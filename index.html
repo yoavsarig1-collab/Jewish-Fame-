@@ -1246,43 +1246,6 @@ body:not(.lang-en) .violin-caption cite { font-family: 'Heebo', sans-serif; }
   .hero-watch-mobile { display: inline-flex !important; }
 }
 
-/* ── Phone rotate hint ── */
-#rotate-hint {
-  display: none;
-  position: fixed;
-  inset: 0;
-  z-index: 2000;
-  background: rgba(12,14,18,0.97);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.4rem;
-  animation: rotateHintFade 3.2s ease forwards;
-  cursor: pointer;
-}
-#rotate-hint p {
-  font-family: 'Heebo', sans-serif;
-  font-size: 0.78rem;
-  color: var(--paper-70);
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  margin: 0;
-}
-body.lang-en #rotate-hint p { font-family: 'Inter', sans-serif; }
-.rotate-phone-icon { color: var(--ember); animation: phoneRotate 3.2s ease forwards; }
-@keyframes phoneRotate {
-  0%   { transform: rotate(0deg); }
-  20%  { transform: rotate(0deg); }
-  65%  { transform: rotate(90deg); }
-  100% { transform: rotate(90deg); }
-}
-@keyframes rotateHintFade {
-  0%   { opacity: 0; }
-  12%  { opacity: 1; }
-  72%  { opacity: 1; }
-  100% { opacity: 0; }
-}
-@media (max-width: 768px) { #rotate-hint { display: flex; } }
 
 @media (prefers-reduced-motion: reduce) {
   .rule, .hero-bg::after, #countdown-bar::before {
@@ -1295,18 +1258,6 @@ body.lang-en #rotate-hint p { font-family: 'Inter', sans-serif; }
 </head>
 <body>
 
-<!-- Phone rotate hint — shown once on mobile portrait -->
-<div id="rotate-hint" aria-hidden="true">
-  <div class="rotate-phone-icon">
-    <svg width="38" height="62" viewBox="0 0 38 62" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="2" y="2" width="34" height="58" rx="6"/>
-      <line x1="14" y1="8" x2="24" y2="8"/>
-      <circle cx="19" cy="54" r="2.5"/>
-    </svg>
-  </div>
-  <p class="he">סובבו למצב רוחבי</p>
-  <p class="en">Rotate for best experience</p>
-</div>
 
 <!-- ══════════════════════════════════
      NAVBAR
@@ -1869,20 +1820,6 @@ function switchLang(to) {
   menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeMenu); });
 })();
 
-/* ── Phone rotate hint ── */
-(function() {
-  var hint = document.getElementById('rotate-hint');
-  if (!hint) return;
-  var isMobile  = window.innerWidth <= 768;
-  var isPortrait = window.innerHeight > window.innerWidth;
-  if (!isMobile || !isPortrait || sessionStorage.getItem('rotateHintSeen')) {
-    hint.style.display = 'none';
-    return;
-  }
-  sessionStorage.setItem('rotateHintSeen', '1');
-  setTimeout(function() { hint.style.display = 'none'; }, 3300);
-  hint.addEventListener('click', function() { hint.style.display = 'none'; });
-})();
 
 /* Apply saved language on load */
 if (lang === 'en') switchLang('en');
