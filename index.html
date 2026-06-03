@@ -1293,7 +1293,7 @@ body:not(.lang-en) .violin-caption cite { font-family: 'Heebo', sans-serif; }
 </nav>
 
 <div id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט ניווט">
-  <nav class="mobile-nav" dir="rtl">
+  <nav class="mobile-nav">
     <ul>
       <li><a href="about.html"><span class="he">אודות</span><span class="en">About</span></a></li>
       <li><a href="categories.html"><span class="he">קטגוריות</span><span class="en">Categories</span></a></li>
@@ -1752,7 +1752,11 @@ body:not(.lang-en) .violin-caption cite { font-family: 'Heebo', sans-serif; }
 
   <div class="footer-bottom">
     <span>© 2027 <span class="he">טקס פרסי היכל התהילה של המוזיקה היהודית</span><span class="en">Jewish Music Hall of Fame Awards</span></span>
-    <span><span class="he">חלק מפרויקט היכל התהילה של המוזיקה היהודית</span><span class="en">Part of the Hall of Fame of Jewish Music project</span></span>
+    <span style="display:flex;align-items:center;gap:0.75rem;">
+      <button type="button" class="lang-btn active" id="footer-lang-he" onclick="switchLang('he')" style="font-size:0.75rem;">עברית</button>
+      <span style="color:var(--ash);opacity:0.4;">·</span>
+      <button type="button" class="lang-btn" id="footer-lang-en" onclick="switchLang('en')" style="font-size:0.75rem;">English</button>
+    </span>
   </div>
 </footer>
 
@@ -1777,6 +1781,10 @@ function switchLang(to) {
     const men = document.getElementById('mobile-lang-en-btn');
     if (mhe) mhe.classList.remove('active');
     if (men) men.classList.add('active');
+    const fhe = document.getElementById('footer-lang-he');
+    const fen = document.getElementById('footer-lang-en');
+    if (fhe) fhe.classList.remove('active');
+    if (fen) fen.classList.add('active');
     const inp = document.getElementById('nl-email');
     if (inp) inp.placeholder = inp.dataset.en;
   } else {
@@ -1789,6 +1797,10 @@ function switchLang(to) {
     const men = document.getElementById('mobile-lang-en-btn');
     if (mhe) mhe.classList.add('active');
     if (men) men.classList.remove('active');
+    const fhe = document.getElementById('footer-lang-he');
+    const fen = document.getElementById('footer-lang-en');
+    if (fhe) fhe.classList.add('active');
+    if (fen) fen.classList.remove('active');
     const inp = document.getElementById('nl-email');
     if (inp) inp.placeholder = inp.dataset.he;
   }
