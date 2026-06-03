@@ -1,0 +1,110 @@
+/*
+ * JMHOF 2027 — Design Tokens
+ * Single source of truth. All values from DESIGN.md.
+ * Never edit values here without updating DESIGN.md first.
+ */
+
+:root {
+
+  /* ─── COLOR TOKENS ─────────────────────────────────────────────── */
+
+  /* Dark surfaces — 80% of the site */
+  --stage:        #121418;   /* Primary dark background */
+  --stage-mid:    #1C2030;   /* Secondary dark, alternates with stage */
+  --stage-lift:   #252A3A;   /* Card backgrounds on dark */
+  --stage-deep:   #0E0E0C;   /* Footer, deepest surface */
+
+  /* Light surfaces — Selection Process + Press Room only */
+  --paper:        #F7F3EC;   /* Warm off-white background */
+  --parchment:    #EDE5D4;   /* Card backgrounds on paper */
+
+  /* Gold — flat, never gradient, max 4% coverage per viewport */
+  --ember:           #B0884A;  /* THE muted antique gold — borders, dividers, CTAs */
+  --ember-deep:      #7A5A2B;  /* Hover state on ember */
+  --ceremonial-gold: #C8972A;  /* Hero headline accent words ONLY — max 2% viewport */
+
+  /* Text + line */
+  --ash:       #8A857C;  /* Secondary text, metadata */
+  --ink:       #0E0E0C;  /* Text on light backgrounds */
+  --line-dark: #2A2A28;  /* Hairline dividers on dark */
+  --line:      #D8D0BF;  /* Hairline dividers on light */
+
+  /* Off-white — NEVER pure white */
+  --off-white: #F7F3EC;
+
+  /* ─── TYPOGRAPHY ────────────────────────────────────────────────── */
+
+  /* Font families */
+  --font-display-he: 'Frank Ruhl Libre', serif;
+  --font-body-he:    'Heebo', sans-serif;
+  --font-display-en: 'Fraunces', serif;
+  --font-body-en:    'Inter', sans-serif;
+
+  /* Type scale — desktop */
+  --fs-display-xl: clamp(3.5rem, 8vw, 6rem);    /* 56–96px: Hero headlines only */
+  --fs-display-lg: clamp(2.75rem, 5.5vw, 4.5rem); /* 44–72px: Section openers */
+  --fs-h1:         clamp(2.25rem, 4vw, 3.5rem);   /* 36–56px: Page titles */
+  --fs-h2:         clamp(1.75rem, 3vw, 2.5rem);   /* 28–40px: Major sections */
+  --fs-h3:         clamp(1.375rem, 2vw, 1.75rem); /* 22–28px: Subsections */
+  --fs-h4:         clamp(1.125rem, 1.5vw, 1.25rem); /* 18–20px: Card titles */
+  --fs-body-lg:    clamp(1.125rem, 1.5vw, 1.25rem); /* 18–20px: Lead paragraphs */
+  --fs-body:       1rem;                             /* 16px: Default */
+  --fs-caption:    0.75rem;                          /* 12px: Labels, meta */
+
+  /* Font weights */
+  --fw-regular: 400;
+  --fw-medium:  500;
+  --fw-bold:    700;
+  --fw-extrabold: 800;
+
+  /* Line heights */
+  --lh-headline: 1.15;
+  --lh-body:     1.5;
+
+  /* Letter spacing for captions */
+  --ls-caption: 0.08em;
+
+  /* ─── LAYOUT ─────────────────────────────────────────────────────── */
+
+  --grid-columns:    12;
+  --grid-gutter:     24px;
+  --content-max:     1280px;
+  --content-narrow:  720px;  /* max 60ch for body text */
+
+  /* Section padding */
+  --section-pad-y:      clamp(3.5rem, 8vw, 8rem);   /* 56–128px */
+  --section-pad-x:      clamp(1.5rem, 5vw, 4rem);
+
+  /* Nav height */
+  --nav-height:         64px;
+  --nav-height-scroll:  48px;
+
+  /* ─── MOTION ─────────────────────────────────────────────────────── */
+
+  --ease-ceremony:    cubic-bezier(0.16, 1, 0.3, 1);
+  --duration-default: 800ms;
+  --duration-fast:    600ms;
+  --duration-slow:    900ms;
+  --duration-reveal:  800ms;
+  --stagger-step:     60ms;
+
+  /* ─── BORDERS ────────────────────────────────────────────────────── */
+
+  --hairline:         1px solid var(--line-dark);
+  --hairline-light:   1px solid var(--line);
+  --border-ember:     1px solid var(--ember);
+  --border-ember-2:   2px solid var(--ember);
+
+  /* NO border-radius anywhere — sharp corners only */
+  --radius: 0;
+}
+
+/* ─── REDUCED MOTION ──────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-default: 0ms;
+    --duration-fast:    0ms;
+    --duration-slow:    0ms;
+    --duration-reveal:  0ms;
+  }
+}

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&amp;family=Fraunces:opsz,wght@9..144,400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-tertiary-fixed": "#001c37",
+                    "surface-container-low": "#1f1b16",
+                    "on-primary-container": "#3b2500",
+                    "on-secondary-container": "#382700",
+                    "inverse-surface": "#eae1d9",
+                    "on-primary-fixed-variant": "#604107",
+                    "surface-container-lowest": "#110e09",
+                    "on-tertiary": "#0c3255",
+                    "primary-container": "#b28a4c",
+                    "surface": "#16130e",
+                    "surface-variant": "#39342f",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "on-background": "#eae1d9",
+                    "secondary-container": "#b8891b",
+                    "surface-dim": "#16130e",
+                    "error-container": "#93000a",
+                    "tertiary-fixed-dim": "#a9c9f5",
+                    "outline-variant": "#4f4539",
+                    "on-secondary": "#412d00",
+                    "tertiary": "#a9c9f5",
+                    "surface-container": "#231f1a",
+                    "on-error-container": "#ffdad6",
+                    "outline": "#9b8f80",
+                    "inverse-primary": "#7a581f",
+                    "on-tertiary-fixed-variant": "#28486d",
+                    "surface-bright": "#3d3833",
+                    "on-primary-fixed": "#281800",
+                    "secondary": "#f4be4f",
+                    "on-secondary-fixed": "#261900",
+                    "surface-container-highest": "#39342f",
+                    "on-surface-variant": "#d2c4b4",
+                    "background": "#16130e",
+                    "secondary-fixed": "#ffdea4",
+                    "surface-tint": "#edbf7b",
+                    "primary": "#edbf7b",
+                    "error": "#ffb4ab",
+                    "primary-fixed": "#ffddaf",
+                    "surface-container-high": "#2e2924",
+                    "secondary-fixed-dim": "#f4be4f",
+                    "on-surface": "#eae1d9",
+                    "on-primary": "#442c00",
+                    "tertiary-fixed": "#d2e4ff",
+                    "on-error": "#690005",
+                    "tertiary-container": "#7493bc",
+                    "inverse-on-surface": "#34302a",
+                    "on-tertiary-container": "#022b4e",
+                    "primary-fixed-dim": "#edbf7b"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0rem",
+                    "lg": "0rem",
+                    "xl": "0rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin": "48px",
+                    "container-max": "1280px",
+                    "hairline": "1px",
+                    "unit": "4px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "headline-md": ["Frank Ruhl Libre"],
+                    "body-md": ["Fraunces"],
+                    "headline-lg": ["Frank Ruhl Libre"],
+                    "body-lg": ["Fraunces"],
+                    "display-xl": ["Frank Ruhl Libre"],
+                    "label-caps": ["Fraunces"]
+            },
+            "fontSize": {
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #121418;
+            color: #eae1d9;
+        }
+        .border-gold-subtle {
+            border-color: rgba(176, 136, 74, 0.3);
+        }
+        .border-gold-solid {
+            border-color: #B0884A;
+        }
+    </style>
+</head>
+<body class="font-body-md">
+<!-- TopAppBar -->
+<nav class="sticky top-0 w-full z-50 flex justify-between items-center px-12 h-24 max-w-full bg-[#121418] border-b border-[#B0884A]/30">
+<div class="text-2xl font-serif tracking-tighter text-[#B0884A]">PRIZE FOR MUSIC</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-sans uppercase tracking-[0.2em] text-[12px] font-semibold text-zinc-500 hover:text-[#B0884A] hover:bg-[#1C2030] transition-colors duration-500" href="#">Laureates</a>
+<a class="font-sans uppercase tracking-[0.2em] text-[12px] font-semibold text-zinc-500 hover:text-[#B0884A] hover:bg-[#1C2030] transition-colors duration-500" href="#">Archives</a>
+<a class="font-sans uppercase tracking-[0.2em] text-[12px] font-semibold text-zinc-500 hover:text-[#B0884A] hover:bg-[#1C2030] transition-colors duration-500" href="#">The Jury</a>
+<a class="font-sans uppercase tracking-[0.2em] text-[12px] font-semibold text-[#B0884A] border-b border-[#B0884A] pb-1" href="#">Selection</a>
+<a class="font-sans uppercase tracking-[0.2em] text-[12px] font-semibold text-zinc-500 hover:text-[#B0884A] hover:bg-[#1C2030] transition-colors duration-500" href="#">Nominate</a>
+</div>
+<div class="flex gap-6 items-center">
+<span class="font-sans uppercase tracking-[0.2em] text-[12px] font-semibold text-zinc-500">EN / FR</span>
+<button class="font-sans uppercase tracking-[0.2em] text-[12px] font-semibold text-[#B0884A] border border-[#B0884A] px-6 py-2 hover:bg-[#B0884A] hover:text-[#121418] transition-all">Contact</button>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[921px] flex flex-col items-center justify-center overflow-hidden px-12 py-24 border-b border-gold-subtle">
+<!-- Massive Watermark -->
+<div class="absolute inset-0 flex items-center justify-center select-none pointer-events-none opacity-15">
+<span class="font-headline-lg text-[40vw] text-[#B0884A] leading-none">01</span>
+</div>
+<div class="relative z-10 text-center max-w-4xl">
+<span class="font-label-caps text-primary mb-6 block uppercase">Category 01</span>
+<h1 class="font-display-xl text-on-surface mb-8">זמר / Male Singer</h1>
+<p class="font-body-lg text-on-surface-variant max-w-2xl mx-auto leading-relaxed">
+                    Honoring the vocalists who have defined the soundscape of generations. This category recognizes mastery of performance, cultural resonance, and the enduring legacy of the male voice in our musical heritage.
+                </p>
+</div>
+</section>
+<!-- Pre-announcement State -->
+<section class="bg-[#1C2030] py-32 border-b border-gold-subtle relative">
+<div class="max-w-container-max mx-auto px-12 grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
+<div class="md:col-span-8 md:col-start-3 text-center border-y border-gold-subtle py-20 px-12">
+<h2 class="font-headline-lg text-primary mb-6">הנבחר יוכרז בטקס / The inductee will be announced at the ceremony</h2>
+<p class="font-label-caps text-on-surface mb-12 tracking-widest">DECEMBER 14, 2024 — JERUSALEM THEATRE</p>
+<div class="flex flex-col md:flex-row gap-0 max-w-md mx-auto">
+<input class="bg-transparent border border-gold-subtle text-on-surface p-4 flex-grow focus:border-primary outline-none font-label-caps placeholder:text-zinc-600" placeholder="YOUR EMAIL ADDRESS" type="email"/>
+<button class="bg-primary text-background px-8 py-4 font-label-caps hover:bg-secondary transition-colors">JOIN PROTOCOL</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Post-announcement Teaser (Mock Archival) -->
+<section class="bg-[#121418] py-32 border-b border-gold-subtle overflow-hidden">
+<div class="max-w-container-max mx-auto px-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-0 border border-gold-subtle">
+<!-- Archival Photo Left -->
+<div class="relative aspect-square md:aspect-auto border-l md:border-l-0 md:border-r border-gold-subtle">
+<img alt="Archival Singer" class="w-full h-full object-cover grayscale opacity-70" data-alt="Moody black and white archival photograph of a classic male singer in a tuxedo performing into a vintage ribbon microphone with soft stage smoke" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-xjE0uTW3-0UVO5KVlO--FABk9CnvGK5szUuJK4K9SlAdbpWj5CXJv8koDKOQV6TF4KKzo2CJ2QTLmBKGYHzkNLjJIm1lrTgOmzenLH4COqydQLOJxJjGjj8NVZEo68Lds0T4cC5qXMu1JqcCONXJ13KjxKGKyRFt_9HBGe5FOQXllED6pp8DmclqWfRZIiLolm_QGpV5QWoAr_laU3HgOVe07yfqO051LhAXHY_m5H3v7vrwsDf4u0nxhhl_YNZzlsFWd-LhoYiq"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#121418] to-transparent opacity-40"></div>
+<div class="absolute bottom-8 left-8">
+<span class="font-label-caps text-primary bg-[#121418] px-4 py-2 border border-gold-subtle">LATEST INDUCTEE ARCHIVE CLIP</span>
+</div>
+</div>
+<!-- Bio Right -->
+<div class="p-16 flex flex-col justify-center">
+<span class="font-label-caps text-primary mb-4">LEGACY SPOTLIGHT</span>
+<h3 class="font-headline-md text-on-surface mb-6">Mastery of the Vocal Tradition</h3>
+<p class="font-body-md text-on-surface-variant mb-10">
+                            Our archives meticulously document the evolutionary path of male vocalists. From the liturgical roots to the modern stage, each laureate represents a chapter in the definitive authority of music history. Explore the criteria of selection and the weight of artistic contribution that defines a State Prize winner.
+                        </p>
+<a class="inline-flex items-center gap-4 font-label-caps text-primary hover:gap-6 transition-all group" href="#">
+                            VIEW HISTORICAL LAUREATES
+                            <span class="material-symbols-outlined text-[16px] group-hover:translate-x-[-4px]">arrow_back</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Hall of Fame Building CTA -->
+<section class="bg-[#0E0E0C] py-24">
+<div class="max-w-container-max mx-auto px-12">
+<div class="border-2 border-gold-solid p-12 md:p-20 text-center relative">
+<!-- Corner Accents -->
+<div class="absolute top-0 left-0 w-8 h-8 border-t-4 border-l-4 border-primary -mt-1 -ml-1"></div>
+<div class="absolute top-0 right-0 w-8 h-8 border-t-4 border-r-4 border-primary -mt-1 -mr-1"></div>
+<div class="absolute bottom-0 left-0 w-8 h-8 border-b-4 border-l-4 border-primary -mb-1 -ml-1"></div>
+<div class="absolute bottom-0 right-0 w-8 h-8 border-b-4 border-r-4 border-primary -mb-1 -mr-1"></div>
+<h2 class="font-display-xl text-primary mb-8 text-5xl md:text-7xl">HALL OF FAME</h2>
+<p class="font-body-lg text-on-surface mb-10 max-w-xl mx-auto">
+                        The physical monument of music excellence is currently under curation. Reserve your passage to the opening.
+                    </p>
+<button class="border border-primary text-primary px-12 py-5 font-label-caps hover:bg-primary hover:text-background transition-all tracking-[0.3em]">
+                        EXPLORE THE CONSTRUCTION SITE
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="grid grid-cols-1 md:grid-cols-4 w-full px-12 py-20 gap-0 bg-[#0E0E0C] border-t border-[#B0884A]/30 divide-x divide-x-reverse divide-[#B0884A]/30">
+<div class="pr-0 md:pr-12 pb-12 md:pb-0">
+<div class="text-xl font-serif text-[#B0884A] mb-8">PRIZE FOR MUSIC</div>
+<p class="font-sans uppercase tracking-widest text-[11px] text-zinc-600">
+                © 2024 State Music Prize. Archival Authority.
+            </p>
+</div>
+<div class="px-0 md:px-12 py-8 md:py-0 border-t md:border-t-0 border-[#B0884A]/30">
+<h4 class="font-sans uppercase tracking-widest text-[11px] text-[#B0884A] mb-6">Directory</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-sans uppercase tracking-widest text-[11px] text-zinc-600 hover:text-[#B0884A] underline decoration-1 underline-offset-4 transition-all" href="#">Legal Terms</a></li>
+<li><a class="font-sans uppercase tracking-widest text-[11px] text-zinc-600 hover:text-[#B0884A] underline decoration-1 underline-offset-4 transition-all" href="#">Press Office</a></li>
+</ul>
+</div>
+<div class="px-0 md:px-12 py-8 md:py-0 border-t md:border-t-0 border-[#B0884A]/30">
+<h4 class="font-sans uppercase tracking-widest text-[11px] text-[#B0884A] mb-6">Affiliates</h4>
+<ul class="flex flex-col gap-4">
+<li><a class="font-sans uppercase tracking-widest text-[11px] text-zinc-600 hover:text-[#B0884A] underline decoration-1 underline-offset-4 transition-all" href="#">Heritage Foundation</a></li>
+<li><a class="font-sans uppercase tracking-widest text-[11px] text-zinc-600 hover:text-[#B0884A] underline decoration-1 underline-offset-4 transition-all" href="#">Privacy Protocol</a></li>
+</ul>
+</div>
+<div class="pl-0 md:pl-12 pt-8 md:pt-0 border-t md:border-t-0 border-[#B0884A]/30 flex flex-col justify-between">
+<div>
+<h4 class="font-sans uppercase tracking-widest text-[11px] text-[#B0884A] mb-6">Connectivity</h4>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#B0884A] cursor-pointer hover:opacity-80">share</span>
+<span class="material-symbols-outlined text-[#B0884A] cursor-pointer hover:opacity-80">public</span>
+<span class="material-symbols-outlined text-[#B0884A] cursor-pointer hover:opacity-80">mail</span>
+</div>
+</div>
+<div class="mt-12 text-[10px] font-sans uppercase tracking-[0.2em] text-zinc-700">
+                DESIGNED FOR IMMUTABILITY
+            </div>
+</div>
+</footer>
+</body></html>

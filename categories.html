@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" id="html-root">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>קטגוריות הפרס | טקס פרסי היכל התהילה של המוזיקה היהודית</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;700;800&family=Heebo:wght@300;400;500;700;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,800&family=Inter:wght@300;400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --stage:           #121418;
+  --stage-mid:       #1C2030;
+  --stage-lift:      #252A3A;
+  --stage-deep:      #0E0E0C;
+  --paper:           #F7F3EC;
+  --ember:           #B0884A;
+  --ember-deep:      #7A5A2B;
+  --ceremonial-gold: #C8972A;
+  --ash:             #8A857C;
+  --ink:             #0E0E0C;
+  --line-dark:       #2A2A28;
+  --paper-70:  rgba(247,243,236,0.70);
+  --paper-40:  rgba(247,243,236,0.40);
+  --paper-12:  rgba(247,243,236,0.12);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--stage); color: var(--paper);
+  font-family: 'Heebo', sans-serif; font-weight: 400;
+  line-height: 1.6; overflow-x: hidden; direction: rtl;
+}
+body.lang-en { direction: ltr; font-family: 'Inter', sans-serif; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--stage); }
+::-webkit-scrollbar-thumb { background: var(--ember-deep); }
+a { text-decoration: none; color: inherit; }
+
+.he { display: block; } .en { display: none !important; }
+body.lang-en .he { display: none !important; }
+body.lang-en .en { display: block !important; }
+.he-inline { display: inline; } .en-inline { display: none; }
+body.lang-en .he-inline { display: none !important; }
+body.lang-en .en-inline { display: inline !important; }
+
+.eyebrow {
+  display: block; font-size: 0.65rem; letter-spacing: 5px;
+  text-transform: uppercase; color: var(--ember); margin-bottom: 0.9rem;
+  font-family: 'Outfit', sans-serif; font-weight: 600;
+}
+body:not(.lang-en) .eyebrow { font-family: 'Heebo', sans-serif; font-weight: 700; }
+
+.rule {
+  width: 48px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ember), transparent);
+  background-size: 200% auto; animation: shimmer 8s cubic-bezier(0.16,1,0.3,1) infinite;
+  margin: 1.2rem 0 2rem; border: none;
+}
+
+/* ── NAVBAR ── */
+#navbar {
+  position: fixed; inset: 0 0 auto; z-index: 900; height: 64px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2.5rem; transition: height 0.3s, background 0.3s; direction: ltr;
+}
+#navbar.solid {
+  height: 48px; background: rgba(18,20,24,0.97);
+  border-bottom: 1px solid var(--line-dark);
+}
+.nav-brand { display: flex; align-items: center; }
+.nav-wordmark .t1 {
+  font-family: 'Frank Ruhl Libre', serif; font-size: 0.85rem;
+  font-weight: 500; color: var(--paper);
+}
+body.lang-en .nav-wordmark .t1 { font-family: 'Fraunces', serif; }
+.nav-wordmark .t2 {
+  font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 300;
+  color: var(--ash); letter-spacing: 2px; text-transform: uppercase;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--paper-70); transition: color 0.2s;
+  position: relative; padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: 0; left: 50%;
+  transform: translateX(-50%); width: 0; height: 1px;
+  background: var(--ember); transition: width 0.2s;
+}
+.nav-links a:hover { color: var(--paper); }
+.nav-links a:hover::after, .nav-links a.active::after { width: 20px; }
+.nav-links a.active { color: var(--ember); }
+body:not(.lang-en) .nav-links a { font-family: 'Heebo', sans-serif; }
+.lang-switcher {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-family: 'Inter', sans-serif; font-size: 0.7rem;
+  letter-spacing: 1.5px; text-transform: uppercase;
+}
+.lang-switcher .sep { color: var(--ash); }
+.lang-btn {
+  color: var(--ash); cursor: pointer; background: none; border: none;
+  font-family: inherit; font-size: inherit; letter-spacing: inherit;
+  text-transform: inherit; padding: 0; transition: color 0.2s;
+}
+.lang-btn:hover { color: var(--paper); }
+.lang-btn.active { color: var(--ember); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Hamburger button */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 910;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--paper);
+  transition: transform 0.25s ease, opacity 0.25s ease, width 0.25s ease;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile menu overlay */
+#mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 64px 0 0;
+  z-index: 800;
+  background: rgba(12,14,18,0.97);
+  padding: 2.5rem 2rem;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  pointer-events: none;
+}
+#mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.mobile-nav > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-nav > ul > li > a {
+  display: block;
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--paper-70);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.2s;
+}
+body.lang-en .mobile-nav > ul > li > a { font-family: 'Fraunces', serif; }
+.mobile-nav > ul > li > a:hover,
+.mobile-nav > ul > li > a:focus { color: var(--ember); }
+.mobile-lang {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ── PAGE HERO ── */
+#page-hero {
+  position: relative;
+  padding: 11rem 3rem 6rem;
+  border-bottom: 1px solid var(--line-dark);
+  overflow: hidden;
+}
+
+.page-hero-wm {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none; user-select: none;
+}
+.page-hero-wm span {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(120px, 25vw, 300px);
+  font-weight: 800; color: var(--ember); opacity: 0.06;
+  line-height: 1; letter-spacing: -0.03em; direction: ltr;
+}
+
+.page-hero-inner {
+  position: relative; z-index: 2; max-width: 1200px; margin: 0 auto;
+}
+.page-hero-inner h1 {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800; line-height: 1.05; color: var(--paper);
+  margin-bottom: 1rem;
+}
+body.lang-en .page-hero-inner h1 { font-family: 'Fraunces', serif; }
+.page-hero-inner p {
+  font-size: 1rem; color: var(--ash); max-width: 52ch; line-height: 1.85;
+}
+
+/* ── CATEGORIES IMAGE GRID ── */
+#cats-section { padding: 0; }
+.cats-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px;
+  background: var(--stage-deep);
+}
+.cg-card {
+  position: relative; cursor: pointer; height: 280px; overflow: hidden;
+  touch-action: manipulation; user-select: none;
+  outline: none;
+}
+.cg-card:hover {
+  box-shadow: inset 0 0 0 1px rgba(176,136,74,0.35);
+  z-index: 1;
+}
+.cg-img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center 20%;
+  filter: grayscale(1) brightness(0.45);
+  transition: filter 0.55s cubic-bezier(0.25,0.46,0.45,0.94),
+              transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.cg-card:hover .cg-img {
+  filter: grayscale(0.1) brightness(0.55);
+  transform: scale(1.07);
+}
+.cg-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top,
+    rgba(14,14,12,0.94) 0%, rgba(14,14,12,0.3) 55%, transparent 100%);
+  transition: opacity 0.4s;
+}
+.cg-card:hover .cg-overlay { opacity: 0.85; }
+.cg-content {
+  position: absolute; inset: 0; display: flex; flex-direction: column;
+  justify-content: flex-end; padding: 1.4rem 1.6rem;
+  transition: transform 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+}
+.cg-card:hover .cg-content { transform: translateY(-5px); }
+.cg-num {
+  font-family: 'Outfit', sans-serif; font-size: 0.5rem; font-weight: 600;
+  letter-spacing: 4px; text-transform: uppercase; color: var(--ember); margin-bottom: 0.35rem;
+}
+.cg-name {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(1rem, 1.4vw, 1.3rem); font-weight: 700;
+  color: var(--paper); line-height: 1.2; margin-bottom: 0.3rem;
+}
+body.lang-en .cg-name { font-family: 'Fraunces', serif; }
+.cg-arrow {
+  font-size: 0.75rem; color: var(--ember-deep); display: inline-block;
+  transition: color 0.25s, transform 0.25s;
+}
+[dir="rtl"] .cg-card:hover .cg-arrow { color: var(--ember); transform: translateX(-5px); }
+[dir="ltr"] .cg-card:hover .cg-arrow { color: var(--ember); transform: translateX(5px); }
+
+/* ── CATEGORY MODAL ── */
+#cat-modal {
+  position: fixed; inset: 0; z-index: 9500;
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.32s cubic-bezier(0.16,1,0.3,1);
+}
+#cat-modal::before {
+  content: ''; position: absolute; inset: 0;
+  background: rgba(6,6,8,0.9);
+}
+#cat-modal.open { opacity: 1; pointer-events: auto; }
+.cm-bg {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center;
+  filter: blur(28px) brightness(0.22) saturate(0.7);
+  transform: scale(1.12);
+  transition: background-image 0.35s;
+  pointer-events: none;
+}
+/* RTL: swap arrow direction so prev=→ next=← */
+[dir="rtl"] #cm-prev { font-size: 0; }
+[dir="rtl"] #cm-prev::after { content: '→'; font-size: 0.95rem; }
+[dir="rtl"] #cm-next { font-size: 0; }
+[dir="rtl"] #cm-next::after { content: '←'; font-size: 0.95rem; }
+.cm-wrap {
+  position: relative; z-index: 1;
+  width: min(1080px, 92vw); max-height: 88vh; overflow-y: auto;
+  background: rgba(16,18,22,0.82);
+  border: 1px solid rgba(176,136,74,0.2);
+  display: grid; grid-template-columns: 1fr 1.6fr;
+  transform: scale(0.96) translateY(10px);
+  transition: transform 0.38s cubic-bezier(0.16,1,0.3,1);
+}
+#cat-modal.open .cm-wrap { transform: scale(1) translateY(0); }
+.cm-left {
+  padding: 4rem 3rem; display: flex; flex-direction: column; justify-content: center;
+  border-inline-end: 1px solid rgba(176,136,74,0.14);
+}
+.cm-right { padding: 4rem 3rem; }
+.cm-num {
+  font-family: 'Outfit', sans-serif; font-size: 0.58rem; font-weight: 600;
+  letter-spacing: 5px; text-transform: uppercase; color: var(--ember); margin-bottom: 0.8rem;
+}
+.cm-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem); font-weight: 700;
+  color: var(--paper); line-height: 1.1; margin-bottom: 0.5rem;
+}
+body.lang-en .cm-title { font-family: 'Fraunces', serif; }
+.cm-rule { width: 40px; height: 1px; background: linear-gradient(90deg, var(--ember), transparent); margin: 1.4rem 0; }
+.cm-sub { font-size: 0.88rem; color: var(--ash); line-height: 1.75; }
+.cm-ind-label {
+  font-family: 'Outfit', sans-serif; font-size: 0.58rem; font-weight: 600;
+  letter-spacing: 4px; text-transform: uppercase; color: var(--ember); margin-bottom: 1.4rem;
+}
+body:not(.lang-en) .cm-ind-label { font-family: 'Heebo', sans-serif; }
+.cm-inductees { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.cm-ind {
+  padding: 1rem 0.8rem 1rem 0; border-bottom: 1px solid rgba(176,136,74,0.12);
+  text-decoration: none; color: inherit; display: block;
+  transition: background 0.18s, padding-inline-start 0.18s;
+  opacity: 0; transform: translateY(8px);
+}
+.cm-ind.visible {
+  opacity: 1; transform: none;
+  transition: opacity 0.35s ease, transform 0.35s ease, background 0.18s, padding-inline-start 0.18s;
+}
+a.cm-ind:hover {
+  background: rgba(176,136,74,0.06); padding-inline-start: 0.8rem;
+}
+.cm-ind-name {
+  font-family: 'Frank Ruhl Libre', serif; font-size: 0.95rem; font-weight: 700;
+  color: var(--paper); line-height: 1.3;
+}
+body.lang-en .cm-ind-name { font-family: 'Fraunces', serif; }
+a.cm-ind:hover .cm-ind-name { color: var(--ember); }
+.cm-ind-years {
+  font-family: 'Inter', sans-serif; font-size: 0.65rem;
+  color: var(--ember); letter-spacing: 1px; direction: ltr; unicode-bidi: isolate;
+}
+.cm-chrome {
+  position: absolute; top: 0; inset-inline-end: 0;
+  display: flex; align-items: center; gap: 4px; padding: 1rem 1.2rem; z-index: 2;
+}
+.cm-btn {
+  display: flex; align-items: center; justify-content: center;
+  width: 38px; height: 38px;
+  background: rgba(14,14,12,0.7); border: 1px solid rgba(176,136,74,0.22);
+  color: var(--ash); cursor: pointer; font-size: 0.95rem;
+  transition: border-color 0.2s, color 0.2s;
+}
+.cm-btn:hover { border-color: var(--ember); color: var(--ember); }
+
+@media (max-width: 1024px) { .cats-grid { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 768px)  {
+  .cats-grid { grid-template-columns: repeat(2, 1fr); } .cg-card { height: 190px; }
+  .cm-wrap { grid-template-columns: 1fr; width: 96vw; }
+  .cm-left { padding: 2.5rem 2rem 1.5rem; border-inline-end: none; border-bottom: 1px solid rgba(176,136,74,0.14); }
+  .cm-right { padding: 1.5rem 2rem 2.5rem; }
+}
+@media (max-width: 480px)  { .cg-card { height: 155px; } .cg-name { font-size: 0.9rem; } }
+
+/* ── LIFETIME ACHIEVEMENT ── */
+#lifetime-award {
+  position: relative; overflow: hidden;
+  min-height: 420px;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center;
+  padding: 7rem 2rem;
+  border-top: 1px solid rgba(176,136,74,0.3);
+}
+.lifetime-bg {
+  position: absolute; inset: 0;
+  background: url('assets/images/building-pt.jpg') center/cover no-repeat;
+  filter: grayscale(0.6) brightness(0.22);
+  transform: scale(1.02);
+}
+.lifetime-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to bottom,
+    rgba(10,10,12,0.6) 0%, rgba(10,10,12,0.4) 50%, rgba(10,10,12,0.7) 100%);
+}
+.lifetime-wm {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  pointer-events: none; user-select: none;
+}
+.lifetime-wm span {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(180px, 35vw, 400px); font-weight: 800;
+  color: var(--ember); opacity: 0.07;
+  line-height: 1; direction: ltr;
+}
+.lifetime-body {
+  position: relative; z-index: 2;
+  max-width: 680px;
+}
+.lifetime-eyebrow {
+  font-family: 'Outfit', sans-serif; font-size: 0.6rem; font-weight: 600;
+  letter-spacing: 6px; text-transform: uppercase; color: var(--ember);
+  margin-bottom: 1.4rem; display: block;
+}
+body:not(.lang-en) .lifetime-eyebrow { font-family: 'Heebo', sans-serif; }
+.lifetime-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(2.8rem, 6vw, 5rem); font-weight: 800;
+  color: var(--paper); line-height: 1.05; margin-bottom: 1rem;
+}
+body.lang-en .lifetime-title { font-family: 'Fraunces', serif; }
+.lifetime-rule {
+  width: 56px; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ember), transparent);
+  margin: 1.4rem auto;
+}
+.lifetime-desc {
+  font-size: 0.95rem; color: var(--paper-70); line-height: 1.8; max-width: 540px; margin: 0 auto;
+}
+@media (max-width: 600px) {
+  #lifetime-award { min-height: 300px; padding: 5rem 1.5rem; }
+  .lifetime-title { font-size: 2.5rem; }
+}
+
+footer { background: var(--stage-deep); padding: 4.5rem 2rem 2rem; }
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem; max-width: 1200px; margin: 0 auto;
+  padding-bottom: 3rem; border-bottom: 1px solid var(--line-dark);
+}
+.footer-about .fa-logo {
+  font-family: 'Frank Ruhl Libre', serif; font-size: 0.9rem;
+  font-weight: 500; color: var(--paper); margin-bottom: 0.9rem; line-height: 1.4;
+}
+body.lang-en .footer-about .fa-logo { font-family: 'Fraunces', serif; }
+.footer-about p { font-size: 0.8rem; color: var(--ash); line-height: 1.7; max-width: 260px; }
+.footer-col h5 {
+  font-family: 'Outfit', sans-serif; font-size: 0.58rem; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--ember); margin-bottom: 1.2rem;
+}
+body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weight: 700; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.65rem; }
+.footer-col ul li a { font-size: 0.83rem; color: var(--ash); transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--paper); }
+.footer-bottom {
+  max-width: 1200px; margin: 0 auto; display: flex;
+  justify-content: space-between; align-items: center;
+  padding-top: 1.5rem; font-family: 'Inter', sans-serif;
+  font-size: 0.7rem; color: var(--ash); flex-wrap: wrap; gap: 0.5rem;
+}
+
+/* ── REVEAL ── */
+.reveal {
+  opacity: 0; transform: translateY(12px);
+  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.on { opacity: 1; transform: none; }
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .lang-switcher { display: none; }
+  .nav-hamburger { display: flex; }
+  #mobile-menu { display: block; }
+
+  #page-hero { padding: 8rem 2rem 4rem; }
+  .cat-featured-body { padding: 2.5rem 2rem; }
+  .cat-section-header { padding: 2.5rem 2rem 1.5rem; }
+
+  .tape-outer { padding: 3rem 0 4rem; }
+  .tape-outer::before, .tape-outer::after { width: 80px; }
+  .tape-card { min-width: 240px; height: 240px; }
+
+  .tp-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .tp-inductees { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .footer-grid { grid-template-columns: 1fr; }
+
+  #page-hero { padding: 6rem 1.5rem 3rem; }
+  .cat-featured { grid-template-columns: 1fr; }
+  .cat-featured-num { display: none; }
+  .cat-featured-body { padding: 2rem 1.5rem; }
+  .cat-section-header { padding: 2rem 1.5rem 1.2rem; }
+
+  .tape-outer { padding: 2rem 0 3rem; }
+  .tape-outer::before, .tape-outer::after { width: 40px; }
+  .tape-card { min-width: 190px; height: 190px; padding: 0 1.4rem 1.4rem; }
+
+  .tp-inductees { grid-template-columns: repeat(2, 1fr); }
+  .tape-panel { padding: 0 1.2rem; }
+  .tp-inner { padding: 2rem 0 1rem; }
+}
+@media (max-width: 420px) {
+  #page-hero { padding: 5.5rem 1.2rem 2.5rem; }
+  .cat-featured-body { padding: 1.8rem 1.2rem; }
+  .tape-card { min-width: 160px; height: 160px; padding: 0 1.1rem 1.1rem; }
+  .tape-name { font-size: 1.2rem; white-space: normal; }
+  .tp-inductees { grid-template-columns: 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rule { animation: none; background: var(--ember); }
+  .reveal { transition: none; opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-wordmark">
+      <div class="t1 he">טקס פרסי היכל התהילה</div>
+      <div class="t1 en">Hall of Fame Awards</div>
+      <div class="t2">Jewish Music Hall of Fame · 2027</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html">  <span class="he">אודות</span>        <span class="en">About</span></a></li>
+    <li><a href="categories.html" class="active"><span class="he">קטגוריות</span> <span class="en">Categories</span></a></li>
+    <li><a href="ceremony.html"><span class="he">הטקס</span>        <span class="en">Ceremony</span></a></li>
+    <li><a href="selection-process.html"><span class="he">תהליך הבחירה</span><span class="en">Selection</span></a></li>
+    <li><a href="donors.html">       <span class="he">תמיכה</span>        <span class="en">Support</span></a></li>
+  </ul>
+  <div class="lang-switcher">
+    <button class="lang-btn active" id="lang-he" onclick="switchLang('he')">ע</button>
+    <span class="sep">·</span>
+    <button class="lang-btn" id="lang-en-btn" onclick="switchLang('en')">EN</button>
+  </div>
+
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="תפריט" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט ניווט">
+  <nav class="mobile-nav" dir="rtl">
+    <ul>
+      <li><a href="about.html"><span class="he">אודות</span><span class="en">About</span></a></li>
+      <li><a href="categories.html"><span class="he">קטגוריות</span><span class="en">Categories</span></a></li>
+      <li><a href="ceremony.html"><span class="he">הטקס</span><span class="en">Ceremony</span></a></li>
+      <li><a href="selection-process.html"><span class="he">תהליך הבחירה</span><span class="en">Selection</span></a></li>
+      <li><a href="donors.html"><span class="he">תמיכה</span><span class="en">Support</span></a></li>
+    </ul>
+    <div class="mobile-lang">
+      <button type="button" class="lang-btn active" id="mobile-lang-he" onclick="switchLang('he')">עברית</button>
+      <span class="sep">·</span>
+      <button type="button" class="lang-btn" id="mobile-lang-en-btn" onclick="switchLang('en')">English</button>
+    </div>
+  </nav>
+</div>
+
+<!-- PAGE HERO -->
+<section id="page-hero">
+  <div class="page-hero-wm"><span>13</span></div>
+  <div class="page-hero-inner reveal">
+    <span class="eyebrow"><span class="he">מחזור 2027</span><span class="en">Inaugural 2027</span></span>
+    <h1>
+      <span class="he">13 קטגוריות הפרס</span>
+      <span class="en">13 Award Categories</span>
+    </h1>
+    <div class="rule"></div>
+    <p>
+      <span class="he">12 קטגוריות תחרותיות ופרס מפעל חיים. כל קטגוריה נכרעת בפה אחד בידי שלושה שופטים מקצועיים.</span>
+      <span class="en">12 competitive categories and a Lifetime Achievement Award. Each category is decided unanimously by three expert judges.</span>
+    </p>
+  </div>
+</section>
+
+<section id="cats-section">
+  <div id="cats-grid" class="cats-grid"></div>
+</section>
+
+<!-- CATEGORY MODAL -->
+<div id="cat-modal" role="dialog" aria-modal="true" aria-label="פרטי קטגוריה">
+  <div class="cm-bg" id="cm-bg"></div>
+  <div class="cm-chrome">
+    <button class="cm-btn" id="cm-prev" aria-label="קטגוריה קודמת">←</button>
+    <button class="cm-btn" id="cm-next" aria-label="קטגוריה הבאה">→</button>
+    <button class="cm-btn" id="cm-close" aria-label="סגור">✕</button>
+  </div>
+  <div class="cm-wrap">
+    <div class="cm-left">
+      <div class="cm-num" id="cm-num"></div>
+      <div class="cm-title" id="cm-title"></div>
+      <div class="cm-rule"></div>
+      <div class="cm-sub" id="cm-sub"></div>
+    </div>
+    <div class="cm-right">
+      <div class="cm-ind-label he">נבחרים · מחזור 2027</div>
+      <div class="cm-ind-label en">Inductees · Class of 2027</div>
+      <div class="cm-inductees" id="cm-inductees"></div>
+    </div>
+  </div>
+</div>
+
+<!-- LIFETIME ACHIEVEMENT -->
+<section id="lifetime-award" class="reveal">
+  <div class="lifetime-bg"></div>
+  <div class="lifetime-wm"><span>13</span></div>
+  <div class="lifetime-body">
+    <span class="lifetime-eyebrow he">13 — פרס מיוחד</span>
+    <span class="lifetime-eyebrow en">13 — Special Award</span>
+    <h2 class="lifetime-title he">פרס מפעל חיים</h2>
+    <h2 class="lifetime-title en">Lifetime Achievement Award</h2>
+    <div class="lifetime-rule"></div>
+    <p class="lifetime-desc he">הכרה על מפעל יצירתי שלם — ליוצר, מבצע או מלחין שתרומתו למוזיקה היהודית מהווה עדות לנאמנות ומצוינות לאורך עשורים.</p>
+    <p class="lifetime-desc en">Recognition of a complete creative body of work — for a creator, performer or composer whose contribution to Jewish music stands as a testament to lifelong excellence.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-about">
+      <div class="fa-logo he">טקס פרסי היכל התהילה של המוזיקה היהודית</div>
+      <div class="fa-logo en">Jewish Music Hall of Fame Awards</div>
+      <p>
+        <span class="he">הכרה ממלכתית ויוקרתית ליוצרים ומבצעים שעיצבו את המוזיקה היהודית לדורותיה.</span>
+        <span class="en">Prestigious state recognition for the creators and performers who shaped Jewish music for generations.</span>
+      </p>
+    </div>
+    <div class="footer-col">
+      <h5><span class="he">פרויקט</span><span class="en">Project</span></h5>
+      <ul>
+        <li><a href="about.html">     <span class="he">אודות</span>        <span class="en">About</span></a></li>
+        <li><a href="categories.html">      <span class="he">קטגוריות</span>   <span class="en">Categories</span></a></li>
+        <li><a href="ceremony.html">  <span class="he">הטקס</span>         <span class="en">Ceremony</span></a></li>
+        <li><a href="selection-process.html">   <span class="he">תהליך הבחירה</span><span class="en">Selection Process</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5><span class="he">תמיכה</span><span class="en">Support</span></h5>
+      <ul>
+        <li><a href="donors.html">                    <span class="he">רמות תמיכה</span><span class="en">Support Tiers</span></a></li>
+        <li><a href="mailto:info@hallofame.org">       <span class="he">צרו קשר</span><span class="en">Contact</span></a></li>
+        <li><a href="#">                               <span class="he">שאלות נפוצות</span><span class="en">FAQ</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2027 <span class="he">טקס פרסי היכל התהילה של המוזיקה היהודית</span><span class="en">Jewish Music Hall of Fame Awards</span></span>
+    <span><span class="he">חלק מפרויקט היכל התהילה של המוזיקה היהודית</span><span class="en">Part of the Hall of Fame of Jewish Music project</span></span>
+  </div>
+</footer>
+
+<script>
+let lang = localStorage.getItem('lang') || 'he';
+function switchLang(to) {
+  lang = to;
+  const html = document.getElementById('html-root');
+  if (lang === 'en') {
+    document.body.classList.add('lang-en');
+    html.lang = 'en'; html.dir = 'ltr';
+    document.getElementById('lang-he').classList.remove('active');
+    document.getElementById('lang-en-btn').classList.add('active');
+    var mhe = document.getElementById('mobile-lang-he');
+    var men = document.getElementById('mobile-lang-en-btn');
+    if (mhe) mhe.classList.remove('active');
+    if (men) men.classList.add('active');
+  } else {
+    document.body.classList.remove('lang-en');
+    html.lang = 'he'; html.dir = 'rtl';
+    document.getElementById('lang-he').classList.add('active');
+    document.getElementById('lang-en-btn').classList.remove('active');
+    var mhe = document.getElementById('mobile-lang-he');
+    var men = document.getElementById('mobile-lang-en-btn');
+    if (mhe) mhe.classList.add('active');
+    if (men) men.classList.remove('active');
+  }
+  localStorage.setItem('lang', lang);
+}
+
+/* ── Mobile hamburger ── */
+(function() {
+  var btn  = document.getElementById('nav-hamburger');
+  var menu = document.getElementById('mobile-menu');
+  if (!btn || !menu) return;
+  function closeMenu() {
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  btn.addEventListener('click', function() {
+    if (btn.classList.contains('open')) {
+      closeMenu();
+    } else {
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      menu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMenu(); });
+  menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeMenu); });
+})();
+if (lang === 'en') switchLang('en');
+
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('solid', window.scrollY > 50);
+}, { passive: true });
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+}, { threshold: 0.06 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+<script>
+// ── Tape Machine ──
+(function () {
+  const cats = [
+    { id:'01', he:'זמר', en:'Male Vocalist',
+      subHe:'זמר יהודי שהשפיע על קהל יהודי ועולמי — בכל שפה ובכל סגנון',
+      subEn:'A Jewish vocalist who shaped audiences around the world — in any language, any style',
+      img:'assets/images/leonard-cohen-portrait.jpg',
+      ind:[{he:'לאונרד כהן',en:'Leonard Cohen',y:'1934–2016',link:'leonard-cohen.html'},{he:'אל ג\'ולסון',en:'Al Jolson',y:'1886–1950'},{he:'אדי קנטור',en:'Eddie Cantor',y:'1892–1964'},{he:'יאן פירס',en:'Jan Peerce',y:'1904–1984'}]},
+    { id:'02', he:'זמרת', en:'Female Vocalist',
+      subHe:'זמרת יהודיה שהשפיעה על קהל יהודי ועולמי — בכל שפה ובכל סגנון',
+      subEn:'A Jewish vocalist who shaped audiences around the world — in any language, any style',
+      img:'https://upload.wikimedia.org/wikipedia/commons/d/d3/Sophie_Tucker%2C_stage_singer_%28SAYRE_10136%29.jpg',
+      ind:[{he:'סופי טאקר',en:'Sophie Tucker',y:'1884–1966'},{he:'מולי פיקון',en:'Molly Picon',y:'1898–1992'},{he:'דינה שור',en:'Dinah Shore',y:'1915–1994'},{he:'ברברה סטרייסנד',en:'Barbra Streisand',y:'1942–'}]},
+    { id:'03', he:'חזן / פייטן', en:'Cantor / Paytan',
+      subHe:'מוביל של תפילה ושירת בית הכנסת — אשכנזי, ספרדי, מזרחי',
+      subEn:'Leader of Jewish prayer and synagogue song — Ashkenazi, Sephardi, Mizrahi',
+      img:'https://upload.wikimedia.org/wikipedia/commons/2/27/Josef_Singer_%28Published_in_1891%29.jpg',
+      ind:[{he:'יוסלה רוזנבלט',en:'Yossele Rosenblatt',y:'1882–1933',link:'inductee.html'},{he:'משה קוסבצקי',en:'Moshe Koussevitzky',y:'1899–1966'},{he:'ר\' ישראל נג\'ארה',en:'Rabbi Israel Najara',y:'1555–1625'},{he:'בן ציון מילר',en:'Ben Zion Miller',y:'1923–2011'}]},
+    { id:'04', he:'זמר ישראלי', en:'Israeli Male Vocalist',
+      subHe:'זמר שעיצב את קולה המוזיקלי של ישראל — מהשיר הישראלי ועד הפופ הים-תיכוני',
+      subEn:'A vocalist who shaped the musical voice of Israel — from Israeli song to Mediterranean pop',
+      img:'https://upload.wikimedia.org/wikipedia/commons/d/df/Israeli_singer_Arik_Einstein_%28FL45769289%29.jpg',
+      ind:[
+        {he:'אריק איינשטיין',en:'Arik Einstein',y:'1939–2013',link:'arik-einstein.html'},
+        {he:'אריק לביא',en:'Arik Lavie',y:'1927–2004',link:'arik-lavie.html'},
+        {he:'זהר ארגוב',en:'Zohar Argov',y:'1955–1987',link:'zohar-argov.html'},
+        {he:'מאיר בנאי',en:'Meir Banai',y:'1960–2017',link:'meir-banai.html'},
+        {he:'שמעון ישראלי',en:'Shimon Israeli',y:'1932–2023',link:'shimon-israeli.html'},
+        {he:'בני אמדורסקי',en:'Beni Amdursky',y:'1931–1994',link:'beni-amdursky.html'},
+        {he:'צביקה פיק',en:'Zvika Pick',y:'1949–2022',link:'zvika-pick.html'},
+        {he:'מתי כספי',en:'Mati Caspi',y:'1949–2026',link:'mati-caspi.html'},
+        {he:'יגאל בשן',en:'Yigal Bashan',y:'1950–2018',link:'yigal-bashan.html'},
+        {he:'עוזי חיטמן',en:'Uzi Hitman',y:'1952–2004',link:'uzi-hitman.html'},
+        {he:'ג\'ו עמר',en:'Jo Amar',y:'1930–2009',link:'joe-amar.html'}
+      ]},
+    { id:'05', he:'זמרת ישראלית', en:'Israeli Female Vocalist',
+      subHe:'זמרת שעיצבה את קולה המוזיקלי של ישראל — מהשיר הישראלי ועד הפופ הים-תיכוני',
+      subEn:'A vocalist who shaped the musical voice of Israel — from Israeli song to Mediterranean pop',
+      img:'https://upload.wikimedia.org/wikipedia/commons/7/7c/Shoshana_Damari_-_1973.jpg',
+      ind:[{he:'עפרה חזה',en:'Ofra Haza',y:'1957–2000',link:'ofra-haza.html'},{he:'שושנה דמארי',en:'Shoshana Damari',y:'1923–2006'},{he:'יפה ירקוני',en:'Yaffa Yarkoni',y:'1925–2012'},{he:'נעמי שמר',en:'Naomi Shemer',y:'1930–2004'}]},
+    { id:'06', he:'מלחין / מעבד', en:'Composer / Arranger',
+      subHe:'יוצר שהוליד לחנים שנשמעים בעולם — מג\'אז ופופ ועד מחזמר',
+      subEn:'A creator whose melodies echo worldwide — from jazz and pop to musical theatre',
+      img:'https://upload.wikimedia.org/wikipedia/commons/3/3d/Burt_Bacharach_1972.JPG',
+      ind:[{he:'ברט בקראק',en:'Burt Bacharach',y:'1928–2023'},{he:'ג\'ורג\' גרשווין',en:'George Gershwin',y:'1898–1937'},{he:'הרולד ארלן',en:'Harold Arlen',y:'1905–1986'},{he:'ג\'רי ליבר',en:'Jerry Leiber',y:'1933–2011'}]},
+    { id:'07', he:'להקה או הרכב', en:'Band or Ensemble',
+      subHe:'מדואט ועד תזמורת — כל הסגנונות, כל הדורות',
+      subEn:'From duo to orchestra — all styles, all generations',
+      img:'https://upload.wikimedia.org/wikipedia/commons/1/19/Simon_%26_Garfunkel%2C_Jazz_Fest_2010.jpg',
+      ind:[{he:'סיימון וגרפונקל',en:'Simon & Garfunkel',y:'1964–2015'},{he:'האחיות בארי',en:'Barry Sisters',y:'1920s–2013'},{he:'האחיות אנדרוז',en:'Andrews Sisters',y:'1937–1967'},{he:'הדודאים',en:'The Dudaim',y:'1955–'}]},
+    { id:'08', he:'מלחין / מנצח קלאסי', en:'Classical Composer / Conductor',
+      subHe:'מלחין או מנצח שפעל ברמה עולמית בתחומי הקלאסי, האופרה והמחזמר',
+      subEn:'A composer or conductor who shaped classical music, opera and musical theatre worldwide',
+      img:'https://upload.wikimedia.org/wikipedia/commons/2/22/Antal_Dorati_conducts_an_orchestral_rehearsal_for_Colonel_de_Basil%27s_%22Original_Ballet_Russe%22_%28Russian_Ballet%29_season%2C_Theatre_Royal%2C_Sydney%2C_December_1939_-_Sam_Hood_%283809422043%29.jpg',
+      ind:[{he:'לאונרד ברנשטיין',en:'Leonard Bernstein',y:'1918–1990'},{he:'ארנסט בלוך',en:'Ernest Bloch',y:'1880–1959'},{he:'אהרן קופלנד',en:'Aaron Copland',y:'1900–1990'},{he:'דריוס מיו',en:'Darius Milhaud',y:'1892–1974'}]},
+    { id:'09', he:'נגן כלי נשיפה', en:'Wind Instrumentalist',
+      subHe:'חליל, קלרינט, סקסופון, חצוצרה — מן הג\'אז ועד הקלאסי',
+      subEn:'Flute, clarinet, saxophone, trumpet — from jazz to classical',
+      img:'https://upload.wikimedia.org/wikipedia/commons/9/9a/Benny_Goodman_rehearsal_NYWTS.jpg',
+      ind:[{he:'בני גודמן',en:'Benny Goodman',y:'1909–1986'},{he:'ארטי שאו',en:'Artie Shaw',y:'1910–2004'},{he:'סטן גץ',en:'Stan Getz',y:'1927–1991'},{he:'הרבי מן',en:'Herbie Mann',y:'1930–2003'}]},
+    { id:'10', he:'נגן כלי מיתר', en:'String Instrumentalist',
+      subHe:'כינור, ויולה, צ\'לו, גיטרה — מן הקמרי ועד הבמה הגדולה',
+      subEn:'Violin, viola, cello, guitar — from chamber to concert hall',
+      img:'https://upload.wikimedia.org/wikipedia/commons/6/66/Jascha_Heifetz_and_Emanuel_Bay.jpg',
+      ind:[{he:'יאשה היפץ',en:'Jascha Heifetz',y:'1901–1987'},{he:'מישה אלמן',en:'Mischa Elman',y:'1891–1967'},{he:'נתן מילשטיין',en:'Nathan Milstein',y:'1903–1992'},{he:'פריץ קרייסלר',en:'Fritz Kreisler',y:'1875–1962'}]},
+    { id:'11', he:'נגן כלי הקשה', en:'Percussion Instrumentalist',
+      subHe:'תופים, מרימבה, קסילופון — מן הביג-בנד ועד האורכסטרה',
+      subEn:'Drums, marimba, xylophone — from big band to orchestra',
+      img:'https://upload.wikimedia.org/wikipedia/commons/e/ea/Buddy_Rich.jpg',
+      ind:[{he:'באדי ריץ\'',en:'Buddy Rich',y:'1917–1987'},{he:'שלי מן',en:'Shelly Manne',y:'1920–1984'},{he:'מחזור ראשון',en:'Inaugural Class',y:'2027'},{he:'מחזור ראשון',en:'Inaugural Class',y:'2027'}]},
+    { id:'12', he:'נגן / מפיק פופולרי', en:'Popular Musician / Producer',
+      subHe:'נגן או מפיק שעיצב את הצליל של מוזיקה פופולרית יהודית ועולמית',
+      subEn:'A musician or producer who defined the sound of popular Jewish and world music',
+      img:'https://upload.wikimedia.org/wikipedia/commons/3/38/%28Portrait_of_Joe_Mooney%2C_Milt_Gabler%2C_and_Morty_Palitz%2C_Decca_studio%2C_New_York%2C_N.Y.%2C_ca._Dec._1946%29_%28LOC%29_%285061913565%29.jpg',
+      ind:[{he:'מחזור ראשון',en:'Inaugural Class',y:'2027'},{he:'מחזור ראשון',en:'Inaugural Class',y:'2027'},{he:'מחזור ראשון',en:'Inaugural Class',y:'2027'},{he:'מחזור ראשון',en:'Inaugural Class',y:'2027'}]},
+  ];
+
+  const grid = document.getElementById('cats-grid');
+  if (!grid) return;
+
+  // Build image grid
+  cats.forEach((cat, idx) => {
+    const card = document.createElement('div');
+    card.className = 'cg-card';
+    card.dataset.idx = idx;
+    card.setAttribute('role', 'button');
+    card.setAttribute('tabindex', '0');
+    card.innerHTML =
+      `<div class="cg-img" style="background-image:url('${cat.img}')"></div>` +
+      `<div class="cg-overlay"></div>` +
+      `<div class="cg-content">` +
+        `<div class="cg-num">${cat.id}</div>` +
+        `<div class="cg-name he">${cat.he}</div><div class="cg-name en">${cat.en}</div>` +
+        `<span class="cg-arrow he-inline">←</span><span class="cg-arrow en-inline">→</span>` +
+      `</div>`;
+    // stagger entrance
+    card.style.cssText = 'opacity:0;transform:translateY(14px)';
+    setTimeout(() => {
+      card.style.transition = 'opacity 0.45s ease, transform 0.45s ease';
+      card.style.opacity = '1'; card.style.transform = 'none';
+    }, 80 + idx * 40);
+    card.addEventListener('click', () => openModal(idx));
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(idx); } });
+    grid.appendChild(card);
+  });
+
+  // Modal
+  const modal   = document.getElementById('cat-modal');
+  const cmBg    = document.getElementById('cm-bg');
+  const cmNum   = document.getElementById('cm-num');
+  const cmTitle = document.getElementById('cm-title');
+  const cmSub   = document.getElementById('cm-sub');
+  const cmInds  = document.getElementById('cm-inductees');
+  let activeIdx = -1;
+
+  function openModal(idx) {
+    activeIdx = idx;
+    const cat = cats[idx];
+    cmBg.style.backgroundImage = `url('${cat.img}')`;
+    cmNum.textContent = cat.id;
+    cmTitle.innerHTML = `<span class="he">${cat.he}</span><span class="en">${cat.en}</span>`;
+    cmSub.innerHTML   = `<span class="he">${cat.subHe}</span><span class="en">${cat.subEn}</span>`;
+    cmInds.innerHTML  = cat.ind.map(i =>
+      i.link
+        ? `<a href="${i.link}" class="cm-ind"><div class="cm-ind-name he">${i.he}</div><div class="cm-ind-name en">${i.en}</div><div class="cm-ind-years">${i.y}</div></a>`
+        : `<div class="cm-ind"><div class="cm-ind-name he">${i.he}</div><div class="cm-ind-name en">${i.en}</div><div class="cm-ind-years">${i.y}</div></div>`
+    ).join('');
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    // stagger inductee names
+    cmInds.querySelectorAll('.cm-ind').forEach((el, i) => {
+      setTimeout(() => el.classList.add('visible'), 120 + i * 55);
+    });
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    activeIdx = -1;
+  }
+
+  function navigate(dir) {
+    if (activeIdx === -1) return;
+    openModal(((activeIdx + dir) + cats.length) % cats.length);
+  }
+
+  const rtl = () => document.documentElement.dir === 'rtl';
+  document.getElementById('cm-close').addEventListener('click', closeModal);
+  document.getElementById('cm-prev').addEventListener('click', () => navigate(rtl() ? -1 : 1));
+  document.getElementById('cm-next').addEventListener('click', () => navigate(rtl() ? 1 : -1));
+  modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', e => {
+    if (!modal.classList.contains('open')) return;
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowLeft')  { e.preventDefault(); navigate(rtl() ? -1 : 1); }
+    if (e.key === 'ArrowRight') { e.preventDefault(); navigate(rtl() ? 1 : -1); }
+  });
+})();
+</script>
+</body>
+</html>

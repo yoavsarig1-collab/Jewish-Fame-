@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700;800&amp;family=Heebo:wght@300;400;700&amp;family=Fraunces:opsz,wght@9..144,400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#0c3255",
+                        "surface-container-high": "#2e2924",
+                        "tertiary": "#a9c9f5",
+                        "inverse-primary": "#7a581f",
+                        "surface-variant": "#39342f",
+                        "surface-container": "#231f1a",
+                        "on-tertiary-fixed": "#001c37",
+                        "outline": "#9b8f80",
+                        "primary-container": "#b28a4c",
+                        "on-background": "#eae1d9",
+                        "secondary-fixed": "#ffdea4",
+                        "outline-variant": "#4f4539",
+                        "inverse-surface": "#eae1d9",
+                        "tertiary-fixed": "#d2e4ff",
+                        "on-error": "#690005",
+                        "surface-tint": "#edbf7b",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "on-tertiary-fixed-variant": "#28486d",
+                        "surface-bright": "#3d3833",
+                        "on-tertiary-container": "#022b4e",
+                        "on-primary-fixed": "#281800",
+                        "background": "#121418",
+                        "surface-container-highest": "#39342f",
+                        "surface": "#16130e",
+                        "on-primary": "#442c00",
+                        "on-primary-fixed-variant": "#604107",
+                        "on-primary-container": "#3b2500",
+                        "tertiary-fixed-dim": "#a9c9f5",
+                        "on-surface": "#eae1d9",
+                        "surface-dim": "#16130e",
+                        "primary-fixed": "#ffddaf",
+                        "inverse-on-surface": "#34302a",
+                        "surface-container-low": "#1f1b16",
+                        "on-secondary": "#412d00",
+                        "error-container": "#93000a",
+                        "on-secondary-container": "#382700",
+                        "surface-container-lowest": "#110e09",
+                        "secondary-container": "#b8891b",
+                        "primary-fixed-dim": "#edbf7b",
+                        "primary": "#B0884A",
+                        "on-surface-variant": "#d2c4b4",
+                        "secondary": "#f4be4f",
+                        "on-secondary-fixed": "#261900",
+                        "error": "#ffb4ab",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-container": "#7493bc",
+                        "secondary-fixed-dim": "#f4be4f"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "hairline": "1px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "container-max": "1280px",
+                        "margin": "48px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Fraunces"],
+                        "headline-lg": ["Frank Ruhl Libre"],
+                        "body-md": ["Fraunces"],
+                        "headline-md": ["Frank Ruhl Libre"],
+                        "display-xl": ["Frank Ruhl Libre"],
+                        "body-lg": ["Fraunces"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body { background-color: #121418; color: #F7F3EC; font-family: 'Heebo', sans-serif; }
+        .ceremonial-border { border: 1px solid rgba(176, 136, 74, 0.3); }
+        .gold-accent { color: #B0884A; }
+        .bg-gold { background-color: #B0884A; }
+        .border-gold { border-color: #B0884A; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 flex justify-between items-center w-full px-8 h-20 max-w-full bg-[#121418] dark:bg-neutral-950 z-50 border-b border-[#B0884A]/30">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold text-[#B0884A] font-['Frank_Ruhl_Libre']">Jewish Music Hall of Fame</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-[#B0884A]/70 font-['Heebo'] font-['Frank_Ruhl_Libre'] uppercase tracking-widest text-sm hover:bg-[#B0884A] hover:text-black transition-colors duration-300" href="#">Inductees</a>
+<a class="text-[#B0884A] border-b border-[#B0884A] pb-1 font-['Frank_Ruhl_Libre'] uppercase tracking-widest text-sm" href="#">Ceremony</a>
+<a class="text-[#B0884A]/70 font-['Heebo'] font-['Frank_Ruhl_Libre'] uppercase tracking-widest text-sm hover:bg-[#B0884A] hover:text-black transition-colors duration-300" href="#">Archive</a>
+<a class="text-[#B0884A]/70 font-['Heebo'] font-['Frank_Ruhl_Libre'] uppercase tracking-widest text-sm hover:bg-[#B0884A] hover:text-black transition-colors duration-300" href="#">About</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-[#B0884A]/70 font-['Heebo'] text-sm tracking-widest">EN / HE</span>
+<button class="bg-[#B0884A] text-black px-6 py-2 text-sm font-bold font-['Frank_Ruhl_Libre'] uppercase transition-opacity hover:opacity-90">Get Tickets</button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Hero Section -->
+<section class="grid grid-cols-1 md:grid-cols-10 h-[calc(100vh-80px)] border-b border-[#B0884A]/30">
+<div class="md:col-span-5 flex flex-col justify-center px-12 lg:px-24 bg-[#121418]">
+<span class="text-[#B0884A] font-headline-md text-xl mb-4 tracking-widest">דצמבר 2027 / December 2027</span>
+<h1 class="font-headline-lg text-5xl lg:text-7xl mb-8 leading-tight">טקס הכרזת הנבחרים<br/><span class="text-3xl lg:text-4xl opacity-80">The Induction Ceremony</span></h1>
+<div class="h-hairline bg-[#B0884A]/30 w-32 mb-8"></div>
+<p class="text-xl lg:text-2xl font-light mb-4">היכל התרבות, פתח תקווה / Cultural Center, Petah Tikva</p>
+<p class="text-on-surface-variant font-body-md italic">בנוכחות נשיא המדינה, ראש הממשלה ושר התרבות</p>
+</div>
+<div class="md:col-span-5 relative overflow-hidden">
+<img alt="Ceremony Audience" class="w-full h-full object-cover filter grayscale contrast-125" data-alt="high-contrast black and white photograph of a large audience in a grand theater looking towards a bright stage during a gala" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9cTgddimth4O9gW4MXcp-fbI2yZpmKkf2dT39GlKXtYhH2kA7uxDAyb0odPagtDTzffNBzba6OqLc6G1_5KL8jn4D7eI2T3zGnIKagB6YKHuXf2m-EG5dzQhH4g0o5X5lmvCnoG1XXx5mibyiBOmCSlwsqwommm93ij5iSD3wD9vzRTpXCE91o4n0gPYcXV6cPm235BsMlM_9vAwxGhByaJAvqRRKHRGgkqYjpEeXXc8B_Z81ZWxJIpEwame30dij4eZx6lyKFjUs"/>
+<div class="absolute inset-0 bg-gradient-to-l from-transparent to-[#121418]/40"></div>
+</div>
+</section>
+<!-- Details Section -->
+<section class="w-full border-b border-[#B0884A]/30">
+<div class="divide-y divide-[#B0884A]/30">
+<div class="grid grid-cols-1 md:grid-cols-12 px-12 py-12 items-center hover:bg-[#1C2030] transition-colors group">
+<span class="md:col-span-1 text-[#B0884A] font-display-xl text-4xl opacity-50">01</span>
+<h3 class="md:col-span-3 font-headline-md text-2xl">מחזור המייסדים</h3>
+<p class="md:col-span-8 text-on-surface-variant text-lg">המחזור ההיסטורי הראשון של היכל התהילה למוזיקה יהודית, המצדיע לענקי הזמר והלחן מכל הזמנים.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 px-12 py-12 items-center hover:bg-[#1C2030] transition-colors group">
+<span class="md:col-span-1 text-[#B0884A] font-display-xl text-4xl opacity-50">02</span>
+<h3 class="md:col-span-3 font-headline-md text-2xl">מיקום האירוע</h3>
+<p class="md:col-span-8 text-on-surface-variant text-lg">היכל התרבות פתח תקווה מארח את האירוע היוקרתי כחלק מחגיגות ה-150 לעיר העברית הראשונה.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 px-12 py-12 items-center hover:bg-[#1C2030] transition-colors group">
+<span class="md:col-span-1 text-[#B0884A] font-display-xl text-4xl opacity-50">03</span>
+<h3 class="md:col-span-3 font-headline-md text-2xl">נוכחות ממלכתית</h3>
+<p class="md:col-span-8 text-on-surface-variant text-lg">מעמד רשמי במעמד נשיא המדינה, ראש הממשלה ושר התרבות, המדגיש את חשיבות השימור התרבותי.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 px-12 py-12 items-center hover:bg-[#1C2030] transition-colors group">
+<span class="md:col-span-1 text-[#B0884A] font-display-xl text-4xl opacity-50">04</span>
+<h3 class="md:col-span-3 font-headline-md text-2xl">שידור ישיר</h3>
+<p class="md:col-span-8 text-on-surface-variant text-lg">הטקס יועבר בשידור חי בערוצי הטלוויזיה המרכזיים ובפלטפורמות הדיגיטל לקהילות יהודיות ברחבי העולם.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 px-12 py-12 items-center hover:bg-[#1C2030] transition-colors group">
+<span class="md:col-span-1 text-[#B0884A] font-display-xl text-4xl opacity-50">05</span>
+<h3 class="md:col-span-3 font-headline-md text-2xl">הופעות מחווה</h3>
+<p class="md:col-span-8 text-on-surface-variant text-lg">עיבודים סימפוניים חדשים ומחוות בימתיות לכל אחד מנבחרי המחזור הראשון בביצוע תזמורת האופרה.</p>
+</div>
+</div>
+</section>
+<!-- History Section -->
+<section class="grid grid-cols-1 md:grid-cols-12 border-b border-[#B0884A]/30">
+<div class="md:col-span-7 flex flex-col justify-center px-12 lg:px-24 py-24 order-2 md:order-1">
+<h2 class="font-headline-lg text-4xl mb-8">150 שנה לפתח תקווה</h2>
+<div class="space-y-6 text-on-surface-variant font-body-lg max-w-2xl leading-relaxed">
+<p>העיר פתח תקווה, "אם המושבות", מציינת מאה וחמישים שנה להיווסדה ברוח של יצירה והמשכיות. כמרכז תרבותי מוביל, הבחירה בהיכל התרבות העירוני כבית לטקס המכונן של היכל התהילה למוזיקה יהודית אינה מקרית.</p>
+<p>החיבור בין השורשים החלוציים של העיר לבין המורשת המוזיקלית של העם היהודי יוצר מרחב סימבולי של התחדשות. בערב זה, אנו מחברים בין העבר המפואר של ההתיישבות לבין העתיד של היצירה הישראלית והיהודית.</p>
+</div>
+<div class="mt-12">
+<button class="border border-[#B0884A] text-[#B0884A] px-10 py-4 font-label-caps hover:bg-[#B0884A] hover:text-black transition-all duration-300">
+                        קראו עוד על ההיסטוריה
+                    </button>
+</div>
+</div>
+<div class="md:col-span-5 relative min-h-[500px] border-r border-[#B0884A]/30 order-1 md:order-2">
+<img alt="Archival Photo" class="w-full h-full object-cover filter sepia-[0.3] brightness-75" data-alt="historical black and white photo of a group of founders standing in front of a modest stone building in a semi-arid landscape" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-JmIifuenF_15x7ULITCln74zGjqcwA7IygosS3V-1N6-C-rXAYbmkKh5TBbn-lgm_e4T40TNzxXQWoKgAvOkpM1skWCy20aBhUhAM6aLO6wXkHqcDdOcq-PwGLygIWcQyrv8kNuro5wPfJcx03cf8fHdNZgtt2bbQTBMKzEyGh85K0qJO6rbLZ0myKoWhkMmeL4jjiurBDNsBpWKcuuqka-lTc7o-E0Tcyg6YQPKbsZ96aT0TIjpbS6nv9hT-OuXgw8lQd33v8oZ"/>
+</div>
+</section>
+<!-- RSVP Section -->
+<section class="px-12 py-32 flex flex-col items-center text-center bg-[#1C2030]">
+<h2 class="font-headline-lg text-5xl mb-6">הישארו מעודכנים / Stay Updated</h2>
+<p class="text-on-surface-variant max-w-xl mb-12 font-body-lg">הצטרפו לרשימת התפוצה לקבלת עדכונים על רשימת הנבחרים הסופית, מכירת כרטיסים ופרטים נוספים.</p>
+<form class="w-full max-w-2xl grid grid-cols-1 md:grid-cols-3 gap-0">
+<input class="bg-transparent border border-[#B0884A]/30 px-6 py-4 focus:border-[#B0884A] focus:ring-0 text-right outline-none" placeholder="שם מלא" type="text"/>
+<input class="bg-transparent border-t border-b md:border-t md:border-b border-r border-l md:border-r-0 md:border-l-0 border-[#B0884A]/30 px-6 py-4 focus:border-[#B0884A] focus:ring-0 text-right outline-none" placeholder="כתובת אימייל" type="email"/>
+<button class="bg-[#B0884A] text-black font-bold font-['Frank_Ruhl_Libre'] uppercase px-8 py-4 hover:bg-opacity-90 transition-opacity" type="submit">
+                    קבלו עדכונים / Get Updates
+                </button>
+</form>
+</section>
+</main>
+<!-- Footer -->
+<footer class="grid grid-cols-1 md:grid-cols-4 w-full px-12 py-16 gap-8 items-start bg-[#121418] dark:bg-neutral-950 border-t border-[#B0884A]/30">
+<div class="space-y-6">
+<span class="text-lg font-bold font-['Frank_Ruhl_Libre'] text-[#B0884A]">Jewish Music Hall of Fame</span>
+<p class="text-[#B0884A]/60 font-['Heebo'] text-xs tracking-tight leading-relaxed max-w-xs">
+                © 2024 Jewish Music Hall of Fame. Preserving the legacy of liturgical and secular Jewish composition.
+            </p>
+</div>
+<div class="flex flex-col gap-3 border-r border-[#B0884A]/30 pr-8">
+<h4 class="font-label-caps text-[#B0884A] mb-2">NAVIGATE</h4>
+<a class="text-[#B0884A]/60 hover:text-[#B0884A] transition-opacity font-['Heebo'] text-sm" href="#">Our Mission</a>
+<a class="text-[#B0884A]/60 hover:text-[#B0884A] transition-opacity font-['Heebo'] text-sm" href="#">Project Archive</a>
+<a class="text-[#B0884A]/60 hover:text-[#B0884A] transition-opacity font-['Heebo'] text-sm" href="#">Latest News</a>
+<a class="text-[#B0884A]/60 hover:text-[#B0884A] transition-opacity font-['Heebo'] text-sm" href="#">Support &amp; Donate</a>
+</div>
+<div class="flex flex-col gap-3 border-r border-[#B0884A]/30 pr-8">
+<h4 class="font-label-caps text-[#B0884A] mb-2">CONTACT</h4>
+<span class="text-[#B0884A]/60 font-['Heebo'] text-sm">Petah Tikva, Israel</span>
+<span class="text-[#B0884A]/60 font-['Heebo'] text-sm">contact@jmhof.org</span>
+<span class="text-[#B0884A]/60 font-['Heebo'] text-sm">+972-3-1234567</span>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="font-label-caps text-[#B0884A] mb-2">SOCIAL</h4>
+<div class="flex gap-4">
+<div class="w-10 h-10 ceremonial-border flex items-center justify-center hover:bg-[#B0884A] hover:text-black transition-all cursor-pointer">
+<span class="material-symbols-outlined">share</span>
+</div>
+<div class="w-10 h-10 ceremonial-border flex items-center justify-center hover:bg-[#B0884A] hover:text-black transition-all cursor-pointer">
+<span class="material-symbols-outlined">podcasts</span>
+</div>
+<div class="w-10 h-10 ceremonial-border flex items-center justify-center hover:bg-[#B0884A] hover:text-black transition-all cursor-pointer">
+<span class="material-symbols-outlined">video_library</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

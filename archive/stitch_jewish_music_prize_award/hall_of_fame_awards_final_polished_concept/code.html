@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&amp;family=Fraunces:opsz,wght@9..144,400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #121418;
+            color: #F7F3EC;
+        }
+        /* Custom scrollbar for brand consistency */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #121418; }
+        ::-webkit-scrollbar-thumb { background: #B0884A; }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#edbf7b",
+                        "surface": "#121418",
+                        "surface-container": "#1C2030",
+                        "surface-container-high": "#252A3A",
+                        "on-surface": "#F7F3EC",
+                        "outline": "#B0884A",
+                        "accent": "#C8972A"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Fraunces"],
+                        "headline-lg": ["Frank Ruhl Libre"],
+                        "display-xl": ["Frank Ruhl Libre"],
+                        "label-caps": ["Fraunces"]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="font-body-md bg-surface text-on-surface">
+<!-- TopNavBar -->
+<nav class="sticky top-0 w-full z-50 flex flex-row-reverse justify-between items-center px-8 py-4 bg-[#121418] border-b border-[#B0884A]/30">
+<div class="text-2xl font-bold tracking-tighter text-[#B0884A] font-serif">
+            היכל התהילה של המוזיקה היהודית
+        </div>
+<div class="hidden md:flex flex-row-reverse gap-8 items-center">
+<a class="font-serif tracking-tight text-sm uppercase text-[#B0884A] border-b border-[#B0884A] pb-1" href="#">אודות</a>
+<a class="font-serif tracking-tight text-sm uppercase text-slate-400 hover:text-[#B0884A] transition-all duration-300" href="#">קטגוריות</a>
+<a class="font-serif tracking-tight text-sm uppercase text-slate-400 hover:text-[#B0884A] transition-all duration-300" href="#">הטקס</a>
+<a class="font-serif tracking-tight text-sm uppercase text-slate-400 hover:text-[#B0884A] transition-all duration-300" href="#">תמיכה</a>
+</div>
+<button class="bg-[#B0884A] text-black px-6 py-2 text-sm font-bold tracking-widest uppercase hover:bg-[#B0884A]/90 transition-all">
+            הצטרפות
+        </button>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full h-[921px] flex items-center justify-center overflow-hidden border-b border-outline">
+<div class="absolute inset-0 z-0">
+<img alt="cinematic wide shot of a grand classical concert hall with ornate gold carvings and rows of velvet seats under dim amber lighting" class="w-full h-full object-cover opacity-40" data-alt="cinematic wide shot of a grand classical concert hall with ornate gold carvings and rows of velvet seats under dim amber lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCneE-SrJ0OK_jC0QvZ70zNYoMfkG0cyuXNZcWUhWCD-8fF0y60J3TF76_vs17BTrehB5j0My77iWr3eOuRuCNU2wksykBZgxgPc3iIaHt3c0C_IqjJ-AGYR-4ITjhQIfax8cClpa-TOOEFYZQbnp-JbQYVnZmykDnLxGGPB0IlKNVmwMwmyynwvxVfrHLNx-s8DSCu0IppHE6WPNuX0mBQVG-fOt4himNxH_vWNhBWbj9q1NuhRLeEl0v2za7ev6BcGN8Bv4uBG0s"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+</div>
+<div class="relative z-10 container mx-auto px-8 text-center">
+<div class="flex items-center justify-center gap-4 mb-8">
+<div class="h-px w-12 bg-outline"></div>
+<span class="text-label-caps text-outline tracking-[0.3em] font-bold">מחזור ראשון · 2027 / INAUGURAL CLASS · 2027</span>
+<div class="h-px w-12 bg-outline"></div>
+</div>
+<h1 class="font-display-xl text-6xl md:text-8xl leading-tight mb-12">
+                חוגגים את המורשת של<br/>
+<span class="text-accent">הצליל היהודי</span>
+</h1>
+<div class="inline-flex flex-row-reverse border border-outline/30 bg-surface/80 backdrop-blur-sm">
+<div class="px-8 py-4 text-center">
+<div class="text-4xl font-bold font-display-xl">142</div>
+<div class="text-label-caps text-xs text-outline">ימים</div>
+</div>
+<div class="w-px bg-outline/30 my-4"></div>
+<div class="px-8 py-4 text-center">
+<div class="text-4xl font-bold font-display-xl">08</div>
+<div class="text-label-caps text-xs text-outline">שעות</div>
+</div>
+<div class="w-px bg-outline/30 my-4"></div>
+<div class="px-8 py-4 text-center">
+<div class="text-4xl font-bold font-display-xl">45</div>
+<div class="text-label-caps text-xs text-outline">דקות</div>
+</div>
+<div class="w-px bg-outline/30 my-4"></div>
+<div class="px-8 py-4 text-center">
+<div class="text-4xl font-bold font-display-xl">12</div>
+<div class="text-label-caps text-xs text-outline">שניות</div>
+</div>
+</div>
+</div>
+</header>
+<!-- Pull Quote Section -->
+<section class="py-24 border-b border-outline/30">
+<div class="container mx-auto px-8">
+<div class="max-w-4xl mr-auto border-r-2 border-outline pr-12 text-right">
+<blockquote class="text-[32px] font-headline-lg leading-relaxed italic text-on-surface">
+                    "המוזיקה היא הקול של הנשמה היהודית, הגשר בין העבר לעתיד, והתפילה שאינה פוסקת לעולם. כאן אנו מעניקים לה בית נצחי."
+                </blockquote>
+<cite class="block mt-6 text-label-caps text-outline">— ועדת ההיגוי האמנותית</cite>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="bg-surface">
+<!-- Major Categories -->
+<div class="border-b border-outline/30">
+<div class="relative bg-surface-container py-16 px-12 border-b border-outline/30">
+<span class="absolute left-12 top-1/2 -translate-y-1/2 text-[120px] font-bold text-outline opacity-15 leading-none pointer-events-none">01</span>
+<h2 class="text-4xl md:text-5xl font-headline-lg font-bold">חלוצי החזנות המודרנית</h2>
+</div>
+<div class="relative bg-surface-container py-16 px-12 border-b border-outline/30">
+<span class="absolute left-12 top-1/2 -translate-y-1/2 text-[120px] font-bold text-outline opacity-15 leading-none pointer-events-none">02</span>
+<h2 class="text-4xl md:text-5xl font-headline-lg font-bold">מלחיני תור הזהב</h2>
+</div>
+<div class="relative bg-surface-container py-16 px-12 border-b border-outline/30">
+<span class="absolute left-12 top-1/2 -translate-y-1/2 text-[120px] font-bold text-outline opacity-15 leading-none pointer-events-none">03</span>
+<h2 class="text-4xl md:text-5xl font-headline-lg font-bold">אמני כלי הכלייזמר</h2>
+</div>
+</div>
+<!-- Grid Categories -->
+<div class="grid grid-cols-1 md:grid-cols-3 border-b border-outline/30">
+<div class="p-12 border-l border-b border-outline/30">
+<span class="text-label-caps text-outline block mb-4">04</span>
+<h3 class="text-2xl font-headline-md">מוזיקה חסידית קלאסית</h3>
+</div>
+<div class="p-12 border-l border-b border-outline/30">
+<span class="text-label-caps text-outline block mb-4">05</span>
+<h3 class="text-2xl font-headline-md">יוצרי פופ יהודי</h3>
+</div>
+<div class="p-12 border-b border-outline/30">
+<span class="text-label-caps text-outline block mb-4">06</span>
+<h3 class="text-2xl font-headline-md">מוזיקה מזרחית ושירת הבקשות</h3>
+</div>
+<div class="p-12 border-l border-b border-outline/30">
+<span class="text-label-caps text-outline block mb-4">07</span>
+<h3 class="text-2xl font-headline-md">שירי ארץ ישראל הישנה</h3>
+</div>
+<div class="p-12 border-l border-b border-outline/30">
+<span class="text-label-caps text-outline block mb-4">08</span>
+<h3 class="text-2xl font-headline-md">מקהלות ואנסמבלים</h3>
+</div>
+<div class="p-12 border-b border-outline/30">
+<span class="text-label-caps text-outline block mb-4">09</span>
+<h3 class="text-2xl font-headline-md">מוזיקה קולנועית וליטורגית</h3>
+</div>
+<div class="p-12 border-l border-outline/30">
+<span class="text-label-caps text-outline block mb-4">10</span>
+<h3 class="text-2xl font-headline-md">נשות השירה היהודית</h3>
+</div>
+<div class="p-12 border-l border-outline/30">
+<span class="text-label-caps text-outline block mb-4">11</span>
+<h3 class="text-2xl font-headline-md">הדור הבא של היצירה</h3>
+</div>
+<div class="p-12 border-outline/30">
+<!-- Placeholder for grid alignment -->
+</div>
+</div>
+<!-- People's Choice -->
+<div class="relative bg-surface-container py-16 px-12 border-r-2 border-outline">
+<div class="flex items-center justify-between">
+<div>
+<span class="text-label-caps text-outline block mb-2">12</span>
+<h2 class="text-4xl font-headline-lg font-bold">בחירת הקהל</h2>
+</div>
+<div class="bg-outline text-black px-4 py-1 text-xs font-bold tracking-widest font-label-caps">PEOPLE'S CHOICE</div>
+</div>
+</div>
+</section>
+<!-- Ceremony Section -->
+<section class="flex flex-col md:flex-row border-t border-outline">
+<div class="w-full md:w-1/2 p-12 md:p-24 flex flex-col justify-center">
+<h2 class="text-5xl font-headline-lg mb-12">הטקס המרכזי</h2>
+<div class="space-y-0">
+<div class="py-8 border-b border-outline/30 flex items-start gap-6">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 1;">calendar_today</span>
+<div>
+<h4 class="text-lg font-bold mb-1">תאריך ומיקום</h4>
+<p class="text-slate-400 font-serif">י"ח באייר תשפ"ז, מרכז לאמנויות הבמה, ירושלים</p>
+</div>
+</div>
+<div class="py-8 border-b border-outline/30 flex items-start gap-6">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 1;">theater_comedy</span>
+<div>
+<h4 class="text-lg font-bold mb-1">תכנית אמנותית</h4>
+<p class="text-slate-400 font-serif">מופע מחווה מרכזי בהשתתפות התזמורת הפילהרמונית ו-20 אמנים מובילים</p>
+</div>
+</div>
+<div class="py-8 flex items-start gap-6">
+<span class="material-symbols-outlined text-outline" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+<div>
+<h4 class="text-lg font-bold mb-1">קוד לבוש</h4>
+<p class="text-slate-400 font-serif">עניבה שחורה (Black Tie) - לבוש ערב רשמי</p>
+</div>
+</div>
+</div>
+<button class="mt-12 self-start border border-outline px-10 py-4 text-outline hover:bg-outline hover:text-black transition-all font-bold tracking-widest">
+                הזמנת כרטיסים
+            </button>
+</div>
+<div class="w-full md:w-1/2 h-[600px] md:h-auto overflow-hidden">
+<img alt="high contrast black and white close up of a violin rests on a stage with dramatic lighting hitting the wood texture" class="w-full h-full object-cover grayscale brightness-75" data-alt="high contrast black and white close up of a violin rests on a stage with dramatic lighting hitting the wood texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRYBlf1tBSdNQrzxZx5nMhTR9JaDnPwvZoNBd7sTAxqt82e5_bfkEFlmPr7o89k5eJpA_OSU6bC4MtJLIFlHIekDXHSCGa4H248WjngsYDyDmPUmKtky9buFXR7onD-hoJsVK3BR3-GTEv6udrH7EEbeppmw36aODgmqstgRrJ7gqvkQsWFKuCiE8DD5DdnN9pjnqD2iIkAjYBPLMxoL0o1m12NrUhItyacxb61BznKMHvBw_We-Wps5vJcQvt14e9UwP4TcBOCYhI"/>
+</div>
+</section>
+<!-- Donor Tiers Section -->
+<section class="border-t border-outline">
+<!-- Tier 1 -->
+<div class="bg-[#121418] p-12 md:p-20 border-b border-outline/30">
+<div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1">
+<h3 class="text-3xl font-headline-lg">תומך היכל</h3>
+<div class="text-3xl font-bold text-outline mt-2">$2,500</div>
+</div>
+<div class="col-span-2">
+<p class="text-lg leading-relaxed mb-4">תמיכה בשימור הארכיון הדיגיטלי ופעילות התיעוד השוטפת של היכל התהילה.</p>
+<p class="text-sm text-slate-400">הכרה באתר, תעודת הוקרה חתומה, הזמנה זוגית לקבלת הפנים.</p>
+</div>
+<div class="col-span-1 flex items-center md:justify-end">
+<a class="text-outline font-bold tracking-widest border-b border-outline pb-1 hover:text-accent hover:border-accent transition-all" href="#">הצטרפות לתמיכה</a>
+</div>
+</div>
+</div>
+<!-- Tier 2 (Featured) -->
+<div class="bg-[#1C2030] p-12 md:p-20 border-r-4 border-outline border-b border-outline/30">
+<div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+<div class="absolute -top-12 right-0 bg-outline text-black px-3 py-1 text-[10px] font-bold tracking-[0.2em]">MOST POPULAR</div>
+<div class="col-span-1">
+<h3 class="text-3xl font-headline-lg">פטרון המוזיקה</h3>
+<div class="text-3xl font-bold text-outline mt-2">$10,000</div>
+</div>
+<div class="col-span-2">
+<p class="text-lg leading-relaxed mb-4">תמיכה מרכזית בהפקת הטקס ובמימון מלגות ליוצרים יהודים צעירים ומבטיחים.</p>
+<p class="text-sm text-slate-400">כל הטבות התומך, 4 כרטיסי VIP לטקס, גישה למתחם האמנים, הקדשה אישית בספר המחזור.</p>
+</div>
+<div class="col-span-1 flex items-center md:justify-end">
+<a class="text-outline font-bold tracking-widest border-b border-outline pb-1 hover:text-accent hover:border-accent transition-all" href="#">הצטרפות לתמיכה</a>
+</div>
+</div>
+</div>
+<!-- Tier 3 -->
+<div class="bg-[#121418] p-12 md:p-20 border-b border-outline">
+<div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+<div class="col-span-1">
+<h3 class="text-3xl font-headline-lg">מייסד היסטורי</h3>
+<div class="text-3xl font-bold text-outline mt-2">$25,000+</div>
+</div>
+<div class="col-span-2">
+<p class="text-lg leading-relaxed mb-4">הנצחה קבועה על כותל המייסדים ותמיכה אסטרטגית בבניית המבנה הפיזי של ההיכל.</p>
+<p class="text-sm text-slate-400">כל הטבות הפטרון, שולחן VIP בערב הגאלה, הכרה בשידורי הטקס, חברות בוועדת הפרס.</p>
+</div>
+<div class="col-span-1 flex items-center md:justify-end">
+<a class="text-outline font-bold tracking-widest border-b border-outline pb-1 hover:text-accent hover:border-accent transition-all" href="#">הצטרפות לתמיכה</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full grid grid-cols-1 md:grid-cols-4 gap-8 px-12 py-16 border-t border-[#B0884A] bg-[#121418]">
+<div class="flex flex-col">
+<div class="text-lg font-bold text-[#B0884A] mb-4 font-serif uppercase tracking-tight">
+                היכל התהילה של המוזיקה היהודית
+            </div>
+<p class="font-serif text-xs leading-relaxed tracking-wide text-slate-300">
+                מוסד המוקדש לשימור, תיעוד וחגיגה של המורשת המוזיקלית היהודית לדורותיה.
+            </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-xs font-bold text-outline tracking-widest">מידע</h4>
+<a class="font-serif text-xs text-slate-300 hover:text-[#B0884A] hover:translate-x-1 transition-transform duration-200" href="#">חזון הפרויקט</a>
+<a class="font-serif text-xs text-slate-300 hover:text-[#B0884A] hover:translate-x-1 transition-transform duration-200" href="#">חדשות הארכיון</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-xs font-bold text-outline tracking-widest">תמיכה</h4>
+<a class="font-serif text-xs text-slate-300 hover:text-[#B0884A] hover:translate-x-1 transition-transform duration-200" href="#">אפשרויות תמיכה</a>
+<a class="font-serif text-xs text-slate-300 hover:text-[#B0884A] hover:translate-x-1 transition-transform duration-200" href="#">צור קשר</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-xs font-bold text-outline tracking-widest">חוקי</h4>
+<a class="font-serif text-xs text-slate-300 hover:text-[#B0884A] hover:translate-x-1 transition-transform duration-200" href="#">תקנון</a>
+<a class="font-serif text-xs text-slate-300 hover:text-[#B0884A] hover:translate-x-1 transition-transform duration-200" href="#">פרטיות</a>
+<div class="mt-8 font-serif text-[10px] text-slate-500 uppercase tracking-tighter">
+                © 2024 היכל התהילה של המוזיקה היהודית. כל הזכויות שמורות.
+            </div>
+</div>
+</footer>
+</body></html>

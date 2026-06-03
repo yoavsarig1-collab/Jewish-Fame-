@@ -1,0 +1,167 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/theme.json",
+	"version": 2,
+	"settings": {
+		"color": {
+			"defaultPalette": false,
+			"palette": [
+				{ "slug": "stage",       "color": "#121418", "name": "Stage" },
+				{ "slug": "stage-mid",   "color": "#1C2030", "name": "Stage Mid" },
+				{ "slug": "stage-lift",  "color": "#252A3A", "name": "Stage Lift" },
+				{ "slug": "stage-deep",  "color": "#0E0E0C", "name": "Stage Deep" },
+				{ "slug": "paper",       "color": "#F7F3EC", "name": "Paper" },
+				{ "slug": "parchment",   "color": "#EDE5D4", "name": "Parchment" },
+				{ "slug": "ember",       "color": "#B0884A", "name": "Ember" },
+				{ "slug": "ember-deep",  "color": "#7A5A2B", "name": "Ember Deep" },
+				{ "slug": "ceremonial-gold", "color": "#C8972A", "name": "Ceremonial Gold" },
+				{ "slug": "ash",         "color": "#8A857C", "name": "Ash" },
+				{ "slug": "ink",         "color": "#0E0E0C", "name": "Ink" },
+				{ "slug": "off-white",   "color": "#F0EBE1", "name": "Off White" }
+			],
+			"gradients": [],
+			"duotone": []
+		},
+		"typography": {
+			"defaultFontSizes": false,
+			"fontFamilies": [
+				{
+					"name": "Frank Ruhl Libre",
+					"slug": "frank-ruhl-libre",
+					"fontFamily": "'Frank Ruhl Libre', serif"
+				},
+				{
+					"name": "Heebo",
+					"slug": "heebo",
+					"fontFamily": "'Heebo', sans-serif"
+				},
+				{
+					"name": "Fraunces",
+					"slug": "fraunces",
+					"fontFamily": "'Fraunces', serif"
+				},
+				{
+					"name": "Inter",
+					"slug": "inter",
+					"fontFamily": "'Inter', sans-serif"
+				}
+			],
+			"fontSizes": [
+				{ "slug": "caption",   "name": "Caption",   "size": "0.75rem" },
+				{ "slug": "small",     "name": "Small",     "size": "0.875rem" },
+				{ "slug": "body",      "name": "Body",      "size": "1rem" },
+				{ "slug": "body-lg",   "name": "Body Large","size": "1.125rem" },
+				{ "slug": "subtitle",  "name": "Subtitle",  "size": "1.25rem" },
+				{ "slug": "display-xs","name": "Display XS","size": "clamp(1.25rem, 3vw, 1.75rem)" },
+				{ "slug": "display-sm","name": "Display SM","size": "clamp(1.5rem, 4vw, 2.25rem)" },
+				{ "slug": "display-md","name": "Display MD","size": "clamp(2rem, 5vw, 3rem)" },
+				{ "slug": "display-lg","name": "Display LG","size": "clamp(2.5rem, 6vw, 4rem)" },
+				{ "slug": "display-xl","name": "Display XL","size": "clamp(3.5rem, 8vw, 6rem)" }
+			]
+		},
+		"spacing": {
+			"spacingSizes": [
+				{ "slug": "xs",  "name": "XS",   "size": "0.5rem" },
+				{ "slug": "sm",  "name": "SM",   "size": "1rem" },
+				{ "slug": "md",  "name": "MD",   "size": "2rem" },
+				{ "slug": "lg",  "name": "LG",   "size": "4rem" },
+				{ "slug": "xl",  "name": "XL",   "size": "8rem" },
+				{ "slug": "section-y", "name": "Section Y", "size": "clamp(3.5rem, 8vw, 8rem)" }
+			],
+			"units": ["px", "rem", "%", "vw"]
+		},
+		"border": {
+			"color": true,
+			"radius": false,
+			"style": true,
+			"width": true
+		},
+		"layout": {
+			"contentSize": "700px",
+			"wideSize": "1260px"
+		},
+		"useRootPaddingAwareAlignments": true,
+		"appearanceTools": true,
+		"blocks": {
+			"core/button": {
+				"color": {
+					"background": true,
+					"text": true
+				}
+			}
+		}
+	},
+	"styles": {
+		"color": {
+			"background": "#121418",
+			"text": "#F0EBE1"
+		},
+		"typography": {
+			"fontFamily": "'Heebo', sans-serif",
+			"fontSize": "1rem",
+			"lineHeight": "1.6"
+		},
+		"elements": {
+			"heading": {
+				"color": {
+					"text": "#F0EBE1"
+				}
+			},
+			"link": {
+				"color": {
+					"text": "#B0884A"
+				},
+				":hover": {
+					"color": {
+						"text": "#F0EBE1"
+					}
+				}
+			}
+		},
+		"blocks": {
+			"core/paragraph": {
+				"color": {
+					"text": "#F0EBE1"
+				}
+			},
+			"core/separator": {
+				"color": {
+					"text": "#2A2A28"
+				}
+			}
+		}
+	},
+	"templateParts": [
+		{
+			"name": "header",
+			"title": "Header",
+			"area": "header"
+		},
+		{
+			"name": "footer",
+			"title": "Footer",
+			"area": "footer"
+		}
+	],
+	"customTemplates": [
+		{
+			"name": "page-categories",
+			"title": "Award Categories",
+			"postTypes": ["page"]
+		},
+		{
+			"name": "page-support",
+			"title": "Support / Donate",
+			"postTypes": ["page"]
+		},
+		{
+			"name": "single-inductee",
+			"title": "Single Inductee",
+			"postTypes": ["jmhof_inductee"]
+		},
+		{
+			"name": "single-category",
+			"title": "Single Award Category",
+			"postTypes": ["jmhof_category"]
+		}
+	]
+}

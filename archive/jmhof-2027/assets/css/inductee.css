@@ -1,0 +1,71 @@
+/*
+ * JMHOF 2027 — Inductee
+ * Single inductee page: portrait, silhouette placeholder, meta layout.
+ */
+
+/* ─── HEADER LAYOUT ───────────────────────────────────────────────── */
+.inductee-header {
+  background-color: var(--stage);
+}
+
+.inductee-header__inner {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 4rem;
+  align-items: start;
+  padding-block: var(--section-pad-y);
+}
+
+@media (max-width: 768px) {
+  .inductee-header__inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ─── PORTRAIT ────────────────────────────────────────────────────── */
+.inductee-portrait {
+  width: 300px;
+  aspect-ratio: 3/4;
+  flex-shrink: 0;
+}
+
+.inductee-portrait__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ─── SILHOUETTE PLACEHOLDER ──────────────────────────────────────── */
+.inductee-portrait__silhouette {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background-color: var(--stage-lift);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inductee-portrait__silhouette svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* ─── META ────────────────────────────────────────────────────────── */
+.inductee-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.inductee-unannounced {
+  margin-block-start: 0.5rem;
+  opacity: 0.6;
+}
+
+/* ─── BODY ────────────────────────────────────────────────────────── */
+.inductee-body {
+  background-color: var(--stage);
+}

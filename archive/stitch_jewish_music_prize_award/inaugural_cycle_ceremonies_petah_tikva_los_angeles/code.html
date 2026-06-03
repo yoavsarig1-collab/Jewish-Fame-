@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@400;500;700&amp;family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,700;1,9..144,400&amp;family=Heebo:wght@300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-tertiary-fixed-variant": "#28486d",
+                      "on-primary": "#442c00",
+                      "on-error": "#690005",
+                      "surface-container": "#231f1a",
+                      "secondary": "#f4be4f",
+                      "inverse-primary": "#7a581f",
+                      "inverse-on-surface": "#34302a",
+                      "on-background": "#eae1d9",
+                      "on-tertiary-fixed": "#001c37",
+                      "on-surface-variant": "#d2c4b4",
+                      "surface-container-high": "#2e2924",
+                      "on-tertiary": "#0c3255",
+                      "inverse-surface": "#eae1d9",
+                      "on-secondary-fixed": "#261900",
+                      "surface-container-low": "#1f1b16",
+                      "surface": "#16130e",
+                      "on-primary-container": "#3b2500",
+                      "on-error-container": "#ffdad6",
+                      "error-container": "#93000a",
+                      "tertiary-container": "#7493bc",
+                      "surface-variant": "#39342f",
+                      "error": "#ffb4ab",
+                      "on-secondary-fixed-variant": "#5d4200",
+                      "on-tertiary-container": "#022b4e",
+                      "surface-dim": "#16130e",
+                      "surface-container-lowest": "#110e09",
+                      "tertiary-fixed": "#d2e4ff",
+                      "on-secondary-container": "#382700",
+                      "background": "#16130e",
+                      "on-secondary": "#412d00",
+                      "surface-container-highest": "#39342f",
+                      "primary-container": "#b28a4c",
+                      "primary-fixed-dim": "#edbf7b",
+                      "on-primary-fixed": "#281800",
+                      "primary": "#edbf7b",
+                      "surface-bright": "#3d3833",
+                      "tertiary-fixed-dim": "#a9c9f5",
+                      "secondary-container": "#b8891b",
+                      "primary-fixed": "#ffddaf",
+                      "surface-tint": "#edbf7b",
+                      "on-primary-fixed-variant": "#604107",
+                      "on-surface": "#eae1d9",
+                      "secondary-fixed-dim": "#f4be4f",
+                      "tertiary": "#a9c9f5",
+                      "secondary-fixed": "#ffdea4",
+                      "outline-variant": "#4f4539",
+                      "outline": "#9b8f80"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0rem",
+                      "lg": "0rem",
+                      "xl": "0rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "gutter": "24px",
+                      "unit": "4px",
+                      "margin": "48px",
+                      "hairline": "1px",
+                      "container-max": "1280px"
+              },
+              "fontFamily": {
+                      "display-xl": ["Frank Ruhl Libre"],
+                      "body-md": ["Heebo"],
+                      "headline-lg": ["Frank Ruhl Libre"],
+                      "label-caps": ["Fraunces"],
+                      "headline-md": ["Frank Ruhl Libre"],
+                      "body-lg": ["Heebo"]
+              },
+              "fontSize": {
+                      "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                      "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                      "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                      "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                      "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}]
+              }
+            },
+          },
+        }
+    </script>
+<style>
+        body { background-color: #121418; color: #F7F3EC; font-family: 'Heebo', sans-serif; }
+        .ceremonial-border { border: 1px solid rgba(176, 136, 74, 0.3); }
+        .gold-accent { color: #B0884A; }
+        .gold-border { border-color: #B0884A; }
+        .gold-bg { background-color: #B0884A; }
+    </style>
+</head>
+<body class="selection:bg-[#B0884A] selection:text-black">
+<!-- TopAppBar -->
+<nav class="bg-[#121418] text-[#B0884A] border-b border-[#B0884A]/30 flex justify-between items-center w-full px-6 py-4 max-w-full fixed top-0 z-[100]">
+<div class="text-xl font-bold tracking-tighter text-[#B0884A] uppercase font-display-xl">JMHOF AWARDS</div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-serif uppercase tracking-widest text-xs text-[#B0884A]/60 hover:text-[#B0884A] transition-colors" href="#">Inductees</a>
+<a class="font-serif uppercase tracking-widest text-xs text-[#B0884A] border-b border-[#B0884A] pb-1" href="#">Ceremonies</a>
+<a class="font-serif uppercase tracking-widest text-xs text-[#B0884A]/60 hover:text-[#B0884A] transition-colors" href="#">Archive</a>
+<a class="font-serif uppercase tracking-widest text-xs text-[#B0884A]/60 hover:text-[#B0884A] transition-colors" href="#">Institutional</a>
+<a class="font-serif uppercase tracking-widest text-xs text-[#B0884A]/60 hover:text-[#B0884A] transition-colors" href="#">Contact</a>
+</div>
+<button class="font-serif uppercase tracking-widest text-xs border border-[#B0884A] px-4 py-2 hover:bg-[#B0884A] hover:text-black transition-all">MEMBER LOGIN</button>
+</nav>
+<!-- Hero Section -->
+<header class="relative h-[819px] flex flex-col items-center justify-center text-center px-6 overflow-hidden pt-16">
+<div class="absolute inset-0 z-0">
+<img alt="Ceremony Hall" class="w-full h-full object-cover grayscale opacity-40" data-alt="Dramatic black and white photograph of an empty grand concert hall with a single bright spotlight illuminating the center stage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJHGRwdPhcwlXnp_g5shrJfMryo4BAHgWBn0gfuD1X3o5XA0mbZRj_W5uUhz1O8NPjU7eMLcEA4gfjqOxNzLwE5m7qcceuuocrs39ebkqNkiEi2h0mUf-MYbyKnSrOh7vU5UsxiRid_Snp2Zn8xsjXpX2NZzrMQWDS876veefFTQHuWn0F3cVwP7Chp1u2led-qxAPS6PnEGCwDTzMt-Re7v-Fhzc6cIDU5nozgYARq8ctaFIgE8KcmjiKYevYzbDsX_BPGn12aVkr"/>
+<div class="absolute inset-0 bg-gradient-to-b from-[#121418]/80 via-transparent to-[#121418]"></div>
+</div>
+<div class="relative z-10 max-w-4xl">
+<span class="font-label-caps text-label-caps gold-accent mb-6 block tracking-[0.3em]">INAUGURAL CYCLE 2027</span>
+<h1 class="font-display-xl text-display-xl mb-12 leading-tight">שני ערים. שני טקסים. אחת לעולם המוזיקה היהודית.</h1>
+<div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+<a class="border border-[#B0884A] text-[#B0884A] px-8 py-4 font-label-caps text-sm tracking-widest hover:bg-[#B0884A] hover:text-black transition-all w-full md:w-auto" href="#petah-tikva">PETAH TIKVA CEREMONY</a>
+<a class="border border-[#B0884A] text-[#B0884A] px-8 py-4 font-label-caps text-sm tracking-widest hover:bg-[#B0884A] hover:text-black transition-all w-full md:w-auto" href="#los-angeles">LOS ANGELES CEREMONY</a>
+</div>
+</div>
+</header>
+<!-- Section 1: Petah Tikva -->
+<section class="bg-[#121418] py-24 border-t border-[#B0884A]/30" id="petah-tikva">
+<div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-2 md:order-1">
+<img alt="Audience Petah Tikva" class="w-full aspect-[4/5] object-cover grayscale border border-[#B0884A]/20" data-alt="Candid black and white wide shot of a formal audience seated in an auditorium, focused and elegant atmosphere" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC56JxCxaldnQDRY9H9Nr_naKZGeDULBX7lNbYX6stLQuY20lquowzd-9382WMfSN0ZaOqhUdycFWoVvI2FJjDVlu67OyIWq0zDbSTQiavr_qzJVQUgKyEWJzLv6srcbkY-aZIpfwuD7BsrwLkN6tF72NF936YzfEGICL51CueUXmFR77D0fko2bA04ePMtDpS79jlEFYAV6Lko_HkXM5HehYBW9aKh96gqRRkvQ9A6wxuD0U3mB6iDWQVOouYkOYjG4LK5dDbHybov"/>
+</div>
+<div class="order-1 md:order-2 space-y-12">
+<div>
+<h2 class="font-display-xl text-headline-lg gold-accent mb-4">פתח תקווה, ישראל</h2>
+<p class="font-label-caps text-sm tracking-widest text-[#B0884A]/60">THE MOTHER OF SETTLEMENTS · JUNE 2027</p>
+</div>
+<ul class="space-y-6">
+<li class="flex justify-between items-center border-b border-[#B0884A]/20 pb-4">
+<span class="font-label-caps text-xs gold-accent">DATE</span>
+<span class="font-body-lg">14 ביוני, 2027</span>
+</li>
+<li class="flex justify-between items-center border-b border-[#B0884A]/20 pb-4">
+<span class="font-label-caps text-xs gold-accent">VENUE</span>
+<span class="font-body-lg">היכל התרבות פתח תקווה</span>
+</li>
+<li class="flex justify-between items-center border-b border-[#B0884A]/20 pb-4">
+<span class="font-label-caps text-xs gold-accent">STATE PRESENCE</span>
+<span class="font-body-lg">במעמד נשיא המדינה</span>
+</li>
+<li class="flex justify-between items-center border-b border-[#B0884A]/20 pb-4">
+<span class="font-label-caps text-xs gold-accent">BROADCAST</span>
+<span class="font-body-lg">שידור חי בערוץ 11</span>
+</li>
+<li class="flex justify-between items-center border-b border-[#B0884A]/20 pb-4">
+<span class="font-label-caps text-xs gold-accent">SPECIALS</span>
+<span class="font-body-lg">תזמורת הפילהרמונית הישראלית</span>
+</li>
+</ul>
+<p class="font-body-md text-[#F7F3EC]/80 leading-relaxed max-w-xl">
+                    הטקס הישראלי יתמקד בשורשי המוזיקה היהודית המודרנית ובתרומתה של היצירה המקומית לתרבות הגלובלית. אירוע המשלב מסורת של עשורים עם חדשנות אמנותית, בלב ליבה של העיר שנוסדה כראשונה למושבות.
+                </p>
+</div>
+</div>
+</section>
+<!-- Transition -->
+<div class="bg-[#121418] relative py-12">
+<div class="absolute left-0 right-0 top-1/2 border-t border-[#B0884A]"></div>
+<div class="relative z-10 flex justify-center">
+<span class="bg-[#121418] px-8 font-label-caps text-xs tracking-[0.4em] gold-accent">AND ACROSS THE OCEAN</span>
+</div>
+</div>
+<!-- Section 2: Los Angeles -->
+<section class="bg-[#1C2030] py-24" id="los-angeles">
+<div class="max-w-[1280px] mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+<div class="order-1 md:order-1 space-y-12">
+<div>
+<h2 class="font-display-xl text-headline-lg gold-accent mb-4">לכל אנג'לס, ארה"ב</h2>
+<p class="font-label-caps text-sm tracking-widest text-[#B0884A]/60">THE GLOBAL STAGE · OCTOBER 2027</p>
+</div>
+<ul class="space-y-6">
+<li class="flex justify-between items-center border-b border-[#B0884A]/20 pb-4">
+<span class="font-label-caps text-xs gold-accent">DATE</span>
+<div class="flex items-center gap-3">
+<span class="font-body-lg">אוקטובר 2027</span>
+<span class="bg-[#B0884A]/20 text-[#B0884A] text-[10px] px-2 py-0.5 border border-[#B0884A]/40 font-bold uppercase">TBC</span>
+</div>
+</li>
+<li class="flex justify-between items-center border-b border-[#B0884A]/20 pb-4">
+<span class="font-label-caps text-xs gold-accent">VENUE</span>
+<div class="flex items-center gap-3">
+<span class="font-body-lg">Walt Disney Concert Hall</span>
+<span class="bg-[#B0884A]/20 text-[#B0884A] text-[10px] px-2 py-0.5 border border-[#B0884A]/40 font-bold uppercase">TBC</span>
+</div>
+</li>
+<li class="flex justify-between items-center border-b border-[#B0884A]/20 pb-4">
+<span class="font-label-caps text-xs gold-accent">DELEGATION</span>
+<span class="font-body-lg">International Archive Board</span>
+</li>
+</ul>
+<div class="pt-8 border-t border-[#B0884A]/10">
+<h4 class="font-label-caps text-xs gold-accent mb-4">L.A. UPDATES REGISTRY</h4>
+<form class="flex gap-2">
+<input class="bg-transparent border-b border-[#B0884A]/40 focus:border-[#B0884A] outline-none px-2 py-2 text-xs w-full text-[#F7F3EC] placeholder:text-[#B0884A]/30" placeholder="EMAIL ADDRESS" type="email"/>
+<button class="bg-[#B0884A] text-black px-6 py-2 font-label-caps text-xs hover:bg-[#C8972A] transition-colors">JOIN</button>
+</form>
+</div>
+</div>
+<div class="order-2 md:order-2">
+<img alt="LA Architecture" class="w-full aspect-[4/5] object-cover grayscale border border-[#B0884A]/20" data-alt="High-contrast black and white architectural shot of a modern concert hall exterior in Los Angeles with sharp metallic curves and deep shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAk4Zy1fPtFwEPUZQw88nkLFp1gUL4qRBh3vyaQRK3D7CNcumL7HaJJCVzdoMlSS9mrC19MIYgZPh-8kFV276XCrrta4M63sZ2sRMeJiFxUA8DdTh0phZl82cj4BnbAcwC9FEjktsuL_QI99T4ZDTkFcR1w2dzhslU-f_RAmK_-aCdFnNPrJEuwTqe9kQawzlIPXdOTUuQxvhn0tym-uCnV7GNB0h9N-XupixR3fPFYvq0SUL5siG6G7dvvRPNw_LcQ9FpnSJrqUQCi"/>
+</div>
+</div>
+</section>
+<!-- Section 3: Universal Vision -->
+<section class="bg-[#121418] py-32 border-t border-[#B0884A]/30">
+<div class="max-w-3xl mx-auto px-6 text-center space-y-12">
+<h2 class="font-display-xl text-display-xl leading-tight">One Prize.<br/>One Jewish World.</h2>
+<p class="font-body-lg text-[#F7F3EC]/70 leading-relaxed">
+                מעבר לגבולות וליבשות, היכל התהילה של המוזיקה היהודית מאחד את הקולות המרכיבים את הפסיפס התרבותי שלנו. שני הטקסים מייצגים את הדיאלוג המתמשך בין ישראל לתפוצות, בין העבר המפואר לעתיד המבטיח.
+            </p>
+<div class="pt-8">
+<a class="inline-block border border-[#B0884A] px-12 py-5 font-label-caps text-sm tracking-[0.2em] hover:bg-[#B0884A] hover:text-black transition-all" href="#">SUPPORT THE VISION</a>
+</div>
+</div>
+</section>
+<!-- Section 4: Mailing List -->
+<section class="bg-[#0E0E0C] py-24 border-t border-[#B0884A]/50">
+<div class="max-w-2xl mx-auto px-6 text-center">
+<span class="material-symbols-outlined text-4xl gold-accent mb-8" data-icon="mail">mail</span>
+<h3 class="font-display-xl text-headline-md mb-4 uppercase">Institutional Access</h3>
+<p class="font-label-caps text-xs gold-accent/60 mb-12 tracking-widest">SUBSCRIBE TO THE OFFICIAL ARCHIVE UPDATES</p>
+<form class="grid grid-cols-1 md:grid-cols-2 gap-8 text-right">
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-[10px] gold-accent">FULL NAME</label>
+<input class="bg-transparent border border-[#B0884A]/20 focus:border-[#B0884A] p-4 text-[#F7F3EC] outline-none" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="font-label-caps text-[10px] gold-accent">EMAIL ADDRESS</label>
+<input class="bg-transparent border border-[#B0884A]/20 focus:border-[#B0884A] p-4 text-[#F7F3EC] outline-none" type="email"/>
+</div>
+<div class="md:col-span-2">
+<button class="w-full bg-[#B0884A] text-black py-4 font-label-caps text-sm tracking-widest hover:bg-[#C8972A] transition-colors" type="submit">AUTHENTICATE REGISTRATION</button>
+</div>
+</form>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-[#121418] text-[#B0884A] border-t border-[#B0884A] mt-auto flex flex-col md:flex-row justify-between items-center px-12 py-16 w-full gap-8">
+<div class="text-lg font-bold text-[#B0884A] font-display-xl uppercase">JEWISH MUSIC HALL OF FAME</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="font-serif uppercase tracking-widest text-[10px] text-[#B0884A]/50 hover:text-[#B0884A]" href="#">Terms of Archive</a>
+<a class="font-serif uppercase tracking-widest text-[10px] text-[#B0884A]/50 hover:text-[#B0884A]" href="#">Privacy Protocol</a>
+<a class="font-serif uppercase tracking-widest text-[10px] text-[#B0884A]/50 hover:text-[#B0884A]" href="#">Press Inquiry</a>
+<a class="font-serif uppercase tracking-widest text-[10px] text-[#B0884A]/50 hover:text-[#B0884A]" href="#">Institutional Access</a>
+</div>
+<div class="font-serif uppercase tracking-widest text-[10px] text-[#B0884A]/60">
+            © 2024 JEWISH MUSIC HALL OF FAME. ARCHIVAL AUTHORITY.
+        </div>
+</footer>
+<!-- BottomNavBar (Mobile Only) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-[#121418] border-t border-[#B0884A]">
+<a class="flex flex-col items-center justify-center text-[#B0884A]/40 py-2 hover:bg-[#252A3A] flex-1" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-sans uppercase tracking-[0.2em] text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#B0884A] bg-[#1C2030] py-2 flex-1" href="#">
+<span class="material-symbols-outlined" data-icon="event">event</span>
+<span class="font-sans uppercase tracking-[0.2em] text-[10px]">Ceremonies</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#B0884A]/40 py-2 hover:bg-[#252A3A] flex-1" href="#">
+<span class="material-symbols-outlined" data-icon="library_music">library_music</span>
+<span class="font-sans uppercase tracking-[0.2em] text-[10px]">Archive</span>
+</a>
+<a class="flex flex-col items-center justify-center text-[#B0884A]/40 py-2 hover:bg-[#252A3A] flex-1" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-sans uppercase tracking-[0.2em] text-[10px]">Profile</span>
+</a>
+</div>
+</body></html>

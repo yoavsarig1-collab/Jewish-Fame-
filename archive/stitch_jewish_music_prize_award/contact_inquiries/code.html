@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&amp;family=Fraunces:opsz,wght@9..144,400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface": "#16130e",
+                        "on-primary": "#442c00",
+                        "background": "#16130e",
+                        "surface-container-highest": "#39342f",
+                        "on-primary-fixed-variant": "#604107",
+                        "on-primary-container": "#3b2500",
+                        "tertiary-fixed-dim": "#a9c9f5",
+                        "on-surface": "#eae1d9",
+                        "surface-dim": "#16130e",
+                        "surface-container-low": "#1f1b16",
+                        "on-secondary": "#412d00",
+                        "primary-fixed": "#ffddaf",
+                        "inverse-on-surface": "#34302a",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#110e09",
+                        "secondary-container": "#b8891b",
+                        "primary-fixed-dim": "#edbf7b",
+                        "primary": "#edbf7b",
+                        "on-secondary-container": "#382700",
+                        "on-secondary-fixed": "#261900",
+                        "error": "#ffb4ab",
+                        "on-surface-variant": "#d2c4b4",
+                        "secondary": "#f4be4f",
+                        "tertiary-container": "#7493bc",
+                        "secondary-fixed-dim": "#f4be4f",
+                        "on-error-container": "#ffdad6",
+                        "surface-container-high": "#2e2924",
+                        "on-tertiary": "#0c3255",
+                        "tertiary": "#a9c9f5",
+                        "inverse-primary": "#7a581f",
+                        "outline": "#9b8f80",
+                        "surface-variant": "#39342f",
+                        "surface-container": "#231f1a",
+                        "on-tertiary-fixed": "#001c37",
+                        "secondary-fixed": "#ffdea4",
+                        "outline-variant": "#4f4539",
+                        "inverse-surface": "#eae1d9",
+                        "primary-container": "#b28a4c",
+                        "on-background": "#eae1d9",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "tertiary-fixed": "#d2e4ff",
+                        "on-error": "#690005",
+                        "surface-tint": "#edbf7b",
+                        "surface-bright": "#3d3833",
+                        "on-tertiary-container": "#022b4e",
+                        "on-tertiary-fixed-variant": "#28486d",
+                        "on-primary-fixed": "#281800",
+                        "brand-gold": "#B0884A",
+                        "brand-ink": "#0E0E0C",
+                        "brand-paper": "#F7F3EC"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin": "48px",
+                        "hairline": "1px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "container-max": "1280px"
+                    },
+                    "fontFamily": {
+                        "body-lg": ["Fraunces"],
+                        "label-caps": ["Fraunces"],
+                        "headline-lg": ["Frank Ruhl Libre"],
+                        "body-md": ["Fraunces"],
+                        "display-xl": ["Frank Ruhl Libre"],
+                        "headline-md": ["Frank Ruhl Libre"]
+                    },
+                    "fontSize": {
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #121418;
+        }
+    </style>
+</head>
+<body class="bg-[#121418] text-on-surface font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full flex justify-between items-center px-12 py-6 z-50 bg-[#121418] border-b border-[#B0884A]/30 flat no-shadows scale-100 active:scale-[0.99]">
+<div class="flex items-center gap-8">
+<h1 class="text-sm font-bold text-[#B0884A] tracking-normal leading-tight font-serif uppercase tracking-[0.2em]">טקס פרסי היכל התהילה | Jewish Music Hall of Fame Awards</h1>
+<nav class="hidden md:flex gap-6">
+<a class="text-gray-500 hover:text-[#B0884A] font-serif uppercase tracking-[0.2em] text-xs transition-all duration-300" href="#">About</a>
+<a class="text-gray-500 hover:text-[#B0884A] font-serif uppercase tracking-[0.2em] text-xs transition-all duration-300" href="#">Categories</a>
+<a class="text-gray-500 hover:text-[#B0884A] font-serif uppercase tracking-[0.2em] text-xs transition-all duration-300" href="#">Ceremony</a>
+<a class="text-[#B0884A] border-b border-[#B0884A] pb-1 font-serif uppercase tracking-[0.2em] text-xs transition-all duration-300" href="#">Support</a>
+</nav>
+</div>
+<div class="flex items-center gap-4 text-[#B0884A] font-serif uppercase tracking-[0.2em] text-xs">
+<span>EN/HE</span>
+<span class="material-symbols-outlined" data-icon="language">language</span>
+</div>
+</header>
+<!-- Location Bar -->
+<div class="w-full bg-[#121418] py-4 px-12 flex justify-between items-center border-b border-[#B0884A]/30">
+<div class="flex gap-8 text-[10px] tracking-[0.3em] font-label-caps text-[#B0884A]/70 uppercase">
+<span>Petah Tikva, Israel</span>
+<span class="opacity-30">|</span>
+<span>Archive District</span>
+<span class="opacity-30">|</span>
+<span>Contact@JMHof.org</span>
+</div>
+<div class="text-[10px] tracking-[0.3em] font-label-caps text-[#B0884A]/70 uppercase">
+            Institutional Relations
+        </div>
+</div>
+<main>
+<!-- Section 1: Donors & Partners -->
+<section class="grid grid-cols-1 md:grid-cols-[55%_45%] border-b border-[#B0884A] bg-[#121418]">
+<div class="p-12 md:p-24 flex flex-col justify-center">
+<h2 class="font-headline-lg text-on-surface mb-8 leading-tight">לתורמים ושותפים<br/><span class="opacity-60 text-body-lg italic">For Donors &amp; Partners</span></h2>
+<p class="font-body-lg text-on-surface-variant max-w-xl leading-relaxed">
+                    אנו מזמינים אתכם לקחת חלק בשימור המורשת המוזיקלית היהודית. פנייתכם תטופל בדיסקרטיות מלאה על ידי הנהלת המוסד.
+                    <br/><br/>
+<span class="text-body-md opacity-70">We invite you to take part in preserving the Jewish musical legacy. Your inquiry will be handled with absolute discretion by the institution's leadership.</span>
+</p>
+</div>
+<div class="bg-[#1C2030] p-12 md:p-24 border-r border-[#B0884A]/30">
+<form class="space-y-12">
+<div class="space-y-2">
+<label class="block font-label-caps text-brand-gold uppercase text-[10px] tracking-widest">Name / שם מלא</label>
+<input class="w-full bg-transparent border-0 border-b border-[#B0884A]/30 focus:ring-0 focus:border-brand-gold py-2 text-on-surface placeholder-white/10" placeholder="Yisrael Israeli" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-brand-gold uppercase text-[10px] tracking-widest">Email / דוא״ל</label>
+<input class="w-full bg-transparent border-0 border-b border-[#B0884A]/30 focus:ring-0 focus:border-brand-gold py-2 text-on-surface placeholder-white/10" placeholder="yisrael@domain.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-brand-gold uppercase text-[10px] tracking-widest">Message / הודעה</label>
+<textarea class="w-full bg-transparent border-0 border-b border-[#B0884A]/30 focus:ring-0 focus:border-brand-gold py-2 text-on-surface placeholder-white/10 resize-none" rows="4"></textarea>
+</div>
+<button class="flex items-center gap-4 text-brand-gold group font-label-caps uppercase tracking-widest text-sm" type="submit">
+                        Send Inquiry / שלח פנייה
+                        <span class="material-symbols-outlined transform -scale-x-100 group-hover:translate-x-2 transition-transform" data-icon="arrow_right_alt">arrow_right_alt</span>
+</button>
+</form>
+</div>
+</section>
+<!-- Section 2: Media -->
+<section class="grid grid-cols-1 md:grid-cols-[45%_55%] border-b border-[#B0884A] bg-brand-paper">
+<div class="bg-brand-paper p-12 md:p-24 order-2 md:order-1">
+<div class="mb-12 space-y-4">
+<div class="flex flex-col">
+<span class="font-label-caps text-brand-ink/40 text-[10px] uppercase">Press Desk</span>
+<span class="font-headline-md text-brand-ink">press@jmhof.org</span>
+</div>
+<div class="flex flex-col border-t border-brand-ink/10 pt-4">
+<span class="font-label-caps text-brand-ink/40 text-[10px] uppercase">Direct Line</span>
+<span class="font-headline-md text-brand-ink text-left" dir="ltr">+972 (0)3 912 4400</span>
+</div>
+</div>
+<form class="space-y-10">
+<div class="space-y-2">
+<label class="block font-label-caps text-brand-ink/60 uppercase text-[10px] tracking-widest">Organization / ארגון</label>
+<input class="w-full bg-transparent border-0 border-b border-brand-ink/20 focus:ring-0 focus:border-brand-ink py-2 text-brand-ink" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-brand-ink/60 uppercase text-[10px] tracking-widest">Email / דוא״ל</label>
+<input class="w-full bg-transparent border-0 border-b border-brand-ink/20 focus:ring-0 focus:border-brand-ink py-2 text-brand-ink" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="block font-label-caps text-brand-ink/60 uppercase text-[10px] tracking-widest">Inquiry / פרטי הפנייה</label>
+<textarea class="w-full bg-transparent border-0 border-b border-brand-ink/20 focus:ring-0 focus:border-brand-ink py-2 text-brand-ink resize-none" rows="3"></textarea>
+</div>
+<button class="flex items-center gap-4 text-brand-ink group font-label-caps uppercase tracking-widest text-sm border-b border-brand-ink pb-1" type="submit">
+                        Request Credentials / בקשת הרצאה לתקשורת
+                        <span class="material-symbols-outlined transform -scale-x-100 group-hover:translate-x-2 transition-transform" data-icon="arrow_right_alt">arrow_right_alt</span>
+</button>
+</form>
+</div>
+<div class="p-12 md:p-24 flex flex-col justify-center bg-brand-paper border-r border-[#B0884A]/30 order-1 md:order-2">
+<h2 class="font-headline-lg text-brand-ink mb-8 leading-tight">לתקשורת<br/><span class="opacity-60 text-body-lg italic">For Media</span></h2>
+<p class="font-body-lg text-brand-ink/80 max-w-xl leading-relaxed">
+                    מרכז המידע של היכל התהילה עומד לרשות עיתונאים, חוקרים ויוצרי תוכן. אנו מספקים חומרים ארכיוניים, אישורי כניסה לטקסים וראיונות בלעדיים.
+                    <br/><br/>
+<span class="text-body-md opacity-60">The Hall of Fame information center is at the disposal of journalists, researchers, and content creators. We provide archival materials, ceremony credentials, and exclusive interviews.</span>
+</p>
+<div class="mt-12 w-full h-[300px] border border-brand-ink/10 relative grayscale contrast-125">
+<img alt="Institutional archive building interior" class="w-full h-full object-cover opacity-20" data-alt="monochrome architectural photo of a grand institutional library or archive with high ceilings and geometric patterns" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKmgbLR7HdqCTRZ8ee-BDumFJPlweJcZlGt-vKK0B_ZfawIAos8aKuAmAfN8FwPvYoGjRnSN-Bc6XOke-XD5qLVsKrYTgS0xuPJ5snSoxruMW0imhEyRoCoe0SgERb8HiOXyr0Qe0RC3mJE6w1VhDUYczH7Na6UKgzTT0Sq85qPy7-KPfEyUcD0X7HXp2wFSsaztQeJoiSxH-FOebcB6hxylX4oSG5h4nuwVjWXav9K3cA9DIVRUi4efGfp6Ed13LCyLCB54BM8Uu3"/>
+<div class="absolute inset-0 flex items-center justify-center border border-brand-ink/5">
+<span class="font-label-caps text-[10px] tracking-[0.5em] text-brand-ink/30 uppercase">Institutional Archive</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: General Public -->
+<section class="bg-[#1C2030] py-24 md:py-32 px-12 border-b border-[#B0884A]">
+<div class="max-w-2xl mx-auto text-center">
+<h2 class="font-headline-lg text-on-surface mb-4">לכלל הציבור</h2>
+<span class="block font-body-lg text-on-surface-variant italic mb-12">General Public</span>
+<form class="space-y-16">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="space-y-2 text-right">
+<label class="block font-label-caps text-brand-gold uppercase text-[10px] tracking-widest">Email Address / כתובת דוא״ל</label>
+<input class="w-full bg-transparent border-0 border-b border-[#B0884A]/30 focus:ring-0 focus:border-brand-gold py-2 text-on-surface text-center" type="email"/>
+</div>
+<div class="space-y-2 text-right">
+<label class="block font-label-caps text-brand-gold uppercase text-[10px] tracking-widest">Your Message / ההודעה שלך</label>
+<input class="w-full bg-transparent border-0 border-b border-[#B0884A]/30 focus:ring-0 focus:border-brand-gold py-2 text-on-surface text-center" type="text"/>
+</div>
+</div>
+<button class="inline-block font-label-caps text-brand-gold text-sm uppercase tracking-[0.2em] border-b border-brand-gold pb-1 hover:text-white hover:border-white transition-colors duration-300" type="submit">
+                        שלחו הודעה / Send a Message
+                    </button>
+</form>
+<div class="mt-24 flex justify-center gap-12 text-[#B0884A]/40">
+<span class="material-symbols-outlined text-4xl" data-icon="museum">museum</span>
+<span class="material-symbols-outlined text-4xl" data-icon="library_music">library_music</span>
+<span class="material-symbols-outlined text-4xl" data-icon="history_edu">history_edu</span>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="grid grid-cols-1 md:grid-cols-4 gap-0 w-full border-t border-[#B0884A] px-12 py-16 bg-[#121418] font-serif text-sm tracking-wide tonal-layering divide-x divide-[#B0884A]/30 flex-row-reverse">
+<div class="flex flex-col pr-8">
+<h3 class="text-xl font-bold text-[#B0884A] mb-4">Jewish Music Hall of Fame</h3>
+<p class="text-gray-400 mb-6 max-w-xs">Preserving the sound of generations. Honoring the architects of Jewish melody.</p>
+<span class="text-gray-500 text-xs">© Jewish Music Hall of Fame Awards. All Rights Reserved.</span>
+</div>
+<div class="flex flex-col px-8">
+<span class="font-bold text-[#B0884A] mb-4 uppercase text-xs tracking-widest">Navigation</span>
+<ul class="space-y-2">
+<li><a class="text-gray-400 hover:text-[#C8972A] underline underline-offset-4" href="#">Mission</a></li>
+<li><a class="text-gray-400 hover:text-[#C8972A] underline underline-offset-4" href="#">Archives</a></li>
+<li><a class="text-gray-400 hover:text-[#C8972A] underline underline-offset-4" href="#">Categories</a></li>
+</ul>
+</div>
+<div class="flex flex-col px-8">
+<span class="font-bold text-[#B0884A] mb-4 uppercase text-xs tracking-widest">Institutional</span>
+<ul class="space-y-2">
+<li><a class="text-gray-400 hover:text-[#C8972A] underline underline-offset-4" href="#">News</a></li>
+<li><a class="text-[#B0884A] font-bold" href="#">Support</a></li>
+<li><a class="text-gray-400 hover:text-[#C8972A] underline underline-offset-4" href="#">Project Bridge</a></li>
+</ul>
+</div>
+<div class="flex flex-col px-8">
+<span class="font-bold text-[#B0884A] mb-4 uppercase text-xs tracking-widest">Headquarters</span>
+<address class="text-gray-400 not-italic space-y-1">
+<p>12 Archivist Way</p>
+<p>Petah Tikva, 49512</p>
+<p>Israel</p>
+</address>
+</div>
+</footer>
+</body></html>

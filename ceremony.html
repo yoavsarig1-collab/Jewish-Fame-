@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" id="html-root">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>הטקס | טקס פרסי היכל התהילה של המוזיקה היהודית</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;700;800&family=Heebo:wght@300;400;500;700;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,800&family=Inter:wght@300;400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --stage:           #121418;
+  --stage-mid:       #1C2030;
+  --stage-lift:      #252A3A;
+  --stage-deep:      #0E0E0C;
+  --paper:           #F7F3EC;
+  --parchment:       #EDE5D4;
+  --ember:           #B0884A;
+  --ember-deep:      #7A5A2B;
+  --ceremonial-gold: #C8972A;
+  --ash:             #8A857C;
+  --ink:             #0E0E0C;
+  --line-dark:       #2A2A28;
+  --line:            #D8D0BF;
+  --paper-70:  rgba(247,243,236,0.70);
+  --paper-40:  rgba(247,243,236,0.40);
+  --paper-12:  rgba(247,243,236,0.12);
+  --paper-06:  rgba(247,243,236,0.06);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--stage); color: var(--paper);
+  font-family: 'Heebo', sans-serif; font-weight: 400;
+  line-height: 1.6; overflow-x: hidden; direction: rtl;
+  padding-bottom: 80px;
+}
+body.lang-en { direction: ltr; font-family: 'Inter', sans-serif; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--stage); }
+::-webkit-scrollbar-thumb { background: var(--ember-deep); }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+.he { display: block; } .en { display: none; }
+body.lang-en .he { display: none !important; }
+body.lang-en .en { display: block !important; }
+.he-inline { display: inline; } .en-inline { display: none; }
+body.lang-en .he-inline { display: none !important; }
+body.lang-en .en-inline { display: inline !important; }
+
+/* ── NAVBAR ── */
+#navbar {
+  position: fixed; inset: 0 0 auto; z-index: 900;
+  height: 64px; display: flex; align-items: center;
+  justify-content: space-between; padding: 0 2.5rem;
+  transition: height 0.3s, background 0.3s; direction: ltr;
+}
+#navbar.solid {
+  height: 48px; background: rgba(18,20,24,0.97);
+  border-bottom: 1px solid var(--line-dark);
+}
+.nav-brand { display: flex; align-items: center; gap: 0.75rem; }
+.nav-wordmark .t1 { font-family: 'Frank Ruhl Libre', serif; font-size: 0.85rem; font-weight: 500; color: var(--paper); }
+body.lang-en .nav-wordmark .t1 { font-family: 'Fraunces', serif; }
+.nav-wordmark .t2 { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 300; color: var(--ash); letter-spacing: 2px; text-transform: uppercase; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--paper-70); transition: color 0.2s; position: relative; padding-bottom: 4px; }
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 1px; background: var(--ember); transition: width 0.2s; }
+.nav-links a:hover { color: var(--paper); }
+.nav-links a:hover::after, .nav-links a.active::after { width: 20px; }
+.nav-links a.active { color: var(--paper); }
+body:not(.lang-en) .nav-links a { font-family: 'Heebo', sans-serif; }
+.lang-switcher { display: flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; }
+.lang-switcher .sep { color: var(--ash); }
+.lang-btn { color: var(--ash); cursor: pointer; background: none; border: none; font-family: inherit; font-size: inherit; letter-spacing: inherit; text-transform: inherit; padding: 0; transition: color 0.2s; }
+.lang-btn:hover { color: var(--paper); }
+.lang-btn.active { color: var(--ember); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Hamburger button */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 910;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--paper);
+  transition: transform 0.25s ease, opacity 0.25s ease, width 0.25s ease;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile menu overlay */
+#mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 64px 0 0;
+  z-index: 800;
+  background: rgba(12,14,18,0.97);
+  padding: 2.5rem 2rem;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  pointer-events: none;
+}
+#mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.mobile-nav > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-nav > ul > li > a {
+  display: block;
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--paper-70);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.2s;
+}
+body.lang-en .mobile-nav > ul > li > a { font-family: 'Fraunces', serif; }
+.mobile-nav > ul > li > a:hover,
+.mobile-nav > ul > li > a:focus { color: var(--ember); }
+.mobile-lang {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ── UTILITY ── */
+.eyebrow { display: block; font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--ember); margin-bottom: 0.9rem; font-family: 'Outfit', sans-serif; font-weight: 600; }
+body:not(.lang-en) .eyebrow { font-family: 'Heebo', sans-serif; font-weight: 700; }
+.rule { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--ember), transparent); background-size: 200% auto; animation: shimmer 8s cubic-bezier(0.16,1,0.3,1) infinite; margin: 1.2rem 0 2rem; border: none; }
+.section-title { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; }
+body.lang-en .section-title { font-family: 'Fraunces', serif; }
+.btn-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--ember); font-size: 0.85rem; font-weight: 500; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: border-color 0.2s; font-family: inherit; }
+.btn-link:hover { border-bottom-color: var(--ember); }
+.btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--ember); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 0 1.8rem; height: 48px; border: none; cursor: pointer; transition: background 0.2s; }
+.btn-primary:hover { background: var(--ember-deep); color: var(--paper); }
+body:not(.lang-en) .btn-primary { font-family: 'Heebo', sans-serif; }
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal.on { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.06s; } .reveal-d2 { transition-delay: 0.12s; } .reveal-d3 { transition-delay: 0.18s; }
+
+/* ── HERO ── */
+#hero {
+  position: relative; height: 100vh; min-height: 700px;
+  display: flex; align-items: center; justify-content: center;
+  padding-top: 64px; overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background:
+    linear-gradient(175deg, rgba(18,20,24,0.15) 0%, rgba(18,20,24,0.88) 100%),
+    url('https://upload.wikimedia.org/wikipedia/commons/f/fb/Musikverein_Konzert_2023.jpg') center/cover no-repeat;
+}
+.hero-bg::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ember), transparent);
+  background-size: 200% auto; animation: shimmer 9s cubic-bezier(0.16,1,0.3,1) infinite;
+}
+.hero-body {
+  position: relative; z-index: 2; text-align: start;
+  padding: 0 2.5rem; max-width: 900px; width: 100%;
+  animation: fadeUp 1s cubic-bezier(0.16,1,0.3,1) both;
+}
+.hero-badge { display: inline-block; border: 1px solid var(--ember); color: var(--ember); font-family: 'Outfit', sans-serif; font-size: 0.62rem; letter-spacing: 5px; text-transform: uppercase; padding: 0.35rem 1.2rem; margin-bottom: 1.4rem; font-weight: 600; }
+body:not(.lang-en) .hero-badge { font-family: 'Heebo', sans-serif; font-weight: 700; }
+.hero-h1 { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(3rem, 7vw, 5.5rem); font-weight: 800; line-height: 1.05; margin-bottom: 1rem; color: var(--paper); }
+body.lang-en .hero-h1 { font-family: 'Fraunces', serif; }
+.hero-date {
+  display: flex; align-items: center; gap: 2rem; margin-top: 2rem; flex-wrap: wrap;
+}
+.hero-date-item { display: flex; flex-direction: column; }
+.hero-date-item .hd-val { font-family: 'Fraunces', serif; font-size: 1.4rem; font-weight: 300; color: var(--ember); }
+body:not(.lang-en) .hero-date-item .hd-val { font-family: 'Frank Ruhl Libre', serif; }
+.hero-date-item .hd-lbl { font-family: 'Inter', sans-serif; font-size: 0.56rem; letter-spacing: 3px; text-transform: uppercase; color: var(--ash); margin-top: 0.3rem; }
+.hero-date-sep { width: 1px; height: 42px; background: var(--line-dark); }
+
+/* ── COUNTDOWN BAR ── */
+#countdown-bar {
+  position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+  display: flex; align-items: center; justify-content: center;
+  gap: 4rem; padding: 1.2rem 2.5rem;
+  direction: ltr; background: rgba(14,14,12,0.94);
+  border-top: 1px solid var(--line-dark); flex-wrap: wrap;
+}
+#countdown-bar::before {
+  content: ''; position: absolute; top: -1px; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ember), transparent);
+  background-size: 200% auto; animation: shimmer 10s cubic-bezier(0.16,1,0.3,1) infinite;
+}
+.cd-event .ev-title { font-family: 'Frank Ruhl Libre', serif; font-size: 0.82rem; font-weight: 500; color: var(--paper); letter-spacing: 0.3px; }
+body.lang-en .cd-event .ev-title { font-family: 'Fraunces', serif; }
+.cd-event .ev-sub { font-family: 'Inter', sans-serif; font-size: 0.58rem; color: var(--ash); margin-top: 0.2rem; letter-spacing: 1px; }
+.cd-units { display: flex; align-items: center; gap: 0; direction: ltr; }
+.cd-unit { text-align: center; min-width: 52px; }
+.cd-num { font-family: 'Fraunces', serif; font-variant-numeric: tabular-nums; font-size: 1.9rem; font-weight: 300; color: var(--paper); line-height: 1; }
+.cd-lbl { font-family: 'Outfit', sans-serif; font-size: 0.52rem; letter-spacing: 2px; text-transform: uppercase; color: var(--ash); margin-top: 0.3rem; font-weight: 500; }
+.cd-sep { width: 1px; height: 36px; background: var(--line-dark); margin: 0 0.8rem; flex-shrink: 0; }
+
+/* ── PETAH TIKVA VENUE ── */
+#venue-pt {
+  background: var(--stage-mid);
+  padding: 7rem 2.5rem;
+}
+.venue-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center; max-width: 1200px; margin: 0 auto;
+}
+.venue-img-wrap {
+  position: relative; aspect-ratio: 4/3; overflow: hidden;
+}
+.venue-img-wrap img { width: 100%; height: 100%; object-fit: cover; filter: grayscale(30%); transition: filter 0.6s; animation: kenBurns 22s ease-in-out infinite alternate; transform-origin: center center; }
+.venue-img-wrap:hover img { filter: grayscale(0%); }
+@keyframes kenBurns {
+  0%   { transform: scale(1)    translate(0, 0); }
+  100% { transform: scale(1.07) translate(-1.5%, 1%); }
+}
+@media (prefers-reduced-motion: reduce) { .venue-img-wrap img { animation: none; } }
+.venue-img-wrap::after { content: ''; position: absolute; inset: 0; border: 1px solid rgba(176,136,74,0.25); pointer-events: none; }
+.venue-badge { position: absolute; bottom: 1.2rem; inset-inline-end: 1.2rem; background: rgba(18,20,24,0.94); border: 1px solid var(--ember); padding: 0.8rem 1.1rem; text-align: center; }
+.venue-badge .vb-date { font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--ember); font-weight: 300; line-height: 1; }
+.venue-badge .vb-place { font-family: 'Inter', sans-serif; font-size: 0.55rem; letter-spacing: 2px; text-transform: uppercase; color: var(--ash); margin-top: 0.3rem; }
+.venue-copy p { font-size: 1rem; color: var(--paper-70); line-height: 1.9; margin-bottom: 1.4rem; max-width: 52ch; }
+
+/* Feature list — no bullets, hairline rows */
+.feature-list { list-style: none; margin-top: 2rem; }
+.feature-list li { display: flex; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line-dark); font-size: 0.88rem; color: var(--ash); }
+.feature-list li:first-child { border-top: 1px solid var(--line-dark); }
+.feature-list li .ico { color: var(--ember); flex-shrink: 0; font-style: normal; min-width: 1.2rem; }
+
+
+/* ── PROGRAMME ── */
+#programme {
+  background: var(--stage-deep);
+  padding: 7rem 2.5rem;
+}
+.programme-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.programme-list { list-style: none; }
+.programme-item { padding: 1.5rem 0; border-bottom: 1px solid var(--line-dark); }
+.programme-item:first-child { border-top: 1px solid var(--line-dark); }
+.programme-time { font-family: 'Outfit', sans-serif; font-size: 0.58rem; letter-spacing: 3px; text-transform: uppercase; color: var(--ember); margin-bottom: 0.4rem; font-weight: 600; }
+.programme-name { font-family: 'Frank Ruhl Libre', serif; font-size: 1rem; font-weight: 700; color: var(--paper); }
+body.lang-en .programme-name { font-family: 'Fraunces', serif; }
+.programme-desc { font-size: 0.83rem; color: var(--ash); line-height: 1.6; margin-top: 0.3rem; }
+
+/* ── LA CEREMONY ── */
+#venue-la {
+  background: var(--stage);
+  padding: 7rem 2.5rem;
+}
+.la-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.la-coming-soon {
+  aspect-ratio: 4/3; background: var(--stage-mid);
+  border: 1px solid var(--line-dark); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 1rem;
+}
+.la-coming-soon .cs-label { font-family: 'Inter', sans-serif; font-size: 0.58rem; letter-spacing: 4px; text-transform: uppercase; color: var(--ember); }
+.la-coming-soon .cs-text { font-family: 'Frank Ruhl Libre', serif; font-size: 1.1rem; color: var(--ash); text-align: center; padding: 0 2rem; }
+body.lang-en .la-coming-soon .cs-text { font-family: 'Fraunces', serif; }
+.la-badge {
+  display: inline-block; border: 1px solid var(--line-dark);
+  color: var(--ash); font-family: 'Inter', sans-serif; font-size: 0.58rem;
+  letter-spacing: 3px; text-transform: uppercase; padding: 0.3rem 0.9rem; margin-bottom: 1.5rem;
+}
+.la-copy p { font-size: 1rem; color: var(--paper-70); line-height: 1.9; margin-bottom: 1.4rem; max-width: 52ch; }
+
+/* ── SUPPORT CTA ── */
+#support-cta {
+  background: var(--stage-deep);
+  padding: 7rem 2.5rem;
+  text-align: center;
+  border-top: 1px solid var(--line-dark);
+}
+#support-cta h2 { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(1.8rem, 3.5vw, 2.5rem); font-weight: 700; color: var(--paper); }
+body.lang-en #support-cta h2 { font-family: 'Fraunces', serif; }
+#support-cta p { color: var(--ash); font-size: 1rem; max-width: 52ch; margin: 1rem auto 2.5rem; line-height: 1.75; }
+
+/* ── FOOTER ── */
+footer { background: var(--stage-deep); padding: 5rem 2.5rem 2rem; border-top: 1px solid var(--line-dark); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto; padding-bottom: 3rem; border-bottom: 1px solid var(--line-dark); }
+.footer-about .fa-logo { font-family: 'Frank Ruhl Libre', serif; font-size: 0.9rem; font-weight: 500; color: var(--paper); margin-bottom: 0.9rem; line-height: 1.4; }
+body.lang-en .footer-about .fa-logo { font-family: 'Fraunces', serif; }
+.footer-about p { font-size: 0.8rem; color: var(--ash); line-height: 1.7; max-width: 260px; }
+.footer-col h5 { font-family: 'Outfit', sans-serif; font-size: 0.58rem; letter-spacing: 3px; text-transform: uppercase; color: var(--ember); margin-bottom: 1.2rem; font-weight: 600; }
+body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.65rem; }
+.footer-col ul li a { font-size: 0.83rem; color: var(--ash); transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--paper); }
+.footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.7rem; color: var(--ash); flex-wrap: wrap; gap: 0.5rem; }
+
+@keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+
+@media (max-width: 960px) {
+  .venue-inner, .programme-inner, .la-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .lang-switcher { display: none; }
+  .nav-hamburger { display: flex; }
+  #mobile-menu { display: block; }
+}
+@media (max-width: 600px) {
+  #navbar { padding: 0 1.2rem; }
+  .footer-grid { grid-template-columns: 1fr; }
+  #countdown-bar { gap: 1.5rem; }
+  #venue-pt, #programme, #venue-la, #support-cta { padding: 3.5rem 1.5rem; }
+  footer { padding: 3rem 1.5rem 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rule, .hero-bg::after, #countdown-bar::before { animation: none; background: var(--ember); }
+  .reveal { transition: none; opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-wordmark">
+      <div class="t1 he">טקס פרסי היכל התהילה</div>
+      <div class="t1 en">Hall of Fame Awards</div>
+      <div class="t2">Jewish Music Hall of Fame · 2027</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html"><span class="he">אודות</span><span class="en">About</span></a></li>
+    <li><a href="categories.html"><span class="he">קטגוריות</span><span class="en">Categories</span></a></li>
+    <li><a href="ceremony.html" class="active"><span class="he">הטקס</span><span class="en">Ceremony</span></a></li>
+    <li><a href="selection-process.html"><span class="he">תהליך הבחירה</span><span class="en">Selection</span></a></li>
+    <li><a href="donors.html"><span class="he">תמיכה</span><span class="en">Support</span></a></li>
+  </ul>
+  <div class="lang-switcher">
+    <button type="button" class="lang-btn active" id="lang-he" onclick="switchLang('he')">עברית</button>
+    <span class="sep">·</span>
+    <button type="button" class="lang-btn" id="lang-en-btn" onclick="switchLang('en')">English</button>
+  </div>
+
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="תפריט" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט ניווט">
+  <nav class="mobile-nav" dir="rtl">
+    <ul>
+      <li><a href="about.html"><span class="he">אודות</span><span class="en">About</span></a></li>
+      <li><a href="categories.html"><span class="he">קטגוריות</span><span class="en">Categories</span></a></li>
+      <li><a href="ceremony.html"><span class="he">הטקס</span><span class="en">Ceremony</span></a></li>
+      <li><a href="selection-process.html"><span class="he">תהליך הבחירה</span><span class="en">Selection</span></a></li>
+      <li><a href="donors.html"><span class="he">תמיכה</span><span class="en">Support</span></a></li>
+    </ul>
+    <div class="mobile-lang">
+      <button type="button" class="lang-btn active" id="mobile-lang-he" onclick="switchLang('he')">עברית</button>
+      <span class="sep">·</span>
+      <button type="button" class="lang-btn" id="mobile-lang-en-btn" onclick="switchLang('en')">English</button>
+    </div>
+  </nav>
+</div>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-body">
+    <span class="hero-badge">
+      <span class="he">טקס הפרסים הראשון · 2027</span>
+      <span class="en">Inaugural Awards Ceremony · 2027</span>
+    </span>
+    <h1 class="hero-h1">
+      <span class="he">הלילה שבו המוזיקה היהודית<br>תיקח את מקומה<br><span style="color: var(--ceremonial-gold);">בהיסטוריה</span></span>
+      <span class="en">The Night Jewish Music<br>Takes Its Rightful<br><span style="color: var(--ceremonial-gold);">Place in History</span></span>
+    </h1>
+    <div class="hero-date">
+      <div class="hero-date-item">
+        <span class="hd-val"><span class="he-inline">28 בדצמבר 2027</span><span class="en-inline">December 28, 2027</span></span>
+        <span class="hd-lbl"><span class="he-inline">תאריך הטקס</span><span class="en-inline">Ceremony Date</span></span>
+      </div>
+      <div class="hero-date-sep"></div>
+      <div class="hero-date-item">
+        <span class="hd-val"><span class="he-inline">פתח תקווה</span><span class="en-inline">Petah Tikva</span></span>
+        <span class="hd-lbl"><span class="he-inline">מקום הטקס</span><span class="en-inline">Venue City</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div id="countdown-bar">
+    <div class="cd-event">
+      <div class="ev-title he">טקס הכרזת הנבחרים</div>
+      <div class="ev-title en">Inaugural Induction Ceremony</div>
+      <div class="ev-sub">פתח תקווה · 28.12.2027 &nbsp;|&nbsp; Petah Tikva · Dec 28, 2027</div>
+    </div>
+    <div class="cd-units">
+      <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><div class="cd-lbl he">ימים</div><div class="cd-lbl en">DAYS</div></div>
+      <span class="cd-sep"></span>
+      <div class="cd-unit"><span class="cd-num" id="cd-h">--</span><div class="cd-lbl he">שעות</div><div class="cd-lbl en">HRS</div></div>
+      <span class="cd-sep"></span>
+      <div class="cd-unit"><span class="cd-num" id="cd-m">--</span><div class="cd-lbl he">דקות</div><div class="cd-lbl en">MIN</div></div>
+      <span class="cd-sep"></span>
+      <div class="cd-unit"><span class="cd-num" id="cd-s">--</span><div class="cd-lbl he">שניות</div><div class="cd-lbl en">SEC</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PETAH TIKVA VENUE -->
+<section id="venue-pt">
+  <div class="venue-inner">
+    <div class="venue-img-wrap reveal">
+      <img src="assets/images/exterior-road.jpg"
+           alt="היכל התרבות, פתח תקווה" loading="lazy">
+      <div class="venue-badge">
+        <div class="vb-date"><span class="he-inline">דצמבר 2027</span><span class="en-inline">Dec 2027</span></div>
+        <div class="vb-place"><span class="he-inline">היכל התרבות · פ"ת</span><span class="en-inline">Cultural Center · PT</span></div>
+      </div>
+    </div>
+    <div class="venue-copy reveal reveal-d1">
+      <span class="eyebrow"><span class="he">הטקס הראשי</span><span class="en">The Primary Ceremony</span></span>
+      <h2 class="section-title">
+        <span class="he">היכל התרבות, פתח תקווה</span>
+        <span class="en">Petah Tikva Cultural Center</span>
+      </h2>
+      <div class="rule"></div>
+      <p>
+        <span class="he">28 בדצמבר 2027. אולם ההופעות של היכל התרבות בפתח תקווה — "אם המושבות". לראשונה בהיסטוריה יוענקו פרסים ליוצרים ומבצעים יהודים, בנוכחות ראשי המדינה.</span>
+        <span class="en">December 28, 2027, at the Petah Tikva Cultural Center concert hall — the "Mother of the Moshavot." For the first time in history, awards will be presented to Jewish creators and performers, in the presence of Israeli leaders.</span>
+      </p>
+      <p>
+        <span class="he">הטקס ישודר בטלוויזיה הישראלית ובפלטפורמות דיגיטליות עולמיות. זו הפעם הראשונה שמוזיקה יהודית נחגגת בהיקף ממלכתי ובינלאומי כזה.</span>
+        <span class="en">The ceremony will be broadcast on Israeli television and worldwide digital platforms — the first time Jewish music is celebrated at this level of state and international recognition.</span>
+      </p>
+      <ul class="feature-list">
+        <li><span class="ico">—</span><span><strong><span class="he">ראשי המדינה</span><span class="en">Israeli Leaders</span></strong> — <span class="he">נוכחות רשמית</span><span class="en">Official attendance</span></span></li>
+        <li><span class="ico">—</span><span><strong><span class="he">שידור בטלוויזיה</span><span class="en">Television broadcast</span></strong> — <span class="he">ישראל ועולם</span><span class="en">Israel &amp; worldwide</span></span></li>
+        <li><span class="ico">—</span><span><strong><span class="he">הופעות חיות ומחוות</span><span class="en">Live performances &amp; tributes</span></strong> — <span class="he">לכל אחד מהנבחרים</span><span class="en">For each inductee</span></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROGRAMME -->
+<section id="programme">
+  <div class="programme-inner">
+    <div class="reveal">
+      <span class="eyebrow"><span class="he">תוכנית הערב</span><span class="en">Programme</span></span>
+      <h2 class="section-title">
+        <span class="he">ערב של כבוד ומוזיקה</span>
+        <span class="en">An Evening of Honor &amp; Music</span>
+      </h2>
+      <div class="rule"></div>
+      <p style="font-size: 1rem; color: var(--paper-70); line-height: 1.9; max-width: 50ch; margin-bottom: 1rem;">
+        <span class="he">הפרטים הסופיים יפורסמו בהמשך. זה המבנה הכללי של הלילה.</span>
+        <span class="en">The full ceremony programme will be announced in due course. Below is the general structure of the evening.</span>
+      </p>
+    </div>
+    <ul class="programme-list reveal reveal-d1">
+      <li class="programme-item">
+        <div class="programme-time"><span class="he">פתיחה</span><span class="en">Opening</span></div>
+        <div class="programme-name he">פתיחה מוזיקלית וברכות</div>
+        <div class="programme-name en">Musical Opening &amp; Welcome Remarks</div>
+        <div class="programme-desc he">דברי פתיחה: יושב ראש עמותת מיתר וראש עיריית פתח תקווה</div>
+        <div class="programme-desc en">Opening remarks by the Chair of the Meitar Society and the Mayor of Petah Tikva</div>
+      </li>
+      <li class="programme-item">
+        <div class="programme-time"><span class="he">גוף הטקס</span><span class="en">Main Ceremony</span></div>
+        <div class="programme-name he">הענקת 13 הפרסים</div>
+        <div class="programme-name en">Presentation of 13 Awards</div>
+        <div class="programme-desc he">הפרסים יוענקו לכל אחד מ-13 הזוכים, בליווי קטעי מחווה מוזיקליים</div>
+        <div class="programme-desc en">Awards will be presented to each of the 13 winners, accompanied by musical tribute performances</div>
+      </li>
+      <li class="programme-item">
+        <div class="programme-time"><span class="he">הופעות</span><span class="en">Performances</span></div>
+        <div class="programme-name he">מחוות וביצועים חיים</div>
+        <div class="programme-name en">Tributes &amp; Live Performances</div>
+        <div class="programme-desc he">אמנים ידועים מבצעים מחוות מוזיקליות לכבוד הזוכים</div>
+        <div class="programme-desc en">Leading artists perform musical tributes in honor of the winners</div>
+      </li>
+      <li class="programme-item">
+        <div class="programme-time"><span class="he">הכנסה להיכל</span><span class="en">Induction</span></div>
+        <div class="programme-name he">קבלת פנים להיכל התהילה</div>
+        <div class="programme-name en">Official Hall of Fame Induction</div>
+        <div class="programme-desc he">הזוכים נכנסים רשמית להיכל התהילה של המוזיקה היהודית</div>
+        <div class="programme-desc en">Inductees formally enter the Jewish Music Hall of Fame</div>
+      </li>
+      <li class="programme-item">
+        <div class="programme-time"><span class="he">סיום</span><span class="en">Closing</span></div>
+        <div class="programme-name he">סיום הטקס</div>
+        <div class="programme-name en">Closing</div>
+        <div class="programme-desc he">דברי סיום ופרידה עד הטקס הבא</div>
+        <div class="programme-desc en">Closing remarks and farewell until the next ceremony</div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- LOS ANGELES COMPANION CEREMONY -->
+<section id="venue-la">
+  <div class="la-inner">
+    <div class="reveal">
+      <div class="la-badge"><span class="he">טקס שותף · לוס אנג'לס</span><span class="en">Partner Ceremony · Los Angeles</span></div>
+      <span class="eyebrow"><span class="he">הטקס השותף</span><span class="en">The Partner Ceremony</span></span>
+      <h2 class="section-title">
+        <span class="he">לוס אנג'לס</span>
+        <span class="en">Los Angeles</span>
+      </h2>
+      <div class="rule"></div>
+      <p class="la-copy">
+        <span class="he">טקס שותף, בעל מעמד שווה, ייערך בלוס אנג'לס — ליבת הקהילה היהודית הגדולה ביותר בעולם מחוץ לישראל. הטקס יתקיים בשותפות עם הקהילה היהודית המקומית ויישא את אותו כוח סמלי כטקס פתח תקווה.</span>
+        <span class="en">A full partner ceremony — equal in standing — will be held in Los Angeles, the heart of the world's largest Jewish diaspora community outside Israel. The ceremony will take place in partnership with the local Jewish community and carry the same symbolic weight as the Petah Tikva ceremony.</span>
+      </p>
+      <p class="la-copy">
+        <span class="he">הפרטים הסופיים (תאריך, מקום ומבנה האירוע) יפורסמו בהמשך. הרשמו לניוזלטר לקבלת עדכונים.</span>
+        <span class="en">Final details — date, venue and event format — will be announced in due course. Subscribe to our newsletter for updates.</span>
+      </p>
+      <a href="index.html#newsletter" class="btn-link">
+        <span class="he">קבלו עדכונים ראשונים</span><span class="en">Be First to Know</span>
+        <span class="he-inline">←</span><span class="en-inline">→</span>
+      </a>
+    </div>
+    <div class="la-coming-soon reveal reveal-d1">
+      <div class="cs-label"><span class="he">פרטים בקרוב</span><span class="en">Details Coming Soon</span></div>
+      <div class="cs-text he">לוס אנג'לס<br>קהילה יהודית · 2027</div>
+      <div class="cs-text en">Los Angeles<br>Jewish Community · 2027</div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPORT CTA -->
+<section id="support-cta" class="reveal">
+  <h2>
+    <span class="he">היו שותפים לטקס ההיסטורי</span>
+    <span class="en">Be Part of the Historic Ceremony</span>
+  </h2>
+  <div class="rule" style="margin: 1.2rem auto 2rem;"></div>
+  <p>
+    <span class="he">הצטרפו לחוג התומכים בטקס הפרסים הראשון של היכל התהילה של המוזיקה היהודית.</span>
+    <span class="en">Join the circle of supporters of the inaugural Jewish Music Hall of Fame Awards ceremony.</span>
+  </p>
+  <a href="donors.html" class="btn-primary">
+    <span class="he">לרמות התמיכה</span>
+    <span class="en">View Support Tiers</span>
+  </a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-about">
+      <div class="fa-logo he">טקס פרסי היכל התהילה של המוזיקה היהודית</div>
+      <div class="fa-logo en">Jewish Music Hall of Fame Awards</div>
+      <p><span class="he">הכרה ממלכתית ויוקרתית ליוצרים ומבצעים שעיצבו את המוזיקה היהודית לדורותיה.</span><span class="en">Prestigious state recognition for the creators and performers who shaped Jewish music for generations.</span></p>
+    </div>
+    <div class="footer-col">
+      <h5><span class="he">פרויקט</span><span class="en">Project</span></h5>
+      <ul>
+        <li><a href="about.html"><span class="he">אודות</span><span class="en">About</span></a></li>
+        <li><a href="categories.html"><span class="he">קטגוריות</span><span class="en">Categories</span></a></li>
+        <li><a href="ceremony.html"><span class="he">הטקס</span><span class="en">Ceremony</span></a></li>
+        <li><a href="selection-process.html"><span class="he">תהליך הבחירה</span><span class="en">Selection Process</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5><span class="he">תמיכה</span><span class="en">Support</span></h5>
+      <ul>
+        <li><a href="donors.html"><span class="he">רמות תמיכה</span><span class="en">Support Tiers</span></a></li>
+        <li><a href="mailto:info@hallofame.org"><span class="he">צרו קשר</span><span class="en">Contact</span></a></li>
+        <li><a href="#"><span class="he">שאלות נפוצות</span><span class="en">FAQ</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2027 <span class="he">טקס פרסי היכל התהילה של המוזיקה היהודית</span><span class="en">Jewish Music Hall of Fame Awards</span></span>
+    <span><span class="he">חלק מפרויקט היכל התהילה של המוזיקה היהודית</span><span class="en">Part of the Hall of Fame of Jewish Music project</span></span>
+  </div>
+</footer>
+
+<script>
+let lang = localStorage.getItem('lang') || 'he';
+function switchLang(to) {
+  lang = to;
+  const html = document.getElementById('html-root');
+  if (lang === 'en') {
+    document.body.classList.add('lang-en'); html.lang = 'en'; html.dir = 'ltr';
+    document.getElementById('lang-he').classList.remove('active');
+    document.getElementById('lang-en-btn').classList.add('active');
+    var mhe = document.getElementById('mobile-lang-he');
+    var men = document.getElementById('mobile-lang-en-btn');
+    if (mhe) mhe.classList.remove('active');
+    if (men) men.classList.add('active');
+  } else {
+    document.body.classList.remove('lang-en'); html.lang = 'he'; html.dir = 'rtl';
+    document.getElementById('lang-he').classList.add('active');
+    document.getElementById('lang-en-btn').classList.remove('active');
+    var mhe = document.getElementById('mobile-lang-he');
+    var men = document.getElementById('mobile-lang-en-btn');
+    if (mhe) mhe.classList.add('active');
+    if (men) men.classList.remove('active');
+  }
+  localStorage.setItem('lang', lang);
+}
+
+/* ── Mobile hamburger ── */
+(function() {
+  var btn  = document.getElementById('nav-hamburger');
+  var menu = document.getElementById('mobile-menu');
+  if (!btn || !menu) return;
+  function closeMenu() {
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  btn.addEventListener('click', function() {
+    if (btn.classList.contains('open')) {
+      closeMenu();
+    } else {
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      menu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMenu(); });
+  menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeMenu); });
+})();
+if (lang === 'en') switchLang('en');
+
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('solid', window.scrollY > 20);
+});
+
+/* Countdown */
+function updateCountdown() {
+  const target = new Date('2027-12-28T20:00:00+02:00');
+  const now = new Date();
+  const diff = target - now;
+  if (diff <= 0) return;
+  const d = Math.floor(diff / 86400000);
+  const h = Math.floor((diff % 86400000) / 3600000);
+  const m = Math.floor((diff % 3600000) / 60000);
+  const s = Math.floor((diff % 60000) / 1000);
+  document.getElementById('cd-d').textContent = String(d).padStart(3,'0');
+  document.getElementById('cd-h').textContent = String(h).padStart(2,'0');
+  document.getElementById('cd-m').textContent = String(m).padStart(2,'0');
+  document.getElementById('cd-s').textContent = String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown, 1000);
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

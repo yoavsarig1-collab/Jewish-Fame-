@@ -1,0 +1,224 @@
+/*
+ * JMHOF 2027 — Navigation
+ * Sticky top bar, language switcher, mobile menu.
+ */
+
+/* ─── SITE HEADER ────────────────────────────────────────────────── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  height: var(--nav-height);
+  background-color: var(--stage);
+  border-block-end: var(--hairline);
+  transition:
+    height var(--duration-fast) var(--ease-ceremony),
+    background-color var(--duration-fast) var(--ease-ceremony);
+}
+
+.site-header.scrolled {
+  height: var(--nav-height-scroll);
+  background-color: rgba(18, 20, 24, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.site-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: var(--content-max);
+  margin-inline: auto;
+  padding-inline: var(--section-pad-x);
+}
+
+/* ─── WORDMARK ────────────────────────────────────────────────────── */
+.site-wordmark {
+  font-family: var(--font-display-he);
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-caption);
+  color: var(--off-white);
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1.2;
+  text-decoration: none;
+  max-width: 280px;
+}
+
+/* Pipe separator between Hebrew and English wordmark */
+.site-wordmark .pipe {
+  margin-inline: 0.5em;
+  color: var(--ember);
+  font-weight: var(--fw-regular);
+}
+
+/* ─── PRIMARY NAV ─────────────────────────────────────────────────── */
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.site-nav__list {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.site-nav__link {
+  position: relative;
+  font-family: var(--font-body-he);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  color: var(--off-white);
+  text-decoration: none;
+  padding-block: 4px;
+  transition: color var(--duration-fast) var(--ease-ceremony);
+}
+
+:lang(en) .site-nav__link {
+  font-family: var(--font-body-en);
+}
+
+/* Active/current underline: 1px ember, 20px centered */
+.site-nav__link::after {
+  content: '';
+  position: absolute;
+  inset-inline-start: 50%;
+  bottom: -2px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1px;
+  background-color: var(--ember);
+  transition: width var(--duration-fast) var(--ease-ceremony);
+}
+
+[dir="rtl"] .site-nav__link::after {
+  transform: translateX(50%);
+}
+
+.site-nav__link:hover::after,
+.site-nav__link.current-menu-item::after,
+.site-nav__link[aria-current="page"]::after {
+  width: 20px;
+}
+
+.site-nav__link:hover {
+  color: var(--off-white);
+}
+
+/* ─── LANGUAGE SWITCHER ───────────────────────────────────────────── */
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: var(--fs-caption);
+  letter-spacing: var(--ls-caption);
+}
+
+.lang-switcher__separator {
+  color: var(--line-dark);
+}
+
+.lang-switcher__link {
+  color: var(--ash);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color var(--duration-fast) var(--ease-ceremony);
+}
+
+.lang-switcher__link:hover {
+  color: var(--off-white);
+}
+
+/* Current language: underlined in ember */
+.lang-switcher__link.current {
+  color: var(--off-white);
+  text-decoration: underline;
+  text-decoration-color: var(--ember);
+  text-underline-offset: 3px;
+}
+
+/* ─── MOBILE MENU TOGGLE ──────────────────────────────────────────── */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--off-white);
+  cursor: pointer;
+  padding: 8px;
+  line-height: 1;
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 2px;
+}
+
+/* Hamburger bars */
+.menu-toggle__bar {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background-color: var(--off-white);
+  margin-block: 5px;
+  transition: transform var(--duration-fast) var(--ease-ceremony),
+              opacity var(--duration-fast) var(--ease-ceremony);
+}
+
+/* Open state */
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(2) {
+  opacity: 0;
+}
+.menu-toggle[aria-expanded="true"] .menu-toggle__bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ─── MOBILE BREAKPOINT ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .menu-toggle { display: block; }
+
+  .site-nav {
+    position: fixed;
+    inset-block-start: var(--nav-height);
+    inset-inline: 0;
+    background-color: var(--stage);
+    padding: 2rem var(--section-pad-x);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+    border-block-end: var(--hairline);
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      transform var(--duration-fast) var(--ease-ceremony),
+      opacity var(--duration-fast) var(--ease-ceremony),
+      visibility var(--duration-fast);
+    z-index: 99;
+  }
+
+  .site-nav.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .site-nav__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .site-nav__link {
+    font-size: var(--fs-h4);
+  }
+}

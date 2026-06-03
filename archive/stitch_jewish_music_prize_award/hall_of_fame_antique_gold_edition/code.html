@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Jewish Music Hall of Fame | Preserving Heritage</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;500;600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+    body {
+      background-color: #050505;
+      color: #e5e2e1;
+      -webkit-font-smoothing: antialiased;
+    }
+    .gold-border { border-color: #B0884A; }
+    .gold-text { color: #B0884A; }
+    .gold-bg { background-color: #B0884A; }
+    .hero-accent { color: #C8972A; }
+    .glass-dark { background: rgba(18, 20, 24, 0.8); backdrop-filter: blur(12px); }
+  </style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary": "#313030",
+            "surface-bright": "#3a3939",
+            "on-surface": "#e5e2e1",
+            "tertiary-fixed-dim": "#c8c6c5",
+            "surface": "#131313",
+            "on-background": "#e5e2e1",
+            "on-secondary-fixed": "#1a1c1c",
+            "on-secondary": "#2f3131",
+            "tertiary": "#c8c6c5",
+            "on-surface-variant": "#d2c4b4",
+            "inverse-surface": "#e5e2e1",
+            "inverse-on-surface": "#313030",
+            "secondary-container": "#454747",
+            "surface-tint": "#B0884A",
+            "surface-container-lowest": "#0e0e0e",
+            "surface-variant": "#353534",
+            "error-container": "#93000a",
+            "on-tertiary-container": "#2a2a2a",
+            "on-primary-fixed": "#281800",
+            "error": "#ffb4ab",
+            "outline": "#9b8f80",
+            "secondary": "#c6c6c6",
+            "on-primary-fixed-variant": "#604107",
+            "on-secondary-container": "#b5b5b5",
+            "primary-fixed": "#ffddaf",
+            "tertiary-fixed": "#e5e2e1",
+            "inverse-primary": "#7a581f",
+            "on-error": "#690005",
+            "on-error-container": "#ffdad6",
+            "on-tertiary-fixed-variant": "#474746",
+            "surface-container": "#201f1f",
+            "surface-dim": "#131313",
+            "tertiary-container": "#929090",
+            "secondary-fixed": "#e2e2e2",
+            "surface-container-highest": "#353534",
+            "primary-container": "#B0884A",
+            "primary": "#B0884A",
+            "outline-variant": "#4f4539",
+            "surface-container-high": "#2a2a2a",
+            "secondary-fixed-dim": "#c6c6c6",
+            "on-secondary-fixed-variant": "#454747",
+            "on-primary": "#050505",
+            "surface-container-low": "#1c1b1b",
+            "on-primary-container": "#050505",
+            "primary-fixed-dim": "#B0884A",
+            "on-tertiary-fixed": "#1c1b1b",
+            "background": "#050505"
+          },
+          "fontFamily": {
+            "label-md": ["Work Sans"],
+            "headline-lg": ["Noto Serif"],
+            "headline-md": ["Noto Serif"],
+            "headline-xl": ["Noto Serif"],
+            "body-lg": ["Work Sans"],
+            "body-md": ["Work Sans"]
+          },
+          "fontSize": {
+            "label-md": ["14px", {"lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600"}],
+            "headline-lg": ["32px", {"lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+            "headline-md": ["24px", {"lineHeight": "1.3", "letterSpacing": "0", "fontWeight": "500"}],
+            "headline-xl": ["48px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0", "fontWeight": "400"}]
+          }
+        },
+      },
+    }
+  </script>
+</head>
+<body class="font-body-md text-on-surface bg-background">
+<!-- TopAppBar -->
+<header class="bg-neutral-950/90 backdrop-blur-md border-neutral-900 border-b-[1px] fixed top-0 w-full z-50">
+<div class="flex justify-between items-center w-full px-16 py-6 max-w-screen-2xl mx-auto">
+<div class="text-xl font-serif font-bold tracking-tighter text-amber-600" style="color: #B0884A;">
+        Jewish Music Hall of Fame
+      </div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="text-amber-600 border-b-2 border-amber-600 pb-1 font-serif tracking-widest uppercase text-sm" href="#" style="color: #B0884A; border-color: #B0884A;">Inductees</a>
+<a class="text-neutral-400 hover:text-amber-600 transition-colors font-serif tracking-widest uppercase text-sm" href="#" style="--hover-color: #B0884A;">Archives</a>
+<a class="text-neutral-400 hover:text-amber-600 transition-colors font-serif tracking-widest uppercase text-sm" href="#">Events</a>
+<a class="text-neutral-400 hover:text-amber-600 transition-colors font-serif tracking-widest uppercase text-sm" href="#">Support</a>
+<a class="text-neutral-400 hover:text-amber-600 transition-colors font-serif tracking-widest uppercase text-sm" href="#">About</a>
+</nav>
+<div class="flex items-center gap-6">
+<button class="text-neutral-400 hover:text-white font-label-md text-xs uppercase tracking-widest transition-colors">Member Login</button>
+<button class="bg-[#B0884A] text-[#050505] px-6 py-2 font-label-md uppercase tracking-widest text-xs hover:brightness-110 transition-all">Donate</button>
+</div>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-height-[921px] pt-32 pb-24 px-16 flex flex-col justify-center items-center overflow-hidden bg-[#121418]">
+<div class="absolute inset-0 z-0 opacity-20">
+<img class="w-full h-full object-cover" data-alt="atmospheric wide shot of a grand concert hall with gold detailing and empty velvet seats in dramatic low light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaB4Po9JRAEcEyCPDbFDyLg0Pe93wZlifRPsCpUQM0H5MLDHiKx_ICxuVRfhEDBvSJ0lFYRMTIzCpxfyUuvpx4PEMAorVhZUWVknAh4R-hMQMfD3AY6odjzEJwpgDD08sduhS4wOwXZ79GkkrGfgwsgRBic5PZAXM6rV73IHLjPPbsNmyZbWhAknZSqIUmAtqsOv6N7A_GS77r0NocpQp-GKwgHAfsgApmqgSUNNk2upsPIARhf48CSKO23XQNyYp5DE3T2TQ1d21d"/>
+</div>
+<div class="relative z-10 text-center max-w-4xl">
+<div class="flex items-center justify-center gap-4 mb-8">
+<div class="h-[1px] w-12 bg-[#B0884A]"></div>
+<span class="font-label-md text-[#B0884A] tracking-[0.3em] uppercase">Est. 1994</span>
+<div class="h-[1px] w-12 bg-[#B0884A]"></div>
+</div>
+<h1 class="font-headline-xl text-white mb-6 leading-tight">
+          A Legacy of Sacred Resonance <br/>
+<span class="hero-accent">Forever Inducted.</span>
+</h1>
+<p class="font-body-lg text-neutral-400 mb-12 max-w-2xl mx-auto">
+          Honoring the visionaries, cantors, and maestros who have shaped the tapestry of Jewish cultural identity through the power of melody.
+        </p>
+<!-- Countdown -->
+<div class="flex gap-12 justify-center mb-16">
+<div class="text-center">
+<span class="block font-headline-lg text-white mb-1">24</span>
+<span class="block font-label-md text-[#B0884A] text-xs">Days</span>
+</div>
+<div class="text-2xl text-[#B0884A] font-serif">:</div>
+<div class="text-center">
+<span class="block font-headline-lg text-white mb-1">08</span>
+<span class="block font-label-md text-[#B0884A] text-xs">Hours</span>
+</div>
+<div class="text-2xl text-[#B0884A] font-serif">:</div>
+<div class="text-center">
+<span class="block font-headline-lg text-white mb-1">42</span>
+<span class="block font-label-md text-[#B0884A] text-xs">Mins</span>
+</div>
+</div>
+<div class="flex gap-4 justify-center">
+<button class="bg-[#B0884A] text-[#050505] px-10 py-4 font-label-md uppercase tracking-widest hover:brightness-110 transition-all">Explore the Archives</button>
+<button class="border border-[#B0884A] text-[#B0884A] px-10 py-4 font-label-md uppercase tracking-widest hover:bg-[#B0884A]/10 transition-all">Upcoming Gala</button>
+</div>
+</div>
+</section>
+<!-- Stats & Mission -->
+<section class="bg-black py-24 px-16 border-y border-neutral-900">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="flex flex-col items-center text-center">
+<span class="font-headline-xl text-[#B0884A] mb-2">120+</span>
+<span class="font-label-md text-[#B0884A] text-xs uppercase tracking-widest">Inducted Artists</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-headline-xl text-[#B0884A] mb-2">3k+</span>
+<span class="font-label-md text-[#B0884A] text-xs uppercase tracking-widest">Archival Pieces</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-headline-xl text-[#B0884A] mb-2">18</span>
+<span class="font-label-md text-[#B0884A] text-xs uppercase tracking-widest">Global Chapters</span>
+</div>
+<div class="flex flex-col items-center text-center">
+<span class="font-headline-xl text-[#B0884A] mb-2">100y</span>
+<span class="font-label-md text-[#B0884A] text-xs uppercase tracking-widest">Musical Heritage</span>
+</div>
+</div>
+</section>
+<!-- Categories Section -->
+<section class="bg-[#1C2030] py-32 px-16 overflow-hidden">
+<div class="max-w-screen-2xl mx-auto">
+<div class="mb-20 text-center md:text-left">
+<h2 class="font-headline-xl text-white mb-4">Curated Collections</h2>
+<div class="h-1 w-24 bg-[#B0884A]"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+<!-- Category Card -->
+<div class="relative p-12 bg-[#121212] border border-neutral-800 group hover:border-[#B0884A] transition-all duration-500">
+<span class="absolute top-4 right-8 text-8xl font-serif font-bold text-[#B0884A]/15 pointer-events-none">01</span>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-[#B0884A] mb-6 text-4xl">temple_hindu</span>
+<h3 class="font-headline-lg text-white mb-4">Cantorial Classics</h3>
+<p class="font-body-md text-neutral-400 mb-8">Rediscovering the golden age of Chazzanut and liturgical innovation.</p>
+<a class="font-label-md text-[#B0884A] text-xs uppercase tracking-widest flex items-center gap-2 group-hover:gap-4 transition-all" href="#">
+                View Archive <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Featured Category (People's Choice) -->
+<div class="relative p-12 bg-[#121212] border-2 border-[#B0884A] group transition-all duration-500">
+<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#B0884A] text-[#050505] px-6 py-1 font-label-md text-[10px] uppercase tracking-widest">
+              People's Choice
+            </div>
+<span class="absolute top-4 right-8 text-8xl font-serif font-bold text-[#B0884A]/15 pointer-events-none">02</span>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-[#B0884A] mb-6 text-4xl">piano</span>
+<h3 class="font-headline-lg text-white mb-4">Yiddish Folk</h3>
+<p class="font-body-md text-neutral-400 mb-8">The soul of the shtetl preserved through melody and oral tradition.</p>
+<a class="font-label-md text-[#B0884A] text-xs uppercase tracking-widest flex items-center gap-2 transition-all" href="#">
+                Explore More <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+<!-- Category Card -->
+<div class="relative p-12 bg-[#121212] border border-neutral-800 group hover:border-[#B0884A] transition-all duration-500">
+<span class="absolute top-4 right-8 text-8xl font-serif font-bold text-[#B0884A]/15 pointer-events-none">03</span>
+<div class="relative z-10">
+<span class="material-symbols-outlined text-[#B0884A] mb-6 text-4xl">piano</span>
+<h3 class="font-headline-lg text-white mb-4">Contemporary Artists</h3>
+<p class="font-body-md text-neutral-400 mb-8">Modern visionaries blending tradition with the sounds of today.</p>
+<a class="font-label-md text-[#B0884A] text-xs uppercase tracking-widest flex items-center gap-2 transition-all" href="#">
+                See Inductees <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Support/Tiers Section -->
+<section class="py-32 px-16 bg-[#121418]">
+<div class="max-w-screen-2xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-end mb-24 gap-8">
+<div class="max-w-2xl">
+<span class="font-label-md text-[#B0884A] uppercase tracking-[0.2em] mb-4 block">Patronage</span>
+<h2 class="font-headline-xl text-white">Join the Circle of Guardians</h2>
+</div>
+<p class="font-body-md text-neutral-400 max-w-sm mb-2">Your support ensures these voices are never forgotten. Choose a tier to begin your legacy contribution.</p>
+</div>
+<div class="space-y-0">
+<!-- Tier 1 -->
+<div class="group flex flex-col md:flex-row items-center justify-between py-12 border-t border-[#B0884A] transition-colors hover:bg-white/[0.02] px-8">
+<div class="flex items-center gap-12 flex-1">
+<span class="font-label-md text-[#B0884A] text-sm tracking-widest">LEVEL 01</span>
+<h4 class="font-headline-lg text-white">Sustaining Member</h4>
+</div>
+<div class="flex items-center gap-16">
+<span class="font-headline-md text-[#B0884A]">$180 <span class="text-xs uppercase font-label-md tracking-widest text-neutral-500 ml-2">/ Yearly</span></span>
+<button class="material-symbols-outlined text-neutral-600 group-hover:text-[#B0884A] transition-colors">add_circle</button>
+</div>
+</div>
+<!-- Tier 2 -->
+<div class="group flex flex-col md:flex-row items-center justify-between py-12 border-t border-[#B0884A] bg-[#1C2030]/30 transition-colors hover:bg-[#1C2030]/50 px-8">
+<div class="flex items-center gap-12 flex-1">
+<span class="font-label-md text-[#B0884A] text-sm tracking-widest">LEVEL 02</span>
+<h4 class="font-headline-lg text-white">Heritage Circle</h4>
+</div>
+<div class="flex items-center gap-16">
+<span class="font-headline-md text-[#B0884A]">$500 <span class="text-xs uppercase font-label-md tracking-widest text-neutral-500 ml-2">/ Yearly</span></span>
+<button class="material-symbols-outlined text-neutral-600 group-hover:text-[#B0884A] transition-colors">add_circle</button>
+</div>
+</div>
+<!-- Tier 3 -->
+<div class="group flex flex-col md:flex-row items-center justify-between py-12 border-t border-b border-[#B0884A] transition-colors hover:bg-white/[0.02] px-8">
+<div class="flex items-center gap-12 flex-1">
+<span class="font-label-md text-[#B0884A] text-sm tracking-widest">LEVEL 03</span>
+<h4 class="font-headline-lg text-white">Director's Council</h4>
+</div>
+<div class="flex items-center gap-16">
+<span class="font-headline-md text-[#B0884A]">$1,200 <span class="text-xs uppercase font-label-md tracking-widest text-neutral-500 ml-2">/ Yearly</span></span>
+<button class="material-symbols-outlined text-neutral-600 group-hover:text-[#B0884A] transition-colors">add_circle</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Archive Teaser -->
+<section class="py-32 px-16 bg-black">
+<div class="max-w-screen-2xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+<div class="relative">
+<div class="aspect-[4/5] bg-[#121212] overflow-hidden border border-neutral-800">
+<img class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700" data-alt="dramatic high-contrast black and white photograph of an antique violin resting on a stack of handwritten sheet music" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpiXc17dJATWQJnWmCKzW__bRCIXrWyCFvaBqugtD3LVu4uhlKsqoe9WION60Akbh8vIRynVAYTbSixM-gMix_wlyyhm0QrbT1CN6diJw44kbhzdwdh77npFKYursd5IBrePudxwdzR6LM7xCBIQU-KDfkgbpl5TfREZ6npNbmmJTxuFkp6svMb6B6Nt9qt3DNR0Vrb61A_vAEzE97U1qJWtRN3GtXiGbWhOe2LZ6-kHTOSj2YnU4G_qyGjfFdg-i8yW2v7GtX98S9"/>
+</div>
+<div class="absolute -bottom-8 -right-8 w-64 h-64 border-2 border-[#B0884A] -z-10"></div>
+</div>
+<div>
+<span class="font-label-md text-[#B0884A] uppercase tracking-[0.3em] mb-6 block">Preservation Project</span>
+<h2 class="font-headline-xl text-white mb-8">Digitizing 5,000 Years of Melodic Thought.</h2>
+<p class="font-body-lg text-neutral-400 mb-12">
+            Our vault contains rare recordings dating back to the earliest wax cylinders, now being restored with state-of-the-art precision.
+          </p>
+<ul class="space-y-6 mb-12">
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#B0884A]">check_circle</span>
+<span class="font-body-md">Lossless archival restoration</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#B0884A]">check_circle</span>
+<span class="font-body-md">Interactive sheet music library</span>
+</li>
+<li class="flex items-center gap-4">
+<span class="material-symbols-outlined text-[#B0884A]">check_circle</span>
+<span class="font-body-md">Oral history documentaries</span>
+</li>
+</ul>
+<button class="bg-transparent border border-[#B0884A] text-[#B0884A] px-12 py-5 font-label-md uppercase tracking-widest hover:bg-[#B0884A] hover:text-black transition-all">Enter the Vault</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-neutral-950 border-t border-neutral-900 w-full px-16 py-12">
+<div class="max-w-screen-2xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-center md:items-start">
+<div class="font-serif text-lg text-amber-600 mb-2" style="color: #B0884A;">Jewish Music Hall of Fame</div>
+<p class="font-sans text-xs tracking-widest uppercase text-neutral-500">© 2024 Jewish Music Hall of Fame. Preserving Heritage Through Sound.</p>
+</div>
+<div class="flex gap-12">
+<div class="flex flex-col gap-3">
+<a class="font-sans text-xs tracking-widest uppercase text-neutral-500 hover:text-amber-600 transition-colors" href="#" style="--hover-color: #B0884A;">Privacy Policy</a>
+<a class="font-sans text-xs tracking-widest uppercase text-neutral-500 hover:text-amber-600 transition-colors" href="#">Terms of Service</a>
+</div>
+<div class="flex flex-col gap-3">
+<a class="font-sans text-xs tracking-widest uppercase text-neutral-500 hover:text-amber-600 transition-colors" href="#">Press Kit</a>
+<a class="font-sans text-xs tracking-widest uppercase text-neutral-500 hover:text-amber-600 transition-colors" href="#">Contact Us</a>
+</div>
+</div>
+<div class="flex gap-6">
+<a class="w-10 h-10 border border-neutral-800 flex items-center justify-center text-neutral-500 hover:border-[#B0884A] hover:text-[#B0884A] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">share</span>
+</a>
+<a class="w-10 h-10 border border-neutral-800 flex items-center justify-center text-neutral-500 hover:border-[#B0884A] hover:text-[#B0884A] transition-all" href="#">
+<span class="material-symbols-outlined text-xl">mail</span>
+</a>
+</div>
+</div>
+</footer>
+</body></html>

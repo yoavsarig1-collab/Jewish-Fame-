@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;500;700&amp;family=Fraunces:opsz,wght@9..144,300;400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container": "#231f1a",
+                        "inverse-surface": "#eae1d9",
+                        "on-background": "#eae1d9",
+                        "primary-fixed-dim": "#edbf7b",
+                        "secondary-fixed": "#ffdea4",
+                        "outline": "#9b8f80",
+                        "tertiary-fixed-dim": "#a9c9f5",
+                        "tertiary": "#a9c9f5",
+                        "surface": "#16130e",
+                        "on-tertiary-fixed-variant": "#28486d",
+                        "secondary": "#f4be4f",
+                        "error": "#ffb4ab",
+                        "on-tertiary-container": "#022b4e",
+                        "surface-container-highest": "#39342f",
+                        "on-surface-variant": "#d2c4b4",
+                        "inverse-primary": "#7a581f",
+                        "on-surface": "#eae1d9",
+                        "tertiary-container": "#7493bc",
+                        "surface-variant": "#39342f",
+                        "secondary-container": "#b8891b",
+                        "primary-container": "#b28a4c",
+                        "surface-container-high": "#2e2924",
+                        "on-error": "#690005",
+                        "tertiary-fixed": "#d2e4ff",
+                        "surface-tint": "#edbf7b",
+                        "surface-bright": "#3d3833",
+                        "outline-variant": "#4f4539",
+                        "on-tertiary-fixed": "#001c37",
+                        "on-secondary-container": "#382700",
+                        "on-primary-fixed": "#281800",
+                        "on-secondary-fixed": "#261900",
+                        "surface-container-lowest": "#110e09",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "inverse-on-surface": "#34302a",
+                        "error-container": "#93000a",
+                        "on-secondary": "#412d00",
+                        "primary": "#edbf7b",
+                        "on-primary-fixed-variant": "#604107",
+                        "on-error-container": "#ffdad6",
+                        "secondary-fixed-dim": "#f4be4f",
+                        "surface-dim": "#16130e",
+                        "on-primary": "#442c00",
+                        "primary-fixed": "#ffddaf",
+                        "surface-container-low": "#1f1b16",
+                        "on-tertiary": "#0c3255",
+                        "on-primary-container": "#3b2500",
+                        "background": "#16130e"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1280px",
+                        "margin": "48px",
+                        "hairline": "1px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Frank Ruhl Libre"],
+                        "body-lg": ["Fraunces"],
+                        "headline-lg": ["Frank Ruhl Libre"],
+                        "display-xl": ["Frank Ruhl Libre"],
+                        "label-caps": ["Fraunces"],
+                        "body-md": ["Fraunces"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .paper-bg { background-color: #F7F3EC; color: #121418; }
+        .gold-border { border-color: #B0884A; }
+        .gold-text { color: #B0884A; }
+        .dark-bg { background-color: #121418; color: #F7F3EC; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 bg-[#121418] border-b border-[#B0884A]/30 flex justify-between items-center px-12 h-20 w-full">
+<div class="text-2xl font-bold tracking-tighter text-[#B0884A] font-headline-md">
+            JMHOF | היכל התהילה
+        </div>
+<nav class="hidden md:flex items-center space-x-8 space-x-reverse font-serif uppercase tracking-widest text-sm text-[#B0884A]">
+<a class="text-[#B0884A]/70 hover:text-[#B0884A] transition-colors duration-300" href="#">Inductees</a>
+<a class="text-[#B0884A]/70 hover:text-[#B0884A] transition-colors duration-300" href="#">Archive</a>
+<a class="text-[#B0884A]/70 hover:text-[#B0884A] transition-colors duration-300" href="#">Awards</a>
+<a class="text-[#B0884A] border-b border-[#B0884A] pb-1" href="#">About</a>
+<a class="text-[#B0884A]/70 hover:text-[#B0884A] transition-colors duration-300" href="#">Contact</a>
+</nav>
+<div class="flex items-center gap-6">
+<span class="font-serif uppercase tracking-widest text-sm text-[#B0884A]/70">EN/HE</span>
+<button class="border border-[#B0884A] px-6 py-2 text-[#B0884A] font-serif uppercase tracking-widest text-xs hover:bg-[#B0884A] hover:text-[#121418] transition-all duration-300">
+                Support
+            </button>
+</div>
+</header>
+<main class="mt-20">
+<!-- Hero Section -->
+<section class="relative h-[716px] w-full overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center grayscale contrast-125" data-alt="archival black and white photograph of a historic grand concert hall with ornate architecture and a symphony orchestra performing on stage" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5XRjm7pu4iA85vlVeEGHCdRS72njvJ1_Ihf5R_UuR7xx7Qoyk7p9AQoQ6hP9T7bHdC71-T9AgoqgpdJ2v6mEySWPfnghQUBCv82ujyXPIFSbn_UCiwTOYsqLJkOkaxLr3DzcV2lRpYbxk30uGcCQgxcm0CRhLKFO7dWERQSomdnH3Ed2YROk87o7eqqvTREsnB0yJp-qUQ8p7Tnj9VVxHahtK1AwyvvJjySphxDNU24uZBju8fdgF6cZ82u0voPJ3fzVxMFKzk-FO');">
+</div>
+<div class="absolute bottom-12 right-12 text-right">
+<h1 class="font-headline-lg text-white/90 font-light leading-none tracking-tight">
+                    הצליל של עמנו <br/>
+<span class="text-[32px] opacity-80">The Sound of Our People</span>
+</h1>
+</div>
+</section>
+<!-- Editorial Section -->
+<section class="paper-bg py-32 px-12 border-b gold-border">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-10 gap-24">
+<div class="md:col-span-4 border-r-2 gold-border pr-8">
+<blockquote class="font-headline-md text-3xl font-light italic leading-snug">
+                        "המוזיקה היהודית היא החוט המקשר בין דורות, שפה ללא מילים המבטאת את הכאב, התקווה והניצחון של עם שלם לאורך אלפי שנות היסטוריה ותרבות עשירה."
+                    </blockquote>
+</div>
+<div class="md:col-span-6">
+<div class="max-w-[60ch] font-body-lg leading-relaxed text-justify">
+                        היכל התהילה של המוזיקה היהודית נוסד מתוך הכרה בחשיבותו המכרעת של הצליל בשימור הזהות הלאומית והתרבותית. מזה עשורים, המוזיקה משמשת כשגרירה הנאמנה ביותר של העם היהודי, חוצה גבולות גיאוגרפיים ומחברת בין קהילות רחוקות. הפרס השנתי אינו רק הכרה בהישג אמנותי יוצא דופן, אלא עדות להמשכיותה של שרשרת הדורות המוזיקלית.
+                        <br/><br/>
+                        בתהליך הבחירה הקפדני, ועדה מקצועית המורכבת מאנשי אקדמיה, מבקרים ואמנים ותיקים, בוחנת את השפעתו ארוכת הטווח של המועמד על פסקול החיים היהודיים. אנו מחפשים את אלו שלא רק יצרו מוזיקה יפה, אלא כאלו ששינו את פני התרבות, שהעניקו קול לתפילה או שהפכו את הניגון העממי ליצירת מופת נצחית.
+                        <br/><br/>
+                        ההוקרה הניתנת כאן היא חלק מפרויקט לאומי רחב היקף, השואף לתעד, לשמר ולהנחיל את המורשת המוזיקלית לדורות הבאים. זהו מרחב שבו העבר והעתיד נפגשים, שבו הפיוט העתיק מקבל חיים חדשים בעיבודים עכשוויים, ושבו כל תו מספר סיפור של הישרדות ופריחה.
+                    </div>
+</div>
+</div>
+</section>
+<!-- Vision Section -->
+<section class="dark-bg py-32 px-12">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-0 border gold-border/30">
+<div class="p-12 border-l gold-border/30 flex flex-col items-center text-center">
+<span class="font-headline-lg text-[80px] gold-text mb-4">120+</span>
+<span class="font-label-caps uppercase tracking-[0.2em] mb-6">Inductees Honored</span>
+<p class="font-body-md opacity-70 leading-relaxed">
+                            ממיטב היוצרים והמבצעים שהטביעו חותם בלתי נמכר על המוזיקה היהודית העולמית לאורך המאה האחרונה.
+                        </p>
+</div>
+<div class="p-12 border-l gold-border/30 flex flex-col items-center text-center">
+<span class="font-headline-lg text-[80px] gold-text mb-4">40k</span>
+<span class="font-label-caps uppercase tracking-[0.2em] mb-6">Archival Recordings</span>
+<p class="font-body-md opacity-70 leading-relaxed">
+                            אוסף נדיר של הקלטות היסטוריות, תווים וכתבי יד שנאספו מרחבי העולם היהודי לשימור בבנק הדיגיטלי.
+                        </p>
+</div>
+<div class="p-12 flex flex-col items-center text-center">
+<span class="font-headline-lg text-[80px] gold-text mb-4">12</span>
+<span class="font-label-caps uppercase tracking-[0.2em] mb-6">Global Partners</span>
+<p class="font-body-md opacity-70 leading-relaxed">
+                            שיתופי פעולה עם מוסדות אקדמיים וארכיאולוגיים מובילים להבטחת הדיוק והעומק של המחקר המוזיקלי.
+                        </p>
+</div>
+</div>
+</div>
+</section>
+<!-- Institution Section -->
+<section class="paper-bg py-32 px-12 border-t gold-border">
+<div class="max-w-container-max mx-auto grid grid-cols-1 md:grid-cols-12 items-center gap-16">
+<div class="md:col-span-7">
+<h2 class="font-headline-md text-4xl mb-8 gold-text">הגשר בין הפרס לבניין</h2>
+<p class="font-body-lg leading-relaxed text-justify max-w-[55ch]">
+                        היכל התהילה אינו מתקיים רק בחלל הדיגיטלי או בטקסים שנתיים. בימים אלו מוקם בפתח תקווה הבית הקבוע של המוזיקה היהודית — מוסד מוזיאלי וארכיבי שיהווה מרכז פועם למחקר, יצירה והופעות. 
+                        <br/><br/>
+                        כל אמן שנבחר להיכל התהילה מקבל מקום של קבע בתערוכת הקבע של המבנה, שם מונצחת מורשתו באמצעים טכנולוגיים מתקדמים לצד פריטים אישיים נדירים. הבניין עצמו עוצב בהשראת תיבת תהודה של כלי מיתר, ומבקש להדהד את השילוב בין החומרי לרוחני.
+                    </p>
+</div>
+<div class="md:col-span-5">
+<div class="border gold-border p-2">
+<img alt="Building Rendering" class="w-full grayscale border gold-border/30" data-alt="modern minimalist architectural rendering of a museum building with sharp geometric lines and limestone facade in Petah Tikva" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvYy8oMUENkZvsnZYDWAlDoiOkbugqKCl-n27BMIpNnbG9yllQn-DTGdmNFit14oGFFwl6hvy3JdBm5zdtiKPNsBmuySXrioDUz6wTFnk1iPyKbo2js7sFhg2k2PUkGXd7TDRZBifGlMxYXJJDGVxLoVardHGmg2I8E-dd-z0OpWbeYtwnIpluUpYs7frabO5o_quTfW5O2jQf0CqoUxBiIbLX7Us6g__NuiIeHY5z-3q7M3izxWkdTdw_tM3nGFLbUScbVkv1dCof"/>
+<div class="mt-4 font-label-caps text-xs text-center opacity-60">הדמיה אדריכלית - היכל התהילה, פתח תקווה</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Partners Section -->
+<section class="paper-bg py-24 px-12 border-t gold-border/30">
+<div class="max-w-container-max mx-auto text-center">
+<p class="font-headline-md text-xl mb-16 opacity-80">
+                    "A national project, backed by the State of Israel and the City of Petah Tikva."
+                </p>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-12 items-center justify-items-center opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+<img alt="Gov Israel" class="h-16 w-auto" data-alt="minimalist black and white logo representing a government institution of Israel" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAj1LgT_IBhZ0yIDLHzxxyoYlvuioMQJgocBmLg6Lg-ylj--TL-SN0CXPEeU4x_bucMj8hu4cbyMhqOXxodK916XTYEqgxIHDD35vSW42xX6vQ1HfcvKB2vUpVkjEgAyZ99PeM_fKu78vmaWHBYwEZg9PA4BDmpX2bVLA7wM27lq1c4USc_mWtnMVAM-jRKPb8ta0do9w1hqQpwjNdPQbVs9FEMp3dXDS3Vth_nc-Krc28DN75anWULe1wQPIa6Vx2XZSvXbVZWAjKq"/>
+<img alt="Petah Tikva City" class="h-16 w-auto" data-alt="minimalist black and white official emblem of the city of Petah Tikva" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_9zfN0z0JRj5ZxKUDs_rqYB8T2BdJL1J7oXBagkI15THr1OFfvOYOEfOsUvgZGnrVxGaSCRZwrK0jSbe8tP8Msc9DjS5YICw_I-v5ZtblqPGKtbcwz0Su6EQ3LZ3M0_1acC-AkNCx8K8V5JglZ_6Bmvu6nqfXyc7xfYidy92dEB2M08kWSlJ1iVBvpZSQklvzckMtYSDIkR9EQE6YdL2bV6518OSsFjdo1esmom2eyOxI8gYrXsYhq8t7E-ma4meNxNdVsOaCtN6g"/>
+<img alt="Ministry Culture" class="h-16 w-auto" data-alt="elegant monochrome logo of the Ministry of Culture and Sports" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCQj3TmWfFy4iydD6OuBfNaUQgswUJTjV1VHauB3c8Cq1uXZ-_eBJYV_E1OloPqwosYwV47VLvbKL7mbZ5pU7DvuPjBzu6nyAQJ-xl5hZVtqFD_CeCn5J7r1efe3f-zZsdA4v-xoVI5LNTwP5dbk03asY3EHKygJfgVIh93El900x1rXhH6EYAdO2jJtM4NsMKGwFDeAWNc0O1hj38BSwQ2Vpxt5g3NbNl6X1F1oesgTZWhYpHL1JQ9P7NAO0OKsjLLqvdiNHQXQFk5"/>
+<img alt="Music Foundation" class="h-16 w-auto" data-alt="abstract minimalist black and white icon for a music heritage foundation" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC0PKlADbKfrE_8s_knw__8wI_RxIrj19CIdKX3D9Bj4hufQZn54VthytmFgtL0MrmhBTIi1gV2cCQWPMDYc2a1Bjj_d3YR7qc34EMCjsaxGAaIFfU1c5BW5HEUJociIqHClsPWZ-cRI-Fn8sF9qw4BJtWIr6irCKfWp4efSnrmKXqbZifwPONjsFgJn6mtt-XU3SowgmEDGqB2dEHv2vy1mEMwHb1kb0K0xtA5kO_gz-XW8Udnk8JebKATKzfrnA_I5iwYeni8R2l3"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="w-full border-t border-[#B0884A] bg-[#121418] dark:bg-[#121418]">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-0 w-full px-12 py-16">
+<div class="flex flex-col">
+<span class="text-xl font-bold text-[#B0884A] mb-4 block font-headline-md">JMHOF</span>
+<p class="text-[#B0884A]/60 font-serif text-xs uppercase tracking-wider">
+                    © 2024 Jewish Music Hall of Fame. All Rights Reserved.
+                </p>
+</div>
+<div class="flex flex-col gap-2 md:border-r border-[#B0884A]/30 pr-8">
+<a class="text-[#B0884A]/60 hover:text-[#B0884A] font-serif text-xs uppercase tracking-wider transition-all duration-200" href="#">Mission Statement</a>
+<a class="text-[#B0884A]/60 hover:text-[#B0884A] font-serif text-xs uppercase tracking-wider transition-all duration-200" href="#">Contact Us</a>
+</div>
+<div class="flex flex-col gap-2 md:border-r border-[#B0884A]/30 pr-8">
+<a class="text-[#B0884A]/60 hover:text-[#B0884A] font-serif text-xs uppercase tracking-wider transition-all duration-200" href="#">Project Bridge</a>
+<a class="text-[#B0884A]/60 hover:text-[#B0884A] font-serif text-xs uppercase tracking-wider transition-all duration-200" href="#">Archives</a>
+</div>
+<div class="flex flex-col gap-2 md:border-r border-[#B0884A]/30 pr-8">
+<a class="text-[#B0884A]/60 hover:text-[#B0884A] font-serif text-xs uppercase tracking-wider transition-all duration-200" href="#">Privacy Policy</a>
+<a class="text-[#B0884A]/60 hover:text-[#B0884A] font-serif text-xs uppercase tracking-wider transition-all duration-200" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+</body></html>

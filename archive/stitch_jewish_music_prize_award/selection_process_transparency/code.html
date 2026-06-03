@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&amp;family=Fraunces:opsz,wght@9..144,400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-error": "#690005",
+                        "inverse-primary": "#7a581f",
+                        "primary-container": "#b28a4c",
+                        "outline": "#9b8f80",
+                        "on-primary-fixed-variant": "#604107",
+                        "secondary-fixed-dim": "#f4be4f",
+                        "tertiary-container": "#7493bc",
+                        "surface-container-highest": "#39342f",
+                        "surface-dim": "#16130e",
+                        "on-tertiary": "#0c3255",
+                        "background": "#16130e",
+                        "primary": "#edbf7b",
+                        "outline-variant": "#4f4539",
+                        "on-surface-variant": "#d2c4b4",
+                        "inverse-surface": "#eae1d9",
+                        "secondary-container": "#b8891b",
+                        "on-primary-container": "#3b2500",
+                        "secondary-fixed": "#ffdea4",
+                        "surface-container": "#231f1a",
+                        "on-secondary": "#412d00",
+                        "secondary": "#f4be4f",
+                        "surface": "#16130e",
+                        "on-background": "#eae1d9",
+                        "on-secondary-fixed": "#261900",
+                        "on-primary": "#442c00",
+                        "tertiary-fixed-dim": "#a9c9f5",
+                        "surface-bright": "#3d3833",
+                        "on-secondary-container": "#382700",
+                        "on-error-container": "#ffdad6",
+                        "tertiary": "#a9c9f5",
+                        "surface-variant": "#39342f",
+                        "surface-container-lowest": "#110e09",
+                        "primary-fixed": "#ffddaf",
+                        "inverse-on-surface": "#34302a",
+                        "on-tertiary-fixed-variant": "#28486d",
+                        "on-tertiary-container": "#022b4e",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "surface-tint": "#edbf7b",
+                        "error": "#ffb4ab",
+                        "on-surface": "#eae1d9",
+                        "on-tertiary-fixed": "#001c37",
+                        "surface-container-low": "#1f1b16",
+                        "on-primary-fixed": "#281800",
+                        "error-container": "#93000a",
+                        "tertiary-fixed": "#d2e4ff",
+                        "surface-container-high": "#2e2924",
+                        "primary-fixed-dim": "#edbf7b"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "container-max": "1280px",
+                        "margin": "48px",
+                        "gutter": "24px",
+                        "hairline": "1px",
+                        "unit": "4px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Fraunces"],
+                        "display-xl": ["Frank Ruhl Libre"],
+                        "body-lg": ["Fraunces"],
+                        "headline-md": ["Frank Ruhl Libre"],
+                        "headline-lg": ["Frank Ruhl Libre"],
+                        "body-md": ["Fraunces"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                        "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                        "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            background-color: #F7F3EC;
+            color: #0E0E0C;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        .paper-texture {
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3BaseFilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/baseFilter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.05;
+            pointer-events: none;
+            position: fixed;
+            inset: 0;
+            z-index: 50;
+        }
+    </style>
+</head>
+<body class="font-body-md antialiased">
+<div class="paper-texture"></div>
+<!-- TopNavBar -->
+<nav class="bg-[#121418] text-[#B0884A] font-serif uppercase tracking-[0.2em] text-xs docked full-width top-0 border-b border-[#B0884A]/30 flex justify-between items-center w-full px-8 py-4 sticky z-40">
+<div class="text-xl font-bold tracking-tighter text-[#B0884A]">Jewish Music Hall of Fame</div>
+<div class="hidden md:flex gap-8">
+<a class="text-[#F7F3EC]/70 hover:bg-[#B0884A] hover:text-[#121418] transition-colors duration-200 px-2 py-1" href="#">About</a>
+<a class="text-[#F7F3EC]/70 hover:bg-[#B0884A] hover:text-[#121418] transition-colors duration-200 px-2 py-1" href="#">Categories</a>
+<a class="text-[#B0884A] border-b border-[#B0884A] px-2 py-1" href="#">Ceremony</a>
+<a class="text-[#F7F3EC]/70 hover:bg-[#B0884A] hover:text-[#121418] transition-colors duration-200 px-2 py-1" href="#">Support</a>
+</div>
+<button class="bg-[#B0884A] text-[#121418] px-6 py-2 font-label-caps uppercase tracking-widest text-[10px] hover:opacity-80 transition-opacity">Induct</button>
+</nav>
+<!-- Hero Header -->
+<header class="max-w-screen-2xl mx-auto px-8 md:px-24 pt-24 pb-16 border-b border-[#B0884A]/30">
+<div class="max-w-4xl">
+<h1 class="font-display-xl text-[#0E0E0C] mb-8 leading-tight">
+                יוקרה, שקיפות ואמינות /<br/>
+<span class="opacity-80">Prestige, Transparency &amp; Integrity</span>
+</h1>
+<p class="font-body-lg text-[#0E0E0C]/80 max-w-2xl leading-relaxed">
+                תהליך הבחירה של היכל התהילה למוזיקה יהודית מושתת על עקרונות של מצוינות בלתי מתפשרת. כל ההחלטות מתקבלות על ידי אנשי מקצוע עצמאיים, תחת מעטה סודיות מוחלט, תוך דרישה להסכמה פה אחד של כלל חברי הוועדה.
+            </p>
+</div>
+</header>
+<!-- Main Content: Selection Process -->
+<main class="max-w-screen-2xl mx-auto border-x border-[#B0884A]/20">
+<!-- Step 1 -->
+<section class="grid grid-cols-1 md:grid-cols-12 border-b border-[#B0884A]/30 group hover:bg-[#B0884A]/5 transition-colors duration-500">
+<div class="md:col-span-8 p-12 md:p-24 flex flex-col justify-center order-2 md:order-1">
+<span class="font-label-caps text-[#B0884A] mb-4">PHASE 01</span>
+<h2 class="font-headline-lg text-[#0E0E0C] mb-6">Judging panels appointed: Expert committees across 12 categories</h2>
+<p class="font-body-md text-[#0E0E0C]/70">מינוי פאנל השופטים: ועדות מומחים המורכבות מאוצרים, אקדמאים ואמנים מובילים ממונות ל-12 קטגוריות שונות, המבטיחות כיסוי רחב ומעמיק של כלל גווני היצירה היהודית.</p>
+</div>
+<div class="md:col-span-4 p-12 flex items-center justify-center bg-[#B0884A]/10 order-1 md:order-2 border-r border-[#B0884A]/30">
+<span class="font-display-xl text-[#B0884A]/40 text-[180px] leading-none select-none">א</span>
+</div>
+</section>
+<!-- Step 2 -->
+<section class="grid grid-cols-1 md:grid-cols-12 border-b border-[#B0884A]/30 group hover:bg-[#B0884A]/5 transition-colors duration-500">
+<div class="md:col-span-8 p-12 md:p-24 flex flex-col justify-center order-2 md:order-1">
+<span class="font-label-caps text-[#B0884A] mb-4">PHASE 02</span>
+<h2 class="font-headline-lg text-[#0E0E0C] mb-6">Professional shortlisting Jan–Mar 2027: Rigorous review</h2>
+<p class="font-body-md text-[#0E0E0C]/70">סינון מקצועי (ינואר-מרץ 2027): בחינה מדוקדקת של התרומות המוזיקליות וההשפעה התרבותית של כל מועמד, תוך שימוש במדדים אובייקטיביים של איכות ושימור מורשת.</p>
+</div>
+<div class="md:col-span-4 p-12 flex items-center justify-center bg-[#B0884A]/10 order-1 md:order-2 border-r border-[#B0884A]/30">
+<span class="font-display-xl text-[#B0884A]/40 text-[180px] leading-none select-none">ב</span>
+</div>
+</section>
+<!-- Step 3 -->
+<section class="grid grid-cols-1 md:grid-cols-12 border-b border-[#B0884A]/30 group hover:bg-[#B0884A]/5 transition-colors duration-500">
+<div class="md:col-span-8 p-12 md:p-24 flex flex-col justify-center order-2 md:order-1">
+<span class="font-label-caps text-[#B0884A] mb-4">PHASE 03</span>
+<h2 class="font-headline-lg text-[#0E0E0C] mb-6">Unanimous decision required: Total consensus</h2>
+<p class="font-body-md text-[#0E0E0C]/70">דרישה להחלטה פה אחד: לא ייבחר זוכה ללא הסכמה מוחלטת של כלל חברי הוועדה. זהו עקרון הברזל המבטיח את טוהר הבחירה ומניעת שיקולים זרים.</p>
+</div>
+<div class="md:col-span-4 p-12 flex items-center justify-center bg-[#B0884A]/10 order-1 md:order-2 border-r border-[#B0884A]/30">
+<span class="font-display-xl text-[#B0884A]/40 text-[180px] leading-none select-none">ג</span>
+</div>
+</section>
+<!-- Step 4 -->
+<section class="grid grid-cols-1 md:grid-cols-12 border-b border-[#B0884A]/30 group hover:bg-[#B0884A]/5 transition-colors duration-500">
+<div class="md:col-span-8 p-12 md:p-24 flex flex-col justify-center order-2 md:order-1">
+<span class="font-label-caps text-[#B0884A] mb-4">PHASE 04</span>
+<h2 class="font-headline-lg text-[#0E0E0C] mb-6">Ratification and announcement H2 2027</h2>
+<p class="font-body-md text-[#0E0E0C]/70">אשרור והכרזה (מחצית שנייה 2027): אישור סופי של מועצת הנאמנים וחשיפה פומבית רשמית של הנבחרים בטקס ממלכתי מרכזי.</p>
+</div>
+<div class="md:col-span-4 p-12 flex items-center justify-center bg-[#B0884A]/10 order-1 md:order-2 border-r border-[#B0884A]/30">
+<span class="font-display-xl text-[#B0884A]/40 text-[180px] leading-none select-none">ד</span>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="p-12 md:p-24 bg-[#1C2030]/5">
+<div class="max-w-3xl mx-auto">
+<h3 class="font-headline-md text-[#0E0E0C] mb-12 text-center underline decoration-[#B0884A] underline-offset-8">שאלות נפוצות / FAQ</h3>
+<div class="space-y-4">
+<!-- Accordion Item 1 -->
+<div class="border border-[#B0884A]/30 bg-white">
+<button class="w-full p-6 flex justify-between items-center text-right group">
+<span class="font-body-lg text-[#0E0E0C] font-bold">כיצד נבחרים חברי הוועדה?</span>
+<span class="material-symbols-outlined text-[#B0884A] transition-transform duration-300 group-hover:translate-x-2">chevron_left</span>
+</button>
+<div class="px-6 pb-6 text-[#0E0E0C]/70 font-body-md border-t border-[#B0884A]/10 pt-4">
+                            חברי הוועדה נבחרים על ידי מועצת הנאמנים על בסיס מומחיות מוכחת של 20 שנה לפחות בתחום המוזיקה היהודית, האקדמיה או האוצרות.
+                        </div>
+</div>
+<!-- Accordion Item 2 -->
+<div class="border border-[#B0884A]/30 bg-white">
+<button class="w-full p-6 flex justify-between items-center text-right group">
+<span class="font-body-lg text-[#0E0E0C] font-bold">האם הציבור יכול להשפיע על הבחירה?</span>
+<span class="material-symbols-outlined text-[#B0884A] transition-transform duration-300 group-hover:translate-x-2">chevron_left</span>
+</button>
+<div class="px-6 pb-6 text-[#0E0E0C]/70 font-body-md border-t border-[#B0884A]/10 pt-4">
+                            הציבור מוזמן להגיש המלצות, אך ההחלטה הסופית נתונה בידי אנשי המקצוע בלבד כדי להבטיח ניטרליות ואיכות אמנותית.
+                        </div>
+</div>
+<!-- Accordion Item 3 -->
+<div class="border border-[#B0884A]/30 bg-white">
+<button class="w-full p-6 flex justify-between items-center text-right group">
+<span class="font-body-lg text-[#0E0E0C] font-bold">מהו משך הכהונה של שופט?</span>
+<span class="material-symbols-outlined text-[#B0884A] transition-transform duration-300 group-hover:translate-x-2">chevron_left</span>
+</button>
+<div class="px-6 pb-6 text-[#0E0E0C]/70 font-body-md border-t border-[#B0884A]/10 pt-4">
+                            שופטים ממונים למחזור בחירה אחד בלבד (שנתיים) כדי למנוע קיבעון מחשבתי ולאפשר רענון של נקודות המבט בוועדה.
+                        </div>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Block -->
+<section class="bg-[#121418] text-[#F7F3EC] p-16 md:p-32 text-center relative overflow-hidden">
+<div class="relative z-10">
+<h2 class="font-headline-lg mb-8">מעוניינים להגיש מועמד? /<br/><span class="text-[#B0884A]">Want to nominate someone?</span></h2>
+<div class="flex flex-col md:flex-row justify-center gap-8 items-center">
+<a class="text-[#B0884A] font-label-caps text-lg border-b-2 border-[#B0884A] pb-2 hover:opacity-80 transition-opacity" href="#">
+                        לחצו כאן להגשת מועמדות / NOMINATE NOW
+                    </a>
+</div>
+</div>
+<!-- Decorative Element -->
+<div class="absolute inset-0 opacity-10 flex items-center justify-center">
+<span class="font-display-xl text-[400px] text-[#B0884A]">JMHF</span>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#121418] text-[#B0884A] font-serif text-[11px] leading-relaxed full-width border-t border-[#B0884A]">
+<div class="grid grid-cols-4 gap-8 px-12 py-16 w-full max-w-screen-2xl mx-auto text-right">
+<div class="col-span-4 md:col-span-1 space-y-4">
+<div class="text-lg font-bold text-[#B0884A]">JMHF Archive</div>
+<p class="text-[#F7F3EC]/50">מצוינות במוזיקה יהודית מאז ועד עולם.</p>
+</div>
+<div class="col-span-2 md:col-span-1 flex flex-col gap-4 border-r border-[#B0884A]/30 pr-8">
+<a class="text-[#B0884A] underline" href="#">Institutional Archive</a>
+<a class="text-[#F7F3EC]/50 hover:text-[#B0884A]" href="#">Transparency Report</a>
+</div>
+<div class="col-span-2 md:col-span-1 flex flex-col gap-4 border-r border-[#B0884A]/30 pr-8">
+<a class="text-[#F7F3EC]/50 hover:text-[#B0884A]" href="#">Selection Process</a>
+<a class="text-[#F7F3EC]/50 hover:text-[#B0884A]" href="#">Privacy Policy</a>
+</div>
+<div class="col-span-4 md:col-span-1 border-r border-[#B0884A]/30 pr-8">
+<p class="text-[#F7F3EC]/50">© 2024 Jewish Music Hall of Fame. All rights reserved.</p>
+</div>
+</div>
+</footer>
+</body></html>

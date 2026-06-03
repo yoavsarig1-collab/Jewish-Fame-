@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@700&amp;family=Fraunces:opsz,wght@9..144,400;700&amp;family=Heebo:wght@300;400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-low": "#1f1b16",
+                        "surface-container-high": "#2e2924",
+                        "on-secondary-fixed-variant": "#5d4200",
+                        "tertiary-container": "#7493bc",
+                        "on-primary": "#442c00",
+                        "tertiary-fixed": "#d2e4ff",
+                        "surface-tint": "#edbf7b",
+                        "surface-container-lowest": "#110e09",
+                        "primary-fixed": "#ffddaf",
+                        "tertiary": "#a9c9f5",
+                        "primary": "#edbf7b",
+                        "on-tertiary-fixed-variant": "#28486d",
+                        "surface-container": "#231f1a",
+                        "primary-fixed-dim": "#edbf7b",
+                        "on-tertiary-fixed": "#001c37",
+                        "secondary": "#f4be4f",
+                        "on-secondary-container": "#382700",
+                        "on-background": "#eae1d9",
+                        "secondary-fixed": "#ffdea4",
+                        "on-secondary": "#412d00",
+                        "on-primary-container": "#3b2500",
+                        "outline": "#9b8f80",
+                        "on-error": "#690005",
+                        "surface-dim": "#16130e",
+                        "surface-variant": "#39342f",
+                        "error": "#ffb4ab",
+                        "on-surface": "#eae1d9",
+                        "inverse-on-surface": "#34302a",
+                        "outline-variant": "#4f4539",
+                        "on-secondary-fixed": "#261900",
+                        "error-container": "#93000a",
+                        "secondary-fixed-dim": "#f4be4f",
+                        "inverse-surface": "#eae1d9",
+                        "on-primary-fixed-variant": "#604107",
+                        "background": "#16130e",
+                        "on-error-container": "#ffdad6",
+                        "surface": "#16130e",
+                        "secondary-container": "#b8891b",
+                        "on-surface-variant": "#d2c4b4",
+                        "on-tertiary": "#0c3255",
+                        "inverse-primary": "#7a581f",
+                        "surface-container-highest": "#39342f",
+                        "surface-bright": "#3d3833",
+                        "tertiary-fixed-dim": "#a9c9f5",
+                        "primary-container": "#b28a4c",
+                        "on-tertiary-container": "#022b4e",
+                        "on-primary-fixed": "#281800",
+                        "ink": "#0E0E0C",
+                        "ember": "#B0884A",
+                        "parchment": "#EDE5D4",
+                        "warm-paper": "#F7F3EC"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    fontFamily: {
+                        "frank": ["Frank Ruhl Libre", "serif"],
+                        "heebo": ["Heebo", "sans-serif"],
+                        "fraunces": ["Fraunces", "serif"],
+                        "headline-md": ["Frank Ruhl Libre"],
+                        "body-lg": ["Fraunces"],
+                        "label-caps": ["Fraunces"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { background-color: #F7F3EC; color: #0E0E0C; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .rtl-border-right { border-right: 1px solid #B0884A; }
+    </style>
+</head>
+<body class="font-heebo">
+<!-- TopAppBar -->
+<nav class="bg-[#121418] dark:bg-[#121418] flex justify-between items-center w-full px-8 py-6 max-w-full docked full-width top-0 border-b border-[#B0884A]/30">
+<div class="text-lg font-bold tracking-tighter text-[#B0884A] uppercase font-frank">
+            Jewish Music Hall of Fame Awards
+        </div>
+<div class="hidden md:flex gap-8 items-center">
+<a class="font-sans uppercase tracking-[0.2em] text-[11px] font-medium text-gray-400 hover:text-[#B0884A] transition-colors duration-300" href="#">About</a>
+<a class="font-sans uppercase tracking-[0.2em] text-[11px] font-medium text-gray-400 hover:text-[#B0884A] transition-colors duration-300" href="#">Categories</a>
+<a class="font-sans uppercase tracking-[0.2em] text-[11px] font-medium text-gray-400 hover:text-[#B0884A] transition-colors duration-300" href="#">Ceremony</a>
+<a class="font-sans uppercase tracking-[0.2em] text-[11px] font-medium text-[#B0884A] border-b border-[#B0884A] pb-1" href="#">Support</a>
+</div>
+<div class="font-sans uppercase tracking-[0.2em] text-[11px] font-medium text-[#B0884A]">
+            EN / HE
+        </div>
+</nav>
+<main class="max-w-[1280px] mx-auto px-8 py-16">
+<!-- Header & Contact Block -->
+<header class="mb-16">
+<h1 class="text-[64px] font-frank font-bold text-ink leading-tight mb-8">
+                לתקשורת / Press
+            </h1>
+<div class="rtl-border-right pr-8 py-4 bg-ink/5">
+<p class="font-label-caps text-ember uppercase text-[12px] tracking-widest mb-2">Press Inquiries</p>
+<p class="text-[20px] font-frank font-bold text-ink mb-1">Office of Communications</p>
+<p class="text-ink/80 text-[16px] leading-relaxed">
+                    press@jmhofawards.org<br/>
+                    +972 (0) 3 555 0192<br/>
+                    בית המוסיקה, תל אביב
+                </p>
+</div>
+</header>
+<!-- Press Kit Section -->
+<section class="mb-24">
+<div class="flex items-center justify-between mb-8 border-b border-ember pb-4">
+<h2 class="text-[32px] font-frank font-bold text-ink">חומרי עיתונות / Press Kit</h2>
+<span class="text-ember font-label-caps text-[12px]">ARCHIVAL ASSETS 2024</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-0 border border-ember/30">
+<!-- Press Release -->
+<div class="bg-parchment p-8 border-l border-ember/30 flex flex-col justify-between min-h-[240px] hover:bg-white transition-colors cursor-pointer group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="bg-ink text-white px-3 py-1 text-[10px] font-bold tracking-tighter uppercase">PDF</span>
+<span class="material-symbols-outlined text-ember">description</span>
+</div>
+<h3 class="text-[20px] font-frank font-bold text-ink leading-tight">הודעה לעיתונות<br/>Press Release</h3>
+</div>
+<div class="flex items-center justify-end group-hover:translate-x-[-4px] transition-transform">
+<span class="material-symbols-outlined text-ember text-[32px]">arrow_downward</span>
+</div>
+</div>
+<!-- Visual Assets -->
+<div class="bg-parchment p-8 border-l border-ember/30 flex flex-col justify-between min-h-[240px] hover:bg-white transition-colors cursor-pointer group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="bg-ink text-white px-3 py-1 text-[10px] font-bold tracking-tighter uppercase">ZIP</span>
+<span class="material-symbols-outlined text-ember">imagesmode</span>
+</div>
+<h3 class="text-[20px] font-frank font-bold text-ink leading-tight">נכסים ויזואליים<br/>Visual Assets</h3>
+</div>
+<div class="flex items-center justify-end group-hover:translate-x-[-4px] transition-transform">
+<span class="material-symbols-outlined text-ember text-[32px]">arrow_downward</span>
+</div>
+</div>
+<!-- Founder Bios -->
+<div class="bg-parchment p-8 border-l border-ember/30 flex flex-col justify-between min-h-[240px] hover:bg-white transition-colors cursor-pointer group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="bg-ink text-white px-3 py-1 text-[10px] font-bold tracking-tighter uppercase">PDF</span>
+<span class="material-symbols-outlined text-ember">history_edu</span>
+</div>
+<h3 class="text-[20px] font-frank font-bold text-ink leading-tight">ביוגרפיות מייסדים<br/>Founder Bios</h3>
+</div>
+<div class="flex items-center justify-end group-hover:translate-x-[-4px] transition-transform">
+<span class="material-symbols-outlined text-ember text-[32px]">arrow_downward</span>
+</div>
+</div>
+<!-- Award Overview -->
+<div class="bg-parchment p-8 flex flex-col justify-between min-h-[240px] hover:bg-white transition-colors cursor-pointer group">
+<div>
+<div class="flex justify-between items-start mb-6">
+<span class="bg-ink text-white px-3 py-1 text-[10px] font-bold tracking-tighter uppercase">PNG</span>
+<span class="material-symbols-outlined text-ember">military_tech</span>
+</div>
+<h3 class="text-[20px] font-frank font-bold text-ink leading-tight">סקירת הפרס<br/>Award Overview</h3>
+</div>
+<div class="flex items-center justify-end group-hover:translate-x-[-4px] transition-transform">
+<span class="material-symbols-outlined text-ember text-[32px]">arrow_downward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Hero Editorial Image -->
+<section class="mb-24 w-full">
+<div class="w-full h-[400px] grayscale opacity-90 relative overflow-hidden">
+<img alt="Ceremony Hall" class="w-full h-full object-cover" data-alt="atmospheric black and white photo of a grand concert hall stage with vintage microphones and warm stage lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy28Shpyg4wjQVJu8TIOdKhSxlbOXNUvUUrTIZd_hy14tC5wSO4WgIGh3YS0S4W-3il987CTgl6OEjbgE2JV6GeFjzKpRGGAMB7rWcv8ZVfRx8_o0hfoGR-oVuIviy0uJygtDLuxOgmRlTX17vTB17R7sviMWN7sTnYmPKVsiW6ZJA6I2jyhpj5Qz_YhbWk87zeaj-_G4w_8hLGBWxkEGp_AT6myrH_CIZRHG7zugWHl1yVRG7JMxHldU4AA7WLOePpFGL6BUzWhPF"/>
+<div class="absolute inset-0 border border-ember/20 pointer-events-none"></div>
+</div>
+</section>
+<!-- Latest News Section -->
+<section class="mb-24">
+<h2 class="text-[32px] font-frank font-bold text-ink mb-8">חדשות / Latest News</h2>
+<div class="border-t border-ember">
+<!-- Item 1 -->
+<div class="py-10 border-b border-ember/30 group cursor-pointer flex flex-col md:flex-row md:items-center gap-6">
+<div class="md:w-32">
+<span class="text-ember font-label-caps text-[12px]">NOV 14, 2024</span>
+</div>
+<div class="flex-1">
+<h3 class="text-[24px] font-frank font-bold text-ink mb-2 group-hover:text-ember transition-colors">הכרזה על רשימת המועמדים הסופית לשנת 2024</h3>
+<p class="text-ink/70 leading-relaxed font-heebo font-light max-w-3xl">האקדמיה למוזיקה יהודית גאה להציג את האמנים והיוצרים שהגיעו לקו הגמר של הטקס השנתי.</p>
+</div>
+<span class="material-symbols-outlined text-ember opacity-0 group-hover:opacity-100 transition-opacity">north_east</span>
+</div>
+<!-- Item 2 -->
+<div class="py-10 border-b border-ember/30 group cursor-pointer flex flex-col md:flex-row md:items-center gap-6">
+<div class="md:w-32">
+<span class="text-ember font-label-caps text-[12px]">OCT 28, 2024</span>
+</div>
+<div class="flex-1">
+<h3 class="text-[24px] font-frank font-bold text-ink mb-2 group-hover:text-ember transition-colors">שותפות אסטרטגית חדשה עם הספרייה הלאומית</h3>
+<p class="text-ink/70 leading-relaxed font-heebo font-light max-w-3xl">תיעוד והנגשה של ארכיוני המוזיקה היהודית לדורות הבאים בשיתוף פעולה היסטורי.</p>
+</div>
+<span class="material-symbols-outlined text-ember opacity-0 group-hover:opacity-100 transition-opacity">north_east</span>
+</div>
+<!-- Item 3 -->
+<div class="py-10 border-b border-ember group cursor-pointer flex flex-col md:flex-row md:items-center gap-6">
+<div class="md:w-32">
+<span class="text-ember font-label-caps text-[12px]">OCT 12, 2024</span>
+</div>
+<div class="flex-1">
+<h3 class="text-[24px] font-frank font-bold text-ink mb-2 group-hover:text-ember transition-colors">מכירת כרטיסים מוקדמת לערב הגאלה הגדול</h3>
+<p class="text-ink/70 leading-relaxed font-heebo font-light max-w-3xl">הצטרפו אלינו לערב שכולו הוקרה ליצירה היהודית לדורותיה בלב ירושלים.</p>
+</div>
+<span class="material-symbols-outlined text-ember opacity-0 group-hover:opacity-100 transition-opacity">north_east</span>
+</div>
+</div>
+</section>
+<!-- Quotes & Background Section -->
+<section class="mb-24">
+<h2 class="text-[32px] font-frank font-bold text-ink mb-8">לציטוטים ורקע / For Quotes &amp; Background</h2>
+<div class="rtl-border-right pr-12 py-4 bg-parchment/30">
+<div class="max-w-4xl">
+<p class="font-heebo text-ink/80 text-[18px] leading-[1.8] mb-12">
+                        היכל התהילה של המוזיקה היהודית (Jewish Music Hall of Fame Awards) הוא המוסד המוביל לשימור והוקרת המורשת המוזיקלית של העם היהודי. אנו פועלים להבטחת ההכרה ביוצרים שעיצבו את קולו של העם לאורך הדורות.
+                    </p>
+<div class="mb-12">
+<span class="text-ember font-label-caps text-[11px] block mb-4 uppercase tracking-widest">Official Attribution: Director General</span>
+<blockquote class="text-[22px] font-frank font-bold text-ink leading-tight italic">
+                            "המוזיקה היא החוט המקשר של ההיסטוריה שלנו. הטקס הזה הוא לא רק חגיגה של אמנות, אלא מעשה של צדק היסטורי עבור אלו שנתנו לנו קול."
+                        </blockquote>
+</div>
+<div>
+<span class="text-ember font-label-caps text-[11px] block mb-4 uppercase tracking-widest">Official Attribution: Artistic Committee</span>
+<blockquote class="text-[22px] font-frank font-bold text-ink leading-tight italic">
+                            "אנו מחפשים את הצלילים שמצליחים לעבור את מבחן הזמן, אלו שהופכים לחלק מהדי-אן-איי התרבותי של הקהילה היהודית הגלובלית."
+                        </blockquote>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#121418] dark:bg-[#121418] grid grid-cols-1 md:grid-cols-4 gap-8 px-8 py-16 w-full max-w-full border-t border-[#B0884A]/100">
+<div class="col-span-1">
+<div class="text-[#B0884A] font-bold text-lg font-frank mb-4">JMHOF AWARDS</div>
+<p class="font-sans uppercase tracking-widest text-[10px] text-gray-500">
+                © 2024 Jewish Music Hall of Fame Awards.<br/>All Rights Reserved.
+            </p>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-sans uppercase tracking-widest text-[10px] text-[#B0884A]">Resources</span>
+<a class="font-sans uppercase tracking-widest text-[10px] text-gray-500 hover:text-[#B0884A] transition-colors" href="#">Project Details</a>
+<a class="font-sans uppercase tracking-widest text-[10px] text-gray-500 hover:text-[#B0884A] transition-colors" href="#">News</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-sans uppercase tracking-widest text-[10px] text-[#B0884A]">Support</span>
+<a class="font-sans uppercase tracking-widest text-[10px] text-gray-500 hover:text-[#B0884A] transition-colors" href="#">Support</a>
+<a class="font-sans uppercase tracking-widest text-[10px] text-gray-500 hover:text-[#B0884A] transition-colors" href="#">Legal Information</a>
+</div>
+<div class="flex flex-col gap-4">
+<span class="font-sans uppercase tracking-widest text-[10px] text-[#B0884A]">Social</span>
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-[#B0884A] text-sm">public</span>
+<span class="material-symbols-outlined text-[#B0884A] text-sm">mail</span>
+<span class="material-symbols-outlined text-[#B0884A] text-sm">share</span>
+</div>
+</div>
+</footer>
+</body></html>

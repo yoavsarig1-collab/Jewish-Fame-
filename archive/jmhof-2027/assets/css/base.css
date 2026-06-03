@@ -1,0 +1,294 @@
+/*
+ * JMHOF 2027 — Base / Reset
+ * Global HTML defaults, typography setup, RTL/LTR foundations.
+ */
+
+/* ─── BOX MODEL ──────────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── ROOT ───────────────────────────────────────────────────────── */
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* ─── BODY ───────────────────────────────────────────────────────── */
+body {
+  background-color: var(--stage);
+  color: var(--off-white);
+  font-family: var(--font-body-he);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* English override */
+:lang(en) body,
+[lang="en"] body,
+.lang-en body {
+  font-family: var(--font-body-en);
+}
+
+/* ─── HEBREW (RTL) DEFAULT ──────────────────────────────────────── */
+:root,
+body,
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+
+/* English LTR override */
+[dir="ltr"],
+[lang="en"],
+.lang-en {
+  direction: ltr;
+  text-align: left;
+}
+
+/* ─── TYPOGRAPHY: HEADINGS ──────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display-he);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-headline);
+  color: var(--off-white);
+}
+
+:lang(en) h1, :lang(en) h2, :lang(en) h3,
+:lang(en) h4, :lang(en) h5, :lang(en) h6,
+[lang="en"] h1, [lang="en"] h2, [lang="en"] h3 {
+  font-family: var(--font-display-en);
+}
+
+h1 { font-size: var(--fs-h1); }
+h2 { font-size: var(--fs-h2); font-weight: var(--fw-regular); }
+h3 { font-size: var(--fs-h3); font-weight: var(--fw-medium); }
+h4 { font-size: var(--fs-h4); font-weight: var(--fw-medium); }
+
+/* Display sizes — applied via utility classes */
+.display-xl {
+  font-size: var(--fs-display-xl);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-headline);
+}
+.display-lg {
+  font-size: var(--fs-display-lg);
+  font-weight: var(--fw-bold);
+  line-height: var(--lh-headline);
+}
+
+/* ─── TYPOGRAPHY: BODY ──────────────────────────────────────────── */
+p {
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  max-width: 60ch;
+  color: var(--off-white);
+}
+
+.body-lg {
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-body);
+}
+
+.caption {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-regular);
+  letter-spacing: var(--ls-caption);
+  text-transform: uppercase;
+  color: var(--ash);
+}
+
+/* ─── GOLD ACCENT (hero words only) ──────────────────────────────── */
+.accent-gold {
+  color: var(--ceremonial-gold);
+}
+
+/* Ember — CTAs, borders, labels */
+.accent-ember {
+  color: var(--ember);
+}
+
+/* ─── LINKS ──────────────────────────────────────────────────────── */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--ember);
+  outline-offset: 3px;
+}
+
+/* ─── BUTTONS ────────────────────────────────────────────────────── */
+
+/* Default: text-link with arrow */
+.btn-text {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375em;
+  color: var(--ember);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-regular);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-ceremony);
+}
+
+.btn-text:hover,
+.btn-text:focus-visible {
+  color: var(--ember-deep);
+}
+
+/* Arrow flips in RTL */
+.btn-text .arrow { display: inline-block; }
+[dir="rtl"] .btn-text .arrow { transform: scaleX(-1); }
+
+/* Hero primary CTA — ONE per page only */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  background-color: var(--ember);
+  color: var(--ink);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  padding: 0 24px;
+  height: 48px;
+  border: none;
+  border-radius: 0; /* Never rounded */
+  cursor: pointer;
+  transition: background-color var(--duration-fast) var(--ease-ceremony);
+  white-space: nowrap;
+}
+
+.btn-primary:hover,
+.btn-primary:focus-visible {
+  background-color: var(--ember-deep);
+}
+
+/* Ghost / secondary */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375em;
+  color: var(--ash);
+  font-size: var(--fs-body);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color var(--duration-fast) var(--ease-ceremony);
+}
+
+.btn-ghost:hover { color: var(--off-white); }
+
+/* ─── IMAGES ─────────────────────────────────────────────────────── */
+img, video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* No border-radius on any media */
+img, video, iframe {
+  border-radius: 0;
+}
+
+/* ─── DIVIDERS ───────────────────────────────────────────────────── */
+hr {
+  border: none;
+  border-block-start: 1px solid var(--line-dark);
+  margin: 0;
+}
+
+hr.line-light {
+  border-block-start-color: var(--line);
+}
+
+hr.line-ember {
+  border-block-start-color: var(--ember);
+}
+
+/* ─── SKIP LINK (accessibility) ─────────────────────────────────── */
+.skip-link {
+  position: absolute;
+  inset-inline-start: -9999px;
+  top: 0;
+  z-index: 9999;
+  padding: 8px 16px;
+  background: var(--ember);
+  color: var(--ink);
+  font-weight: var(--fw-medium);
+}
+
+.skip-link:focus {
+  inset-inline-start: 0;
+}
+
+/* ─── NUMBERS STAY LTR IN RTL CONTEXT ────────────────────────────── */
+.num, .countdown-digit, .category-number,
+[class*="price"], [class*="amount"] {
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+/* ─── LIGHT-BACKGROUND PAGES (paper) ────────────────────────────── */
+.bg-paper {
+  background-color: var(--paper);
+  color: var(--ink);
+}
+
+.bg-paper h1, .bg-paper h2, .bg-paper h3,
+.bg-paper h4, .bg-paper p {
+  color: var(--ink);
+}
+
+.bg-paper hr { border-block-start-color: var(--line); }
+
+/* ─── SECTION WRAPPER ────────────────────────────────────────────── */
+.section {
+  padding-block: var(--section-pad-y);
+  padding-inline: var(--section-pad-x);
+}
+
+.section-inner {
+  max-width: var(--content-max);
+  margin-inline: auto;
+}
+
+/* ─── GRID ───────────────────────────────────────────────────────── */
+.grid-12 {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--grid-gutter);
+}
+
+/* ─── UTILITY ────────────────────────────────────────────────────── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-ash   { color: var(--ash); }
+.text-ember { color: var(--ember); }
+.text-gold  { color: var(--ceremonial-gold); }
+
+/* Tabular figures for countdown, prices, category numbers */
+.tabular { font-variant-numeric: tabular-nums; }

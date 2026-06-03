@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" id="html-root">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>אודות הפרס | טקס פרסי היכל התהילה של המוזיקה היהודית</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;700;800&family=Heebo:wght@300;400;500;700;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,800&family=Inter:wght@300;400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --stage:           #121418;
+  --stage-mid:       #1C2030;
+  --stage-lift:      #252A3A;
+  --stage-deep:      #0E0E0C;
+  --paper:           #F7F3EC;
+  --parchment:       #EDE5D4;
+  --ember:           #B0884A;
+  --ember-deep:      #7A5A2B;
+  --ceremonial-gold: #C8972A;
+  --ash:             #8A857C;
+  --ink:             #0E0E0C;
+  --line-dark:       #2A2A28;
+  --line:            #D8D0BF;
+  --paper-70:  rgba(247,243,236,0.70);
+  --paper-40:  rgba(247,243,236,0.40);
+  --paper-12:  rgba(247,243,236,0.12);
+  --paper-06:  rgba(247,243,236,0.06);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--stage); color: var(--paper);
+  font-family: 'Heebo', sans-serif; font-weight: 400;
+  line-height: 1.6; overflow-x: hidden; direction: rtl;
+}
+body.lang-en { direction: ltr; font-family: 'Inter', sans-serif; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--stage); }
+::-webkit-scrollbar-thumb { background: var(--ember-deep); }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+.he { display: block; } .en { display: none; }
+body.lang-en .he { display: none !important; }
+body.lang-en .en { display: block !important; }
+.he-inline { display: inline; } .en-inline { display: none; }
+body.lang-en .he-inline { display: none !important; }
+body.lang-en .en-inline { display: inline !important; }
+
+/* ── NAVBAR ── */
+#navbar {
+  position: fixed; inset: 0 0 auto; z-index: 900;
+  height: 64px; display: flex; align-items: center;
+  justify-content: space-between; padding: 0 2.5rem;
+  transition: height 0.3s, background 0.3s, border-color 0.3s;
+  direction: ltr;
+}
+#navbar.solid {
+  height: 48px; background: rgba(18,20,24,0.97);
+  border-bottom: 1px solid var(--line-dark);
+}
+.nav-brand { display: flex; align-items: center; gap: 0.75rem; }
+.nav-wordmark .t1 {
+  font-family: 'Frank Ruhl Libre', serif; font-size: 0.85rem;
+  font-weight: 500; color: var(--paper); letter-spacing: 0.3px;
+}
+body.lang-en .nav-wordmark .t1 { font-family: 'Fraunces', serif; }
+.nav-wordmark .t2 {
+  font-family: 'Inter', sans-serif; font-size: 0.58rem;
+  font-weight: 300; color: var(--ash); letter-spacing: 2px; text-transform: uppercase;
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--paper-70); transition: color 0.2s;
+  position: relative; padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: ''; position: absolute; bottom: 0; left: 50%;
+  transform: translateX(-50%); width: 0; height: 1px;
+  background: var(--ember); transition: width 0.2s;
+}
+.nav-links a:hover { color: var(--paper); }
+.nav-links a:hover::after, .nav-links a.active::after { width: 20px; }
+.nav-links a.active { color: var(--paper); }
+body:not(.lang-en) .nav-links a { font-family: 'Heebo', sans-serif; }
+.lang-switcher { display: flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; }
+.lang-switcher .sep { color: var(--ash); }
+.lang-btn { color: var(--ash); cursor: pointer; background: none; border: none; font-family: inherit; font-size: inherit; letter-spacing: inherit; text-transform: inherit; padding: 0; transition: color 0.2s; }
+.lang-btn:hover { color: var(--paper); }
+.lang-btn.active { color: var(--ember); text-decoration: underline; text-underline-offset: 3px; }
+
+/* Hamburger button */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 910;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--paper);
+  transition: transform 0.25s ease, opacity 0.25s ease, width 0.25s ease;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile menu overlay */
+#mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 64px 0 0;
+  z-index: 800;
+  background: rgba(12,14,18,0.97);
+  padding: 2.5rem 2rem;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  pointer-events: none;
+}
+#mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.mobile-nav > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-nav > ul > li > a {
+  display: block;
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--paper-70);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.2s;
+}
+body.lang-en .mobile-nav > ul > li > a { font-family: 'Fraunces', serif; }
+.mobile-nav > ul > li > a:hover,
+.mobile-nav > ul > li > a:focus { color: var(--ember); }
+.mobile-lang {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ── UTILITY ── */
+.eyebrow { display: block; font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--ember); margin-bottom: 0.9rem; font-family: 'Outfit', sans-serif; font-weight: 600; }
+body:not(.lang-en) .eyebrow { font-family: 'Heebo', sans-serif; font-weight: 700; }
+.rule { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--ember), transparent); background-size: 200% auto; animation: shimmer 8s cubic-bezier(0.16,1,0.3,1) infinite; margin: 1.2rem 0 2rem; border: none; }
+.section-title { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; }
+body.lang-en .section-title { font-family: 'Fraunces', serif; }
+.btn-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--ember); font-size: 0.85rem; font-weight: 500; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: border-color 0.2s, color 0.2s; cursor: pointer; background: none; border-top: none; border-left: none; border-right: none; font-family: inherit; }
+.btn-link:hover { border-bottom-color: var(--ember); }
+.btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--ember); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 0 1.8rem; height: 48px; border: none; cursor: pointer; transition: background 0.2s; }
+.btn-primary:hover { background: var(--ember-deep); color: var(--paper); }
+body:not(.lang-en) .btn-primary { font-family: 'Heebo', sans-serif; }
+.btn-ghost { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--ash); font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: border-color 0.2s, color 0.2s; font-family: 'Inter', sans-serif; }
+.btn-ghost:hover { color: var(--paper-70); border-bottom-color: var(--ash); }
+body:not(.lang-en) .btn-ghost { font-family: 'Heebo', sans-serif; }
+#cta-bar { background: var(--stage-deep); padding: 6rem 2.5rem; text-align: center; border-top: 1px solid var(--line-dark); }
+#cta-bar h2 { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 700; color: var(--paper); }
+body.lang-en #cta-bar h2 { font-family: 'Fraunces', serif; }
+#cta-bar p { color: var(--ash); font-size: 0.95rem; max-width: 50ch; margin: 1rem auto 0; line-height: 1.75; }
+.cta-actions { display: flex; gap: 2rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 2.5rem; }
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal.on { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.06s; } .reveal-d2 { transition-delay: 0.12s; } .reveal-d3 { transition-delay: 0.18s; }
+
+/* ── PAGE HERO ── */
+#page-hero {
+  position: relative;
+  height: 55vh; min-height: 480px;
+  display: flex; align-items: flex-end; padding-bottom: 5rem;
+  padding-top: 64px; overflow: hidden;
+}
+.page-hero-bg {
+  position: absolute; inset: 0; overflow: hidden;
+  background: linear-gradient(180deg, rgba(18,20,24,0.3) 0%, rgba(18,20,24,0.85) 100%);
+}
+.page-hero-bg video {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; object-position: center 30%;
+  z-index: -1;
+}
+.page-hero-bg::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ember), transparent);
+  background-size: 200% auto; animation: shimmer 9s cubic-bezier(0.16,1,0.3,1) infinite;
+}
+.page-hero-body { position: relative; z-index: 2; padding: 0 2.5rem; max-width: 1200px; width: 100%; }
+
+/* ── MISSION ── */
+#mission {
+  background: var(--stage-mid);
+  padding: 7rem 2.5rem;
+}
+.mission-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: start; max-width: 1200px; margin: 0 auto;
+}
+.mission-copy p { font-size: 1rem; color: var(--paper-70); line-height: 1.9; margin-bottom: 1.4rem; max-width: 55ch; }
+.mission-quote {
+  border-inline-start: 2px solid var(--ember);
+  padding-inline-start: 2rem;
+  margin-top: 3rem;
+}
+.mission-quote blockquote {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+  font-weight: 300; line-height: 1.5; color: var(--paper-70);
+}
+body.lang-en .mission-quote blockquote { font-family: 'Fraunces', serif; font-style: italic; }
+.mission-quote cite { display: block; font-family: 'Outfit', sans-serif; font-size: 0.62rem; letter-spacing: 4px; text-transform: uppercase; color: var(--ember); font-style: normal; margin-top: 1.2rem; font-weight: 600; }
+body:not(.lang-en) .mission-quote cite { font-family: 'Heebo', sans-serif; font-weight: 700; }
+
+/* ── BUILDING ── */
+#building-bridge {
+  background: var(--stage);
+  padding: 7rem 2.5rem;
+}
+.bridge-inner {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 5rem; align-items: center; max-width: 1200px; margin: 0 auto;
+}
+.bridge-img-wrap {
+  position: relative; aspect-ratio: 4/3; overflow: hidden;
+}
+.bridge-img-wrap video {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%; object-fit: cover;
+}
+@media (prefers-reduced-motion: reduce) { .bridge-img-wrap video { display: none; } }
+.bridge-img-wrap::after {
+  content: ''; position: absolute; inset: 0;
+  border: 1px solid rgba(176,136,74,0.25); pointer-events: none;
+}
+.bridge-copy p { font-size: 1rem; color: var(--paper-70); line-height: 1.9; margin-bottom: 1.4rem; max-width: 52ch; }
+.bridge-box {
+  margin-top: 2rem; border: 1px solid var(--ember);
+  padding: 1.5rem 1.8rem; background: var(--stage-mid);
+}
+.bridge-box .bb-cap {
+  font-family: 'Inter', sans-serif; font-size: 0.55rem;
+  letter-spacing: 4px; text-transform: uppercase; color: var(--ember);
+  margin-bottom: 0.6rem;
+}
+body:not(.lang-en) .bridge-box .bb-cap { font-family: 'Heebo', sans-serif; }
+.bridge-box .bb-title { font-family: 'Frank Ruhl Libre', serif; font-size: 1.15rem; font-weight: 700; color: var(--paper); margin-bottom: 0.4rem; }
+body.lang-en .bridge-box .bb-title { font-family: 'Fraunces', serif; }
+.bridge-box .bb-link { font-size: 0.8rem; color: var(--ember); display: inline-flex; align-items: center; gap: 0.35rem; margin-top: 0.8rem; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
+.bridge-box .bb-link:hover { border-bottom-color: var(--ember); }
+
+/* ── LEADERSHIP ── */
+#leadership {
+  background: var(--stage-mid);
+  padding: 7rem 2.5rem;
+}
+.leadership-inner { max-width: 1200px; margin: 0 auto; }
+.leadership-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1px; margin-top: 3rem;
+}
+.leader-card { background: var(--stage-lift); position: relative; overflow: hidden; }
+.leader-card:hover .leader-portrait img { filter: grayscale(0%); }
+.leader-portrait {
+  aspect-ratio: 3/4; overflow: hidden; position: relative;
+}
+.leader-portrait img {
+  width: 100%; height: 100%; object-fit: cover; object-position: top;
+  filter: grayscale(100%); transition: filter 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.leader-portrait-placeholder {
+  background: linear-gradient(160deg, var(--stage-mid) 0%, var(--stage-lift) 100%);
+  border-bottom: 1px solid var(--line-dark);
+}
+.leader-info { padding: 1.4rem 1.6rem 1.8rem; border-top: 1px solid var(--line-dark); }
+.leader-name { font-family: 'Frank Ruhl Libre', serif; font-size: 1.1rem; font-weight: 700; color: var(--paper); margin-bottom: 0.3rem; }
+body.lang-en .leader-name { font-family: 'Fraunces', serif; }
+.leader-role { font-family: 'Outfit', sans-serif; font-size: 0.72rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ember); font-weight: 600; }
+body:not(.lang-en) .leader-role { font-family: 'Heebo', sans-serif; font-weight: 700; }
+.leader-bio { font-size: 0.83rem; color: var(--ash); line-height: 1.65; margin-top: 0.7rem; }
+
+/* ── HISTORY (PAPER) ── */
+#history {
+  background: var(--paper);
+  color: var(--ink);
+  padding: 7rem 2.5rem;
+}
+#history .eyebrow { color: var(--ember-deep); }
+#history .section-title { color: var(--ink); }
+#history .rule { background: linear-gradient(90deg, transparent, var(--ember-deep), transparent); background-size: 200% auto; }
+.history-inner { max-width: 800px; margin: 0 auto; }
+.history-inner p { font-size: 1rem; color: rgba(14,14,12,0.75); line-height: 1.9; margin-bottom: 1.4rem; }
+.history-facts {
+  margin-top: 3rem; border-top: 1px solid var(--line);
+}
+.fact-row {
+  display: flex; gap: 2rem; padding: 1.5rem 0;
+  border-bottom: 1px solid var(--line); align-items: flex-start;
+}
+.fact-num { font-family: 'Fraunces', serif; font-size: 1.8rem; font-weight: 300; color: var(--ember-deep); line-height: 1; min-width: 3.5rem; }
+body:not(.lang-en) .fact-num { font-family: 'Frank Ruhl Libre', serif; }
+.fact-text h4 { font-family: 'Frank Ruhl Libre', serif; font-size: 0.95rem; font-weight: 700; color: var(--ink); margin-bottom: 0.3rem; }
+body.lang-en .fact-text h4 { font-family: 'Fraunces', serif; }
+.fact-text p { font-size: 0.83rem; color: rgba(14,14,12,0.65); line-height: 1.6; margin: 0; }
+
+/* ── MISSION STATS ── */
+.mission-stat {
+  background: var(--stage-lift);
+  padding: 1.8rem;
+  border-top: 2px solid transparent;
+  transition: border-color 0.3s, background 0.3s;
+}
+.mission-stat:hover { border-top-color: var(--ember); background: var(--stage-mid); }
+.mission-stat-n { font-family: 'Fraunces', serif; font-size: 2.4rem; font-weight: 700; color: var(--ember); line-height: 1; }
+.mission-stat-d { font-size: 0.78rem; color: var(--ash); margin-top: 0.5rem; line-height: 1.5; }
+
+/* ── VIDEO SECTION ── */
+#about-video {
+  background: var(--stage-deep);
+  padding: 8rem 2.5rem;
+  border-top: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+  text-align: center;
+}
+.about-video-inner { max-width: 900px; margin: 0 auto; }
+.video-stage {
+  position: relative; margin-top: 3rem;
+  aspect-ratio: 16/9; background: var(--stage-mid);
+  overflow: hidden; cursor: pointer;
+}
+.video-stage-thumb {
+  position: absolute; inset: 0;
+  background: url('assets/images/exterior-road.jpg') center/cover no-repeat;
+  filter: brightness(0.55);
+  transition: filter 0.4s;
+}
+.video-stage:hover .video-stage-thumb { filter: brightness(0.75); }
+.video-stage-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(18,20,24,0.0) 30%, rgba(18,20,24,0.65) 100%);
+}
+.video-play-btn {
+  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+  width: 80px; height: 80px; border-radius: 50%;
+  background: rgba(200,151,42,0.9); border: none; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s, transform 0.2s; z-index: 2;
+}
+.video-play-btn svg { width: 28px; height: 28px; fill: var(--ink); margin-inline-start: 4px; }
+.video-stage:hover .video-play-btn { background: var(--ceremonial-gold); transform: translate(-50%, -50%) scale(1.08); }
+.video-caption {
+  margin-top: 1.2rem; font-family: 'Inter', sans-serif;
+  font-size: 0.68rem; letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--ash);
+}
+body:not(.lang-en) .video-caption { font-family: 'Heebo', sans-serif; }
+
+/* ── VIDEO MODAL ── */
+#about-video-modal {
+  display: none; position: fixed; inset: 0; z-index: 2000;
+  background: rgba(10,10,12,0.92); align-items: center; justify-content: center;
+}
+#about-video-modal.open { display: flex; }
+.avm-inner {
+  position: relative; width: min(860px, 90vw);
+  aspect-ratio: 16/9;
+}
+.avm-inner iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
+.avm-close {
+  position: absolute; top: -2.5rem; inset-inline-end: 0;
+  background: none; border: none; color: var(--paper-70);
+  font-size: 1.6rem; line-height: 1; cursor: pointer;
+  font-family: 'Inter', sans-serif; transition: color 0.2s;
+}
+.avm-close:hover { color: var(--paper); }
+
+/* ── PARTNERS ── */
+#partners {
+  background: var(--stage);
+  padding: 5rem 2.5rem;
+  border-top: 1px solid var(--line-dark);
+}
+.partners-inner { max-width: 1200px; margin: 0 auto; text-align: center; }
+.partners-inner .eyebrow { text-align: center; }
+.partners-logos {
+  display: flex; justify-content: center; align-items: center;
+  gap: 4rem; margin-top: 2.5rem; flex-wrap: wrap;
+}
+.partner-logo { font-family: 'Frank Ruhl Libre', serif; font-size: 0.88rem; color: var(--ash); letter-spacing: 1px; transition: color 0.2s; }
+body.lang-en .partner-logo { font-family: 'Fraunces', serif; }
+.partner-logo:hover { color: var(--paper); }
+.partner-sep { width: 1px; height: 32px; background: var(--line-dark); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--stage-deep); padding: 5rem 2.5rem 2rem;
+  border-top: 1px solid var(--line-dark);
+}
+.footer-grid {
+  display: grid; grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem; max-width: 1200px; margin: 0 auto;
+  padding-bottom: 3rem; border-bottom: 1px solid var(--line-dark);
+}
+.footer-about .fa-logo { font-family: 'Frank Ruhl Libre', serif; font-size: 0.9rem; font-weight: 500; color: var(--paper); margin-bottom: 0.9rem; line-height: 1.4; }
+body.lang-en .footer-about .fa-logo { font-family: 'Fraunces', serif; }
+.footer-about p { font-size: 0.8rem; color: var(--ash); line-height: 1.7; max-width: 260px; }
+.footer-col h5 { font-family: 'Outfit', sans-serif; font-size: 0.58rem; letter-spacing: 3px; text-transform: uppercase; color: var(--ember); margin-bottom: 1.2rem; font-weight: 600; }
+body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weight: 700; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.65rem; }
+.footer-col ul li a { font-size: 0.83rem; color: var(--ash); transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--paper); }
+.footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.7rem; color: var(--ash); flex-wrap: wrap; gap: 0.5rem; }
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (max-width: 960px) {
+  .mission-inner, .bridge-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .leadership-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .lang-switcher { display: none; }
+  .nav-hamburger { display: flex; }
+  #mobile-menu { display: block; }
+}
+@media (max-width: 600px) {
+  .leadership-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  #navbar { padding: 0 1.2rem; }
+  #mission, #bridge, #leadership, #cta-bar,
+  #why, #history { padding: 3.5rem 1.5rem; }
+  .page-hero-body { padding: 0 1.5rem; }
+  footer { padding: 3rem 1.5rem 2rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rule { animation: none; background: var(--ember); }
+  .page-hero-bg::after { animation: none; background: var(--ember); }
+  .reveal { transition: none; opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-wordmark">
+      <div class="t1 he">טקס פרסי היכל התהילה</div>
+      <div class="t1 en">Hall of Fame Awards</div>
+      <div class="t2">Jewish Music Hall of Fame · 2027</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html" class="active"><span class="he">אודות</span><span class="en">About</span></a></li>
+    <li><a href="categories.html"><span class="he">קטגוריות</span><span class="en">Categories</span></a></li>
+    <li><a href="ceremony.html"><span class="he">הטקס</span><span class="en">Ceremony</span></a></li>
+    <li><a href="selection-process.html"><span class="he">תהליך הבחירה</span><span class="en">Selection</span></a></li>
+    <li><a href="donors.html"><span class="he">תמיכה</span><span class="en">Support</span></a></li>
+  </ul>
+  <div class="lang-switcher">
+    <button type="button" class="lang-btn active" id="lang-he" onclick="switchLang('he')">עברית</button>
+    <span class="sep">·</span>
+    <button type="button" class="lang-btn" id="lang-en-btn" onclick="switchLang('en')">English</button>
+  </div>
+
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="תפריט" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט ניווט">
+  <nav class="mobile-nav" dir="rtl">
+    <ul>
+      <li><a href="about.html"><span class="he">אודות</span><span class="en">About</span></a></li>
+      <li><a href="categories.html"><span class="he">קטגוריות</span><span class="en">Categories</span></a></li>
+      <li><a href="ceremony.html"><span class="he">הטקס</span><span class="en">Ceremony</span></a></li>
+      <li><a href="selection-process.html"><span class="he">תהליך הבחירה</span><span class="en">Selection</span></a></li>
+      <li><a href="donors.html"><span class="he">תמיכה</span><span class="en">Support</span></a></li>
+    </ul>
+    <div class="mobile-lang">
+      <button type="button" class="lang-btn active" id="mobile-lang-he" onclick="switchLang('he')">עברית</button>
+      <span class="sep">·</span>
+      <button type="button" class="lang-btn" id="mobile-lang-en-btn" onclick="switchLang('en')">English</button>
+    </div>
+  </nav>
+</div>
+
+<!-- PAGE HERO -->
+<section id="page-hero">
+  <div class="page-hero-bg">
+    <video autoplay muted loop playsinline preload="auto">
+      <source src="assets/videos/building-clip.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="page-hero-body" style="animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both;">
+    <span class="eyebrow"><span class="he">אודות הפרס</span><span class="en">About the Award</span></span>
+    <h1 class="section-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800;">
+      <span class="he">הצליל של עמנו</span>
+      <span class="en">The Sound of Our People</span>
+    </h1>
+    <p style="font-size: 1rem; color: var(--paper-70); max-width: 520px; margin-top: 1rem; line-height: 1.75;">
+      <span class="he">הכרה ממלכתית ויוקרתית ליוצרים ומבצעים שעיצבו את המוזיקה היהודית לדורותיה</span>
+      <span class="en">Prestigious state recognition for the creators and performers who shaped Jewish music for generations</span>
+    </p>
+  </div>
+</section>
+
+<!-- MISSION -->
+<section id="mission">
+  <div class="mission-inner">
+
+    <div class="mission-copy reveal">
+      <span class="eyebrow"><span class="he">החזון</span><span class="en">Our Vision</span></span>
+      <h2 class="section-title">
+        <span class="he">החזון</span>
+        <span class="en">The Vision</span>
+      </h2>
+      <div class="rule"></div>
+      <p>
+        <span class="he">המוזיקה היהודית היא הגשר המחבר בין עבר, הווה ועתיד: שפה ללא גבולות שנדדה עם העם היהודי בכל תפוצותיו. שלושת אלפים שנות יצירה, מהמזמורים הקדומים ועד הפסקול של ישראל המודרנית.</span>
+        <span class="en">Jewish music is the bridge connecting past, present and future — a language without borders that travelled with the Jewish people through every diaspora. Three thousand years of creation, from ancient psalms to the soundtrack of modern Israel.</span>
+      </p>
+      <p>
+        <span class="he">על כן, הוחלט לקיים את טקס פרס התהילה ולהעניק הכרה והוקרה ליוצרים ומבצעים היהודים שתרומתם למוזיקה העולמית ראויה לציון.</span>
+        <span class="en">It was therefore decided to hold the Prize of Fame ceremony and grant recognition to the Jewish creators and performers whose contribution to world music deserves to be acknowledged.</span>
+      </p>
+      <div style="margin-top: 1.5rem;">
+        <a href="categories.html" class="btn-link">
+          <span class="he">לקטגוריות הפרס</span><span class="en">View Categories</span>
+          <span class="he-inline">←</span><span class="en-inline">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="reveal reveal-d2">
+      <div class="mission-quote">
+        <blockquote>
+          <span class="he">"הלילה שבו תרומתם תיקח את מקומה הראוי בהיסטוריה"</span>
+          <span class="en">"The night their contribution takes its rightful place in history"</span>
+        </blockquote>
+        <cite>
+          <span class="he">הכותרת הצפונה לטקס 2027</span>
+          <span class="en">The guiding spirit of the 2027 Ceremony</span>
+        </cite>
+      </div>
+      <div style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1px;">
+        <div class="mission-stat">
+          <div class="mission-stat-n">13</div>
+          <div class="mission-stat-d"><span class="he">קטגוריות הפרס — יצירה וביצוע</span><span class="en">Award categories — composition and performance</span></div>
+        </div>
+        <div class="mission-stat">
+          <div class="mission-stat-n">3</div>
+          <div class="mission-stat-d"><span class="he">שופטים מקצועיים לכל קטגוריה — החלטה פה אחד בלבד</span><span class="en">Expert judges per category — unanimous decision required</span></div>
+        </div>
+        <div class="mission-stat">
+          <div class="mission-stat-n">2027</div>
+          <div class="mission-stat-d"><span class="he">שנת הטקס הראשון — שידור בטלוויזיה לישראל ולעולם</span><span class="en">Year of the inaugural ceremony — televised broadcast worldwide</span></div>
+        </div>
+        <div class="mission-stat">
+          <div class="mission-stat-n">150</div>
+          <div class="mission-stat-d"><span class="he">שנות פתח תקווה — המסגרת החגיגית לטקס הפתיחה</span><span class="en">Years of Petah Tikva — the celebratory backdrop for the ceremony</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- THE BUILDING BRIDGE -->
+<section id="building-bridge">
+  <div class="bridge-inner">
+
+    <div class="bridge-img-wrap reveal">
+      <video autoplay muted loop playsinline preload="auto">
+        <source src="assets/videos/cafe-animation.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="reveal reveal-d2">
+      <span class="eyebrow"><span class="he">הפרס והמבנה</span><span class="en">The Award &amp; The Building</span></span>
+      <h2 class="section-title">
+        <span class="he">מהפרס להיכל</span>
+        <span class="en">From the Award to the Hall</span>
+      </h2>
+      <div class="rule"></div>
+      <p>
+        <span class="he">טקס הפרסים הוא שלב ראשון בחזון רחב יותר: הקמת היכל התהילה של המוזיקה היהודית, מוסד לאומי ועולמי שייבנה בפתח תקווה ויהפוך לבית הקבע של המורשת המוזיקלית היהודית.</span>
+        <span class="en">The Awards Ceremony is the first phase of a broader vision: building the Jewish Music Hall of Fame — a national and global institution to be built in Petah Tikva, becoming the permanent home of Jewish musical heritage.</span>
+      </p>
+      <p>
+        <span class="he">כל זוכה בפרס יוכנס לאחר מכן אל תוך היכל התהילה הפיזי, תצוגת כבוד קבועה במוסד החדש שייפתח בעתיד.</span>
+        <span class="en">Every prize winner will subsequently be inducted into the physical Hall of Fame — a permanent honorific display in the new institution opening in the future.</span>
+      </p>
+      <div class="bridge-box">
+        <div class="bb-cap"><span class="he">מהפרס להיכל / FROM THE PRIZE TO THE HALL</span><span class="en">FROM THE PRIZE TO THE HALL / מהפרס להיכל</span></div>
+        <div class="bb-title he">היכל התהילה של המוזיקה היהודית</div>
+        <div class="bb-title en">Jewish Music Hall of Fame</div>
+        <p style="font-size: 0.83rem; color: var(--ash); line-height: 1.6; margin-top: 0.4rem;">
+          <span class="he">פתח תקווה, ישראל · שייפתח בעתיד · עיצוב: Braslavi Architects</span>
+          <span class="en">Petah Tikva, Israel · Opening in the future · Design: Braslavi Architects</span>
+        </p>
+        <a href="https://www.hallofame.org" class="bb-link">
+          <span class="he">לאתר המבנה</span><span class="en">Visit hallofame.org</span>
+          <span class="he-inline">←</span><span class="en-inline">→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- LEADERSHIP -->
+<section id="leadership">
+  <div class="leadership-inner">
+    <div class="reveal">
+      <span class="eyebrow"><span class="he">ההנהגה</span><span class="en">Leadership</span></span>
+      <h2 class="section-title">
+        <span class="he">מי עומד מאחורי הפרס</span>
+        <span class="en">The People Behind the Award</span>
+      </h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="leadership-grid">
+
+      <div class="leader-card reveal reveal-d1">
+        <div class="leader-portrait">
+          <img src="assets/images/leader-gafni.png" alt="איתן גפני" loading="lazy" style="object-position: center top;">
+        </div>
+        <div class="leader-info">
+          <div class="leader-name he">איתן גפני</div>
+          <div class="leader-name en">Eitan Gafni</div>
+          <div class="leader-role"><span class="he">מייסד</span><span class="en">Founder</span></div>
+          <p class="leader-bio">
+            <span class="he">יוזם ומייסד היכל התהילה של המוזיקה היהודית וטקס פרס התהילה.</span>
+            <span class="en">Founder of the Jewish Music Hall of Fame and the Prize of Fame ceremony.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="leader-card reveal reveal-d2">
+        <div class="leader-portrait">
+          <img src="assets/images/leader-gaon-recent.jpg" alt="יהורם גאון" loading="lazy" style="object-position: 67% top;">
+        </div>
+        <div class="leader-info">
+          <div class="leader-name he">יהורם גאון</div>
+          <div class="leader-name en">Yehoram Gaon</div>
+          <div class="leader-role"><span class="he">יושב ראש מיתר — זוכה פרס ישראל</span><span class="en">Chair of Meitar · Israel Prize Laureate</span></div>
+          <p class="leader-bio">
+            <span class="he">אמן ושגריר בינלאומי של המוזיקה היהודית והישראלית, יושב ראש עמותת מיתר — היכל התהילה של המוזיקה היהודית.</span>
+            <span class="en">Artist and international ambassador for Jewish and Israeli music, Chairman of the Meitar — Hall of Fame Society.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="leader-card reveal reveal-d3">
+        <div class="leader-portrait">
+          <img src="assets/images/leader-shwadron.png" alt="מלכה שבדרון" loading="lazy" style="object-position: center 15%;">
+        </div>
+        <div class="leader-info">
+          <div class="leader-name he">מלכה שבדרון</div>
+          <div class="leader-name en">Malka Shwadron</div>
+          <div class="leader-role"><span class="he">מנהלת מיתר</span><span class="en">Meitar Director</span></div>
+          <p class="leader-bio">
+            <span class="he">מנהלת עמותת מיתר — הגוף המוביל את הקמת היכל התהילה של המוזיקה היהודית בפתח תקווה.</span>
+            <span class="en">Director of the Meitar Society, leading the establishment of the Jewish Music Hall of Fame in Petah Tikva.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="leader-card reveal reveal-d4">
+        <div class="leader-portrait">
+          <img src="assets/images/leader-greenberg.jpg" alt="רמי גרינברג" loading="lazy" style="object-position: center top;">
+        </div>
+        <div class="leader-info">
+          <div class="leader-name he">רמי גרינברג</div>
+          <div class="leader-name en">Rami Greenberg</div>
+          <div class="leader-role"><span class="he">ראש עיר פתח תקווה</span><span class="en">Mayor of Petah Tikva</span></div>
+          <p class="leader-bio">
+            <span class="he">ראש עיר פתח תקווה — השותפה המרכזית לאירוח הטקס הראשון של פרס התהילה.</span>
+            <span class="en">Mayor of Petah Tikva — the city hosting the inaugural Prize of Fame ceremony.</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VIDEO SECTION -->
+<section id="about-video">
+  <div class="about-video-inner reveal">
+    <span class="eyebrow"><span class="he">הסיפור בווידאו</span><span class="en">The Story in Video</span></span>
+    <h2 class="section-title">
+      <span class="he">ראו את החזון</span>
+      <span class="en">See the Vision</span>
+    </h2>
+    <div class="rule" style="margin-inline: auto;"></div>
+
+    <div class="video-stage" onclick="openAboutVideoModal()">
+      <div class="video-stage-thumb"></div>
+      <div class="video-stage-overlay"></div>
+      <button class="video-play-btn" aria-label="הפעל סרטון">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+    </div>
+    <p class="video-caption">
+      <span class="he">היכל התהילה של המוזיקה היהודית — סרטון היכרות</span>
+      <span class="en">Jewish Music Hall of Fame — Introduction</span>
+    </p>
+  </div>
+</section>
+
+<!-- VIDEO MODAL -->
+<div id="about-video-modal" onclick="handleAboutModalClick(event)">
+  <div class="avm-inner">
+    <button class="avm-close" onclick="closeAboutVideoModal()" aria-label="סגור">✕</button>
+    <iframe id="about-modal-iframe" src="" allow="autoplay; fullscreen" allowfullscreen></iframe>
+  </div>
+</div>
+
+<!-- PARTNERS -->
+<section id="partners">
+  <div class="partners-inner reveal">
+    <span class="eyebrow"><span class="he">שותפים לפרויקט</span><span class="en">Project Partners</span></span>
+    <div class="partners-logos">
+      <span class="partner-logo he">עיריית פתח תקווה</span>
+      <span class="partner-logo en">Petah Tikva Municipality</span>
+      <div class="partner-sep"></div>
+      <span class="partner-logo">מיתר — Meitar</span>
+      <div class="partner-sep"></div>
+      <span class="partner-logo he">ההסתדרות הציונית העולמית</span>
+      <span class="partner-logo en">World Zionist Federation</span>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAR -->
+<section id="cta-bar" class="reveal">
+  <h2>
+    <span class="he">הטקס הראשון — דצמבר 2027</span>
+    <span class="en">The Inaugural Ceremony — December 2027</span>
+  </h2>
+  <div class="rule" style="margin: 1.2rem auto 0;"></div>
+  <p>
+    <span class="he">היכל התרבות, פתח תקווה. בנוכחות ראשי המדינה. שידור בטלוויזיה לישראל ולעולם.</span>
+    <span class="en">Petah Tikva Cultural Center. In the presence of Israeli leaders. Televised broadcast worldwide.</span>
+  </p>
+  <div class="cta-actions">
+    <a href="ceremony.html" class="btn-primary">
+      <span class="he">לפרטי הטקס</span>
+      <span class="en">Ceremony Details</span>
+    </a>
+    <a href="categories.html" class="btn-ghost">
+      <span class="he">13 קטגוריות הפרס</span>
+      <span class="en">The 13 Categories</span>
+      <span class="he-inline">←</span><span class="en-inline">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-about">
+      <div class="fa-logo he">טקס פרסי היכל התהילה של המוזיקה היהודית</div>
+      <div class="fa-logo en">Jewish Music Hall of Fame Awards</div>
+      <p>
+        <span class="he">הכרה ממלכתית ויוקרתית ליוצרים ומבצעים שעיצבו את המוזיקה היהודית לדורותיה.</span>
+        <span class="en">Prestigious state recognition for the creators and performers who shaped Jewish music for generations.</span>
+      </p>
+    </div>
+    <div class="footer-col">
+      <h5><span class="he">פרויקט</span><span class="en">Project</span></h5>
+      <ul>
+        <li><a href="about.html"><span class="he">אודות</span><span class="en">About</span></a></li>
+        <li><a href="categories.html"><span class="he">קטגוריות</span><span class="en">Categories</span></a></li>
+        <li><a href="ceremony.html"><span class="he">הטקס</span><span class="en">Ceremony</span></a></li>
+        <li><a href="selection-process.html"><span class="he">תהליך הבחירה</span><span class="en">Selection Process</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5><span class="he">תמיכה</span><span class="en">Support</span></h5>
+      <ul>
+        <li><a href="donors.html"><span class="he">רמות תמיכה</span><span class="en">Support Tiers</span></a></li>
+        <li><a href="mailto:info@hallofame.org"><span class="he">צרו קשר</span><span class="en">Contact</span></a></li>
+        <li><a href="#"><span class="he">שאלות נפוצות</span><span class="en">FAQ</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2027 <span class="he">טקס פרסי היכל התהילה של המוזיקה היהודית</span><span class="en">Jewish Music Hall of Fame Awards</span></span>
+    <span><span class="he">חלק מפרויקט היכל התהילה של המוזיקה היהודית</span><span class="en">Part of the Hall of Fame of Jewish Music project</span></span>
+  </div>
+</footer>
+
+<script>
+let lang = localStorage.getItem('lang') || 'he';
+function switchLang(to) {
+  lang = to;
+  const html = document.getElementById('html-root');
+  if (lang === 'en') {
+    document.body.classList.add('lang-en');
+    html.lang = 'en'; html.dir = 'ltr';
+    document.getElementById('lang-he').classList.remove('active');
+    document.getElementById('lang-en-btn').classList.add('active');
+    var mhe = document.getElementById('mobile-lang-he');
+    var men = document.getElementById('mobile-lang-en-btn');
+    if (mhe) mhe.classList.remove('active');
+    if (men) men.classList.add('active');
+    document.querySelectorAll('[data-en]').forEach(el => { el.placeholder = el.dataset.en; });
+  } else {
+    document.body.classList.remove('lang-en');
+    html.lang = 'he'; html.dir = 'rtl';
+    document.getElementById('lang-he').classList.add('active');
+    document.getElementById('lang-en-btn').classList.remove('active');
+    var mhe = document.getElementById('mobile-lang-he');
+    var men = document.getElementById('mobile-lang-en-btn');
+    if (mhe) mhe.classList.add('active');
+    if (men) men.classList.remove('active');
+    document.querySelectorAll('[data-he]').forEach(el => { el.placeholder = el.dataset.he; });
+  }
+  localStorage.setItem('lang', lang);
+}
+
+/* ── Mobile hamburger ── */
+(function() {
+  var btn  = document.getElementById('nav-hamburger');
+  var menu = document.getElementById('mobile-menu');
+  if (!btn || !menu) return;
+  function closeMenu() {
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  btn.addEventListener('click', function() {
+    if (btn.classList.contains('open')) {
+      closeMenu();
+    } else {
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      menu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMenu(); });
+  menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeMenu); });
+})();
+if (lang === 'en') switchLang('en');
+
+/* Navbar solid on scroll */
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('solid', window.scrollY > 20);
+});
+
+/* Scroll reveal */
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+/* About video modal */
+function openAboutVideoModal() {
+  document.getElementById('about-modal-iframe').src =
+    'https://player.vimeo.com/video/1191467915?autoplay=1&controls=1';
+  document.getElementById('about-video-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeAboutVideoModal() {
+  document.getElementById('about-video-modal').classList.remove('open');
+  document.getElementById('about-modal-iframe').src = '';
+  document.body.style.overflow = '';
+}
+function handleAboutModalClick(e) {
+  if (e.target === document.getElementById('about-video-modal')) closeAboutVideoModal();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAboutVideoModal(); });
+</script>
+</body>
+</html>

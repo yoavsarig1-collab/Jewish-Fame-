@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+
+<html class="dark" dir="rtl" lang="he"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700&amp;family=Fraunces:opsz,wght@9..144,400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-container-lowest": "#110e09",
+                    "secondary-container": "#b8891b",
+                    "primary-fixed-dim": "#edbf7b",
+                    "primary": "#edbf7b",
+                    "on-secondary-container": "#382700",
+                    "error-container": "#93000a",
+                    "tertiary-container": "#7493bc",
+                    "secondary-fixed-dim": "#f4be4f",
+                    "on-error-container": "#ffdad6",
+                    "on-secondary-fixed": "#261900",
+                    "error": "#ffb4ab",
+                    "secondary": "#f4be4f",
+                    "on-surface-variant": "#d2c4b4",
+                    "on-primary-fixed-variant": "#604107",
+                    "on-primary-container": "#3b2500",
+                    "on-primary": "#442c00",
+                    "surface": "#16130e",
+                    "surface-container-highest": "#39342f",
+                    "background": "#16130e",
+                    "surface-container-low": "#1f1b16",
+                    "on-secondary": "#412d00",
+                    "primary-fixed": "#ffddaf",
+                    "inverse-on-surface": "#34302a",
+                    "surface-dim": "#16130e",
+                    "tertiary-fixed-dim": "#a9c9f5",
+                    "on-surface": "#eae1d9",
+                    "on-secondary-fixed-variant": "#5d4200",
+                    "surface-tint": "#edbf7b",
+                    "tertiary-fixed": "#d2e4ff",
+                    "on-error": "#690005",
+                    "secondary-fixed": "#ffdea4",
+                    "outline-variant": "#4f4539",
+                    "inverse-surface": "#eae1d9",
+                    "on-background": "#eae1d9",
+                    "primary-container": "#b28a4c",
+                    "on-primary-fixed": "#281800",
+                    "surface-bright": "#3d3833",
+                    "on-tertiary-container": "#022b4e",
+                    "on-tertiary-fixed-variant": "#28486d",
+                    "surface-container-high": "#2e2924",
+                    "on-tertiary": "#0c3255",
+                    "outline": "#9b8f80",
+                    "on-tertiary-fixed": "#001c37",
+                    "surface-variant": "#39342f",
+                    "surface-container": "#231f1a",
+                    "tertiary": "#a9c9f5",
+                    "inverse-primary": "#7a581f",
+                    "ash": "#8A857C",
+                    "ember": "#B0884A",
+                    "off-white": "#F7F3EC"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0px",
+                    "lg": "0px",
+                    "xl": "0px",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "margin": "48px",
+                    "hairline": "1px",
+                    "gutter": "24px",
+                    "unit": "4px",
+                    "container-max": "1280px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Fraunces"],
+                    "display-xl": ["Frank Ruhl Libre"],
+                    "headline-md": ["Frank Ruhl Libre"],
+                    "label-caps": ["Fraunces"],
+                    "headline-lg": ["Frank Ruhl Libre"],
+                    "body-md": ["Fraunces"],
+                    "serif": ["Frank Ruhl Libre"]
+            },
+            "fontSize": {
+                    "body-lg": ["20px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "display-xl": ["72px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "500"}],
+                    "label-caps": ["12px", {"lineHeight": "1.0", "letterSpacing": "0.15em", "fontWeight": "700"}],
+                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "500"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { background-color: #121418; color: #F7F3EC; }
+        .hairline-b { border-bottom: 1px solid rgba(176, 136, 74, 0.3); }
+        .featured-number { color: rgba(176, 136, 74, 0.2); font-size: 180px; font-weight: 700; line-height: 1; pointer-events: none; }
+        .grid-cell:hover { background-color: #1C2030; border-right: 2px solid #B0884A; }
+    </style>
+</head>
+<body class="font-body-md antialiased overflow-x-hidden">
+<!-- Top Navigation Bar -->
+<nav class="bg-[#121418] border-b border-[#B0884A]/30 docked full-width top-0 h-20 sticky flex flex-row-reverse justify-between items-center px-8 w-full max-w-full z-50">
+<div class="text-xl font-black tracking-tighter text-[#B0884A]">JEWISH MUSIC HALL OF FAME</div>
+<div class="hidden md:flex flex-row-reverse gap-8 items-center font-serif text-xs tracking-[0.2em] uppercase">
+<a class="text-white/60 hover:bg-[#B0884A] hover:text-[#121418] transition-all duration-300" href="#">Inductees</a>
+<a class="text-white/60 hover:bg-[#B0884A] hover:text-[#121418] transition-all duration-300" href="#">Archives</a>
+<a class="text-[#B0884A] border-b border-[#B0884A] pb-1" href="#">Categories</a>
+<a class="text-white/60 hover:bg-[#B0884A] hover:text-[#121418] transition-all duration-300" href="#">Exhibits</a>
+<a class="text-white/60 hover:bg-[#B0884A] hover:text-[#121418] transition-all duration-300" href="#">Timeline</a>
+</div>
+<div class="font-serif text-xs tracking-[0.2em] uppercase text-[#B0884A] cursor-pointer">HE/EN</div>
+</nav>
+<main class="w-full">
+<!-- Hero Section -->
+<header class="pt-32 pb-16 flex flex-col items-center text-center px-8 bg-[#121418]">
+<h1 class="font-display-xl text-[96px] tracking-tighter mb-8 text-[#F7F3EC]">
+                Award Categories / קטגוריות הפרס
+            </h1>
+<div class="max-w-[60ch] mx-auto text-right mb-12">
+<p class="font-body-lg text-ash mb-4">
+                    שתים-עשרה קטגוריות החובקות כל מסורת של יצירה מוזיקלית יהודית — מחזנות ועד פופ ישראלי, מכליזמר עד קלאסי. בכל קטגוריה מוענק פרס אחד לכל מחזור, בהחלטה פה אחד של שלושה שופטים.
+                </p>
+<p class="font-body-lg text-ash">
+                    Twelve categories spanning every tradition of Jewish musical creation — from Cantorial art to Israeli pop, Klezmer to Classical. One award is granted per category each cycle by a unanimous jury of three.
+                </p>
+</div>
+<p class="font-label-caps text-[#B0884A] tracking-[0.15em] uppercase">
+                מחזור 2027 / 2027 Inaugural Class
+            </p>
+</header>
+<!-- Filter Row -->
+<section class="bg-[#121418] border-b border-[#B0884A]/30 py-6 px-8 overflow-x-auto">
+<div class="max-w-[1280px] mx-auto flex flex-row gap-12 justify-center items-center font-label-caps text-sm whitespace-nowrap">
+<div class="relative flex flex-col items-center">
+<a class="text-[#F7F3EC]" href="#">הכל / All</a>
+<div class="absolute -bottom-2 w-5 h-[1px] bg-[#B0884A]"></div>
+</div>
+<a class="text-ash hover:text-[#F7F3EC] transition-colors" href="#">שירה / Vocal</a>
+<a class="text-ash hover:text-[#F7F3EC] transition-colors" href="#">נגינה / Instrumental</a>
+<a class="text-ash hover:text-[#F7F3EC] transition-colors" href="#">מקהלה / Choral</a>
+<a class="text-ash hover:text-[#F7F3EC] transition-colors" href="#">אגדות / Legends</a>
+</div>
+</section>
+<!-- Featured Categories (01-03) -->
+<section class="max-w-full">
+<!-- 01 -->
+<div class="relative w-full h-[280px] border-b border-[#B0884A]/30 bg-[#121418] px-12 flex flex-col justify-center items-start overflow-hidden">
+<div class="absolute top-1/2 -translate-y-1/2 right-12 featured-number opacity-20">01</div>
+<div class="relative z-10">
+<span class="font-label-caps text-[#B0884A] tracking-widest uppercase block mb-1">3 מועמדים · 3 NOMINEES</span>
+<h2 class="font-display-xl text-[64px] font-bold text-[#F7F3EC] mb-2 leading-none">מוזיקת חזנות / Cantorial Art</h2>
+<p class="font-body-lg text-ash mb-4">
+                        The sacred art of synagogue prayer leadership across Ashkenazi, Sephardi, and Mizrahi traditions.
+                    </p>
+<a class="text-[#B0884A] font-label-caps flex items-center gap-2 hover:underline" href="#">
+                        → ראו מועמדים / See Nominees
+                    </a>
+</div>
+</div>
+<!-- 02 -->
+<div class="relative w-full h-[280px] border-b border-[#B0884A]/30 bg-[#1C2030] px-12 flex flex-col justify-center items-start overflow-hidden">
+<div class="absolute top-1/2 -translate-y-1/2 right-12 featured-number opacity-20">02</div>
+<div class="relative z-10">
+<span class="font-label-caps text-[#B0884A] tracking-widest uppercase block mb-1">3 מועמדים · 3 NOMINEES</span>
+<h2 class="font-display-xl text-[64px] font-bold text-[#F7F3EC] mb-2 leading-none">ניגון חסידי / Hasidic Melody</h2>
+<p class="font-body-lg text-ash mb-4">
+                        The soulful and spiritual nigunim of the Hasidic courts, preserving the ecstatic heart of Jewish devotion.
+                    </p>
+<a class="text-[#B0884A] font-label-caps flex items-center gap-2 hover:underline" href="#">
+                        → ראו מועמדים / See Nominees
+                    </a>
+</div>
+</div>
+<!-- 03 -->
+<div class="relative w-full h-[280px] border-b border-[#B0884A]/30 bg-[#121418] px-12 flex flex-col justify-center items-start overflow-hidden">
+<div class="absolute top-1/2 -translate-y-1/2 right-12 featured-number opacity-20">03</div>
+<div class="relative z-10">
+<span class="font-label-caps text-[#B0884A] tracking-widest uppercase block mb-1">3 מועמדים · 3 NOMINEES</span>
+<h2 class="font-display-xl text-[64px] font-bold text-[#F7F3EC] mb-2 leading-none">יצירה ישראלית / Israeli Creation</h2>
+<p class="font-body-lg text-ash mb-4">
+                        Original works blending Hebrew poetry, Middle Eastern rhythms, and modern arrangements into a unique national sound.
+                    </p>
+<a class="text-[#B0884A] font-label-caps flex items-center gap-2 hover:underline" href="#">
+                        → ראו מועמדים / See Nominees
+                    </a>
+</div>
+</div>
+</section>
+<!-- Section Divider -->
+<div class="w-full h-[1px] bg-[#B0884A]/30 flex justify-center items-center relative my-16">
+<span class="bg-[#121418] px-6 font-label-caps text-ash tracking-widest uppercase text-xs">ALL CATEGORIES / כל הקטגוריות</span>
+</div>
+<!-- Grid Categories (04-11) -->
+<section class="grid grid-cols-1 md:grid-cols-4 w-full">
+<!-- 04 -->
+<div class="bg-[#252A3A] p-10 border-b border-l border-[#B0884A]/30 flex flex-col justify-between min-h-[300px] grid-cell transition-all duration-300">
+<span class="font-label-caps text-[#B0884A] text-xl tracking-widest">04</span>
+<div class="mt-8">
+<h4 class="font-serif font-bold text-2xl text-[#F7F3EC] mb-1">מוזיקה אנדלוסית</h4>
+<span class="font-label-caps text-ash text-[10px] tracking-wider uppercase">Sephardic Traditions</span>
+</div>
+<div class="flex justify-start">
+<span class="material-symbols-outlined text-[#B0884A]">arrow_left_alt</span>
+</div>
+</div>
+<!-- 05 -->
+<div class="bg-[#252A3A] p-10 border-b border-l border-[#B0884A]/30 flex flex-col justify-between min-h-[300px] grid-cell transition-all duration-300">
+<span class="font-label-caps text-[#B0884A] text-xl tracking-widest">05</span>
+<div class="mt-8">
+<h4 class="font-serif font-bold text-2xl text-[#F7F3EC] mb-1">פופ יהודי עכשווי</h4>
+<span class="font-label-caps text-ash text-[10px] tracking-wider uppercase">Contemporary Jewish Pop</span>
+</div>
+<div class="flex justify-start">
+<span class="material-symbols-outlined text-[#B0884A]">arrow_left_alt</span>
+</div>
+</div>
+<!-- 06 -->
+<div class="bg-[#252A3A] p-10 border-b border-l border-[#B0884A]/30 flex flex-col justify-between min-h-[300px] grid-cell transition-all duration-300">
+<span class="font-label-caps text-[#B0884A] text-xl tracking-widest">06</span>
+<div class="mt-8">
+<h4 class="font-serif font-bold text-2xl text-[#F7F3EC] mb-1">עיבוד וניצוח</h4>
+<span class="font-label-caps text-ash text-[10px] tracking-wider uppercase">Arrangement &amp; Conducting</span>
+</div>
+<div class="flex justify-start">
+<span class="material-symbols-outlined text-[#B0884A]">arrow_left_alt</span>
+</div>
+</div>
+<!-- 07 -->
+<div class="bg-[#252A3A] p-10 border-b border-[#B0884A]/30 flex flex-col justify-between min-h-[300px] grid-cell transition-all duration-300">
+<span class="font-label-caps text-[#B0884A] text-xl tracking-widest">07</span>
+<div class="mt-8">
+<h4 class="font-serif font-bold text-2xl text-[#F7F3EC] mb-1">הלחנה לסרטים</h4>
+<span class="font-label-caps text-ash text-[10px] tracking-wider uppercase">Film Composition</span>
+</div>
+<div class="flex justify-start">
+<span class="material-symbols-outlined text-[#B0884A]">arrow_left_alt</span>
+</div>
+</div>
+<!-- 08 -->
+<div class="bg-[#252A3A] p-10 border-b border-l border-[#B0884A]/30 flex flex-col justify-between min-h-[300px] grid-cell transition-all duration-300">
+<span class="font-label-caps text-[#B0884A] text-xl tracking-widest">08</span>
+<div class="mt-8">
+<h4 class="font-serif font-bold text-2xl text-[#F7F3EC] mb-1">מוזיקה קלאסית יהודית</h4>
+<span class="font-label-caps text-ash text-[10px] tracking-wider uppercase">Jewish Classical</span>
+</div>
+<div class="flex justify-start">
+<span class="material-symbols-outlined text-[#B0884A]">arrow_left_alt</span>
+</div>
+</div>
+<!-- 09 -->
+<div class="bg-[#252A3A] p-10 border-b border-l border-[#B0884A]/30 flex flex-col justify-between min-h-[300px] grid-cell transition-all duration-300">
+<span class="font-label-caps text-[#B0884A] text-xl tracking-widest">09</span>
+<div class="mt-8">
+<h4 class="font-serif font-bold text-2xl text-[#F7F3EC] mb-1">תגלית השנה</h4>
+<span class="font-label-caps text-ash text-[10px] tracking-wider uppercase">New Artist Reveal</span>
+</div>
+<div class="flex justify-start">
+<span class="material-symbols-outlined text-[#B0884A]">arrow_left_alt</span>
+</div>
+</div>
+<!-- 10 -->
+<div class="bg-[#252A3A] p-10 border-b border-l border-[#B0884A]/30 flex flex-col justify-between min-h-[300px] grid-cell transition-all duration-300">
+<span class="font-label-caps text-[#B0884A] text-xl tracking-widest">10</span>
+<div class="mt-8">
+<h4 class="font-serif font-bold text-2xl text-[#F7F3EC] mb-1">מוזיקת עולם יהודית</h4>
+<span class="font-label-caps text-ash text-[10px] tracking-wider uppercase">Global Jewish Fusion</span>
+</div>
+<div class="flex justify-start">
+<span class="material-symbols-outlined text-[#B0884A]">arrow_left_alt</span>
+</div>
+</div>
+<!-- 11 -->
+<div class="bg-[#252A3A] p-10 border-b border-[#B0884A]/30 flex flex-col justify-between min-h-[300px] grid-cell transition-all duration-300">
+<span class="font-label-caps text-[#B0884A] text-xl tracking-widest">11</span>
+<div class="mt-8">
+<h4 class="font-serif font-bold text-2xl text-[#F7F3EC] mb-1">שימור מורשת</h4>
+<span class="font-label-caps text-ash text-[10px] tracking-wider uppercase">Heritage Preservation</span>
+</div>
+<div class="flex justify-start">
+<span class="material-symbols-outlined text-[#B0884A]">arrow_left_alt</span>
+</div>
+</div>
+</section>
+<!-- Legends Teaser -->
+<section class="w-full bg-[#121418] h-[400px] flex flex-col items-center justify-center text-center px-8 border-b border-[#B0884A]">
+<h2 class="font-headline-lg font-bold text-[#F7F3EC] mb-6">אגדות שייכנסו להיכל התהילה / Legends Entering the Hall of Fame</h2>
+<p class="max-w-3xl font-body-lg text-ash mb-10">
+                Honoring posthumous inductees whose foundational contributions to Jewish music earn them direct entry into the permanent Hall of Fame. These pioneers set the stage for all who follow.
+            </p>
+<a class="text-[#B0884A] font-label-caps flex items-center gap-2 hover:underline text-lg underline" href="#">
+                → אל דף האגדות / To the Legends Page
+            </a>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#121418] full-width border-t border-[#B0884A] flex flex-col items-center py-16 px-8 gap-8 text-center">
+<div class="text-sm font-bold text-[#B0884A]">JMHOF</div>
+<div class="flex flex-wrap justify-center gap-8 font-serif text-[10px] uppercase tracking-widest">
+<a class="text-white/40 hover:text-white transition-colors" href="#">Institutional Bio</a>
+<a class="text-white/40 hover:text-white transition-colors" href="#">Curatorial Standards</a>
+<a class="text-white/40 hover:text-white transition-colors" href="#">Press Office</a>
+<a class="text-white/40 hover:text-white transition-colors" href="#">Legal Archive</a>
+<a class="text-white/40 hover:text-white transition-colors" href="#">Contact</a>
+</div>
+<p class="font-serif text-[10px] uppercase tracking-widest text-white/40">© 2024 THE JEWISH MUSIC HALL OF FAME. AN ARCHIVAL INSTITUTION.</p>
+</footer>
+</body></html>

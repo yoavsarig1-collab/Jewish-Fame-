@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" id="html-root">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>שותפים לחזון | טקס פרסי היכל התהילה של המוזיקה היהודית</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;700;800&family=Heebo:wght@300;400;500;700;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════
+   DESIGN TOKENS
+══════════════════════════════════════════ */
+:root {
+  --stage:           #121418;
+  --stage-mid:       #1C2030;
+  --stage-lift:      #252A3A;
+  --stage-deep:      #0E0E0C;
+  --paper:           #F7F3EC;
+  --parchment:       #EDE5D4;
+  --ember:           #B0884A;
+  --ember-deep:      #7A5A2B;
+  --ceremonial-gold: #C8972A;
+  --ash:             #8A857C;
+  --ink:             #0E0E0C;
+  --line-dark:       #2A2A28;
+  --line:            #D8D0BF;
+  --paper-70:  rgba(247,243,236,0.70);
+  --paper-40:  rgba(247,243,236,0.40);
+  --paper-12:  rgba(247,243,236,0.12);
+  --paper-06:  rgba(247,243,236,0.06);
+}
+
+/* ══════════════════════════════════════════
+   RESET & BASE
+══════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--stage);
+  color: var(--paper);
+  font-family: 'Heebo', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  overflow-x: hidden;
+  direction: rtl;
+}
+body.lang-en {
+  direction: ltr;
+  font-family: 'Inter', sans-serif;
+}
+
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--stage); }
+::-webkit-scrollbar-thumb { background: var(--ember-deep); }
+
+a { text-decoration: none; color: inherit; }
+
+/* ══════════════════════════════════════════
+   LANG SYSTEM
+══════════════════════════════════════════ */
+.he { display: block; }
+.en { display: none; }
+body.lang-en .he { display: none !important; }
+body.lang-en .en { display: block !important; }
+.he-inline { display: inline; }
+.en-inline { display: none; }
+body.lang-en .he-inline { display: none !important; }
+body.lang-en .en-inline { display: inline !important; }
+
+/* ══════════════════════════════════════════
+   UTILITY
+══════════════════════════════════════════ */
+.eyebrow {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 0.9rem;
+  font-family: 'Inter', sans-serif;
+}
+body:not(.lang-en) .eyebrow { font-family: 'Heebo', sans-serif; }
+
+.rule {
+  width: 48px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ember), transparent);
+  background-size: 200% auto;
+  animation: shimmer 3s linear infinite;
+  margin: 1.2rem 0 2rem;
+  border: none;
+}
+.rule.center { margin-left: auto; margin-right: auto; }
+
+.section-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  line-height: 1.15;
+}
+body.lang-en .section-title { font-family: 'Fraunces', serif; }
+
+/* ══════════════════════════════════════════
+   BUTTONS
+══════════════════════════════════════════ */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--ember);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0 1.8rem;
+  height: 48px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-primary:hover { background: var(--ember-deep); }
+body:not(.lang-en) .btn-primary { font-family: 'Heebo', sans-serif; }
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ember);
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+  cursor: pointer;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  font-family: inherit;
+}
+.btn-link:hover { border-bottom-color: var(--ember); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--ash);
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { color: var(--paper-70); border-bottom-color: var(--ash); }
+
+/* ══════════════════════════════════════════
+   SCROLL REVEAL
+══════════════════════════════════════════ */
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.on { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.06s; }
+.reveal-d2 { transition-delay: 0.12s; }
+.reveal-d3 { transition-delay: 0.18s; }
+.reveal-d4 { transition-delay: 0.24s; }
+
+/* ══════════════════════════════════════════
+   NAVBAR
+══════════════════════════════════════════ */
+#navbar {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 900;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.5rem;
+  transition: height 0.3s, background 0.3s, border-color 0.3s;
+  direction: ltr;
+}
+#navbar.solid {
+  height: 48px;
+  background: rgba(18,20,24,0.92);
+  border-bottom: 1px solid var(--line-dark);
+  backdrop-filter: blur(10px);
+}
+
+.nav-brand { display: flex; align-items: center; gap: 0.75rem; }
+.nav-wordmark { line-height: 1.25; }
+.nav-wordmark .t1 {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--paper);
+  letter-spacing: 0.3px;
+}
+body.lang-en .nav-wordmark .t1 { font-family: 'Fraunces', serif; }
+.nav-wordmark .t2 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.58rem;
+  font-weight: 300;
+  color: var(--ash);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+.nav-links a {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--paper-70);
+  transition: color 0.2s;
+  position: relative;
+  padding-bottom: 4px;
+}
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 0; height: 1px;
+  background: var(--ember);
+  transition: width 0.2s;
+}
+.nav-links a:hover { color: var(--paper); }
+.nav-links a:hover::after,
+.nav-links a.active::after { width: 20px; }
+.nav-links a.active { color: var(--ember); }
+body:not(.lang-en) .nav-links a { font-family: 'Heebo', sans-serif; }
+
+.lang-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+.lang-switcher .sep { color: var(--ash); }
+.lang-btn {
+  color: var(--ash);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  padding: 0;
+  transition: color 0.2s;
+}
+.lang-btn:hover { color: var(--paper); }
+.lang-btn.active {
+  color: var(--ember);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Hamburger button */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 910;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--paper);
+  transition: transform 0.25s ease, opacity 0.25s ease, width 0.25s ease;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+/* Mobile menu overlay */
+#mobile-menu {
+  display: none;
+  position: fixed;
+  inset: 64px 0 0;
+  z-index: 800;
+  background: rgba(12,14,18,0.97);
+  backdrop-filter: blur(12px);
+  padding: 2.5rem 2rem;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  pointer-events: none;
+}
+#mobile-menu.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+.mobile-nav > ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.mobile-nav > ul > li > a {
+  display: block;
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--paper-70);
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  transition: color 0.2s;
+}
+body.lang-en .mobile-nav > ul > li > a { font-family: 'Fraunces', serif; }
+.mobile-nav > ul > li > a:hover,
+.mobile-nav > ul > li > a:focus { color: var(--ember); }
+.mobile-lang {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* ══════════════════════════════════════════
+   HERO
+══════════════════════════════════════════ */
+#hero {
+  position: relative;
+  height: 100vh;
+  min-height: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 64px;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(175deg, rgba(14,14,12,0.45) 0%, rgba(14,14,12,0.88) 100%),
+    url('https://upload.wikimedia.org/wikipedia/commons/2/26/Carnegie_Hall_-_Full_%2848155558466%29.jpg') center 40%/cover no-repeat;
+}
+
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--ember), transparent);
+  background-size: 200% auto;
+  animation: shimmer 4s linear infinite;
+}
+
+.hero-body {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding: 0 2rem;
+}
+
+.hero-badge {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--ember);
+  border: 1px solid rgba(176,136,74,0.35);
+  padding: 0.4rem 1.4rem;
+  margin-bottom: 2rem;
+}
+body:not(.lang-en) .hero-badge { font-family: 'Heebo', sans-serif; }
+
+.hero-h1 {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(2.6rem, 6vw, 4.4rem);
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--paper);
+  margin-bottom: 1.2rem;
+  animation: fadeUp 1s 0.1s ease both;
+}
+body.lang-en .hero-h1 { font-family: 'Fraunces', serif; }
+
+.hero-sub {
+  font-size: clamp(0.9rem, 1.8vw, 1.05rem);
+  color: var(--paper-70);
+  line-height: 1.8;
+  max-width: 580px;
+  margin: 0 auto 2.5rem;
+  animation: fadeUp 1s 0.2s ease both;
+}
+
+.hero-ctas {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  animation: fadeUp 1s 0.35s ease both;
+}
+
+/* ══════════════════════════════════════════
+   WHY NOW
+══════════════════════════════════════════ */
+#why-now {
+  background: var(--stage-mid);
+  border-top: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+  padding: 7rem 2rem;
+}
+.why-now-inner { max-width: 1100px; margin: 0 auto; }
+.why-now-lead {
+  text-align: center;
+  max-width: 820px;
+  margin: 0 auto 5rem;
+}
+.why-now-lead p {
+  color: var(--ash);
+  font-size: 1rem;
+  line-height: 1.85;
+  margin-top: 0.5rem;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line-dark);
+}
+.pillar {
+  padding: 3rem 2.5rem;
+  border-inline-start: 1px solid var(--line-dark);
+}
+.pillar:first-child { border-inline-start: none; }
+
+.pillar-num {
+  font-family: 'Fraunces', serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: var(--ember);
+  line-height: 1;
+  margin-bottom: 1rem;
+  opacity: 0.65;
+}
+body:not(.lang-en) .pillar-num { font-family: 'Frank Ruhl Libre', serif; }
+
+.pillar-title {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--paper);
+  margin-bottom: 0.6rem;
+}
+body.lang-en .pillar-title { font-family: 'Fraunces', serif; }
+
+.pillar p {
+  font-size: 0.85rem;
+  color: var(--ash);
+  line-height: 1.75;
+}
+
+/* ══════════════════════════════════════════
+   IMPACT STRIP
+══════════════════════════════════════════ */
+#impact {
+  background: var(--stage);
+  border-bottom: 1px solid var(--line-dark);
+}
+.impact-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid var(--line-dark);
+}
+.impact-stat {
+  padding: 4rem 2.5rem;
+  text-align: center;
+  border-inline-start: 1px solid var(--line-dark);
+}
+.impact-stat:first-child { border-inline-start: none; }
+
+.impact-n {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2.4rem, 4.5vw, 3.6rem);
+  font-weight: 300;
+  color: var(--ember);
+  line-height: 1;
+  margin-bottom: 0.6rem;
+}
+body:not(.lang-en) .impact-n { font-family: 'Frank Ruhl Libre', serif; font-weight: 400; }
+
+.impact-d {
+  font-size: 0.8rem;
+  color: var(--ash);
+  line-height: 1.6;
+}
+
+/* ══════════════════════════════════════════
+   TIERS — full-width editorial rows
+══════════════════════════════════════════ */
+#tiers { background: var(--stage-deep); }
+
+.tiers-header {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 7rem 2rem 4rem;
+}
+
+.tier-row {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-top: 1px solid var(--line-dark);
+  transition: background 0.4s;
+}
+.tier-row:last-child { border-bottom: 1px solid var(--line-dark); }
+.tier-row:hover { background: rgba(176,136,74,0.03); }
+.tier-row.featured { background: rgba(176,136,74,0.04); }
+.tier-row.featured:hover { background: rgba(176,136,74,0.07); }
+
+.tier-identity {
+  padding: 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-inline-end: 1px solid var(--line-dark);
+}
+.tier-row.featured .tier-identity { border-inline-end: 2px solid var(--ember); }
+
+.tier-featured-badge {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.55rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ember);
+  border: 1px solid var(--ember);
+  padding: 0.2rem 0.7rem;
+  margin-bottom: 0.9rem;
+}
+body:not(.lang-en) .tier-featured-badge { font-family: 'Heebo', sans-serif; }
+
+.tier-level {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 0.8rem;
+}
+body:not(.lang-en) .tier-level { font-family: 'Heebo', sans-serif; }
+
+.tier-name {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 700;
+  color: var(--paper);
+  line-height: 1.15;
+  margin-bottom: 0.9rem;
+}
+body.lang-en .tier-name { font-family: 'Fraunces', serif; }
+
+.tier-price {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  color: var(--ceremonial-gold);
+  line-height: 1;
+  margin-bottom: 0.25rem;
+}
+body:not(.lang-en) .tier-price { font-family: 'Frank Ruhl Libre', serif; font-weight: 400; }
+
+.tier-price-note {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.68rem;
+  color: var(--ash);
+  letter-spacing: 1px;
+}
+body:not(.lang-en) .tier-price-note { font-family: 'Heebo', sans-serif; }
+
+.tier-details {
+  padding: 4rem 3.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.tier-impact-quote {
+  font-size: 0.9rem;
+  color: var(--paper-70);
+  line-height: 1.8;
+  margin-bottom: 2rem;
+  padding-inline-start: 1.2rem;
+  border-inline-start: 2px solid var(--line-dark);
+  font-style: italic;
+}
+.tier-row.featured .tier-impact-quote { border-inline-start-color: var(--ember); }
+
+.tier-benefits {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+.tier-benefits li {
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--line-dark);
+  font-size: 0.85rem;
+  color: var(--ash);
+  line-height: 1.5;
+}
+.tier-benefits li:first-child { border-top: 1px solid var(--line-dark); }
+.tier-benefits li .check {
+  color: var(--ember);
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  font-size: 0.6rem;
+}
+
+/* ══════════════════════════════════════════
+   VISION QUOTE
+══════════════════════════════════════════ */
+#vision-quote {
+  background: var(--stage-mid);
+  border-top: 1px solid var(--line-dark);
+  border-bottom: 1px solid var(--line-dark);
+  padding: 8rem 2rem;
+  text-align: center;
+}
+.vision-quote-inner {
+  max-width: 820px;
+  margin: 0 auto;
+}
+.vision-quote-inner blockquote {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-weight: 300;
+  color: var(--paper);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+body.lang-en .vision-quote-inner blockquote { font-family: 'Fraunces', serif; }
+
+.vision-attr {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.65rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--ember);
+}
+body:not(.lang-en) .vision-attr { font-family: 'Heebo', sans-serif; }
+
+/* ══════════════════════════════════════════
+   CONTACT
+══════════════════════════════════════════ */
+#contact {
+  background: var(--stage);
+  border-top: 1px solid var(--line-dark);
+  padding: 8rem 2rem;
+}
+.contact-inner { max-width: 1100px; margin: 0 auto; }
+.contact-header { margin-bottom: 4rem; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+/* Form — underline only, no boxes */
+.form-group { margin-bottom: 1.5rem; }
+.form-label {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 0.5rem;
+}
+body:not(.lang-en) .form-label { font-family: 'Heebo', sans-serif; }
+
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--line-dark);
+  color: var(--paper);
+  padding: 0.65rem 0;
+  font-size: 0.9rem;
+  font-family: inherit;
+  outline: none;
+  transition: border-bottom-color 0.2s;
+}
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus { border-bottom-color: var(--ember); }
+.form-input::placeholder,
+.form-textarea::placeholder { color: var(--ash); }
+.form-textarea { resize: vertical; min-height: 90px; }
+.form-select {
+  appearance: none;
+  cursor: pointer;
+  color: var(--paper);
+}
+.form-select option { background: var(--stage-mid); color: var(--paper); }
+
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.form-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--ember);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0 2rem;
+  height: 48px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 0.5rem;
+}
+.form-submit:hover { background: var(--ember-deep); }
+body:not(.lang-en) .form-submit { font-family: 'Heebo', sans-serif; }
+
+.form-promise {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--ash);
+  line-height: 1.6;
+}
+.form-promise span { color: var(--paper-70); }
+
+/* Contact info column */
+.contact-info h3 {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--paper);
+  margin-bottom: 0.4rem;
+}
+body.lang-en .contact-info h3 { font-family: 'Fraunces', serif; }
+
+.contact-info > p {
+  font-size: 0.88rem;
+  color: var(--ash);
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.contact-items { list-style: none; }
+.contact-items li {
+  display: flex;
+  gap: 1.2rem;
+  padding: 1.1rem 0;
+  border-bottom: 1px solid var(--line-dark);
+}
+.contact-items li:first-child { border-top: 1px solid var(--line-dark); }
+
+.ci-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ember);
+  flex-shrink: 0;
+  padding-top: 0.25rem;
+  min-width: 56px;
+}
+body:not(.lang-en) .ci-label { font-family: 'Heebo', sans-serif; }
+
+.ci-val {
+  font-size: 0.85rem;
+  color: var(--ash);
+  line-height: 1.6;
+}
+.ci-val strong {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--paper);
+  margin-bottom: 0.15rem;
+}
+.ci-val a { color: var(--paper-70); transition: color 0.2s; }
+.ci-val a:hover { color: var(--ember); }
+
+.response-note {
+  margin-top: 2rem;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid var(--line-dark);
+  border-inline-start: 2px solid var(--ember);
+  font-size: 0.82rem;
+  color: var(--ash);
+  line-height: 1.7;
+}
+.response-note span { color: var(--paper-70); }
+
+/* ══════════════════════════════════════════
+   FOOTER
+══════════════════════════════════════════ */
+footer {
+  background: var(--stage-deep);
+  padding: 4.5rem 2rem 2rem;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--line-dark);
+}
+.footer-about .fa-logo {
+  font-family: 'Frank Ruhl Libre', serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--paper);
+  margin-bottom: 0.9rem;
+  line-height: 1.4;
+}
+body.lang-en .footer-about .fa-logo { font-family: 'Fraunces', serif; }
+.footer-about p {
+  font-size: 0.8rem;
+  color: var(--ash);
+  line-height: 1.7;
+  max-width: 260px;
+}
+.footer-col h5 {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.58rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 1.2rem;
+}
+body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.65rem; }
+.footer-col ul li a {
+  font-size: 0.83rem;
+  color: var(--ash);
+  transition: color 0.2s;
+}
+.footer-col ul li a:hover { color: var(--paper); }
+.footer-bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  color: var(--ash);
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+body:not(.lang-en) .footer-bottom { font-family: 'Heebo', sans-serif; }
+
+/* ══════════════════════════════════════════
+   ANIMATIONS
+══════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE
+══════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .nav-links { display: none; }
+  .pillars { grid-template-columns: 1fr; }
+  .pillar { border-inline-start: none; border-top: 1px solid var(--line-dark); }
+  .pillar:first-child { border-top: none; }
+  .impact-strip { grid-template-columns: 1fr 1fr; }
+  .impact-stat:nth-child(odd) { border-inline-start: none; }
+  .tier-row { grid-template-columns: 1fr; }
+  .tier-identity {
+    border-inline-end: none !important;
+    border-bottom: 1px solid var(--line-dark);
+    padding: 3rem 2rem 2rem;
+  }
+  .tier-details { padding: 2rem 2rem 3rem; }
+  .contact-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  #navbar { padding: 0 1.2rem; }
+  .form-row-2 { grid-template-columns: 1fr; gap: 0; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .impact-strip { grid-template-columns: 1fr 1fr; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rule, .hero-bg::after { animation: none; background: var(--ember); }
+  .reveal { transition: none; opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════
+     NAVBAR
+══════════════════════════════════ -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-wordmark">
+      <div class="t1 he">טקס פרסי היכל התהילה</div>
+      <div class="t1 en">Hall of Fame Awards</div>
+      <div class="t2">Jewish Music Hall of Fame · 2027</div>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="about.html">    <span class="he">אודות</span>        <span class="en">About</span></a></li>
+    <li><a href="categories.html">     <span class="he">קטגוריות</span>     <span class="en">Categories</span></a></li>
+    <li><a href="ceremony.html"> <span class="he">הטקס</span>         <span class="en">Ceremony</span></a></li>
+    <li><a href="selection-process.html">  <span class="he">תהליך הבחירה</span> <span class="en">Selection</span></a></li>
+    <li><a href="donors.html" class="active"><span class="he">תמיכה</span>  <span class="en">Support</span></a></li>
+  </ul>
+
+  <div class="lang-switcher">
+    <button class="lang-btn active" id="lang-he" onclick="switchLang('he')">עברית</button>
+    <span class="sep">·</span>
+    <button class="lang-btn" id="lang-en-btn" onclick="switchLang('en')">English</button>
+  </div>
+
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="תפריט" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט ניווט">
+  <nav class="mobile-nav" dir="rtl">
+    <ul>
+      <li><a href="about.html"><span class="he">אודות</span><span class="en">About</span></a></li>
+      <li><a href="categories.html"><span class="he">קטגוריות</span><span class="en">Categories</span></a></li>
+      <li><a href="ceremony.html"><span class="he">הטקס</span><span class="en">Ceremony</span></a></li>
+      <li><a href="selection-process.html"><span class="he">תהליך הבחירה</span><span class="en">Selection</span></a></li>
+      <li><a href="donors.html"><span class="he">תמיכה</span><span class="en">Support</span></a></li>
+    </ul>
+    <div class="mobile-lang">
+      <button type="button" class="lang-btn active" id="mobile-lang-he" onclick="switchLang('he')">עברית</button>
+      <span class="sep">·</span>
+      <button type="button" class="lang-btn" id="mobile-lang-en-btn" onclick="switchLang('en')">English</button>
+    </div>
+  </nav>
+</div>
+
+<!-- ══════════════════════════════════
+     HERO
+══════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-body reveal">
+    <span class="hero-badge">
+      <span class="he">שותפים לחזון</span>
+      <span class="en">Partners in Vision</span>
+    </span>
+    <h1 class="hero-h1">
+      <span class="he">המוזיקה היהודית<br>ממתינה להכרה</span>
+      <span class="en">Jewish Music<br>Awaits Recognition</span>
+    </h1>
+    <p class="hero-sub">
+      <span class="he">עזרו לנו לבנות את הרגע ההיסטורי הראשון — טקס ממלכתי שיעניק לראשונה הכרה רשמית ליוצרים ומבצעים שעיצבו את פס הקול היהודי לדורותיו</span>
+      <span class="en">Help us build the first historical moment — a state ceremony granting official recognition to the creators and performers who shaped the Jewish sound for generations</span>
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">
+        <span class="he">פנו ישירות</span>
+        <span class="en">Get in Touch</span>
+      </a>
+      <a href="#contact" class="btn-ghost">
+        <span class="he">צרו קשר</span>
+        <span class="en">Get in Touch</span>
+        <span class="arrow he-inline">←</span>
+        <span class="arrow en-inline">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     WHY NOW
+══════════════════════════════════ -->
+<section id="why-now">
+  <div class="why-now-inner">
+
+    <div class="why-now-lead reveal">
+      <span class="eyebrow"><span class="he">למה עכשיו?</span><span class="en">Why Now?</span></span>
+      <h2 class="section-title">
+        <span class="he">ארבע שנים לפני ההיסטוריה</span>
+        <span class="en">Four Years Before History Is Made</span>
+      </h2>
+      <div class="rule center"></div>
+      <p>
+        <span class="he">המבנה הפיזי של היכל התהילה ייבנה — אך ההיסטוריה נכתבת עכשיו. טקס דצמבר 2027 הוא יריית הפתיחה הרשמית: אירוע ממלכתי שישודר בטלוויזיה הישראלית. תמיכתך היום בונה את הבסיס שעליו יעמוד הכל.</span>
+        <span class="en">The physical Hall of Fame will be built — but history is being written right now. The December 2027 ceremony is the official opening shot: a state event broadcast on Israeli television. Your support today builds the foundation for everything that follows.</span>
+      </p>
+    </div>
+
+    <div class="pillars">
+      <div class="pillar reveal reveal-d1">
+        <div class="pillar-num">01</div>
+        <div class="pillar-title"><span class="he">מומנטום תקשורתי</span><span class="en">Media Momentum</span></div>
+        <p>
+          <span class="he">בניית מודעות ציבורית הדרגתית בארץ ובעולם לפני הטקס הגדול.</span>
+          <span class="en">Building gradual public awareness in Israel and worldwide ahead of the major ceremony.</span>
+        </p>
+      </div>
+      <div class="pillar reveal reveal-d2">
+        <div class="pillar-num">02</div>
+        <div class="pillar-title"><span class="he">ביסוס הסמכות</span><span class="en">Authority Building</span></div>
+        <p>
+          <span class="he">מיצוב היכל התהילה כסמכות המוזיקלית העליונה של העולם היהודי.</span>
+          <span class="en">Positioning the Hall as the supreme musical authority of the Jewish world.</span>
+        </p>
+      </div>
+      <div class="pillar reveal reveal-d3">
+        <div class="pillar-num">03</div>
+        <div class="pillar-title"><span class="he">מורשת דיגיטלית</span><span class="en">Digital Legacy</span></div>
+        <p>
+          <span class="he">ארכיון חי ורב-לשוני שישמר את יצירת האמנים לדורות הבאים.</span>
+          <span class="en">A living multilingual archive preserving the artists' work for future generations.</span>
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     IMPACT
+══════════════════════════════════ -->
+<section id="impact">
+  <div class="impact-strip">
+    <div class="impact-stat reveal reveal-d1">
+      <div class="impact-n">13</div>
+      <div class="impact-d he">קטגוריות פרס במחזור הראשון</div>
+      <div class="impact-d en">Award categories in the inaugural class</div>
+    </div>
+    <div class="impact-stat reveal reveal-d2">
+      <div class="impact-n">2027</div>
+      <div class="impact-d he">הטקס הממלכתי הראשון — דצמבר, פתח תקווה</div>
+      <div class="impact-d en">First state ceremony — December, Petah Tikva</div>
+    </div>
+    <div class="impact-stat reveal reveal-d3">
+      <div class="impact-n">150</div>
+      <div class="impact-d he">שנה לעיר פתח תקווה — המסגרת החגיגית</div>
+      <div class="impact-d en">Years of Petah Tikva — the celebratory backdrop</div>
+    </div>
+    <div class="impact-stat reveal reveal-d4">
+      <div class="impact-n">∞</div>
+      <div class="impact-d he">דורות של מוזיקה יהודית שיוכרו לנצח</div>
+      <div class="impact-d en">Generations of Jewish music recognized forever</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     TIERS
+══════════════════════════════════ -->
+<section id="tiers">
+  <div class="tiers-header reveal" style="max-width: 680px; margin: 0 auto; text-align: center;">
+    <span class="eyebrow"><span class="he">רמות תמיכה</span><span class="en">Support Tiers</span></span>
+    <h2 class="section-title">
+      <span class="he">רמות תמיכה שונות</span>
+      <span class="en">Multiple Support Tiers</span>
+    </h2>
+    <div class="rule" style="margin-inline: auto;"></div>
+    <p style="color:var(--ash); font-size:0.95rem; max-width:540px; line-height:1.85; margin: 1.5rem auto 0;">
+      <span class="he">ישנן רמות תמיכה שונות — החל מכרטיס כניסה לטקס, כרטיס VIP, קריאת פרסים על שם התורם ועד חסות רשמית לפרס. הרמות תקפות לשני הטקסים: פתח תקווה ולוס אנג'לס. לפרטים — מלאו את הטופס.</span>
+      <span class="en">Support tiers range from ceremony entry tickets and VIP access, through prizes bearing the donor's name, to official sponsorship of the Prize. All tiers apply to both ceremonies: Petah Tikva and Los Angeles. Fill in the form for details.</span>
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     VISION QUOTE
+══════════════════════════════════ -->
+<section id="vision-quote">
+  <div class="vision-quote-inner reveal">
+    <div class="rule center"></div>
+    <blockquote>
+      <span class="he">"המוזיקה היהודית היא הגשר המחבר בין עבר, הווה ועתיד — שפה ללא גבולות שנדדה עם העם היהודי בכל תפוצותיו. עזרו לנו לתת לה את הבית הקבוע שמגיע לה."</span>
+      <span class="en">"Jewish music is the bridge connecting past, present and future — a language without borders that travelled with the Jewish people through every diaspora. Help us give it the permanent home it deserves."</span>
+    </blockquote>
+    <div class="vision-attr">
+      <span class="he">— עמותת מיתר, היכל התהילה של המוזיקה היהודית</span>
+      <span class="en">— Mitar Association, Jewish Music Hall of Fame</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     CONTACT
+══════════════════════════════════ -->
+<section id="contact">
+  <div class="contact-inner">
+
+    <div class="contact-header reveal">
+      <span class="eyebrow"><span class="he">התחילו את השיחה</span><span class="en">Start the Conversation</span></span>
+      <h2 class="section-title">
+        <span class="he">נשמח לשמוע מכם</span>
+        <span class="en">We'd Love to Hear From You</span>
+      </h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="contact-grid reveal reveal-d1">
+
+      <!-- FORM -->
+      <div>
+        <form name="donor-contact" method="POST" data-netlify="true" onsubmit="handleForm(event)">
+          <input type="hidden" name="form-name" value="donor-contact" />
+
+          <div class="form-row-2">
+            <div class="form-group">
+              <label class="form-label"><span class="he">שם פרטי</span><span class="en">First Name</span></label>
+              <input type="text" name="first_name" class="form-input" required
+                data-he="שם פרטי" data-en="First name" placeholder="שם פרטי" />
+            </div>
+            <div class="form-group">
+              <label class="form-label"><span class="he">שם משפחה</span><span class="en">Last Name</span></label>
+              <input type="text" name="last_name" class="form-input" required
+                data-he="שם משפחה" data-en="Last name" placeholder="שם משפחה" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><span class="he">אימייל</span><span class="en">Email</span></label>
+            <input type="email" name="email" class="form-input" required
+              data-he="your@email.com" data-en="your@email.com" placeholder="your@email.com" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><span class="he">ארגון / חברה (אופציונלי)</span><span class="en">Organisation / Company (optional)</span></label>
+            <input type="text" name="org" class="form-input"
+              data-he="שם הארגון" data-en="Organisation name" placeholder="שם הארגון" />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label"><span class="he">הודעה</span><span class="en">Message</span></label>
+            <textarea name="message" class="form-textarea"
+              data-he="ספרו לנו על עצמכם וקשרכם למוזיקה היהודית..."
+              data-en="Tell us about yourself and your connection to Jewish music..."
+              placeholder="ספרו לנו על עצמכם וקשרכם למוזיקה היהודית..."></textarea>
+          </div>
+
+          <button type="submit" class="form-submit" id="form-submit-btn">
+            <span class="he">שלחו הודעה ←</span>
+            <span class="en">Send Message →</span>
+          </button>
+
+          <p class="form-promise">
+            <span class="he">חוזרים אליכם תוך <span>48 שעות</span> — בסודיות מוחלטת</span>
+            <span class="en">We respond within <span>48 hours</span> — in complete confidence</span>
+          </p>
+        </form>
+      </div>
+
+      <!-- INFO -->
+      <div class="contact-info">
+        <h3><span class="he">למה לפנות?</span><span class="en">Why Reach Out?</span></h3>
+        <p>
+          <span class="he">אנחנו לא מחפשים רק תרומה — אנחנו מחפשים שותפים שמאמינים בכוחה של המוזיקה היהודית לאחד ולהנציח. כל שיחה היא הזדמנות לגלות ביחד מה הדרך הנכונה.</span>
+          <span class="en">We're not just looking for a donation — we're looking for partners who believe in the power of Jewish music to unite and immortalize. Every conversation is a chance to discover the right path together.</span>
+        </p>
+
+        <ul class="contact-items">
+          <li>
+            <span class="ci-label"><span class="he">איש קשר</span><span class="en">Contact</span></span>
+            <div class="ci-val">
+              <strong><span class="he">איתן גפני — מייסד פרס התהילה</span><span class="en">Eitan Gafni — Prize of Fame Founder</span></strong>
+            </div>
+          </li>
+          <li>
+            <span class="ci-label"><span class="he">אימייל</span><span class="en">Email</span></span>
+            <div class="ci-val">
+              <a id="contact-email" href="#">—</a>
+            </div>
+          </li>
+          <li>
+            <span class="ci-label"><span class="he">טלפון</span><span class="en">Phone</span></span>
+            <div class="ci-val" dir="ltr">
+              <a id="contact-phone" href="#">—</a>
+            </div>
+          </li>
+          <li>
+            <span class="ci-label"><span class="he">גוף מפעיל</span><span class="en">By</span></span>
+            <div class="ci-val">
+              <strong><span class="he">עמותת מיתר</span><span class="en">Mitar Association</span></strong>
+              <span class="he">היכל התהילה של המוזיקה היהודית</span>
+              <span class="en">Jewish Music Hall of Fame</span>
+            </div>
+          </li>
+          <li>
+            <span class="ci-label"><span class="he">מיקום</span><span class="en">Location</span></span>
+            <div class="ci-val">
+              <span class="he">פתח תקווה, ישראל</span>
+              <span class="en">Petah Tikva, Israel</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="response-note">
+          <span class="he">כל הפרטים נשמרים <span>בסודיות מוחלטת</span> — לא משתפים ולא מפרסמים ללא אישורכם.</span>
+          <span class="en">All details kept in <span>complete confidence</span> — never shared or published without your approval.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════
+     FOOTER
+══════════════════════════════════ -->
+<footer>
+  <div class="footer-grid">
+
+    <div class="footer-about">
+      <div class="fa-logo he">טקס פרסי היכל התהילה של המוזיקה היהודית</div>
+      <div class="fa-logo en">Jewish Music Hall of Fame Awards</div>
+      <p>
+        <span class="he">הכרה ממלכתית ויוקרתית ליוצרים ומבצעים שעיצבו את המוזיקה היהודית לדורותיה.</span>
+        <span class="en">Prestigious state recognition for the creators and performers who shaped Jewish music for generations.</span>
+      </p>
+    </div>
+
+    <div class="footer-col">
+      <h5><span class="he">פרויקט</span><span class="en">Project</span></h5>
+      <ul>
+        <li><a href="about.html">    <span class="he">אודות</span>        <span class="en">About</span></a></li>
+        <li><a href="categories.html">     <span class="he">קטגוריות</span>     <span class="en">Categories</span></a></li>
+        <li><a href="ceremony.html"> <span class="he">הטקס</span>         <span class="en">Ceremony</span></a></li>
+        <li><a href="selection-process.html">  <span class="he">תהליך הבחירה</span> <span class="en">Selection Process</span></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-col">
+      <h5><span class="he">תמיכה</span><span class="en">Support</span></h5>
+      <ul>
+        <li><a href="#tiers">   <span class="he">רמות תמיכה</span> <span class="en">Support Tiers</span></a></li>
+        <li><a href="#contact"> <span class="he">צרו קשר</span>    <span class="en">Contact</span></a></li>
+        <li><a href="#">        <span class="he">שאלות נפוצות</span><span class="en">FAQ</span></a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2027 <span class="he">טקס פרסי היכל התהילה של המוזיקה היהודית</span><span class="en">Jewish Music Hall of Fame Awards</span></span>
+    <span><span class="he">חלק מפרויקט היכל התהילה של המוזיקה היהודית</span><span class="en">Part of the Hall of Fame of Jewish Music project</span></span>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════ -->
+<script>
+let lang = localStorage.getItem('lang') || 'he';
+
+function switchLang(to) {
+  lang = to;
+  const html = document.getElementById('html-root');
+  if (lang === 'en') {
+    document.body.classList.add('lang-en');
+    html.lang = 'en'; html.dir = 'ltr';
+    document.getElementById('lang-he').classList.remove('active');
+    document.getElementById('lang-en-btn').classList.add('active');
+    var mhe = document.getElementById('mobile-lang-he');
+    var men = document.getElementById('mobile-lang-en-btn');
+    if (mhe) mhe.classList.remove('active');
+    if (men) men.classList.add('active');
+    document.querySelectorAll('[data-en]').forEach(el => { el.placeholder = el.dataset.en; });
+  } else {
+    document.body.classList.remove('lang-en');
+    html.lang = 'he'; html.dir = 'rtl';
+    document.getElementById('lang-he').classList.add('active');
+    document.getElementById('lang-en-btn').classList.remove('active');
+    var mhe = document.getElementById('mobile-lang-he');
+    var men = document.getElementById('mobile-lang-en-btn');
+    if (mhe) mhe.classList.add('active');
+    if (men) men.classList.remove('active');
+    document.querySelectorAll('[data-he]').forEach(el => { el.placeholder = el.dataset.he; });
+  }
+  localStorage.setItem('lang', lang);
+}
+
+/* ── Mobile hamburger ── */
+(function() {
+  var btn  = document.getElementById('nav-hamburger');
+  var menu = document.getElementById('mobile-menu');
+  if (!btn || !menu) return;
+  function closeMenu() {
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  btn.addEventListener('click', function() {
+    if (btn.classList.contains('open')) {
+      closeMenu();
+    } else {
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      menu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMenu(); });
+  menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeMenu); });
+})();
+
+if (lang === 'en') switchLang('en');
+
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('solid', window.scrollY > 50);
+}, { passive: true });
+
+function handleForm(e) {
+  e.preventDefault();
+  const btn = document.getElementById('form-submit-btn');
+  const origHtml = btn.innerHTML;
+  btn.innerHTML = lang === 'he' ? '✓ נשלח — נחזור אליכם בקרוב' : '✓ Sent — we\'ll be in touch soon';
+  btn.style.background = 'var(--ember-deep)';
+  setTimeout(() => {
+    btn.innerHTML = origHtml;
+    btn.style.background = '';
+    e.target.reset();
+  }, 5000);
+}
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('on'); });
+}, { threshold: 0.08 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id === '#') return;
+    const el = document.querySelector(id);
+    if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+  });
+});
+
+(function() {
+  const e = atob('ZWl0YW5nYWZuaUBnbWFpbC5jb20=');
+  const p = ['054', '6633532'].join('-');
+  ['gafni-email','contact-email'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.href = 'mailto:' + e; el.textContent = e; }
+  });
+  ['gafni-phone','contact-phone'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.href = 'tel:+972' + p.replace(/^0/,'').replace(/-/g,''); el.textContent = p; }
+  });
+})();
+</script>
+
+</body>
+</html>
