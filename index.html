@@ -303,6 +303,27 @@ body:not(.lang-en) .nav-links a { font-family: 'Heebo', sans-serif; }
   text-underline-offset: 3px;
 }
 
+/* Mini lang toggle — visible on mobile next to hamburger */
+.lang-mini {
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+}
+.lang-mini-btn {
+  color: var(--ash);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  padding: 0;
+  transition: color 0.2s;
+}
+.lang-mini-btn.active { color: var(--ember); }
+
 /* Hamburger button */
 .nav-hamburger {
   display: none;
@@ -1190,6 +1211,7 @@ body:not(.lang-en) .violin-caption cite { font-family: 'Heebo', sans-serif; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
   .lang-switcher { display: none; }
+  .lang-mini { display: flex; margin-inline-start: auto; margin-inline-end: 1.1rem; }
   .nav-hamburger { display: flex; }
   #mobile-menu { display: block; }
   .cat-grid { grid-template-columns: repeat(3, 1fr); }
@@ -1284,6 +1306,12 @@ body:not(.lang-en) .violin-caption cite { font-family: 'Heebo', sans-serif; }
     <button type="button" class="lang-btn active" id="lang-he" onclick="switchLang('he')">עברית</button>
     <span class="sep">·</span>
     <button type="button" class="lang-btn" id="lang-en-btn" onclick="switchLang('en')">English</button>
+  </div>
+
+  <div class="lang-mini">
+    <button type="button" class="lang-mini-btn active" id="lang-mini-he" onclick="switchLang('he')">HE</button>
+    <span style="color:var(--ash);opacity:0.4;font-size:0.6rem;">|</span>
+    <button type="button" class="lang-mini-btn" id="lang-mini-en" onclick="switchLang('en')">EN</button>
   </div>
 
   <button class="nav-hamburger" id="nav-hamburger" aria-label="תפריט" aria-expanded="false">
@@ -1786,6 +1814,10 @@ function switchLang(to) {
     const fen = document.getElementById('footer-lang-en');
     if (fhe) fhe.classList.remove('active');
     if (fen) fen.classList.add('active');
+    const lmhe = document.getElementById('lang-mini-he');
+    const lmen = document.getElementById('lang-mini-en');
+    if (lmhe) lmhe.classList.remove('active');
+    if (lmen) lmen.classList.add('active');
     const inp = document.getElementById('nl-email');
     if (inp) inp.placeholder = inp.dataset.en;
   } else {
@@ -1802,6 +1834,10 @@ function switchLang(to) {
     const fen = document.getElementById('footer-lang-en');
     if (fhe) fhe.classList.add('active');
     if (fen) fen.classList.remove('active');
+    const lmhe = document.getElementById('lang-mini-he');
+    const lmen = document.getElementById('lang-mini-en');
+    if (lmhe) lmhe.classList.add('active');
+    if (lmen) lmen.classList.remove('active');
     const inp = document.getElementById('nl-email');
     if (inp) inp.placeholder = inp.dataset.he;
   }
