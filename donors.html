@@ -1224,27 +1224,9 @@ body:not(.lang-en) .footer-bottom { font-family: 'Heebo', sans-serif; }
 
         <ul class="contact-items">
           <li>
-            <span class="ci-label"><span class="he">איש קשר</span><span class="en">Contact</span></span>
-            <div class="ci-val">
-              <strong><span class="he">איתן גפני — מייסד פרס התהילה</span><span class="en">Eitan Gafni — Prize of Fame Founder</span></strong>
-            </div>
-          </li>
-          <li>
-            <span class="ci-label"><span class="he">אימייל</span><span class="en">Email</span></span>
-            <div class="ci-val">
-              <a id="contact-email" href="#">—</a>
-            </div>
-          </li>
-          <li>
-            <span class="ci-label"><span class="he">טלפון</span><span class="en">Phone</span></span>
-            <div class="ci-val" dir="ltr">
-              <a id="contact-phone" href="#">—</a>
-            </div>
-          </li>
-          <li>
             <span class="ci-label"><span class="he">גוף מפעיל</span><span class="en">By</span></span>
             <div class="ci-val">
-              <strong><span class="he">עמותת מיתר</span><span class="en">Mitar Association</span></strong>
+              <strong><span class="he">עמותת מיתר</span><span class="en">Meitar Association</span></strong>
               <span class="he">היכל התהילה של המוזיקה היהודית</span>
               <span class="en">Jewish Music Hall of Fame</span>
             </div>
@@ -1401,19 +1383,6 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
   });
 });
-
-(function() {
-  const e = atob('ZWl0YW5nYWZuaUBnbWFpbC5jb20=');
-  const p = ['054', '6633532'].join('-');
-  ['gafni-email','contact-email'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) { el.href = 'mailto:' + e; el.textContent = e; }
-  });
-  ['gafni-phone','contact-phone'].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) { el.href = 'tel:+972' + p.replace(/^0/,'').replace(/-/g,''); el.textContent = p; }
-  });
-})();
 </script>
 
 
