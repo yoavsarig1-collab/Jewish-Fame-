@@ -274,7 +274,7 @@ body:not(.lang-en) .nav-links a { font-family: 'Heebo', sans-serif; }
 
 /* Hamburger button */
 .lang-mini { display: none; align-items: center; gap: 0.4rem; font-family: 'Inter', sans-serif; }
-.lang-mini-btn { color: var(--ash); cursor: pointer; background: none; border: none; font-family: inherit; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.5px; padding: 0; transition: color 0.2s; }
+.lang-mini-btn { color: var(--ash); cursor: pointer; background: none; border: none; font-family: inherit; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.5px; padding: 0; transition: color 0.2s; display: inline-flex; align-items: center; min-height: 44px; padding-inline: 0.35rem; }
 .lang-mini-btn.active { color: var(--ember); }
 .nav-hamburger {
   display: none;
@@ -1171,32 +1171,32 @@ body:not(.lang-en) .footer-bottom { font-family: 'Heebo', sans-serif; }
 
           <div class="form-row-2">
             <div class="form-group">
-              <label class="form-label"><span class="he">שם פרטי</span><span class="en">First Name</span></label>
-              <input type="text" name="first_name" class="form-input" required
+              <label class="form-label" for="f-first"><span class="he">שם פרטי</span><span class="en">First Name</span></label>
+              <input type="text" id="f-first" name="first_name" class="form-input" required autocomplete="given-name"
                 data-he="שם פרטי" data-en="First name" placeholder="שם פרטי" />
             </div>
             <div class="form-group">
-              <label class="form-label"><span class="he">שם משפחה</span><span class="en">Last Name</span></label>
-              <input type="text" name="last_name" class="form-input" required
+              <label class="form-label" for="f-last"><span class="he">שם משפחה</span><span class="en">Last Name</span></label>
+              <input type="text" id="f-last" name="last_name" class="form-input" required autocomplete="family-name"
                 data-he="שם משפחה" data-en="Last name" placeholder="שם משפחה" />
             </div>
           </div>
 
           <div class="form-group">
-            <label class="form-label"><span class="he">אימייל</span><span class="en">Email</span></label>
-            <input type="email" name="email" class="form-input" required
+            <label class="form-label" for="f-email"><span class="he">אימייל</span><span class="en">Email</span></label>
+            <input type="email" id="f-email" name="email" class="form-input" required autocomplete="email"
               data-he="your@email.com" data-en="your@email.com" placeholder="your@email.com" />
           </div>
 
           <div class="form-group">
-            <label class="form-label"><span class="he">ארגון / חברה (אופציונלי)</span><span class="en">Organisation / Company (optional)</span></label>
-            <input type="text" name="org" class="form-input"
+            <label class="form-label" for="f-org"><span class="he">ארגון / חברה (אופציונלי)</span><span class="en">Organisation / Company (optional)</span></label>
+            <input type="text" id="f-org" name="org" class="form-input" autocomplete="organization"
               data-he="שם הארגון" data-en="Organisation name" placeholder="שם הארגון" />
           </div>
 
           <div class="form-group">
-            <label class="form-label"><span class="he">הודעה</span><span class="en">Message</span></label>
-            <textarea name="message" class="form-textarea"
+            <label class="form-label" for="f-message"><span class="he">הודעה</span><span class="en">Message</span></label>
+            <textarea id="f-message" name="message" class="form-textarea"
               data-he="ספרו לנו על עצמכם וקשרכם למוזיקה היהודית..."
               data-en="Tell us about yourself and your connection to Jewish music..."
               placeholder="ספרו לנו על עצמכם וקשרכם למוזיקה היהודית..."></textarea>
