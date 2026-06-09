@@ -284,6 +284,22 @@ body.lang-en .inav-name { font-family: 'Fraunces', serif; }
   .inav-side { padding: 2.5rem 1.5rem; }
 }
 
+
+/* ── JUDGES ── */
+#judges { background: var(--stage-mid); border-top: 1px solid var(--line-dark); padding: 5rem 2.5rem; }
+.judges-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+.judges-eyebrow { font-family:'Inter',sans-serif; font-size:0.6rem; letter-spacing:4px; text-transform:uppercase; color:var(--ember); margin-bottom:0.8rem; }
+body:not(.lang-en) .judges-eyebrow { font-family:'Heebo',sans-serif; font-weight:700; }
+.judges-title { font-family:'Frank Ruhl Libre',serif; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:700; color:var(--paper); line-height:1.2; }
+body.lang-en .judges-title { font-family:'Fraunces',serif; }
+#judges .rule { margin-inline:auto; }
+.judges-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:1.2rem; background:var(--line-dark); border:1px solid var(--line-dark); }
+.judge { background:var(--stage); padding:2.2rem 1.5rem; }
+.judge-name { font-family:'Frank Ruhl Libre',serif; font-size:1.15rem; font-weight:700; color:var(--paper); margin-bottom:0.4rem; }
+body.lang-en .judge-name { font-family:'Fraunces',serif; }
+.judge-role { font-size:0.78rem; color:var(--ash); line-height:1.5; }
+.judges-note { margin-top:1.8rem; font-size:0.82rem; color:var(--ash); line-height:1.7; }
+@media (max-width:680px){ .judges-grid{ grid-template-columns:1fr; } #judges{ padding:3.5rem 1.5rem; } }
 </style>
 </head>
 <body>
@@ -461,6 +477,40 @@ body.lang-en .inav-name { font-family: 'Fraunces', serif; }
 
 <!-- OTHER INDUCTEES -->
 <!-- INDUCTEE NAV -->
+
+<!-- JUDGES -->
+<section id="judges">
+  <div class="judges-inner reveal">
+    <span class="judges-eyebrow he">הרכב השופטים · זמר ישראלי</span>
+    <span class="judges-eyebrow en">Judging Panel · Israeli Male Vocalist</span>
+    <h2 class="judges-title he">מי מחליט בקטגוריה זו</h2>
+    <h2 class="judges-title en">Who Decides This Category</h2>
+    <div class="rule"></div>
+    <div class="judges-grid">
+      <div class="judge">
+        <div class="judge-name he">תלמה אליגון־רוז</div>
+        <div class="judge-name en">Talma Aligon-Roz</div>
+        <div class="judge-role he">משוררת ומלחינה</div>
+        <div class="judge-role en">Songwriter &amp; Composer</div>
+      </div>
+      <div class="judge">
+        <div class="judge-name he">קובי אשרת</div>
+        <div class="judge-name en">Kobi Oshrat</div>
+        <div class="judge-role he">מלחין ומעבד</div>
+        <div class="judge-role en">Composer &amp; Arranger</div>
+      </div>
+      <div class="judge">
+        <div class="judge-name he">יוריק בן דוד</div>
+        <div class="judge-name en">Yorik Ben David</div>
+        <div class="judge-role he">מלחין · יו״ר אקו״ם לשעבר</div>
+        <div class="judge-role en">Composer · Former ACUM Chairman</div>
+      </div>
+    </div>
+    <p class="judges-note he">כל קטגוריה נבחנת על ידי שלושה שופטים מקצועיים. ההחלטה מתקבלת פה אחד.</p>
+    <p class="judges-note en">Each category is judged by three professionals. The decision is unanimous.</p>
+  </div>
+</section>
+
 <section id="inductee-nav">
   <div class="inav-inner">
     <a href="arik-lavie.html" class="inav-side inav-prev">
