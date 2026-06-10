@@ -359,6 +359,19 @@ a.cm-ind:hover .cm-ind-name { color: var(--ember); }
   font-family: 'Inter', sans-serif; font-size: 0.65rem;
   color: var(--ember); letter-spacing: 1px; direction: ltr; unicode-bidi: isolate;
 }
+.cm-judges { margin-top: 2rem; }
+.cm-jud-label {
+  font-family: 'Outfit', sans-serif; font-size: 0.56rem; font-weight: 600;
+  letter-spacing: 4px; text-transform: uppercase; color: var(--ember);
+  margin-bottom: 1rem; padding-top: 1.4rem; border-top: 1px solid rgba(176,136,74,0.16);
+}
+body:not(.lang-en) .cm-jud-label { font-family: 'Heebo', sans-serif; }
+.cm-jud { padding: 0.55rem 0; }
+.cm-jud-name {
+  font-family: 'Frank Ruhl Libre', serif; font-size: 0.9rem; font-weight: 700; color: var(--paper);
+}
+body.lang-en .cm-jud-name { font-family: 'Fraunces', serif; }
+.cm-jud-role { font-size: 0.7rem; color: var(--ash); margin-top: 0.1rem; }
 .cm-chrome {
   position: absolute; top: 0; inset-inline-end: 0;
   display: flex; align-items: center; gap: 4px; padding: 1rem 1.2rem; z-index: 2;
@@ -625,6 +638,7 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
       <div class="cm-ind-label he">נבחרים · מחזור 2027</div>
       <div class="cm-ind-label en">Inductees · Class of 2027</div>
       <div class="cm-inductees" id="cm-inductees"></div>
+      <div class="cm-judges" id="cm-judges"></div>
     </div>
   </div>
 </div>
@@ -778,17 +792,60 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
         {he:'יגאל בשן',en:'Yigal Bashan',y:'1950–2018',link:'yigal-bashan.html'},
         {he:'עוזי חיטמן',en:'Uzi Hitman',y:'1952–2004',link:'uzi-hitman.html'},
         {he:'ג\'ו עמר',en:'Jo Amar',y:'1930–2009',link:'joe-amar.html'}
+      ],
+      judges:[
+        {he:'תלמה אליגון־רוז',en:'Talma Aligon-Roz',roleHe:'משוררת ומלחינה',roleEn:'Songwriter & Composer'},
+        {he:'קובי אשרת',en:'Kobi Oshrat',roleHe:'מלחין ומעבד',roleEn:'Composer & Arranger'},
+        {he:'יוריק בן דוד',en:'Yorik Ben David',roleHe:'מלחין · יו״ר אקו״ם לשעבר',roleEn:'Composer · Former ACUM Chairman'}
       ]},
     { id:'05', he:'זמרת ישראלית', en:'Israeli Female Vocalist',
       subHe:'זמרת שעיצבה את קולה המוזיקלי של ישראל — מהשיר הישראלי ועד הפופ הים-תיכוני',
       subEn:'A vocalist who shaped the musical voice of Israel — from Israeli song to Mediterranean pop',
       img:'https://upload.wikimedia.org/wikipedia/commons/7/7c/Shoshana_Damari_-_1973.jpg',
-      ind:[{he:'עפרה חזה',en:'Ofra Haza',y:'1957–2000',link:'ofra-haza.html'},{he:'שושנה דמארי',en:'Shoshana Damari',y:'1923–2006'},{he:'יפה ירקוני',en:'Yaffa Yarkoni',y:'1925–2012'},{he:'נעמי שמר',en:'Naomi Shemer',y:'1930–2004'}]},
+      ind:[
+        {he:'עפרה חזה',en:'Ofra Haza',y:'',link:'ofra-haza.html'},
+        {he:'שושנה דמארי',en:'Shoshana Damari',y:''},
+        {he:'יפה ירקוני',en:'Yaffa Yarkoni',y:''},
+        {he:'נחמה הנדל',en:'Nechama Hendel',y:''},
+        {he:'ריקה זראי',en:'Rika Zaray',y:''},
+        {he:'צילה דגן',en:'Tzila Dagan',y:''},
+        {he:'ברכה צפירה',en:'Bracha Zefira',y:''},
+        {he:'אסתר גמליאלית',en:'Esther Gamlielit',y:''},
+        {he:'אהובה עוזרי',en:'Ahuva Ozeri',y:''},
+        {he:'קורין אלאל',en:'Corinne Allal',y:''},
+        {he:'מרים אביגל',en:'Miriam Avigal',y:''},
+        {he:'שולמית לבנת',en:'Shulamit Livnat',y:''},
+        {he:'טובה פירון',en:'Tova Firon',y:''}
+      ],
+      judges:[
+        {he:'ד״ר טלילה אלירם',en:'Dr. Talila Eliram',roleHe:'מוזיקולוגית',roleEn:'Musicologist'},
+        {he:'מנחם גרניט',en:'Menahem Granit',roleHe:'',roleEn:''},
+        {he:'יורם רותם',en:'Yoram Rotem',roleHe:'',roleEn:''}
+      ]},
     { id:'06', he:'מלחין / מעבד', en:'Composer / Arranger',
       subHe:'יוצר שהוליד לחנים שנשמעים בעולם — מג\'אז ופופ ועד מחזמר',
       subEn:'A creator whose melodies echo worldwide — from jazz and pop to musical theatre',
       img:'https://upload.wikimedia.org/wikipedia/commons/3/3d/Burt_Bacharach_1972.JPG',
-      ind:[{he:'ברט בקראק',en:'Burt Bacharach',y:'1928–2023'},{he:'ג\'ורג\' גרשווין',en:'George Gershwin',y:'1898–1937'},{he:'הרולד ארלן',en:'Harold Arlen',y:'1905–1986'},{he:'ג\'רי ליבר',en:'Jerry Leiber',y:'1933–2011'}]},
+      ind:[
+        {he:'יאיר רוזנבלום',en:'Yair Rosenblum',y:''},
+        {he:'משה וילנסקי',en:'Moshe Wilensky',y:''},
+        {he:'מתי כספי',en:'Matti Caspi',y:''},
+        {he:'נעמי שמר',en:'Naomi Shemer',y:''},
+        {he:'סשה ארגוב',en:'Sasha Argov',y:''},
+        {he:'עוזי חיטמן',en:'Uzi Hitman',y:''},
+        {he:'שמוליק קראוס',en:'Shmulik Kraus',y:''},
+        {he:'מרדכי זעירא',en:'Mordechai Zeira',y:''},
+        {he:'נחום היימן',en:'Nachum Heiman',y:''},
+        {he:'קורין אלאל',en:'Corinne Allal',y:''},
+        {he:'יצחק קלפטר',en:'Yitzhak Klepter',y:''},
+        {he:'שלמה קרליבך',en:'Shlomo Carlebach',y:''},
+        {he:'צביקה פיק',en:'Zvika Pick',y:''}
+      ],
+      judges:[
+        {he:'גיא מזיג',en:'Guy Mazig',roleHe:'זמר ומלחין',roleEn:'Singer & Composer'},
+        {he:'קובי בן עטר',en:'Kobi Ben Atar',roleHe:'עורך וחוקר זמר עברי',roleEn:'Hebrew Song Editor & Researcher'},
+        {he:'אתי שגב-אנטה',en:'Eti Segev-Aneta',roleHe:'עורכת ומפיקה במוזיקה ישראלית',roleEn:'Editor & Producer, Israeli Music'}
+      ]},
     { id:'07', he:'להקה או הרכב', en:'Band or Ensemble',
       subHe:'מדואט ועד תזמורת — כל הסגנונות, כל הדורות',
       subEn:'From duo to orchestra — all styles, all generations',
@@ -857,6 +914,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   const cmTitle = document.getElementById('cm-title');
   const cmSub   = document.getElementById('cm-sub');
   const cmInds  = document.getElementById('cm-inductees');
+  const cmJudges = document.getElementById('cm-judges');
   let activeIdx = -1;
 
   function openModal(idx) {
@@ -871,6 +929,18 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
         ? `<a href="${i.link}" class="cm-ind"><div class="cm-ind-name he">${i.he}</div><div class="cm-ind-name en">${i.en}</div><div class="cm-ind-years">${i.y}</div></a>`
         : `<div class="cm-ind"><div class="cm-ind-name he">${i.he}</div><div class="cm-ind-name en">${i.en}</div><div class="cm-ind-years">${i.y}</div></div>`
     ).join('');
+    // judges
+    if (cat.judges && cat.judges.length) {
+      cmJudges.innerHTML =
+        `<div class="cm-jud-label he">הרכב השופטים</div><div class="cm-jud-label en">Judging Panel</div>` +
+        cat.judges.map(j =>
+          `<div class="cm-jud"><div class="cm-jud-name he">${j.he}</div><div class="cm-jud-name en">${j.en}</div>` +
+          ((j.roleHe || j.roleEn) ? `<div class="cm-jud-role he">${j.roleHe||''}</div><div class="cm-jud-role en">${j.roleEn||''}</div>` : ``) +
+          `</div>`
+        ).join('');
+    } else {
+      cmJudges.innerHTML = '';
+    }
     modal.classList.add('open');
     document.body.style.overflow = 'hidden';
     // stagger inductee names
