@@ -336,6 +336,15 @@ body.lang-en .cm-title { font-family: 'Fraunces', serif; }
 }
 body:not(.lang-en) .cm-ind-label { font-family: 'Heebo', sans-serif; }
 .cm-inductees { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.cm-inductees.grouped { display: block; }
+.cm-grp { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; }
+.cm-grp-label {
+  font-family: 'Outfit', sans-serif; font-size: 0.56rem; font-weight: 600;
+  letter-spacing: 3px; text-transform: uppercase; color: var(--ember);
+  margin: 1.6rem 0 0.5rem;
+}
+.cm-grp-label:first-child { margin-top: 0; }
+body:not(.lang-en) .cm-grp-label { font-family: 'Heebo', sans-serif; }
 .cm-ind {
   padding: 1rem 0.8rem 1rem 0; border-bottom: 1px solid rgba(176,136,74,0.12);
   text-decoration: none; color: inherit; display: block;
@@ -826,20 +835,29 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
       subHe:'יוצר שהוליד לחנים שנשמעים בעולם — מג\'אז ופופ ועד מחזמר',
       subEn:'A creator whose melodies echo worldwide — from jazz and pop to musical theatre',
       img:'https://upload.wikimedia.org/wikipedia/commons/3/3d/Burt_Bacharach_1972.JPG',
-      ind:[
-        {he:'יאיר רוזנבלום',en:'Yair Rosenblum',y:''},
-        {he:'משה וילנסקי',en:'Moshe Wilensky',y:''},
-        {he:'מתי כספי',en:'Matti Caspi',y:''},
-        {he:'נעמי שמר',en:'Naomi Shemer',y:''},
-        {he:'סשה ארגוב',en:'Sasha Argov',y:''},
-        {he:'עוזי חיטמן',en:'Uzi Hitman',y:''},
-        {he:'שמוליק קראוס',en:'Shmulik Kraus',y:''},
-        {he:'מרדכי זעירא',en:'Mordechai Zeira',y:''},
-        {he:'נחום היימן',en:'Nachum Heiman',y:''},
-        {he:'קורין אלאל',en:'Corinne Allal',y:''},
-        {he:'יצחק קלפטר',en:'Yitzhak Klepter',y:''},
-        {he:'שלמה קרליבך',en:'Shlomo Carlebach',y:''},
-        {he:'צביקה פיק',en:'Zvika Pick',y:''}
+      ind:[],
+      groups:[
+        { he:'מלחינים ישראליים', en:'Israeli Composers', items:[
+          {he:'יאיר רוזנבלום',en:'Yair Rosenblum',y:''},
+          {he:'משה וילנסקי',en:'Moshe Wilensky',y:''},
+          {he:'מתי כספי',en:'Matti Caspi',y:''},
+          {he:'נעמי שמר',en:'Naomi Shemer',y:''},
+          {he:'סשה ארגוב',en:'Sasha Argov',y:''},
+          {he:'עוזי חיטמן',en:'Uzi Hitman',y:''},
+          {he:'שמוליק קראוס',en:'Shmulik Kraus',y:''},
+          {he:'מרדכי זעירא',en:'Mordechai Zeira',y:''},
+          {he:'נחום היימן',en:'Nachum Heiman',y:''},
+          {he:'קורין אלאל',en:'Corinne Allal',y:''},
+          {he:'יצחק קלפטר',en:'Yitzhak Klepter',y:''},
+          {he:'שלמה קרליבך',en:'Shlomo Carlebach',y:''},
+          {he:'צביקה פיק',en:'Zvika Pick',y:''}
+        ]},
+        { he:'מלחינים בינלאומיים', en:'International Composers', items:[
+          {he:'ברט בקראק',en:'Burt Bacharach',y:''},
+          {he:'ג\'ורג\' גרשווין',en:'George Gershwin',y:''},
+          {he:'הרולד ארלן',en:'Harold Arlen',y:''},
+          {he:'ג\'רי ליבר',en:'Jerry Leiber',y:''}
+        ]}
       ],
       judges:[
         {he:'גיא מזיג',en:'Guy Mazig',roleHe:'זמר ומלחין',roleEn:'Singer & Composer'},
@@ -924,11 +942,20 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     cmNum.textContent = cat.id;
     cmTitle.innerHTML = `<span class="he">${cat.he}</span><span class="en">${cat.en}</span>`;
     cmSub.innerHTML   = `<span class="he">${cat.subHe}</span><span class="en">${cat.subEn}</span>`;
-    cmInds.innerHTML  = cat.ind.map(i =>
+    const indHTML = i =>
       i.link
-        ? `<a href="${i.link}" class="cm-ind"><div class="cm-ind-name he">${i.he}</div><div class="cm-ind-name en">${i.en}</div><div class="cm-ind-years">${i.y}</div></a>`
-        : `<div class="cm-ind"><div class="cm-ind-name he">${i.he}</div><div class="cm-ind-name en">${i.en}</div><div class="cm-ind-years">${i.y}</div></div>`
-    ).join('');
+        ? `<a href="${i.link}" class="cm-ind"><div class="cm-ind-name he">${i.he}</div><div class="cm-ind-name en">${i.en}</div><div class="cm-ind-years">${i.y||''}</div></a>`
+        : `<div class="cm-ind"><div class="cm-ind-name he">${i.he}</div><div class="cm-ind-name en">${i.en}</div><div class="cm-ind-years">${i.y||''}</div></div>`;
+    if (cat.groups && cat.groups.length) {
+      cmInds.classList.add('grouped');
+      cmInds.innerHTML = cat.groups.map(g =>
+        `<div class="cm-grp-label he">${g.he}</div><div class="cm-grp-label en">${g.en}</div>` +
+        `<div class="cm-grp">${g.items.map(indHTML).join('')}</div>`
+      ).join('');
+    } else {
+      cmInds.classList.remove('grouped');
+      cmInds.innerHTML = cat.ind.map(indHTML).join('');
+    }
     // judges
     if (cat.judges && cat.judges.length) {
       cmJudges.innerHTML =
