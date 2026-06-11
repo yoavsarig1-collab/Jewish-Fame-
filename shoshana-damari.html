@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl" id="html-root">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>שושנה דמארי | טקס פרסי היכל התהילה של המוזיקה היהודית</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;700;800&family=Heebo:wght@300;400;500;700;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,800&family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --stage:           #121418;
+  --stage-mid:       #1C2030;
+  --stage-lift:      #252A3A;
+  --stage-deep:      #0E0E0C;
+  --paper:           #F7F3EC;
+  --parchment:       #EDE5D4;
+  --ember:           #B0884A;
+  --ember-deep:      #7A5A2B;
+  --ceremonial-gold: #C8972A;
+  --ash:             #8A857C;
+  --ink:             #0E0E0C;
+  --line-dark:       #2A2A28;
+  --line:            #D8D0BF;
+  --paper-70:  rgba(247,243,236,0.70);
+  --paper-40:  rgba(247,243,236,0.40);
+  --paper-12:  rgba(247,243,236,0.12);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--stage); color: var(--paper);
+  font-family: 'Heebo', sans-serif; font-weight: 400;
+  line-height: 1.6; overflow-x: hidden; direction: rtl;
+}
+body.lang-en { direction: ltr; font-family: 'Inter', sans-serif; }
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--stage); }
+::-webkit-scrollbar-thumb { background: var(--ember-deep); }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+.he { display: block; } .en { display: none; }
+body.lang-en .he { display: none !important; }
+body.lang-en .en { display: block !important; }
+.he-inline { display: inline; } .en-inline { display: none; }
+body.lang-en .he-inline { display: none !important; }
+body.lang-en .en-inline { display: inline !important; }
+
+/* ── NAVBAR ── */
+#navbar {
+  position: fixed; inset: 0 0 auto; z-index: 900;
+  height: 64px; display: flex; align-items: center;
+  justify-content: space-between; padding: 0 2.5rem;
+  transition: height 0.3s, background 0.3s; direction: ltr;
+}
+#navbar.solid {
+  height: 48px; background: rgba(18,20,24,0.92);
+  border-bottom: 1px solid var(--line-dark); backdrop-filter: blur(10px);
+}
+.nav-brand { display: flex; align-items: center; gap: 0.75rem; }
+.nav-wordmark .t1 { font-family: 'Frank Ruhl Libre', serif; font-size: 0.85rem; font-weight: 500; color: var(--paper); }
+body.lang-en .nav-wordmark .t1 { font-family: 'Fraunces', serif; }
+.nav-wordmark .t2 { font-family: 'Inter', sans-serif; font-size: 0.58rem; font-weight: 300; color: var(--ash); letter-spacing: 2px; text-transform: uppercase; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--paper-70); transition: color 0.2s; position: relative; padding-bottom: 4px; }
+.nav-links a::after { content: ''; position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 0; height: 1px; background: var(--ember); transition: width 0.2s; }
+.nav-links a:hover { color: var(--paper); }
+.nav-links a:hover::after { width: 20px; }
+body:not(.lang-en) .nav-links a { font-family: 'Heebo', sans-serif; }
+.lang-switcher { display: flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; }
+.lang-switcher .sep { color: var(--ash); }
+.lang-btn { color: var(--ash); cursor: pointer; background: none; border: none; font-family: inherit; font-size: inherit; letter-spacing: inherit; text-transform: inherit; padding: 0; transition: color 0.2s; }
+.lang-btn:hover { color: var(--paper); }
+.lang-btn.active { color: var(--ember); text-decoration: underline; text-underline-offset: 3px; }
+
+.lang-mini { display: none; align-items: center; gap: 0.4rem; font-family: 'Inter', sans-serif; }
+.lang-mini-btn { color: var(--ash); cursor: pointer; background: none; border: none; font-family: inherit; font-size: 0.6rem; font-weight: 600; letter-spacing: 0.5px; padding: 0; transition: color 0.2s; display: inline-flex; align-items: center; min-height: 44px; padding-inline: 0.35rem; }
+.lang-mini-btn.active { color: var(--ember); }
+.nav-hamburger {
+  display: none; flex-direction: column; justify-content: center;
+  align-items: center; gap: 5px; width: 44px; height: 44px;
+  background: none; border: none; cursor: pointer; padding: 0; z-index: 910;
+}
+.nav-hamburger span {
+  display: block; width: 22px; height: 1.5px; background: var(--paper);
+  transition: transform 0.25s ease, opacity 0.25s ease, width 0.25s ease;
+  transform-origin: center;
+}
+.nav-hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+.nav-hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.nav-hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+#mobile-menu {
+  display: none; position: fixed; inset: 64px 0 0; z-index: 800;
+  background: rgba(12,14,18,0.97); backdrop-filter: blur(12px);
+  padding: 2.5rem 2rem; overflow-y: auto;
+  opacity: 0; visibility: hidden; transform: translateY(-8px);
+  transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s;
+  pointer-events: none;
+}
+#mobile-menu.open { opacity: 1; visibility: visible; transform: translateY(0); pointer-events: auto; }
+.mobile-nav > ul { list-style: none; display: flex; flex-direction: column; }
+.mobile-nav > ul > li > a {
+  display: block; font-family: 'Frank Ruhl Libre', serif; font-size: 2rem;
+  font-weight: 400; color: var(--paper-70); padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06); transition: color 0.2s;
+}
+body.lang-en .mobile-nav > ul > li > a { font-family: 'Fraunces', serif; }
+.mobile-nav > ul > li > a:hover, .mobile-nav > ul > li > a:focus { color: var(--ember); }
+.mobile-lang { margin-top: 2rem; display: flex; align-items: center; gap: 0.5rem; font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 1.5px; text-transform: uppercase; }
+
+/* ── UTILITY ── */
+.eyebrow { display: block; font-size: 0.65rem; letter-spacing: 5px; text-transform: uppercase; color: var(--ember); margin-bottom: 0.9rem; font-family: 'Inter', sans-serif; }
+body:not(.lang-en) .eyebrow { font-family: 'Heebo', sans-serif; }
+.rule { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--ember), transparent); background-size: 200% auto; animation: shimmer 3s linear infinite; margin: 1.2rem 0 2rem; border: none; }
+.section-title { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; }
+body.lang-en .section-title { font-family: 'Fraunces', serif; }
+.btn-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--ember); font-size: 0.85rem; font-weight: 500; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: border-color 0.2s; font-family: inherit; }
+.btn-link:hover { border-bottom-color: var(--ember); }
+.btn-primary { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--ember); color: var(--ink); font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 0 1.8rem; height: 48px; border: none; cursor: pointer; transition: background 0.2s; }
+.btn-primary:hover { background: var(--ember-deep); color: var(--paper); }
+body:not(.lang-en) .btn-primary { font-family: 'Heebo', sans-serif; }
+.btn-ghost { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--ash); font-size: 0.75rem; letter-spacing: 1.5px; text-transform: uppercase; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: border-color 0.2s, color 0.2s; font-family: 'Inter', sans-serif; }
+.btn-ghost:hover { color: var(--paper-70); border-bottom-color: var(--ash); }
+body:not(.lang-en) .btn-ghost { font-family: 'Heebo', sans-serif; }
+#cta-bar { background: var(--stage-deep); padding: 6rem 2.5rem; text-align: center; border-top: 1px solid var(--line-dark); }
+#cta-bar h2 { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(1.8rem, 3.5vw, 2.4rem); font-weight: 700; color: var(--paper); }
+body.lang-en #cta-bar h2 { font-family: 'Fraunces', serif; }
+#cta-bar p { color: var(--ash); font-size: 0.95rem; max-width: 50ch; margin: 1rem auto 0; line-height: 1.75; }
+.cta-actions { display: flex; gap: 2rem; justify-content: center; align-items: center; flex-wrap: wrap; margin-top: 2.5rem; }
+.reveal { opacity: 0; transform: translateY(12px); transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1); }
+.reveal.on { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.06s; } .reveal-d2 { transition-delay: 0.12s; }
+
+/* ── INDUCTEE HERO ── */
+#inductee-hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 64px;
+}
+.ih-portrait-col { position: relative; overflow: hidden; }
+.ih-portrait-bg {
+  position: absolute; inset: 0;
+  background: var(--stage-mid);
+  display: flex; align-items: center; justify-content: center;
+}
+.ih-portrait-bg img {
+  width: 100%; height: 100%; object-fit: cover; object-position: center 15%;
+  filter: grayscale(100%) contrast(1.05);
+  transition: filter 1.2s cubic-bezier(0.16,1,0.3,1);
+}
+#inductee-hero:hover .ih-portrait-bg img { filter: grayscale(0%) contrast(1); }
+.ih-portrait-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(270deg, var(--stage) 0%, transparent 40%);
+  pointer-events: none;
+}
+.ih-info-col {
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 6rem 4rem 6rem 3rem;
+  position: relative; z-index: 2;
+}
+[dir="rtl"] #inductee-hero { direction: rtl; }
+[dir="rtl"] .ih-portrait-overlay { background: linear-gradient(90deg, var(--stage) 0%, transparent 40%); }
+[dir="rtl"] .ih-info-col { padding: 6rem 3rem 6rem 4rem; }
+
+.ih-back { display: inline-flex; align-items: center; gap: 0.4rem; font-family: 'Inter', sans-serif; font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase; color: var(--ash); margin-bottom: 3rem; transition: color 0.2s; }
+.ih-back:hover { color: var(--ember); }
+body:not(.lang-en) .ih-back { font-family: 'Heebo', sans-serif; }
+.ih-cat-num { font-family: 'Inter', sans-serif; font-size: 0.58rem; letter-spacing: 5px; text-transform: uppercase; color: var(--ember); margin-bottom: 0.6rem; }
+.ih-cat-name { font-family: 'Frank Ruhl Libre', serif; font-size: 1rem; font-weight: 400; color: var(--ash); margin-bottom: 2rem; }
+body.lang-en .ih-cat-name { font-family: 'Fraunces', serif; }
+.ih-name { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(2.8rem, 5vw, 4.5rem); font-weight: 800; line-height: 1.05; color: var(--paper); margin-bottom: 0.5rem; }
+body.lang-en .ih-name { font-family: 'Fraunces', serif; }
+.ih-years { font-family: 'Inter', sans-serif; font-size: 0.78rem; color: var(--ash); letter-spacing: 2px; margin-bottom: 2rem; }
+.ih-year-badge {
+  margin-top: 2.5rem;
+  display: inline-flex; align-items: center; gap: 0.8rem;
+  border: 1px solid var(--ember); padding: 0.5rem 1.2rem;
+  align-self: flex-start;
+}
+.ih-year-badge .yb-label { font-family: 'Inter', sans-serif; font-size: 0.55rem; letter-spacing: 4px; text-transform: uppercase; color: var(--ember); }
+body:not(.lang-en) .ih-year-badge .yb-label { font-family: 'Heebo', sans-serif; }
+
+/* ── BIO ── */
+#bio { background: var(--stage-mid); padding: 7rem 2.5rem; }
+.bio-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; max-width: 1200px; margin: 0 auto; align-items: start; }
+.bio-text p { font-size: 1rem; color: var(--paper-70); line-height: 1.9; margin-bottom: 1.4rem; max-width: 55ch; }
+.bio-achievements { margin-top: 0; }
+.achievement-item { padding: 1.2rem 0; border-bottom: 1px solid var(--line-dark); }
+.achievement-item:first-child { border-top: 1px solid var(--line-dark); }
+.achievement-title { font-family: 'Frank Ruhl Libre', serif; font-size: 0.95rem; font-weight: 700; color: var(--paper); }
+body.lang-en .achievement-title { font-family: 'Fraunces', serif; }
+.achievement-sub { font-size: 0.8rem; color: var(--ash); margin-top: 0.2rem; line-height: 1.5; }
+
+/* ── BRIDGE BLOCK ── */
+#bridge-block { background: var(--stage); padding: 5rem 2.5rem; border-top: 1px solid var(--line-dark); }
+.bridge-inner { max-width: 1200px; margin: 0 auto; }
+.bridge-card { border: 1px solid var(--ember); background: var(--stage-mid); padding: 2.5rem 3rem; max-width: 600px; }
+.bridge-cap { font-family: 'Inter', sans-serif; font-size: 0.55rem; letter-spacing: 4px; text-transform: uppercase; color: var(--ember); margin-bottom: 0.7rem; }
+body:not(.lang-en) .bridge-cap { font-family: 'Heebo', sans-serif; }
+.bridge-heading { font-family: 'Frank Ruhl Libre', serif; font-size: 1.3rem; font-weight: 700; color: var(--paper); margin-bottom: 0.5rem; }
+body.lang-en .bridge-heading { font-family: 'Fraunces', serif; }
+.bridge-sub { font-size: 0.83rem; color: var(--ash); line-height: 1.65; max-width: 48ch; }
+.bridge-link { display: inline-flex; align-items: center; gap: 0.4rem; color: var(--ember); font-size: 0.83rem; font-weight: 500; border-bottom: 1px solid transparent; padding-bottom: 2px; transition: border-color 0.2s; margin-top: 1.2rem; }
+.bridge-link:hover { border-bottom-color: var(--ember); }
+
+/* ── OTHER INDUCTEES ── */
+#others { background: var(--stage); padding: 7rem 2.5rem; border-top: 1px solid var(--line-dark); }
+.others-inner { max-width: 1200px; margin: 0 auto; }
+.others-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 2.5rem; }
+.other-card { background: var(--stage-lift); padding: 1.8rem; cursor: pointer; transition: background 0.25s; border-top: 2px solid transparent; }
+.other-card:hover { background: var(--stage-mid); border-top-color: var(--ember); }
+.other-cat { font-family: 'Inter', sans-serif; font-size: 0.55rem; letter-spacing: 3px; text-transform: uppercase; color: var(--ember); margin-bottom: 0.7rem; }
+.other-name { font-family: 'Frank Ruhl Libre', serif; font-size: 1rem; font-weight: 700; color: var(--paper); line-height: 1.3; }
+body.lang-en .other-name { font-family: 'Fraunces', serif; }
+.other-genre { font-size: 0.75rem; color: var(--ash); margin-top: 0.3rem; }
+
+/* ── FOOTER ── */
+footer { background: var(--stage-deep); padding: 5rem 2.5rem 2rem; border-top: 1px solid var(--line-dark); }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; max-width: 1200px; margin: 0 auto; padding-bottom: 3rem; border-bottom: 1px solid var(--line-dark); }
+.footer-about .fa-logo { font-family: 'Frank Ruhl Libre', serif; font-size: 0.9rem; font-weight: 500; color: var(--paper); margin-bottom: 0.9rem; line-height: 1.4; }
+body.lang-en .footer-about .fa-logo { font-family: 'Fraunces', serif; }
+.footer-about p { font-size: 0.8rem; color: var(--ash); line-height: 1.7; max-width: 260px; }
+.footer-col h5 { font-family: 'Inter', sans-serif; font-size: 0.58rem; letter-spacing: 3px; text-transform: uppercase; color: var(--ember); margin-bottom: 1.2rem; }
+body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 0.65rem; }
+.footer-col ul li a { font-size: 0.83rem; color: var(--ash); transition: color 0.2s; }
+.footer-col ul li a:hover { color: var(--paper); }
+.footer-bottom { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; font-family: 'Inter', sans-serif; font-size: 0.7rem; color: var(--ash); flex-wrap: wrap; gap: 0.5rem; }
+
+@keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+
+@media (max-width: 1100px) {
+  #inductee-hero { grid-template-columns: 1fr; min-height: auto; }
+  .ih-portrait-col { height: 70vh; }
+  .ih-portrait-overlay { background: linear-gradient(180deg, transparent 40%, var(--stage) 100%) !important; }
+  .ih-info-col { padding: 4rem 2.5rem !important; }
+}
+@media (max-width: 960px) {
+  .bio-inner { grid-template-columns: 1fr; gap: 3rem; }
+  .others-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .nav-links { display: none; }
+  .lang-switcher { display: none; }
+  .lang-mini { display: flex; margin-inline-start: auto; margin-inline-end: 1.1rem; }
+  .nav-hamburger { display: flex; }
+  #mobile-menu { display: block; }
+}
+@media (max-width: 600px) {
+  #navbar { padding: 0 1.2rem; }
+  .others-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .bridge-card { padding: 1.8rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .rule { animation: none; background: var(--ember); }
+  .reveal { transition: none; opacity: 1; transform: none; }
+  .ih-portrait-bg img { transition: none; }
+}
+
+/* ── JUDGES ── */
+#judges { background: var(--stage-mid); border-top: 1px solid var(--line-dark); padding: 5rem 2.5rem; }
+.judges-inner { max-width: 1000px; margin: 0 auto; text-align: center; }
+.judges-eyebrow { font-family:'Inter',sans-serif; font-size:0.6rem; letter-spacing:4px; text-transform:uppercase; color:var(--ember); margin-bottom:0.8rem; }
+body:not(.lang-en) .judges-eyebrow { font-family:'Heebo',sans-serif; font-weight:700; }
+.judges-title { font-family:'Frank Ruhl Libre',serif; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:700; color:var(--paper); line-height:1.2; }
+body.lang-en .judges-title { font-family:'Fraunces',serif; }
+#judges .rule { margin-inline:auto; }
+.judges-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; margin-top:1.2rem; background:var(--line-dark); border:1px solid var(--line-dark); }
+.judge { background:var(--stage); padding:2.2rem 1.5rem; }
+.judge-name { font-family:'Frank Ruhl Libre',serif; font-size:1.15rem; font-weight:700; color:var(--paper); margin-bottom:0.4rem; }
+body.lang-en .judge-name { font-family:'Fraunces',serif; }
+.judge-role { font-size:0.78rem; color:var(--ash); line-height:1.5; }
+.judges-note { margin-top:1.8rem; font-size:0.82rem; color:var(--ash); line-height:1.7; }
+@media (max-width:680px){ .judges-grid{ grid-template-columns:1fr; } #judges{ padding:3.5rem 1.5rem; } }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-wordmark">
+      <div class="t1 he">טקס פרסי היכל התהילה</div>
+      <div class="t1 en">Hall of Fame Awards</div>
+      <div class="t2">Jewish Music Hall of Fame · 2027</div>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="about.html"><span class="he">אודות</span><span class="en">About</span></a></li>
+    <li><a href="categories.html"><span class="he">קטגוריות</span><span class="en">Categories</span></a></li>
+    <li><a href="ceremony.html"><span class="he">הטקס</span><span class="en">Ceremony</span></a></li>
+    <li><a href="selection-process.html"><span class="he">תהליך הבחירה</span><span class="en">Selection</span></a></li>
+    <li><a href="donors.html"><span class="he">תמיכה</span><span class="en">Support</span></a></li>
+  </ul>
+  <div class="lang-switcher">
+    <button type="button" class="lang-btn active" id="lang-he" onclick="switchLang('he')">עברית</button>
+    <span class="sep">·</span>
+    <button type="button" class="lang-btn" id="lang-en-btn" onclick="switchLang('en')">English</button>
+  </div>
+    <div class="lang-mini">
+    <button type="button" class="lang-mini-btn active" id="lang-mini-he" onclick="switchLang('he')">HE</button>
+    <span style="color:var(--ash);opacity:0.4;font-size:0.6rem;">|</span>
+    <button type="button" class="lang-mini-btn" id="lang-mini-en" onclick="switchLang('en')">EN</button>
+  </div>
+
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="תפריט" aria-expanded="false">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט ניווט">
+  <nav class="mobile-nav" dir="rtl">
+    <ul>
+      <li><a href="about.html"><span class="he">אודות</span><span class="en">About</span></a></li>
+      <li><a href="categories.html"><span class="he">קטגוריות</span><span class="en">Categories</span></a></li>
+      <li><a href="ceremony.html"><span class="he">הטקס</span><span class="en">Ceremony</span></a></li>
+      <li><a href="selection-process.html"><span class="he">תהליך הבחירה</span><span class="en">Selection</span></a></li>
+      <li><a href="donors.html"><span class="he">תמיכה</span><span class="en">Support</span></a></li>
+    </ul>
+    <div class="mobile-lang">
+      <button type="button" class="lang-btn active" id="mobile-lang-he" onclick="switchLang('he')">עברית</button>
+      <span class="sep">·</span>
+      <button type="button" class="lang-btn" id="mobile-lang-en-btn" onclick="switchLang('en')">English</button>
+    </div>
+  </nav>
+</div>
+
+<!-- INDUCTEE HERO -->
+<section id="inductee-hero">
+
+  <div class="ih-portrait-col">
+    <div class="ih-portrait-bg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/7c/Shoshana_Damari_-_1973.jpg"
+           alt="שושנה דמארי" style="width:100%;height:100%;object-fit:cover;object-position:center 18%;filter:grayscale(1);">
+    </div>
+    <div class="ih-portrait-overlay"></div>
+  </div>
+
+  <div class="ih-info-col" style="animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both 0.2s;">
+    <a href="categories.html" class="ih-back">
+      <span class="he-inline">→</span><span class="en-inline">←</span>
+      <span class="he">חזרה לקטגוריות</span><span class="en">Back to Categories</span>
+    </a>
+
+    <div class="ih-cat-num">קטגוריה 05 &nbsp;·&nbsp; CATEGORY 05</div>
+    <div class="ih-cat-name">
+      <span class="he">זמרת ישראלית</span>
+      <span class="en">Israeli Female Vocalist</span>
+    </div>
+
+    <h1 class="ih-name">
+      <span class="he">שושנה דמארי</span>
+      <span class="en">Shoshana Damari</span>
+    </h1>
+
+    <div class="ih-years">
+      <span class="he">1923, דמאר תימן — 14 בפברואר 2006, תל אביב</span>
+      <span class="en">1923, Dhamar, Yemen — February 14, 2006, Tel Aviv</span>
+    </div>
+
+    <div class="ih-year-badge">
+      <span class="yb-label"><span class="he">הוכנסה לאחר מותה</span><span class="en">Posthumous Inductee</span></span>
+    </div>
+  </div>
+
+</section>
+
+<!-- BIO -->
+<section id="bio">
+  <div class="bio-inner">
+
+    <div class="bio-text reveal">
+      <span class="eyebrow"><span class="he">ביוגרפיה</span><span class="en">Biography</span></span>
+      <h2 class="section-title">
+        <span class="he">חייה ויצירתה</span>
+        <span class="en">Life &amp; Work</span>
+      </h2>
+      <div class="rule"></div>
+      <p>
+        <span class="he">שושנה דמארי נולדה ב-1923 בעיר דמאר שבתימן. בעקבות גל רדיפות נגד יהודים, יצאה משפחתה ברגל בדרכה לארץ ישראל והשתקעה בראשון לציון. כילדה שרה לצד אמה, זמרת ומקוננת מקצועית בקהילה התימנית. באוגוסט 1938 הופיעה לראשונה כסולנית ברדיו, בשירי המשורר שלום שבזי.</span>
+        <span class="en">Shoshana Damari was born in 1923 in the city of Dhamar, Yemen. Following a wave of anti-Jewish persecution, her family set out on foot for the Land of Israel and settled in Rishon LeZion. As a child she sang alongside her mother, a singer and professional mourner in the Yemenite community. In August 1938 she performed for the first time as a soloist on the radio, singing songs by the poet Shalom Shabazi.</span>
+      </p>
+      <p>
+        <span class="he">ב-1945 הצטרפה לתיאטרון הסאטירי "לי-לה-לו". קולה הנמוך והעמוק וההגייה התימנית הפכו לסימן ההיכר שלה. השיר "כלניות", שהלחין משה וילנסקי למילים של נתן אלתרמן, נעשה לשיר הדגל שלה ולאחת מקלאסיקות הזמר העברי.</span>
+        <span class="en">In 1945 she joined the satirical revue theater "Li-La-Lo." Her low, deep voice and Yemenite pronunciation became her hallmark. The song "Kalaniyot" (Anemones), composed by Moshe Wilensky to lyrics by Nathan Alterman, became her signature song and one of the classics of Hebrew music.</span>
+      </p>
+      <p>
+        <span class="he">לאורך השנים הופיעה בארצות הברית, אירופה, דרום אמריקה, דרום אפריקה ויפן, וזכתה לכינוי "מלכת הזמר העברי". בשנת 1988 הוענק לה פרס ישראל על תרומתה לזמר העברי. היא הוסיפה להופיע עד שנותיה האחרונות. נפטרה מדלקת ריאות בתל אביב ב-14 בפברואר 2006.</span>
+        <span class="en">Over the years she performed across the United States, Europe, South America, South Africa and Japan, and earned the title "Queen of Hebrew Song." In 1988 she was awarded the Israel Prize for her contribution to Hebrew music. She continued performing into her final years. She died of pneumonia in Tel Aviv on February 14, 2006.</span>
+      </p>
+    </div>
+
+    <div class="bio-achievements reveal reveal-d1">
+      <span class="eyebrow"><span class="he">הישגים עיקריים</span><span class="en">Key Achievements</span></span>
+      <h3 style="font-family: 'Frank Ruhl Libre', serif; font-size: 1.3rem; font-weight: 700; color: var(--paper); margin-bottom: 0.5rem;">
+        <span class="he">מדוע נבחרה?</span>
+        <span class="en">Why This Inductee?</span>
+      </h3>
+      <p style="font-size: 0.83rem; color: var(--ash); line-height: 1.65; margin-bottom: 1.5rem;">
+        <span class="he">ארבע סיבות לבחור בשושנה דמארי</span>
+        <span class="en">Four reasons Shoshana Damari was chosen</span>
+      </p>
+      <div>
+        <div class="achievement-item">
+          <div class="achievement-title he">פרס ישראל, 1988</div>
+          <div class="achievement-title en">Israel Prize, 1988</div>
+          <div class="achievement-sub he">הוענק לה על תרומתה יוצאת הדופן לזמר העברי</div>
+          <div class="achievement-sub en">Awarded for her exceptional contribution to Hebrew song</div>
+        </div>
+        <div class="achievement-item">
+          <div class="achievement-title he">"כלניות"</div>
+          <div class="achievement-title en">"Kalaniyot" (Anemones)</div>
+          <div class="achievement-sub he">לחן משה וילנסקי, מילים נתן אלתרמן — שיר הדגל שלה ואחת מקלאסיקות הזמר העברי</div>
+          <div class="achievement-sub en">Music by Moshe Wilensky, lyrics by Nathan Alterman — her signature song and a Hebrew classic</div>
+        </div>
+        <div class="achievement-item">
+          <div class="achievement-title he">מלכת הזמר העברי</div>
+          <div class="achievement-title en">Queen of Hebrew Song</div>
+          <div class="achievement-sub he">הכינוי שדבק בה כסמל של הזמר הארץ-ישראלי לאורך דורות</div>
+          <div class="achievement-sub en">The title she earned as a symbol of Hebrew song across generations</div>
+        </div>
+        <div class="achievement-item">
+          <div class="achievement-title he">"לי-לה-לו" וקריירה בינלאומית</div>
+          <div class="achievement-title en">"Li-La-Lo" & International Career</div>
+          <div class="achievement-sub he">מכוכבות תיאטרון הסאטירה (1945) ועד הופעות בארה"ב, אירופה, דרום אמריקה ויפן</div>
+          <div class="achievement-sub en">From star of the satirical revue (1945) to performances across the US, Europe, South America and Japan</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BRIDGE BLOCK -->
+<section id="bridge-block">
+  <div class="bridge-inner reveal">
+    <div class="bridge-card">
+      <div class="bridge-cap"><span class="he">מהפרס להיכל / FROM THE PRIZE TO THE HALL</span><span class="en">FROM THE PRIZE TO THE HALL / מהפרס להיכל</span></div>
+      <div class="bridge-heading he">הוכנסה להיכל התהילה של המוזיקה היהודית</div>
+      <div class="bridge-heading en">Inducted into the Jewish Music Hall of Fame</div>
+      <p class="bridge-sub">
+        <span class="he">זוכי הפרס נכנסים להיכל התהילה של המוזיקה היהודית שייפתח בפתח תקווה. הפרופיל הקבוע יהיה זמין לאחר פתיחת המבנה בעתיד.</span>
+        <span class="en">Prize winners are inducted into the Jewish Music Hall of Fame opening in Petah Tikva. The permanent profile will be available following the building's future opening.</span>
+      </p>
+      <a href="https://www.hallofame.org" class="bridge-link">
+        <span class="he">לאתר היכל התהילה</span><span class="en">Visit hallofame.org</span>
+        <span class="he-inline">←</span><span class="en-inline">→</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- JUDGES -->
+<section id="judges">
+  <div class="judges-inner reveal">
+    <span class="judges-eyebrow he">הרכב השופטים · זמרת ישראלית</span>
+    <span class="judges-eyebrow en">Judging Panel · Israeli Female Vocalist</span>
+    <h2 class="judges-title he">מי מחליט בקטגוריה זו</h2>
+    <h2 class="judges-title en">Who Decides This Category</h2>
+    <div class="rule"></div>
+    <div class="judges-grid">
+      <div class="judge">
+        <div class="judge-name he">ד״ר טלילה אלירם</div>
+        <div class="judge-name en">Dr. Talila Eliram</div>
+        <div class="judge-role he">מוזיקולוגית וחוקרת</div>
+        <div class="judge-role en">Musicologist & Researcher</div>
+      </div>
+      <div class="judge">
+        <div class="judge-name he">מנחם גרניט</div>
+        <div class="judge-name en">Menahem Granit</div>
+        <div class="judge-role he">עיתונאי, שדרן רדיו ועורך תוכניות מוזיקה</div>
+        <div class="judge-role en">Journalist, Radio Broadcaster & Music Editor</div>
+      </div>
+      <div class="judge">
+        <div class="judge-name he">יורם רותם</div>
+        <div class="judge-name en">Yoram Rotem</div>
+        <div class="judge-role he">עורך מוזיקלי, שדרן ומרצה למוזיקה ישראלית</div>
+        <div class="judge-role en">Music Editor, Broadcaster & Lecturer</div>
+      </div>
+    </div>
+    <p class="judges-note he">כל קטגוריה נבחנת על ידי שלושה שופטים מקצועיים. ההחלטה מתקבלת פה אחד.</p>
+    <p class="judges-note en">Each category is judged by three professionals. The decision is unanimous.</p>
+  </div>
+</section>
+
+<!-- OTHER INDUCTEES -->
+<section id="others">
+  <div class="others-inner">
+    <div class="reveal">
+      <span class="eyebrow"><span class="he">נבחרי 2027</span><span class="en">Class of 2027</span></span>
+      <h2 class="section-title">
+        <span class="he">שאר הנבחרים</span>
+        <span class="en">Other Inductees</span>
+      </h2>
+      <div class="rule"></div>
+    </div>
+    <div class="others-grid reveal">
+      <div class="other-card" onclick="location.href='inductee.html'">
+        <div class="other-cat">03 — <span class="he">חזן</span><span class="en">Cantor</span></div>
+        <div class="other-name he">יוסלה רוזנבלט</div>
+        <div class="other-name en">Yossele Rosenblatt</div>
+        <div class="other-genre he">מסורת אשכנזית</div>
+        <div class="other-genre en">Ashkenazi tradition</div>
+      </div>
+      <div class="other-card" onclick="location.href='leonard-cohen.html'" style="cursor:pointer;">
+        <div class="other-cat">01 — <span class="he">זמר</span><span class="en">Male Vocalist</span></div>
+        <div class="other-name he">לאונרד כהן</div>
+        <div class="other-name en">Leonard Cohen</div>
+        <div class="other-genre he">כל השפות והסגנונות</div>
+        <div class="other-genre en">All languages &amp; styles</div>
+      </div>
+      <div class="other-card">
+        <div class="other-cat">04 — <span class="he">פייטן</span><span class="en">Paytan</span></div>
+        <div class="other-name he">[מחזור 2027]</div>
+        <div class="other-name en">[Class of 2027]</div>
+        <div class="other-genre he">שירת הפיוט, ספרד ומזרח</div>
+        <div class="other-genre en">Piyyut tradition</div>
+      </div>
+      <div class="other-card">
+        <div class="other-cat">05 — <span class="he">גדולי הג'אז</span><span class="en">Jazz Masters</span></div>
+        <div class="other-name he">[מחזור 2027]</div>
+        <div class="other-name en">[Class of 2027]</div>
+        <div class="other-genre he">ג'אז יהודי ועולמי</div>
+        <div class="other-genre en">Jewish &amp; world jazz</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAR -->
+<section id="cta-bar" class="reveal">
+  <h2>
+    <span class="he">הכירו את כל 12 הנבחרים</span>
+    <span class="en">Meet All 12 Inductees</span>
+  </h2>
+  <div class="rule" style="margin: 1.2rem auto 0;"></div>
+  <p>
+    <span class="he">כל קטגוריה — זוכה אחד. שלושה שופטים מקצועיים. החלטה פה אחד.</span>
+    <span class="en">Each category — one winner chosen unanimously by three professional judges.</span>
+  </p>
+  <div class="cta-actions">
+    <a href="categories.html" class="btn-primary">
+      <span class="he">כל הקטגוריות</span>
+      <span class="en">All Categories</span>
+    </a>
+    <a href="donors.html" class="btn-ghost">
+      <span class="he">תמיכה בפרויקט</span>
+      <span class="en">Support the Project</span>
+      <span class="he-inline">←</span><span class="en-inline">→</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-about">
+      <div class="fa-logo he">טקס פרסי היכל התהילה של המוזיקה היהודית</div>
+      <div class="fa-logo en">Jewish Music Hall of Fame Awards</div>
+      <p><span class="he">הכרה ממלכתית ויוקרתית ליוצרים ומבצעים שעיצבו את המוזיקה היהודית לדורותיה.</span><span class="en">Prestigious state recognition for the creators and performers who shaped Jewish music for generations.</span></p>
+    </div>
+    <div class="footer-col">
+      <h5><span class="he">פרויקט</span><span class="en">Project</span></h5>
+      <ul>
+        <li><a href="about.html"><span class="he">אודות</span><span class="en">About</span></a></li>
+        <li><a href="categories.html"><span class="he">קטגוריות</span><span class="en">Categories</span></a></li>
+        <li><a href="ceremony.html"><span class="he">הטקס</span><span class="en">Ceremony</span></a></li>
+        <li><a href="selection-process.html"><span class="he">תהליך הבחירה</span><span class="en">Selection Process</span></a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5><span class="he">תמיכה</span><span class="en">Support</span></h5>
+      <ul>
+        <li><a href="donors.html"><span class="he">רמות תמיכה</span><span class="en">Support Tiers</span></a></li>
+        <li><a href="donors.html#contact"><span class="he">צרו קשר</span><span class="en">Contact</span></a></li>
+        <li><a href="#"><span class="he">שאלות נפוצות</span><span class="en">FAQ</span></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2027 <span class="he">טקס פרסי היכל התהילה של המוזיקה היהודית</span><span class="en">Jewish Music Hall of Fame Awards</span></span>
+    <span><span class="he">חלק מפרויקט היכל התהילה של המוזיקה היהודית</span><span class="en">Part of the Hall of Fame of Jewish Music project</span></span>
+  </div>
+</footer>
+
+<script>
+let lang = localStorage.getItem('lang') || 'he';
+function switchLang(to) {
+  lang = to;
+  const html = document.getElementById('html-root');
+  if (lang === 'en') {
+    document.body.classList.add('lang-en'); html.lang = 'en'; html.dir = 'ltr';
+    document.getElementById('lang-he').classList.remove('active');
+    document.getElementById('lang-en-btn').classList.add('active');
+    var mhe = document.getElementById('mobile-lang-he');
+    var men = document.getElementById('mobile-lang-en-btn');
+    if (mhe) mhe.classList.remove('active');
+    if (men) men.classList.add('active');
+  } else {
+    document.body.classList.remove('lang-en'); html.lang = 'he'; html.dir = 'rtl';
+    document.getElementById('lang-he').classList.add('active');
+    document.getElementById('lang-en-btn').classList.remove('active');
+    var mhe = document.getElementById('mobile-lang-he');
+    var men = document.getElementById('mobile-lang-en-btn');
+    if (mhe) mhe.classList.add('active');
+    if (men) men.classList.remove('active');
+  }
+  localStorage.setItem('lang', lang);
+}
+
+(function() {
+  var btn  = document.getElementById('nav-hamburger');
+  var menu = document.getElementById('mobile-menu');
+  if (!btn || !menu) return;
+  function closeMenu() {
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  btn.addEventListener('click', function() {
+    if (btn.classList.contains('open')) { closeMenu(); }
+    else {
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded', 'true');
+      menu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+  });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMenu(); });
+  menu.querySelectorAll('a').forEach(function(a) { a.addEventListener('click', closeMenu); });
+})();
+if (lang === 'en') switchLang('en');
+
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('solid', window.scrollY > 20);
+});
+
+const io = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+
+<script>
+(function(){
+  function syncMini(){
+    var en = document.body.classList.contains('lang-en');
+    var h = document.getElementById('lang-mini-he');
+    var e = document.getElementById('lang-mini-en');
+    if (h) h.classList.toggle('active', !en);
+    if (e) e.classList.toggle('active', en);
+  }
+  var _o = window.switchLang;
+  window.switchLang = function(to){ if(_o) _o(to); syncMini(); };
+  syncMini();
+})();
+</script>
+</body>
+</html>
