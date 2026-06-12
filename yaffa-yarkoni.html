@@ -277,6 +277,28 @@ body.lang-en .judge-name { font-family:'Fraunces',serif; }
 .judge-role { font-size:0.78rem; color:var(--ash); line-height:1.5; }
 .judges-note { margin-top:1.8rem; font-size:0.82rem; color:var(--ash); line-height:1.7; }
 @media (max-width:680px){ .judges-grid{ grid-template-columns:1fr; } #judges{ padding:3.5rem 1.5rem; } }
+
+/* ── INDUCTEE NAV ── */
+#inductee-nav { background: var(--stage-mid); border-top: 1px solid var(--line-dark); }
+.inav-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; }
+.inav-side { display: flex; flex-direction: column; padding: 3.5rem 2.5rem; text-decoration: none; transition: background 0.2s; color: inherit; }
+.inav-side:hover { background: var(--stage-lift); }
+.inav-prev { border-inline-end: 1px solid var(--line-dark); }
+.inav-next { text-align: end; }
+.inav-dir { font-family: 'Inter', sans-serif; font-size: 0.58rem; letter-spacing: 4px; text-transform: uppercase; color: var(--ember); margin-bottom: 0.7rem; }
+body:not(.lang-en) .inav-dir { font-family: 'Heebo', sans-serif; }
+.inav-name { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(1.3rem, 2.5vw, 2rem); font-weight: 700; color: var(--paper); line-height: 1.2; }
+body.lang-en .inav-name { font-family: 'Fraunces', serif; }
+.inav-arrow { color: var(--ember); font-size: 1.1rem; margin-top: 0.9rem; transition: transform 0.2s; display: inline-block; }
+[dir="rtl"] .inav-prev:hover .inav-arrow { transform: translateX(5px); }
+[dir="rtl"] .inav-next:hover .inav-arrow { transform: translateX(-5px); }
+[dir="ltr"] .inav-prev:hover .inav-arrow { transform: translateX(-5px); }
+[dir="ltr"] .inav-next:hover .inav-arrow { transform: translateX(5px); }
+@media (max-width: 600px) {
+  .inav-inner { grid-template-columns: 1fr; }
+  .inav-prev { border-inline-end: none; border-bottom: 1px solid var(--line-dark); }
+  .inav-side { padding: 2.5rem 1.5rem; }
+}
 </style>
 </head>
 <body>
@@ -489,47 +511,23 @@ body.lang-en .judge-name { font-family:'Fraunces',serif; }
   </div>
 </section>
 
-<!-- OTHER INDUCTEES -->
-<section id="others">
-  <div class="others-inner">
-    <div class="reveal">
-      <span class="eyebrow"><span class="he">נבחרים נוספים</span><span class="en">More Inductees</span></span>
-      <h2 class="section-title">
-        <span class="he">שאר הנבחרים</span>
-        <span class="en">Other Inductees</span>
-      </h2>
-      <div class="rule"></div>
-    </div>
-    <div class="others-grid reveal">
-      <div class="other-card" onclick="location.href='inductee.html'">
-        <div class="other-cat">03 — <span class="he">חזן</span><span class="en">Cantor</span></div>
-        <div class="other-name he">יוסלה רוזנבלט</div>
-        <div class="other-name en">Yossele Rosenblatt</div>
-        <div class="other-genre he">מסורת אשכנזית</div>
-        <div class="other-genre en">Ashkenazi tradition</div>
-      </div>
-      <div class="other-card" onclick="location.href='leonard-cohen.html'" style="cursor:pointer;">
-        <div class="other-cat">01 — <span class="he">זמר</span><span class="en">Male Vocalist</span></div>
-        <div class="other-name he">לאונרד כהן</div>
-        <div class="other-name en">Leonard Cohen</div>
-        <div class="other-genre he">כל השפות והסגנונות</div>
-        <div class="other-genre en">All languages &amp; styles</div>
-      </div>
-      <div class="other-card">
-        <div class="other-cat">04 — <span class="he">פייטן</span><span class="en">Paytan</span></div>
-        <div class="other-name he">[מחזור 2027]</div>
-        <div class="other-name en">[Class of 2027]</div>
-        <div class="other-genre he">שירת הפיוט, ספרד ומזרח</div>
-        <div class="other-genre en">Piyyut tradition</div>
-      </div>
-      <div class="other-card">
-        <div class="other-cat">05 — <span class="he">גדולי הג'אז</span><span class="en">Jazz Masters</span></div>
-        <div class="other-name he">[מחזור 2027]</div>
-        <div class="other-name en">[Class of 2027]</div>
-        <div class="other-genre he">ג'אז יהודי ועולמי</div>
-        <div class="other-genre en">Jewish &amp; world jazz</div>
-      </div>
-    </div>
+<!-- INDUCTEE NAV -->
+<section id="inductee-nav">
+  <div class="inav-inner">
+    <a href="shoshana-damari.html" class="inav-side inav-prev">
+      <span class="inav-dir he">הנבחרת הקודמת · קטגוריה 05</span>
+      <span class="inav-dir en">Previous · Category 05</span>
+      <span class="inav-name he">שושנה דמארי</span>
+      <span class="inav-name en">Shoshana Damari</span>
+      <span class="inav-arrow">→</span>
+    </a>
+    <a href="nechama-hendel.html" class="inav-side inav-next">
+      <span class="inav-dir he">הנבחרת הבאה · קטגוריה 05</span>
+      <span class="inav-dir en">Next · Category 05</span>
+      <span class="inav-name he">נחמה הנדל</span>
+      <span class="inav-name en">Nechama Hendel</span>
+      <span class="inav-arrow">←</span>
+    </a>
   </div>
 </section>
 
