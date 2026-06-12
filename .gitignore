@@ -3,3 +3,10 @@
 
 assets/videos/hero-bg-original.mp4
 assets/images/leader-gafni-original.png
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
