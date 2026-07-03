@@ -700,6 +700,20 @@ body:not(.lang-en) .vision-attr { font-family: 'Heebo', sans-serif; }
 .contact-inner { max-width: 1100px; margin: 0 auto; }
 .contact-header { margin-bottom: 4rem; }
 
+/* ── Graphic support tiers (Anat) ── */
+.tiers-grid { max-width: 1100px; margin: 2.5rem auto 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line-dark); border: 1px solid var(--line-dark); }
+.tier-card { background: var(--stage); padding: 2.2rem 1.5rem; display: flex; flex-direction: column; }
+.tier-card.featured { background: var(--stage-mid); }
+.tier-lvl { font-family: 'Inter', sans-serif; font-size: 0.6rem; letter-spacing: 4px; color: var(--ember); margin-bottom: 0.6rem; }
+.tier-nm { font-family: 'Frank Ruhl Libre', serif; font-size: 1.15rem; font-weight: 700; color: var(--paper); line-height: 1.25; margin-bottom: 1rem; }
+body.lang-en .tier-nm { font-family: 'Fraunces', serif; }
+.tier-list { list-style: none; margin: 0; padding: 0; }
+.tier-list li { font-size: 0.8rem; color: var(--ash); line-height: 1.5; padding: 0.6rem 0; border-top: 1px solid var(--line-dark); display: flex; gap: 0.6rem; align-items: flex-start; }
+.tier-list li .ck { color: var(--ember); flex-shrink: 0; font-size: 0.62rem; margin-top: 0.15rem; }
+.tiers-tax { text-align: center; max-width: 600px; margin: 2.4rem auto 0; font-size: 0.82rem; color: var(--ash); line-height: 1.7; padding: 0 1.5rem; }
+@media (max-width: 900px) { .tiers-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px) { .tiers-grid { grid-template-columns: 1fr; } }
+
 .contact-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -1121,13 +1135,61 @@ body:not(.lang-en) .footer-bottom { font-family: 'Heebo', sans-serif; }
      TIERS
 ══════════════════════════════════ -->
 <section id="tiers">
-  <div class="tiers-header reveal" style="max-width: 680px; margin: 0 auto; text-align: center; padding-top: 5rem; padding-bottom: 1rem;">
+  <div class="tiers-header reveal" style="max-width: 680px; margin: 0 auto; text-align: center; padding-top: 5rem;">
     <span class="eyebrow"><span class="he">רמות תמיכה</span><span class="en">Support Tiers</span></span>
-    <p style="color:var(--ash); font-size:0.95rem; max-width:540px; line-height:1.85; margin: 0.5rem auto 0;">
-      <span class="he">ישנן רמות תמיכה שונות — החל מכרטיס כניסה לטקס, כרטיס VIP, קריאת פרסים על שם התורם ועד חסות רשמית לפרס. הרמות תקפות לשני הטקסים: פתח תקווה ולוס אנג'לס.</span>
-      <span class="en">Support tiers range from ceremony entry tickets and VIP access, through prizes bearing the donor's name, to official sponsorship. All tiers apply to both ceremonies: Petah Tikva and Los Angeles.</span>
+    <h2 class="section-title" style="font-size:clamp(1.7rem,3.2vw,2.4rem);">
+      <span class="he">בחרו את דרך ההשתתפות שלכם</span>
+      <span class="en">Choose How You Take Part</span>
+    </h2>
+    <div class="rule" style="margin-inline:auto;"></div>
+    <p style="color:var(--ash); font-size:0.9rem; max-width:520px; line-height:1.8; margin:0 auto;">
+      <span class="he">כל הרמות תקפות לשני הטקסים — פתח תקווה ולוס אנג'לס, 2027.</span>
+      <span class="en">All tiers apply to both ceremonies — Petah Tikva and Los Angeles, 2027.</span>
     </p>
   </div>
+
+  <div class="tiers-grid reveal">
+    <div class="tier-card">
+      <span class="tier-lvl">01</span>
+      <div class="tier-nm he">תורם מן המניין</div><div class="tier-nm en">Donor</div>
+      <ul class="tier-list">
+        <li><span class="ck">✦</span><span class="he">כרטיס כניסה לטקס</span><span class="en">Ceremony entry ticket</span></li>
+        <li><span class="ck">✦</span><span class="he">הכרה בתכנייה הרשמית</span><span class="en">Recognition in the official programme</span></li>
+      </ul>
+    </div>
+    <div class="tier-card">
+      <span class="tier-lvl">02</span>
+      <div class="tier-nm he">חבר</div><div class="tier-nm en">Friend</div>
+      <ul class="tier-list">
+        <li><span class="ck">✦</span><span class="he">כרטיס VIP לטקס</span><span class="en">VIP ceremony ticket</span></li>
+        <li><span class="ck">✦</span><span class="he">אירוע לפני הטקס</span><span class="en">Pre-ceremony event</span></li>
+        <li><span class="ck">✦</span><span class="he">הכרה בתכנייה</span><span class="en">Recognition in the programme</span></li>
+      </ul>
+    </div>
+    <div class="tier-card featured">
+      <span class="tier-lvl">03</span>
+      <div class="tier-nm he">חבר הנאמנים</div><div class="tier-nm en">Board of Trustees</div>
+      <ul class="tier-list">
+        <li><span class="ck">✦</span><span class="he">פרס על שם התורם, מוכרז מהבמה</span><span class="en">A prize in the donor's name, announced on stage</span></li>
+        <li><span class="ck">✦</span><span class="he">נוכחות בשני הטקסים</span><span class="en">Presence at both ceremonies</span></li>
+        <li><span class="ck">✦</span><span class="he">הכרה בכל חומרי הטקס</span><span class="en">Recognition across ceremony materials</span></li>
+      </ul>
+    </div>
+    <div class="tier-card featured">
+      <span class="tier-lvl">04</span>
+      <div class="tier-nm he">נותן חסות — פרס מפעל חיים</div><div class="tier-nm en">Lifetime Achievement Sponsor</div>
+      <ul class="tier-list">
+        <li><span class="ck">✦</span><span class="he">חסות רשמית על הפרס</span><span class="en">Official sponsorship of the Prize</span></li>
+        <li><span class="ck">✦</span><span class="he">נוכחות מוסדית בכל פעילות ההיכל</span><span class="en">Institutional presence across all Hall activity</span></li>
+        <li><span class="ck">✦</span><span class="he">תנאים בהתאמה אישית</span><span class="en">Bespoke terms</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="tiers-tax">
+    <span class="he">לפרטים על הטבות מס לתורמים בישראל ובארצות הברית — צרו קשר עם הנהלת הפרס.</span>
+    <span class="en">For details on donor tax benefits in Israel and the United States — contact Prize management.</span>
+  </p>
 </section>
 
 <!-- ══════════════════════════════════
@@ -1154,12 +1216,16 @@ body:not(.lang-en) .footer-bottom { font-family: 'Heebo', sans-serif; }
   <div class="contact-inner">
 
     <div class="contact-header reveal">
-      <span class="eyebrow"><span class="he">התחילו את השיחה</span><span class="en">Start the Conversation</span></span>
+      <span class="eyebrow"><span class="he">קחו חלק</span><span class="en">Take Part</span></span>
       <h2 class="section-title">
-        <span class="he">נשמח לשמוע מכם</span>
-        <span class="en">We'd Love to Hear From You</span>
+        <span class="he">מעוניינים לקחת חלק בהיסטוריה של המוזיקה היהודית?</span>
+        <span class="en">Want to take part in the history of Jewish music?</span>
       </h2>
       <div class="rule"></div>
+      <p style="color:var(--ash); font-size:0.95rem; line-height:1.8; max-width:520px;">
+        <span class="he">השאירו פרטים ונציג מטעם העמותה יחזור אליכם.</span>
+        <span class="en">Leave your details and a representative of the association will get back to you.</span>
+      </p>
     </div>
 
     <div class="contact-grid reveal reveal-d1">

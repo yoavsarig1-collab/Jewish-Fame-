@@ -143,6 +143,27 @@ body.lang-en .en-inline { display: inline !important; }
 .btn-primary:hover { background: var(--ember-deep); }
 body:not(.lang-en) .btn-primary { font-family: 'Heebo', sans-serif; }
 
+/* Secondary CTA — transparent with border (partners) */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--paper);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0 1.8rem;
+  height: 48px;
+  border: 1px solid var(--ember);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn-outline:hover { background: var(--ember); color: var(--ink); }
+body:not(.lang-en) .btn-outline { font-family: 'Heebo', sans-serif; }
+
 /* Text-link CTA — all other calls-to-action */
 .btn-link {
   display: inline-flex;
@@ -567,7 +588,7 @@ body.lang-en .hero-play { left: auto; right: clamp(3rem, 8vw, 10rem); }
 /* ── VIDEO MODAL ── */
 #video-modal {
   position: fixed; inset: 0; z-index: 9000;
-  background: rgba(10,10,10,0.96);
+  background: rgba(8,8,8,0.985);
   display: flex; align-items: center; justify-content: center;
   opacity: 0; pointer-events: none;
   transition: opacity 0.4s cubic-bezier(0.16,1,0.3,1);
@@ -586,15 +607,16 @@ body.lang-en .hero-play { left: auto; right: clamp(3rem, 8vw, 10rem); }
   width: 100%; height: 100%; border: none;
 }
 .modal-close {
-  position: absolute; top: -2.5rem; inset-inline-end: 0;
-  background: none; border: none; color: var(--ash);
-  font-family: 'Inter', sans-serif; font-size: 0.65rem;
-  letter-spacing: 3px; text-transform: uppercase;
-  cursor: pointer; display: flex; align-items: center; gap: 0.5rem;
-  transition: color 0.2s;
+  position: fixed; top: 1.1rem; inset-inline-end: 1.1rem;
+  width: 46px; height: 46px; border-radius: 50%;
+  background: rgba(18,18,18,0.9); border: 1px solid var(--ember);
+  color: var(--paper); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9100; transition: background 0.2s, color 0.2s, transform 0.2s;
 }
-.modal-close:hover { color: var(--paper); }
-.modal-close svg { width: 14px; height: 14px; }
+.modal-close:hover { background: var(--ember); color: var(--ink); transform: rotate(90deg); }
+.modal-close svg { width: 18px; height: 18px; }
+.modal-close span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
 
 /* ── Countdown bar ── */
 #countdown-bar {
@@ -1368,21 +1390,19 @@ body:not(.lang-en) .violin-caption cite { font-family: 'Heebo', sans-serif; }
     </h1>
 
     <p class="hero-sub">
-      <span class="he">הכרה ציבורית של העם היהודי ליוצרים ולמבצעים שתרמו תרומה משמעותית למוזיקה העולמית.</span>
-      <span class="en">A public recognition by the Jewish people for the creators and performers who made a significant contribution to world music.</span>
+      <span class="he">היכל התהילה הרשמי וטקס הפרסים הבינלאומי, 2027 — שומרים על המורשת והצליל היהודי לדורי דורות.</span>
+      <span class="en">The official Hall of Fame and international awards ceremony, 2027 — preserving the Jewish heritage and sound for generations.</span>
     </p>
 
     <div class="hero-ctas">
-      <!-- ONE filled button per page — the hero primary CTA -->
-      <a href="categories.html" class="btn-primary">
-        <span class="he">הקטגוריות</span>
-        <span class="en">The Categories</span>
+      <!-- Dual CTA: primary (donors) + secondary (partners) -->
+      <a href="donors.html" class="btn-primary">
+        <span class="he">הצטרפו כמייסדים</span>
+        <span class="en">Join as Founders</span>
       </a>
-      <a href="donors.html" class="btn-ghost">
-        <span class="he">תמיכה בפרויקט</span>
-        <span class="en">Support the Project</span>
-        <span class="arrow he-inline">←</span>
-        <span class="arrow en-inline">→</span>
+      <a href="donors.html#contact" class="btn-outline">
+        <span class="he">הצטרפו כשותפים</span>
+        <span class="en">Join as Partners</span>
       </a>
       <button class="btn-link hero-watch-mobile" onclick="openVideoModal()">
         <span class="he">לצפייה בסרטון</span>
@@ -1407,8 +1427,8 @@ body:not(.lang-en) .violin-caption cite { font-family: 'Heebo', sans-serif; }
 <!-- VIDEO MODAL -->
 <div id="video-modal" role="dialog" aria-modal="true" aria-label="סרטון HIכל התהילה" onclick="handleModalClick(event)">
   <div class="modal-inner">
-    <button class="modal-close" onclick="closeVideoModal()">
-      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.5">
+    <button class="modal-close" onclick="closeVideoModal()" aria-label="סגור / Close">
+      <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
         <line x1="1" y1="1" x2="13" y2="13"/><line x1="13" y1="1" x2="1" y2="13"/>
       </svg>
       <span>סגור / Close</span>
