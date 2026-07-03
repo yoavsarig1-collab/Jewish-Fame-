@@ -143,6 +143,27 @@ body.lang-en .en-inline { display: inline !important; }
 .btn-primary:hover { background: var(--ember-deep); }
 body:not(.lang-en) .btn-primary { font-family: 'Heebo', sans-serif; }
 
+/* Secondary CTA — transparent with border (partners) */
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: transparent;
+  color: var(--paper);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 0 1.8rem;
+  height: 48px;
+  border: 1px solid var(--ember);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn-outline:hover { background: var(--ember); color: var(--ink); }
+body:not(.lang-en) .btn-outline { font-family: 'Heebo', sans-serif; }
+
 /* Text-link CTA — all other calls-to-action */
 .btn-link {
   display: inline-flex;
@@ -1373,16 +1394,14 @@ body:not(.lang-en) .violin-caption cite { font-family: 'Heebo', sans-serif; }
     </p>
 
     <div class="hero-ctas">
-      <!-- ONE filled button per page — the hero primary CTA -->
-      <a href="categories.html" class="btn-primary">
-        <span class="he">הקטגוריות</span>
-        <span class="en">The Categories</span>
+      <!-- Dual CTA: primary (donors) + secondary (partners) -->
+      <a href="donors.html" class="btn-primary">
+        <span class="he">הצטרפו כמייסדים</span>
+        <span class="en">Join as Founders</span>
       </a>
-      <a href="donors.html" class="btn-ghost">
-        <span class="he">תמיכה בפרויקט</span>
-        <span class="en">Support the Project</span>
-        <span class="arrow he-inline">←</span>
-        <span class="arrow en-inline">→</span>
+      <a href="donors.html#contact" class="btn-outline">
+        <span class="he">הצטרפו כשותפים</span>
+        <span class="en">Join as Partners</span>
       </a>
       <button class="btn-link hero-watch-mobile" onclick="openVideoModal()">
         <span class="he">לצפייה בסרטון</span>
