@@ -406,16 +406,16 @@ body.lang-en .cm-jud-name { font-family: 'Fraunces', serif; }
 /* ── LIFETIME ACHIEVEMENT ── */
 #lifetime-award {
   position: relative; overflow: hidden;
-  min-height: 420px;
+  min-height: 500px;
   display: flex; align-items: center; justify-content: center;
   text-align: center;
-  padding: 7rem 2rem;
+  padding: 6rem 2rem;
   border-top: 1px solid rgba(176,136,74,0.3);
 }
 .lifetime-bg {
   position: absolute; inset: 0;
   background: url('assets/images/building-pt.jpg') center/cover no-repeat;
-  filter: grayscale(0.6) brightness(0.22);
+  filter: grayscale(0.5) brightness(0.34);
   transform: scale(1.02);
 }
 .lifetime-bg::after {
@@ -436,7 +436,11 @@ body.lang-en .cm-jud-name { font-family: 'Fraunces', serif; }
 }
 .lifetime-body {
   position: relative; z-index: 2;
-  max-width: 680px;
+  max-width: 960px; width: calc(100% - 3rem);
+  border: 2px solid var(--ember);
+  background: rgba(10,12,16,0.62);
+  backdrop-filter: blur(2px);
+  padding: 4.5rem 3.5rem;
 }
 .lifetime-eyebrow {
   font-family: 'Outfit', sans-serif; font-size: 0.6rem; font-weight: 600;
