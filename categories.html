@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>קטגוריות הפרס | טקס פרסי היכל התהילה של המוזיקה היהודית</title>
+<title>קטגוריות הפרס | טקס פרס התהילה של המוזיקה היהודית</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300;400;700;800&family=Heebo:wght@300;400;500;700;900&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;0,9..144,800&family=Inter:wght@300;400;500;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -563,9 +563,9 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
 <nav id="navbar">
   <a href="index.html" class="nav-brand">
     <div class="nav-wordmark">
-      <div class="t1 he">טקס פרסי היכל התהילה</div>
-      <div class="t1 en">Fame Awards</div>
-      <div class="t2">Jewish Music Hall of Fame · 2027</div>
+      <div class="t1 he">טקס פרסי התהילה</div>
+      <div class="t1 en">Jewish Music Fame Award</div>
+      <div class="t2">Jewish Music Fame Award · 2027</div>
     </div>
   </a>
   <ul class="nav-links">
@@ -622,8 +622,8 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
     </h1>
     <div class="rule"></div>
     <p>
-      <span class="he">12 קטגוריות תחרותיות ופרס מפעל חיים. כל קטגוריה נכרעת בפה אחד בידי שלושה שופטים מקצועיים.</span>
-      <span class="en">12 competitive categories and a Lifetime Achievement Award. Each category is decided unanimously by three expert judges.</span>
+      <span class="he">12 קטגוריות ופרס מפעל חיים. כל קטגוריה נקבעת פה אחד על ידי שלושה שופטים.</span>
+      <span class="en">12 categories and a Lifetime Achievement Award. Each category is decided unanimously by three judges.</span>
     </p>
   </div>
 </section>
@@ -666,8 +666,8 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
     <h2 class="lifetime-title he">פרס מפעל חיים</h2>
     <h2 class="lifetime-title en">Lifetime Achievement Award</h2>
     <div class="lifetime-rule"></div>
-    <p class="lifetime-desc he">הכרה על מפעל יצירתי שלם — ליוצר, מבצע או מלחין שתרומתו למוזיקה היהודית מהווה עדות לנאמנות ומצוינות לאורך עשורים.</p>
-    <p class="lifetime-desc en">Recognition of a complete creative body of work — for a creator, performer or composer whose contribution to Jewish music stands as a testament to lifelong excellence.</p>
+    <p class="lifetime-desc he">הכרה על תרומה לאורך שנים של יהודי, שאינו בהכרח יוצר, מבצע או מלחין, למוזיקה העולמית.</p>
+    <p class="lifetime-desc en">Recognition of a lifetime of contribution to world music by a Jew — not necessarily a creator, performer or composer.</p>
   </div>
 </section>
 
@@ -675,7 +675,7 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
 <footer>
   <div class="footer-grid">
     <div class="footer-about">
-      <div class="fa-logo he">טקס פרסי היכל התהילה של המוזיקה היהודית</div>
+      <div class="fa-logo he">טקס פרס התהילה של המוזיקה היהודית</div>
       <div class="fa-logo en">Jewish Music Fame Awards</div>
       <p>
         <span class="he">הכרה ממלכתית ויוקרתית ליוצרים ומבצעים שעיצבו את המוזיקה היהודית לדורותיה.</span>
@@ -701,7 +701,7 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2027 <span class="he">טקס פרסי היכל התהילה של המוזיקה היהודית</span><span class="en">Jewish Music Fame Awards</span></span>
+    <span>© 2027 <span class="he">טקס פרס התהילה של המוזיקה היהודית</span><span class="en">Jewish Music Fame Awards</span></span>
     <span><span class="he">חלק מפרויקט היכל התהילה של המוזיקה היהודית</span><span class="en">Part of the Hall of Fame of Jewish Music project</span></span>
   </div>
 </footer>
@@ -936,7 +936,7 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
     cmBg.style.backgroundImage = `url('${cat.img}')`;
     cmNum.textContent = cat.id;
     cmTitle.innerHTML = `<span class="he">${cat.he}</span><span class="en">${cat.en}</span>`;
-    cmSub.innerHTML   = `<span class="he">${cat.subHe}</span><span class="en">${cat.subEn}</span>`;
+    cmSub.innerHTML   = '';
     const indHTML = i =>
       i.link
         ? `<a href="${i.link}" class="cm-ind"><div class="cm-ind-name he">${i.he}</div><div class="cm-ind-name en">${i.en}</div><div class="cm-ind-years">${i.y||''}</div></a>`
