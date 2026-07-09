@@ -252,6 +252,20 @@ body.lang-en .cd-event .ev-title { font-family: 'Fraunces', serif; }
 .venue-badge { position: absolute; bottom: 1.2rem; inset-inline-end: 1.2rem; background: rgba(18,20,24,0.94); border: 1px solid var(--ember); padding: 0.8rem 1.1rem; text-align: center; }
 .venue-badge .vb-date { font-family: 'Fraunces', serif; font-size: 1.3rem; color: var(--ember); font-weight: 300; line-height: 1; }
 .venue-badge .vb-place { font-family: 'Inter', sans-serif; font-size: 0.55rem; letter-spacing: 2px; text-transform: uppercase; color: var(--ash); margin-top: 0.3rem; }
+.venue-panel {
+  display: flex; align-items: center; justify-content: center;
+  background:
+    radial-gradient(ellipse at 30% 20%, rgba(176,136,74,0.10), transparent 60%),
+    linear-gradient(160deg, var(--stage-mid) 0%, var(--stage-deep) 100%);
+  border: 1px solid rgba(176,136,74,0.35);
+  min-height: 380px; text-align: center; padding: 3rem 2rem;
+}
+.venue-panel-inner .vp-city { font-family: 'Outfit', sans-serif; font-size: 0.65rem; letter-spacing: 4px; text-transform: uppercase; color: var(--ember); }
+body:not(.lang-en) .venue-panel-inner .vp-city { font-family: 'Heebo', sans-serif; font-weight: 700; }
+.venue-panel-inner .vp-name { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(2rem, 3.5vw, 2.9rem); font-weight: 700; color: var(--paper); margin-top: 1rem; }
+body.lang-en .venue-panel-inner .vp-name { font-family: 'Fraunces', serif; }
+.venue-panel-inner .vp-rule { width: 48px; height: 1px; background: var(--ember); margin: 1.4rem auto; }
+.venue-panel-inner .vp-date { font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 1.5px; color: var(--paper-70); }
 .venue-copy p { font-size: 1rem; color: var(--paper-70); line-height: 1.9; margin-bottom: 1.4rem; max-width: 52ch; }
 
 /* Feature list — no bullets, hairline rows */
@@ -409,8 +423,8 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; }
       <span class="en">Inaugural Awards Ceremony · 2027</span>
     </span>
     <h1 class="hero-h1">
-      <span class="he">הלילה שבו המוזיקה היהודית<br>תיקח את מקומה<br><span style="color: var(--ceremonial-gold);">בהיסטוריה</span></span>
-      <span class="en">The Night Jewish Music<br>Takes Its Rightful<br><span style="color: var(--ceremonial-gold);">Place in History</span></span>
+      <span class="he">הלילה שבו תרומתם של היהודים<br>למוזיקה העולמית תיקח את מקומה<br><span style="color: var(--ceremonial-gold);">בהיסטוריה</span></span>
+      <span class="en">The Night the Jewish Contribution to<br>World Music Takes Its<br><span style="color: var(--ceremonial-gold);">Place in History</span></span>
     </h1>
     <div class="hero-date">
       <div class="hero-date-item">
@@ -419,7 +433,7 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; }
       </div>
       <div class="hero-date-sep"></div>
       <div class="hero-date-item">
-        <span class="hd-val"><span class="he-inline">פתח תקווה</span><span class="en-inline">Petah Tikva</span></span>
+        <span class="hd-val"><span class="he-inline">פתח תקווה, ישראל</span><span class="en-inline">Petah Tikva, Israel</span></span>
         <span class="hd-lbl"><span class="he-inline">מקום הטקס</span><span class="en-inline">Venue City</span></span>
       </div>
     </div>
@@ -429,7 +443,7 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; }
     <div class="cd-event">
       <div class="ev-title he">טקס הכרזת הנבחרים</div>
       <div class="ev-title en">Inaugural Induction Ceremony</div>
-      <div class="ev-sub">פתח תקווה · 28.12.2027 &nbsp;|&nbsp; Petah Tikva · Dec 28, 2027</div>
+      <div class="ev-sub">פתח תקווה, ישראל · 28.12.2027 &nbsp;|&nbsp; Petah Tikva, Israel · Dec 28, 2027</div>
     </div>
     <div class="cd-units">
       <div class="cd-unit"><span class="cd-num" id="cd-d">--</span><div class="cd-lbl he">ימים</div><div class="cd-lbl en">DAYS</div></div>
@@ -446,12 +460,14 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; }
 <!-- PETAH TIKVA VENUE -->
 <section id="venue-pt">
   <div class="venue-inner">
-    <div class="venue-img-wrap reveal">
-      <img src="assets/images/exterior-road.jpg"
-           alt="היכל התרבות, פתח תקווה" loading="lazy">
-      <div class="venue-badge">
-        <div class="vb-date"><span class="he-inline">דצמבר 2027</span><span class="en-inline">Dec 2027</span></div>
-        <div class="vb-place"><span class="he-inline">היכל התרבות · פ"ת</span><span class="en-inline">Cultural Center · PT</span></div>
+    <!-- TO COMPLETE: תמונה אמיתית של היכל התרבות פ"ת (הערות ועדה 5.7) — עד אז פאנל טיפוגרפי, לא להציג מבנה שגוי -->
+    <div class="venue-img-wrap venue-panel reveal">
+      <div class="venue-panel-inner">
+        <div class="vp-city"><span class="he-inline">פתח תקווה · ישראל</span><span class="en-inline">Petah Tikva · Israel</span></div>
+        <div class="vp-name he">היכל התרבות</div>
+        <div class="vp-name en">The Cultural Center</div>
+        <div class="vp-rule"></div>
+        <div class="vp-date"><span class="he-inline">28 בדצמבר 2027</span><span class="en-inline">December 28, 2027</span></div>
       </div>
     </div>
     <div class="venue-copy reveal reveal-d1">
@@ -499,36 +515,26 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; }
         <div class="programme-time"><span class="he">פתיחה</span><span class="en">Opening</span></div>
         <div class="programme-name he">פתיחה מוזיקלית וברכות</div>
         <div class="programme-name en">Musical Opening &amp; Welcome Remarks</div>
-        <div class="programme-desc he">דברי פתיחה: יושב ראש עמותת מיתר וראש עיריית פתח תקווה</div>
-        <div class="programme-desc en">Opening remarks by the Chair of the Meitar Society and the Mayor of Petah Tikva</div>
       </li>
       <li class="programme-item">
         <div class="programme-time"><span class="he">גוף הטקס</span><span class="en">Main Ceremony</span></div>
-        <div class="programme-name he">הענקת 13 הפרסים</div>
-        <div class="programme-name en">Presentation of 13 Awards</div>
-        <div class="programme-desc he">הפרסים יוענקו לכל אחד מ-13 הזוכים, בליווי קטעי מחווה מוזיקליים</div>
-        <div class="programme-desc en">Awards will be presented to each of the 13 winners, accompanied by musical tribute performances</div>
+        <div class="programme-name he">הענקת הפרסים</div>
+        <div class="programme-name en">Presentation of the Awards</div>
       </li>
       <li class="programme-item">
         <div class="programme-time"><span class="he">הופעות</span><span class="en">Performances</span></div>
         <div class="programme-name he">מחוות וביצועים חיים</div>
         <div class="programme-name en">Tributes &amp; Live Performances</div>
-        <div class="programme-desc he">אמנים ידועים מבצעים מחוות מוזיקליות לכבוד הזוכים</div>
-        <div class="programme-desc en">Leading artists perform musical tributes in honor of the winners</div>
       </li>
       <li class="programme-item">
         <div class="programme-time"><span class="he">הכנסה להיכל</span><span class="en">Induction</span></div>
         <div class="programme-name he">קבלת פנים להיכל התהילה</div>
         <div class="programme-name en">Official Hall of Fame Induction</div>
-        <div class="programme-desc he">הזוכים נכנסים רשמית להיכל התהילה של המוזיקה היהודית</div>
-        <div class="programme-desc en">Inductees formally enter the Jewish Music Hall of Fame</div>
       </li>
       <li class="programme-item">
         <div class="programme-time"><span class="he">סיום</span><span class="en">Closing</span></div>
         <div class="programme-name he">סיום הטקס</div>
         <div class="programme-name en">Closing</div>
-        <div class="programme-desc he">דברי סיום ופרידה עד הטקס הבא</div>
-        <div class="programme-desc en">Closing remarks and farewell until the next ceremony</div>
       </li>
     </ul>
   </div>
@@ -546,8 +552,8 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; }
       </h2>
       <div class="rule"></div>
       <p class="la-copy">
-        <span class="he">טקס שותף, בעל מעמד שווה, ייערך בלוס אנג'לס — ליבת הקהילה היהודית הגדולה ביותר בעולם מחוץ לישראל. הטקס יתקיים בשותפות עם הקהילה היהודית המקומית ויישא את אותו כוח סמלי כטקס פתח תקווה.</span>
-        <span class="en">A full partner ceremony — equal in standing — will be held in Los Angeles, the heart of the world's largest Jewish diaspora community outside Israel. The ceremony will take place in partnership with the local Jewish community and carry the same symbolic weight as the Petah Tikva ceremony.</span>
+        <span class="he">טקס שותף, בעל מעמד שווה, ייערך בלוס אנג'לס — ליבת הקהילה היהודית הגדולה ביותר בעולם מחוץ לישראל. הטקס יתקיים בשותפות עם הקהילה היהודית המקומית.</span>
+        <span class="en">A full partner ceremony — equal in standing — will be held in Los Angeles, the heart of the world's largest Jewish diaspora community outside Israel. The ceremony will take place in partnership with the local Jewish community.</span>
       </p>
       <p class="la-copy">
         <span class="he">הפרטים הסופיים (תאריך, מקום ומבנה האירוע) יפורסמו בהמשך. הרשמו לניוזלטר לקבלת עדכונים.</span>

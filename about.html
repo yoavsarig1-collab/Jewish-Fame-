@@ -288,6 +288,23 @@ body.lang-en .bridge-box .bb-title { font-family: 'Fraunces', serif; }
   display: grid; grid-template-columns: repeat(4, 1fr);
   gap: 1px; margin-top: 3rem;
 }
+.leadership-grid.pair { grid-template-columns: repeat(2, minmax(0, 300px)); justify-content: center; }
+.leadership-grid.triple { grid-template-columns: repeat(3, minmax(0, 300px)); justify-content: center; }
+.leadership-sub {
+  font-family: 'Frank Ruhl Libre', serif; font-size: 1.35rem; font-weight: 700;
+  color: var(--paper); text-align: center; margin-top: 4rem;
+}
+body.lang-en .leadership-sub { font-family: 'Fraunces', serif; }
+.leadership-tbd {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  max-width: 760px; margin: 4rem auto 0;
+}
+.leadership-tbd .tbd-row {
+  background: var(--stage-lift); border-top: 2px solid var(--ember);
+  padding: 2rem 1.6rem; text-align: center;
+}
+.leadership-tbd .tbd-row p { font-size: 0.85rem; color: var(--ash); margin-top: 0.6rem; letter-spacing: 0.5px; }
+@media (max-width: 640px) { .leadership-tbd { grid-template-columns: 1fr; } }
 .leader-card { background: var(--stage-lift); position: relative; overflow: hidden; }
 .leader-card:hover .leader-portrait img { filter: grayscale(0%); }
 .leader-portrait {
@@ -460,7 +477,7 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
 
 @media (max-width: 960px) {
   .mission-inner, .bridge-inner { grid-template-columns: 1fr; gap: 3rem; }
-  .leadership-grid { grid-template-columns: 1fr 1fr; }
+  .leadership-grid, .leadership-grid.pair, .leadership-grid.triple { grid-template-columns: 1fr 1fr; }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
   .lang-switcher { display: none; }
@@ -469,7 +486,7 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
   #mobile-menu { display: block; }
 }
 @media (max-width: 600px) {
-  .leadership-grid { grid-template-columns: 1fr; }
+  .leadership-grid, .leadership-grid.pair, .leadership-grid.triple { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   #navbar { padding: 0 1.2rem; }
   #mission, #bridge, #leadership, #cta-bar,
@@ -548,12 +565,12 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
   <div class="page-hero-body" style="animation: fadeUp 0.9s cubic-bezier(0.16,1,0.3,1) both;">
     <span class="eyebrow"><span class="he">אודות הפרס</span><span class="en">About the Award</span></span>
     <h1 class="section-title" style="font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800;">
-      <span class="he">הצליל של עמנו</span>
-      <span class="en">The Sound of Our People</span>
+      <span class="he">התרומה של יהודים למוזיקה העולמית</span>
+      <span class="en">The Jewish Contribution to World Music</span>
     </h1>
     <p style="font-size: 1rem; color: var(--paper-70); max-width: 520px; margin-top: 1rem; line-height: 1.75;">
-      <span class="he">הכרה ממלכתית ויוקרתית ליוצרים ומבצעים שעיצבו את המוזיקה היהודית לדורותיה</span>
-      <span class="en">Prestigious state recognition for the creators and performers who shaped Jewish music for generations</span>
+      <span class="he">הכרה ציבורית ויוקרתית ליוצרים ומבצעים אשר תרומתם משמעותית למוזיקה העולמית</span>
+      <span class="en">Prestigious public recognition for creators and performers whose contribution to world music is significant</span>
     </p>
   </div>
 </section>
@@ -575,7 +592,7 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
       </p>
       <p>
         <span class="he">על כן, הוחלט לקיים את טקס פרס התהילה ולהעניק הכרה והוקרה ליוצרים ומבצעים היהודים שתרומתם למוזיקה העולמית ראויה לציון.</span>
-        <span class="en">It was therefore decided to hold the Prize of Fame ceremony and grant recognition to the Jewish creators and performers whose contribution to world music deserves to be acknowledged.</span>
+        <span class="en">It was therefore decided to hold the Fame Award ceremony and grant recognition to the Jewish creators and performers whose contribution to world music deserves to be acknowledged.</span>
       </p>
       <div style="margin-top: 1.5rem;">
         <a href="categories.html" class="btn-link">
@@ -588,8 +605,8 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
     <div class="reveal reveal-d2">
       <div class="mission-quote">
         <blockquote>
-          <span class="he">"הלילה שבו תרומתם תיקח את מקומה הראוי בהיסטוריה"</span>
-          <span class="en">"The night their contribution takes its rightful place in history"</span>
+          <span class="he">"הלילה שבו תרומתם של היהודים למוזיקה העולמית תיקח את מקומה בהיסטוריה"</span>
+          <span class="en">"The night the Jewish contribution to world music takes its place in history"</span>
         </blockquote>
         <cite>
           <span class="he">הכותרת הצפונה לטקס 2027</span>
@@ -598,7 +615,7 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
       </div>
       <div style="margin-top: 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1px;">
         <div class="mission-stat">
-          <div class="mission-stat-n">13</div>
+          <div class="mission-stat-n">12</div>
           <div class="mission-stat-d"><span class="he">קטגוריות הפרס — יצירה וביצוע</span><span class="en">Award categories — composition and performance</span></div>
         </div>
         <div class="mission-stat">
@@ -652,10 +669,6 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
           <span class="he">פתח תקווה, ישראל · שייפתח בעתיד · עיצוב: Braslavi Architects</span>
           <span class="en">Petah Tikva, Israel · Opening in the future · Design: Braslavi Architects</span>
         </p>
-        <a href="https://www.hallofame.org" class="bb-link">
-          <span class="he">לאתר המבנה</span><span class="en">Visit hallofame.org</span>
-          <span class="he-inline">←</span><span class="en-inline">→</span>
-        </a>
       </div>
     </div>
 
@@ -666,7 +679,7 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
 <section id="leadership">
   <div class="leadership-inner">
     <div class="reveal">
-      <span class="eyebrow"><span class="he">ההנהגה</span><span class="en">Leadership</span></span>
+      <span class="eyebrow"><span class="he">מי אנחנו</span><span class="en">Who We Are</span></span>
       <h2 class="section-title">
         <span class="he">מי עומד מאחורי הפרס</span>
         <span class="en">The People Behind the Award</span>
@@ -674,24 +687,9 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
       <div class="rule"></div>
     </div>
 
-    <div class="leadership-grid">
+    <div class="leadership-grid pair">
 
       <div class="leader-card reveal reveal-d1">
-        <div class="leader-portrait">
-          <img src="assets/images/leader-gafni.png" alt="איתן גפני" loading="lazy" style="object-position: center top;">
-        </div>
-        <div class="leader-info">
-          <div class="leader-name he">איתן גפני</div>
-          <div class="leader-name en">Eitan Gafni</div>
-          <div class="leader-role"><span class="he">מייסד</span><span class="en">Founder</span></div>
-          <p class="leader-bio">
-            <span class="he">יוזם ומייסד היכל התהילה של המוזיקה היהודית וטקס פרס התהילה.</span>
-            <span class="en">Founder of the Jewish Music Hall of Fame and the Prize of Fame ceremony.</span>
-          </p>
-        </div>
-      </div>
-
-      <div class="leader-card reveal reveal-d2">
         <div class="leader-portrait">
           <img src="assets/images/leader-gaon-recent.jpg" alt="יהורם גאון" loading="lazy" style="object-position: 67% top;">
         </div>
@@ -706,7 +704,46 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
         </div>
       </div>
 
-      <div class="leader-card reveal reveal-d3">
+      <div class="leader-card reveal reveal-d2">
+        <div class="leader-portrait">
+          <img src="assets/images/leader-greenberg.jpg" alt="רמי גרינברג" loading="lazy" style="object-position: center top;">
+        </div>
+        <div class="leader-info">
+          <div class="leader-name he">רמי גרינברג</div>
+          <div class="leader-name en">Rami Greenberg</div>
+          <div class="leader-role"><span class="he">ראש עיר פתח תקווה</span><span class="en">Mayor of Petah Tikva</span></div>
+          <p class="leader-bio">
+            <span class="he">ראש עיר פתח תקווה — השותפה המרכזית לאירוח הטקס הראשון של פרס התהילה.</span>
+            <span class="en">Mayor of Petah Tikva — the city hosting the inaugural Fame Award ceremony.</span>
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <h3 class="leadership-sub reveal">
+      <span class="he">חברי הנהלת הפרס</span>
+      <span class="en">Prize Management</span>
+    </h3>
+
+    <div class="leadership-grid triple">
+
+      <div class="leader-card reveal reveal-d1">
+        <div class="leader-portrait">
+          <img src="assets/images/leader-gafni.png" alt="איתן גפני" loading="lazy" style="object-position: center top;">
+        </div>
+        <div class="leader-info">
+          <div class="leader-name he">איתן גפני</div>
+          <div class="leader-name en">Eitan Gafni</div>
+          <div class="leader-role"><span class="he">מייסד ויושב ראש ההנהלה</span><span class="en">Founder &amp; Chair of Management</span></div>
+          <p class="leader-bio">
+            <span class="he">יוזם ומייסד היכל התהילה של המוזיקה היהודית וטקס פרס התהילה.</span>
+            <span class="en">Founder of the Jewish Music Hall of Fame and the Fame Award ceremony.</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="leader-card reveal reveal-d2">
         <div class="leader-portrait">
           <img src="assets/images/leader-shwadron.png" alt="מלכה שבדרון" loading="lazy" style="object-position: center 15%;">
         </div>
@@ -721,22 +758,34 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
         </div>
       </div>
 
-      <div class="leader-card reveal reveal-d4">
-        <div class="leader-portrait">
-          <img src="assets/images/leader-greenberg.jpg" alt="רמי גרינברג" loading="lazy" style="object-position: center top;">
-        </div>
+      <div class="leader-card reveal reveal-d3">
+        <div class="leader-portrait leader-portrait-placeholder"></div>
         <div class="leader-info">
-          <div class="leader-name he">רמי גרינברג</div>
-          <div class="leader-name en">Rami Greenberg</div>
-          <div class="leader-role"><span class="he">ראש עיר פתח תקווה</span><span class="en">Mayor of Petah Tikva</span></div>
-          <p class="leader-bio">
-            <span class="he">ראש עיר פתח תקווה — השותפה המרכזית לאירוח הטקס הראשון של פרס התהילה.</span>
-            <span class="en">Mayor of Petah Tikva — the city hosting the inaugural Prize of Fame ceremony.</span>
-          </p>
+          <div class="leader-name he">יצחק זוננשיין</div>
+          <div class="leader-name en">Yitzhak Zonenshein</div>
+          <div class="leader-role"><span class="he">במאי ומפיק הטקס</span><span class="en">Ceremony Director &amp; Producer</span></div>
         </div>
       </div>
 
     </div>
+
+    <div class="leadership-tbd reveal">
+      <div class="tbd-row">
+        <h3 class="leadership-sub" style="margin-top:0;">
+          <span class="he">חברי המועצה הציבורית</span>
+          <span class="en">Public Council Members</span>
+        </h3>
+        <p><span class="he">השמות יפורסמו בהמשך</span><span class="en">To be announced</span></p>
+      </div>
+      <div class="tbd-row">
+        <h3 class="leadership-sub" style="margin-top:0;">
+          <span class="he">שותפים</span>
+          <span class="en">Partners</span>
+        </h3>
+        <p><span class="he">השמות יפורסמו בהמשך</span><span class="en">To be announced</span></p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -805,8 +854,8 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
       <span class="en">Ceremony Details</span>
     </a>
     <a href="categories.html" class="btn-ghost">
-      <span class="he">13 קטגוריות הפרס</span>
-      <span class="en">The 13 Categories</span>
+      <span class="he">12 קטגוריות הפרס</span>
+      <span class="en">The 12 Categories</span>
       <span class="he-inline">←</span><span class="en-inline">→</span>
     </a>
   </div>
