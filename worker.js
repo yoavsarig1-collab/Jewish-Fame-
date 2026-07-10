@@ -63,7 +63,8 @@ export default {
           body = `אימייל: ${email}\nמקור: ${clip(d.source, 100)}\n`;
         } else {
           const intent = clip(d.intent, 40);
-          subject = intent === 'partner' ? 'פנייה חדשה — הצטרפות כשותפים (אתר פרס התהילה)'
+          subject = d.kind === 'meeting' ? 'בקשת פגישה — שותפות וחסות (אתר פרס התהילה)'
+                  : intent === 'partner' ? 'פנייה חדשה — הצטרפות כשותפים (אתר פרס התהילה)'
                   : intent === 'founder' ? 'פנייה חדשה — הצטרפות כמייסדים (אתר פרס התהילה)'
                   : 'פנייה חדשה מאתר פרס התהילה — טופס תמיכה';
           body = [
