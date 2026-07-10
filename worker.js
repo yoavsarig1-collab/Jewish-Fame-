@@ -62,15 +62,19 @@ export default {
           subject = 'הרשמה לעדכונים — אתר פרס התהילה';
           body = `אימייל: ${email}\nמקור: ${clip(d.source, 100)}\n`;
         } else {
-          subject = 'פנייה חדשה מאתר פרס התהילה — טופס תמיכה';
+          const intent = clip(d.intent, 40);
+          subject = intent === 'partner' ? 'פנייה חדשה — הצטרפות כשותפים (אתר פרס התהילה)'
+                  : intent === 'founder' ? 'פנייה חדשה — הצטרפות כמייסדים (אתר פרס התהילה)'
+                  : 'פנייה חדשה מאתר פרס התהילה — טופס תמיכה';
           body = [
+            intent ? `הגיע דרך: ${intent === 'partner' ? 'כפתור "הצטרפו כשותפים"' : 'כפתור "הצטרפו כמייסדים"'}` : null,
             `שם: ${clip(d.first_name, 100)} ${clip(d.last_name, 100)}`,
             `אימייל: ${email}`,
             `ארגון: ${clip(d.org, 200) || '—'}`,
             '',
             'הודעה:',
             clip(d.message, 5000) || '—',
-          ].join('\n');
+          ].filter(l => l !== null).join('\n');
         }
         await sendMail(env, subject, body, email);
         return Response.json({ ok: true });

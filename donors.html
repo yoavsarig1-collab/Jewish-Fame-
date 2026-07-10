@@ -186,6 +186,7 @@ body:not(.lang-en) .btn-primary { font-family: 'Heebo', sans-serif; }
   padding: 0 2.5rem;
   transition: height 0.3s, background 0.3s, border-color 0.3s;
   direction: ltr;
+  flex-direction: row-reverse;
 }
 #navbar.solid {
   height: 48px;
@@ -1396,6 +1397,7 @@ async function handleForm(e) {
       headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
       body: JSON.stringify({
         _honey: form._honey ? form._honey.value : '',
+        intent: new URLSearchParams(location.search).get('intent') || '',
         first_name: form.first_name.value,
         last_name: form.last_name.value,
         email: form.email.value,
