@@ -2,3 +2,10 @@
 .git/**
 *.pack
 node_modules
+Hall of Fame
+Prize
+assets/videos/hero-bg-original.mp4
+worker.js
+wrangler.jsonc
+.gmail_secrets.tmp
+.gitignore

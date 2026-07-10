@@ -938,11 +938,24 @@ const io = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 /* ── Email form ── */
-function handleEmail(e) {
+async function handleEmail(e) {
   e.preventDefault();
   const inp = document.getElementById('nl-email');
-  inp.value = '';
-  inp.placeholder = lang === 'he' ? 'תודה! נעדכן אתכם בקרוב.' : 'Thank you! We\'ll be in touch.';
+  const email = inp.value;
+  inp.disabled = true;
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ kind: 'signup', email: email, source: 'עמוד קטגוריה' })
+    });
+    if (!res.ok) throw new Error('send failed');
+    inp.value = '';
+    inp.placeholder = lang === 'he' ? 'תודה! נעדכן אתכם בקרוב.' : 'Thank you! We\'ll be in touch.';
+  } catch (err) {
+    inp.placeholder = lang === 'he' ? 'ההרשמה נכשלה — נסו שוב' : 'Sign-up failed — please try again';
+  }
+  inp.disabled = false;
   setTimeout(() => {
     inp.placeholder = lang === 'he' ? inp.dataset.he : inp.dataset.en;
   }, 4000);

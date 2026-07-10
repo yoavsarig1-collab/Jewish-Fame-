@@ -1176,8 +1176,8 @@ body:not(.lang-en) .footer-bottom { font-family: 'Heebo', sans-serif; }
 
       <!-- FORM -->
       <div>
-        <form name="donor-contact" method="POST" data-netlify="true" onsubmit="handleForm(event)">
-          <input type="hidden" name="form-name" value="donor-contact" />
+        <form name="donor-contact" method="POST" onsubmit="handleForm(event)">
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
           <div class="form-row-2">
             <div class="form-group">
@@ -1236,9 +1236,24 @@ body:not(.lang-en) .footer-bottom { font-family: 'Heebo', sans-serif; }
           <li>
             <span class="ci-label"><span class="he">גוף מפעיל</span><span class="en">By</span></span>
             <div class="ci-val">
-              <strong><span class="he">עמותת מיתר</span><span class="en">Meitar Association</span></strong>
-              <span class="he">היכל התהילה של המוזיקה היהודית</span>
-              <span class="en">Jewish Music Hall of Fame</span>
+              <strong><span class="he">מיתר היכל התהילה של המוזיקה היהודית (ע"ר 580163814)</span><span class="en">Meitar — The Hall of Fame of the Jewish Music (R.A. 580163814)</span></strong>
+              <span class="he">עמותה רשומה משנת 1990 · אישור ניהול תקין</span>
+              <span class="en">Registered Israeli nonprofit since 1990 · Certificate of Proper Management</span>
+            </div>
+          </li>
+          <li>
+            <span class="ci-label"><span class="he">הטבת מס</span><span class="en">Tax Credit</span></span>
+            <div class="ci-val">
+              <span class="he">תרומות לעמותה מזכות בזיכוי ממס בישראל — בתוקף עד 31.12.2028</span>
+              <span class="en">Donations qualify for an Israeli tax credit — valid through Dec 31, 2028</span>
+            </div>
+          </li>
+          <li>
+            <span class="ci-label"><span class="he">בארה"ב</span><span class="en">In the U.S.</span></span>
+            <div class="ci-val">
+              <strong dir="ltr" style="unicode-bidi: isolate; display: inline-block;">American Friends of the Jewish Music Hall of Fame, Inc.</strong>
+              <span class="he">תאגיד ללא מטרות רווח, פלורידה · EIN 88-1525961</span>
+              <span class="en">Florida not-for-profit corporation · EIN 88-1525961</span>
             </div>
           </li>
           <li>
@@ -1367,16 +1382,38 @@ window.addEventListener('scroll', () => {
   navbar.classList.toggle('solid', window.scrollY > 50);
 }, { passive: true });
 
-function handleForm(e) {
+async function handleForm(e) {
   e.preventDefault();
+  const form = e.target;
+  if (form._honey && form._honey.value) return;
   const btn = document.getElementById('form-submit-btn');
   const origHtml = btn.innerHTML;
-  btn.innerHTML = lang === 'he' ? '✓ נשלח — נחזור אליכם בקרוב' : '✓ Sent — we\'ll be in touch soon';
-  btn.style.background = 'var(--ember-deep)';
+  btn.disabled = true;
+  btn.innerHTML = lang === 'he' ? 'שולח...' : 'Sending...';
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({
+        _honey: form._honey ? form._honey.value : '',
+        first_name: form.first_name.value,
+        last_name: form.last_name.value,
+        email: form.email.value,
+        org: form.org.value,
+        message: form.message.value
+      })
+    });
+    if (!res.ok) throw new Error('send failed');
+    btn.innerHTML = lang === 'he' ? '✓ נשלח — נחזור אליכם בקרוב' : '✓ Sent — we\'ll be in touch soon';
+    btn.style.background = 'var(--ember-deep)';
+    form.reset();
+  } catch (err) {
+    btn.innerHTML = lang === 'he' ? 'השליחה נכשלה — נסו שוב' : 'Sending failed — please try again';
+  }
   setTimeout(() => {
     btn.innerHTML = origHtml;
     btn.style.background = '';
-    e.target.reset();
+    btn.disabled = false;
   }, 5000);
 }
 

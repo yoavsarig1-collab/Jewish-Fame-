@@ -1919,14 +1919,24 @@ const io = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 /* ── Newsletter ── */
-function handleNewsletter(e) {
+async function handleNewsletter(e) {
   e.preventDefault();
   const inp = document.getElementById('nl-email');
-  const msg = lang === 'he'
-    ? `תודה! ${inp.value} נרשם/ה בהצלחה.`
-    : `Thank you! ${inp.value} has been subscribed.`;
-  inp.value = '';
-  inp.placeholder = msg;
+  const email = inp.value;
+  inp.disabled = true;
+  try {
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify({ kind: 'signup', email: email, source: 'ניוזלטר עמוד הבית' })
+    });
+    if (!res.ok) throw new Error('send failed');
+    inp.value = '';
+    inp.placeholder = lang === 'he' ? `תודה! ${email} נרשם/ה בהצלחה.` : `Thank you! ${email} has been subscribed.`;
+  } catch (err) {
+    inp.placeholder = lang === 'he' ? 'ההרשמה נכשלה — נסו שוב' : 'Sign-up failed — please try again';
+  }
+  inp.disabled = false;
   setTimeout(() => {
     inp.placeholder = lang === 'he' ? inp.dataset.he : inp.dataset.en;
   }, 4000);
