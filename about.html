@@ -969,8 +969,9 @@ document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 
 /* About video modal */
 function openAboutVideoModal() {
+  const touchDevice = window.matchMedia('(pointer: coarse)').matches;
   document.getElementById('about-modal-iframe').src =
-    'https://player.vimeo.com/video/1191467915?autoplay=1&controls=1';
+    'https://player.vimeo.com/video/1191467915?controls=1' + (touchDevice ? '' : '&autoplay=1');
   document.getElementById('about-video-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }

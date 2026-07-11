@@ -1428,7 +1428,7 @@ body:not(.lang-en) .violin-caption cite { font-family: 'Heebo', sans-serif; }
     </button>
 
 <!-- VIDEO MODAL -->
-<div id="video-modal" role="dialog" aria-modal="true" aria-label="סרטון HIכל התהילה" onclick="handleModalClick(event)">
+<div id="video-modal" role="dialog" aria-modal="true" aria-label="סרטון היכל התהילה" onclick="handleModalClick(event)">
   <div class="modal-inner">
     <button class="modal-close" onclick="closeVideoModal()" aria-label="סגור / Close">
       <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -1958,8 +1958,9 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 /* ── Video modal ── */
 
 function openVideoModal() {
+  const touchDevice = window.matchMedia('(pointer: coarse)').matches;
   document.getElementById('modal-iframe').src =
-    'https://player.vimeo.com/video/1191467915?autoplay=1&controls=1';
+    'https://player.vimeo.com/video/1191467915?controls=1' + (touchDevice ? '' : '&autoplay=1');
   document.getElementById('video-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
