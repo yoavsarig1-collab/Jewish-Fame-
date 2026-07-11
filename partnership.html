@@ -374,7 +374,7 @@ body.lang-en .mobile-nav > ul > li > a { font-family: 'Fraunces', serif; }
   inset: 0;
   background:
     linear-gradient(175deg, rgba(14,14,12,0.45) 0%, rgba(14,14,12,0.88) 100%),
-    url('https://upload.wikimedia.org/wikipedia/commons/2/26/Carnegie_Hall_-_Full_%2848155558466%29.jpg') center 40%/cover no-repeat;
+    url('https://commons.wikimedia.org/wiki/Special:FilePath/Vienna%20-%20Vienna%20Opera%20main%20auditorium%20-%209750.jpg') center 55%/cover no-repeat;
 }
 
 .hero-bg::after {
@@ -968,6 +968,16 @@ body:not(.lang-en) .footer-bottom { font-family: 'Heebo', sans-serif; }
   .rule, .hero-bg::after { animation: none; background: var(--ember); }
   .reveal { transition: none; opacity: 1; transform: none; }
 }
+
+/* ── PARTNERSHIP: light value section ── */
+#why-now { background: var(--paper); }
+#why-now .section-title { color: var(--ink); }
+#why-now .why-now-lead p { color: #4A463E; }
+#why-now .rule { background: linear-gradient(90deg, transparent, var(--ember-deep), transparent); background-size: 200% auto; }
+#why-now .pillar { background: transparent; border-top: 2px solid var(--ember-deep); }
+#why-now .pillar-num { color: var(--ember-deep); }
+#why-now .pillar-title { color: var(--ink); }
+#why-now .pillar p { color: #4A463E; }
 </style>
 </head>
 <body>
@@ -1110,26 +1120,21 @@ body:not(.lang-en) .footer-bottom { font-family: 'Heebo', sans-serif; }
      IMPACT
 ══════════════════════════════════ -->
 <section id="impact">
-  <div class="impact-strip">
+  <div class="impact-strip" style="grid-template-columns: repeat(3, 1fr);">
     <div class="impact-stat reveal reveal-d1">
-      <div class="impact-n">12</div>
-      <div class="impact-d he">קטגוריות פרס במחזור הראשון</div>
-      <div class="impact-d en">Award categories in the inaugural class</div>
+      <div class="impact-n" style="font-size:1.6rem;line-height:2.2;"><span class="he-inline">שידור</span><span class="en-inline">Broadcast</span></div>
+      <div class="impact-d he">טלוויזיה ישראלית ופלטפורמות דיגיטליות עולמיות</div>
+      <div class="impact-d en">Israeli television and global digital platforms</div>
     </div>
     <div class="impact-stat reveal reveal-d2">
-      <div class="impact-n">2027</div>
-      <div class="impact-d he">הטקס הממלכתי הראשון — דצמבר, פתח תקווה</div>
-      <div class="impact-d en">First state ceremony — December, Petah Tikva</div>
+      <div class="impact-n">28.12.2027</div>
+      <div class="impact-d he">היכל התרבות, פתח תקווה</div>
+      <div class="impact-d en">Petah Tikva Cultural Center</div>
     </div>
     <div class="impact-stat reveal reveal-d3">
-      <div class="impact-n">150</div>
-      <div class="impact-d he">שנה לעיר פתח תקווה — המסגרת החגיגית</div>
-      <div class="impact-d en">Years of Petah Tikva — the celebratory backdrop</div>
-    </div>
-    <div class="impact-stat reveal reveal-d4">
-      <div class="impact-n">∞</div>
-      <div class="impact-d he">דורות של מוזיקה יהודית שיוכרו לנצח</div>
-      <div class="impact-d en">Generations of Jewish music recognized forever</div>
+      <div class="impact-n" style="font-size:1.6rem;line-height:2.2;"><span class="he-inline">לוס אנג'לס</span><span class="en-inline">Los Angeles</span></div>
+      <div class="impact-d he">טקס שותף לקהילה היהודית בארה"ב</div>
+      <div class="impact-d en">A companion ceremony for the U.S. Jewish community</div>
     </div>
   </div>
 </section>
@@ -1139,22 +1144,6 @@ body:not(.lang-en) .footer-bottom { font-family: 'Heebo', sans-serif; }
 ══════════════════════════════════ -->
 <!-- TIERS SECTION REMOVED per committee 5.7 — saved to docs/tiers-section-SAVED.html, awaiting management rewording -->
 
-<!-- ══════════════════════════════════
-     VISION QUOTE
-══════════════════════════════════ -->
-<section id="vision-quote">
-  <div class="vision-quote-inner reveal">
-    <div class="rule center"></div>
-    <blockquote>
-      <span class="he">"המוזיקה היהודית היא הגשר המחבר בין עבר, הווה ועתיד — שפה ללא גבולות שנדדה עם העם היהודי בכל תפוצותיו. עזרו לנו לתת לה את הבית הקבוע שמגיע לה."</span>
-      <span class="en">"Jewish music is the bridge connecting past, present and future — a language without borders that travelled with the Jewish people through every diaspora. Help us give it the permanent home it deserves."</span>
-    </blockquote>
-    <div class="vision-attr">
-      <span class="he">— עמותת מיתר, היכל התהילה של המוזיקה היהודית</span>
-      <span class="en">— Mitar Association, Jewish Music Hall of Fame</span>
-    </div>
-  </div>
-</section>
 
 <!-- ══════════════════════════════════
      CONTACT
