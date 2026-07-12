@@ -800,10 +800,10 @@ body.lang-en .cat-sub { font-family: 'Inter', sans-serif; }
 .cat-card .card-img-bg {
   position: absolute; inset: 0;
   background-size: cover; background-position: center 20%;
-  filter: grayscale(100%) contrast(1.1) brightness(0.35);
-  opacity: 0; transition: opacity 0.5s ease; z-index: 0;
+  filter: grayscale(100%) contrast(1.05) brightness(0.4);
+  opacity: 1; transition: filter 0.55s ease; z-index: 0;
 }
-.cat-card:hover .card-img-bg { opacity: 1; }
+.cat-card:hover .card-img-bg { filter: grayscale(0%) contrast(1.05) brightness(0.62); }
 .cat-card > *:not(.card-img-bg) { position: relative; z-index: 1; }
 .cat-card--lifetime {
   max-width: 1200px;
