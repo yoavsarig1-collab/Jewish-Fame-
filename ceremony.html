@@ -362,13 +362,13 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; }
 
 /* ===== MERGED: CATEGORIES (grid + modal + lifetime) ===== */
 /* ── CATEGORIES IMAGE GRID ── */
-#cats-section { padding: 0; }
+#cats-section { padding: 0 2.5rem; }
 .cats-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 3px;
-  background: var(--stage-deep);
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px;
+  max-width: 1360px; margin: 0 auto; background: transparent;
 }
 .cg-card {
-  position: relative; cursor: pointer; height: 280px; overflow: hidden;
+  position: relative; cursor: pointer; height: 236px; overflow: hidden; border-radius: 4px;
   touch-action: manipulation; user-select: none;
   outline: none;
 }
@@ -652,8 +652,8 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
     <li><a href="about.html"><span class="he">אודות</span><span class="en">About</span></a></li>
     <li><a href="ceremony.html" class="active"><span class="he">הטקס והפרסים</span> <span class="en">The Award</span></a></li>
     <li><a href="selection-process.html"><span class="he">תקנון</span> <span class="en">Regulations</span></a></li>
+    <li><a href="partnership.html"><span class="he">שותפות וחסות</span> <span class="en">Partnership</span></a></li>
     <li><a href="donors.html"><span class="he">תמיכה</span><span class="en">Support</span></a></li>
-    <li><a href="partnership.html"><span class="he">שותפות</span> <span class="en">Partnership</span></a></li>
   </ul>
   <div class="lang-switcher">
     <button type="button" class="lang-btn active" id="lang-he" onclick="switchLang('he')">עברית</button>
@@ -680,8 +680,8 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
       <li><a href="about.html"><span class="he">אודות</span><span class="en">About</span></a></li>
       <li><a href="ceremony.html"><span class="he">הטקס והפרסים</span> <span class="en">The Award</span></a></li>
       <li><a href="selection-process.html"><span class="he">תקנון</span> <span class="en">Regulations</span></a></li>
+      <li><a href="partnership.html"><span class="he">שותפות וחסות</span><span class="en">Partnership</span></a></li>
       <li><a href="donors.html"><span class="he">תמיכה</span><span class="en">Support</span></a></li>
-      <li><a href="partnership.html"><span class="he">שותפות</span><span class="en">Partnership</span></a></li>
     </ul>
     <div class="mobile-lang">
       <button type="button" class="lang-btn active" id="mobile-lang-he" onclick="switchLang('he')">עברית</button>
@@ -735,6 +735,66 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
 </section>
 
 <!-- PETAH TIKVA VENUE -->
+<!-- ===== MERGED: CATEGORIES ===== -->
+<section id="cats-header" class="reveal" style="padding: 3.2rem 2.5rem 0; text-align:center;">
+  <span class="eyebrow"><span class="he">קטגוריות הפרס</span><span class="en">Award Categories</span></span>
+  <h2 class="section-title" style="margin-inline:auto;">
+    <span class="he">12 קטגוריות ופרס מפעל חיים</span>
+    <span class="en">12 Categories &amp; a Lifetime Achievement Award</span>
+  </h2>
+  <div class="rule" style="margin-inline:auto;"></div>
+  <p style="max-width:60ch;margin:0 auto;color:var(--paper-70);">
+    <span class="he">כל קטגוריה נקבעת פה אחד על ידי שלושה שופטים מקצועיים.</span>
+    <span class="en">Each category is decided unanimously by a panel of three professional judges.</span>
+  </p>
+</section>
+<section id="cats-section">
+  <div id="cats-grid" class="cats-grid"></div>
+</section>
+
+<!-- CATEGORY MODAL -->
+<div id="cat-modal" role="dialog" aria-modal="true" aria-label="פרטי קטגוריה">
+  <div class="cm-bg" id="cm-bg"></div>
+  <div class="cm-chrome">
+    <button class="cm-btn" id="cm-prev" aria-label="קטגוריה קודמת">←</button>
+    <button class="cm-btn" id="cm-next" aria-label="קטגוריה הבאה">→</button>
+    <button class="cm-btn" id="cm-close" aria-label="סגור">✕</button>
+  </div>
+  <div class="cm-wrap">
+    <div class="cm-left">
+      <div class="cm-num" id="cm-num"></div>
+      <div class="cm-title" id="cm-title"></div>
+      <div class="cm-rule"></div>
+      <div class="cm-sub" id="cm-sub"></div>
+    </div>
+    <div class="cm-right">
+      <div class="cm-ind-label he">נבחרים</div>
+      <div class="cm-ind-label en">Inductees</div>
+      <div class="cm-inductees" id="cm-inductees"></div>
+      <div class="cm-judges" id="cm-judges"></div>
+    </div>
+  </div>
+</div>
+
+<!-- LIFETIME ACHIEVEMENT -->
+<section id="lifetime-award" class="reveal">
+  <div class="lifetime-bg"></div>
+  <div class="lifetime-wm"><span>13</span></div>
+  <div class="lifetime-body">
+    <span class="lifetime-eyebrow he">13 — פרס מיוחד</span>
+    <span class="lifetime-eyebrow en">13 — Special Award</span>
+    <h2 class="lifetime-title he">פרס מפעל חיים</h2>
+    <h2 class="lifetime-title en">Lifetime Achievement Award</h2>
+    <div class="lifetime-rule"></div>
+    <p class="lifetime-desc he">הכרה על תרומה לאורך שנים של יהודי, שאינו בהכרח יוצר, מבצע או מלחין, למוזיקה העולמית.</p>
+    <p class="lifetime-desc en">Recognition of a lifetime of contribution to world music by a Jew — not necessarily a creator, performer or composer.</p>
+    <p class="lifetime-desc he" style="margin-top:0.6rem;">הזוכה נקבע ברוב קולות על ידי חברי המועצה הציבורית.</p>
+    <p class="lifetime-desc en" style="margin-top:0.6rem;">The recipient is determined by majority vote of the Public Council.</p>
+  </div>
+</section>
+
+
+
 <section id="venue-pt">
   <div class="venue-inner">
     <!-- TO COMPLETE: תמונה אמיתית של היכל התרבות פ"ת (הערות ועדה 5.7) — עד אז פאנל טיפוגרפי, לא להציג מבנה שגוי -->
@@ -850,65 +910,6 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; font-weigh
 </section>
 
 <!-- SUPPORT CTA -->
-
-<!-- ===== MERGED: CATEGORIES ===== -->
-<section id="cats-header" class="reveal" style="padding: 6rem 2.5rem 0; text-align:center;">
-  <span class="eyebrow"><span class="he">קטגוריות הפרס</span><span class="en">Award Categories</span></span>
-  <h2 class="section-title" style="margin-inline:auto;">
-    <span class="he">12 קטגוריות ופרס מפעל חיים</span>
-    <span class="en">12 Categories &amp; a Lifetime Achievement Award</span>
-  </h2>
-  <div class="rule" style="margin-inline:auto;"></div>
-  <p style="max-width:60ch;margin:0 auto;color:var(--paper-70);">
-    <span class="he">כל קטגוריה נקבעת פה אחד על ידי שלושה שופטים מקצועיים.</span>
-    <span class="en">Each category is decided unanimously by a panel of three professional judges.</span>
-  </p>
-</section>
-<section id="cats-section">
-  <div id="cats-grid" class="cats-grid"></div>
-</section>
-
-<!-- CATEGORY MODAL -->
-<div id="cat-modal" role="dialog" aria-modal="true" aria-label="פרטי קטגוריה">
-  <div class="cm-bg" id="cm-bg"></div>
-  <div class="cm-chrome">
-    <button class="cm-btn" id="cm-prev" aria-label="קטגוריה קודמת">←</button>
-    <button class="cm-btn" id="cm-next" aria-label="קטגוריה הבאה">→</button>
-    <button class="cm-btn" id="cm-close" aria-label="סגור">✕</button>
-  </div>
-  <div class="cm-wrap">
-    <div class="cm-left">
-      <div class="cm-num" id="cm-num"></div>
-      <div class="cm-title" id="cm-title"></div>
-      <div class="cm-rule"></div>
-      <div class="cm-sub" id="cm-sub"></div>
-    </div>
-    <div class="cm-right">
-      <div class="cm-ind-label he">נבחרים</div>
-      <div class="cm-ind-label en">Inductees</div>
-      <div class="cm-inductees" id="cm-inductees"></div>
-      <div class="cm-judges" id="cm-judges"></div>
-    </div>
-  </div>
-</div>
-
-<!-- LIFETIME ACHIEVEMENT -->
-<section id="lifetime-award" class="reveal">
-  <div class="lifetime-bg"></div>
-  <div class="lifetime-wm"><span>13</span></div>
-  <div class="lifetime-body">
-    <span class="lifetime-eyebrow he">13 — פרס מיוחד</span>
-    <span class="lifetime-eyebrow en">13 — Special Award</span>
-    <h2 class="lifetime-title he">פרס מפעל חיים</h2>
-    <h2 class="lifetime-title en">Lifetime Achievement Award</h2>
-    <div class="lifetime-rule"></div>
-    <p class="lifetime-desc he">הכרה על תרומה לאורך שנים של יהודי, שאינו בהכרח יוצר, מבצע או מלחין, למוזיקה העולמית.</p>
-    <p class="lifetime-desc en">Recognition of a lifetime of contribution to world music by a Jew — not necessarily a creator, performer or composer.</p>
-    <p class="lifetime-desc he" style="margin-top:0.6rem;">הזוכה נקבע ברוב קולות על ידי חברי המועצה הציבורית.</p>
-    <p class="lifetime-desc en" style="margin-top:0.6rem;">The recipient is determined by majority vote of the Public Council.</p>
-  </div>
-</section>
-
 
 <!-- ===== MERGED: SELECTION SUMMARY ===== -->
 <section id="selection-brief" class="reveal" style="padding: 6rem 2.5rem; text-align:center; background: var(--stage-mid);">
