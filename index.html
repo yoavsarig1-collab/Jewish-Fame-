@@ -1310,7 +1310,10 @@ body:not(.lang-en) .violin-caption cite { font-family: 'Heebo', sans-serif; }
 .about-side { display: flex; flex-direction: column; gap: 2.4rem; }
 .partners-label { display: block; font-size: 0.62rem; letter-spacing: 4px; text-transform: uppercase; color: var(--ash); margin-bottom: 0.85rem; font-family: 'Outfit', sans-serif; font-weight: 600; }
 body:not(.lang-en) .partners-label { font-family: 'Heebo', sans-serif; font-weight: 700; }
-.partners-logos { display: flex; gap: 1rem; flex-wrap: wrap; }
+.partners-logos { display: flex; gap: 1.3rem; flex-wrap: wrap; }
+.partner-item { display: flex; flex-direction: column; align-items: center; gap: 0.6rem; }
+.logo-cap { font-size: 0.72rem; color: var(--paper-70); text-align: center; letter-spacing: 0.3px; }
+body:not(.lang-en) .logo-cap { font-family: 'Heebo', sans-serif; }
 .logo-chip { background: #fff; border-radius: 12px; padding: 0.7rem 1.2rem; min-height: 104px; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 16px rgba(0,0,0,0.28); transition: transform 0.2s; }
 .logo-chip:hover { transform: translateY(-2px); }
 .logo-chip img { height: 62px; width: auto; max-width: 170px; object-fit: contain; display: block; }
@@ -1531,8 +1534,14 @@ body:not(.lang-en) .wwa-role { font-family: 'Heebo', sans-serif; }
       <div class="partners">
         <span class="partners-label"><span class="he">שותפינו לדרך</span><span class="en">Our Partners</span></span>
         <div class="partners-logos">
-          <div class="logo-chip"><img src="assets/images/logos/logo-meitar.jpg" alt="מיתר — היכל התהילה של המוזיקה היהודית" loading="lazy"></div>
-          <div class="logo-chip"><img src="assets/images/logos/logo-pt-emblem.jpg" alt="עיריית פתח תקווה" loading="lazy" class="logo-pt"></div>
+          <div class="partner-item">
+            <div class="logo-chip"><img src="assets/images/logos/logo-meitar.jpg" alt="מיתר — היכל התהילה של המוזיקה היהודית" loading="lazy"></div>
+            <span class="logo-cap"><span class="he">עמותת מיתר</span><span class="en">Meitar Association</span></span>
+          </div>
+          <div class="partner-item">
+            <div class="logo-chip"><img src="assets/images/logos/logo-pt-emblem.jpg" alt="עיריית פתח תקווה" loading="lazy" class="logo-pt"></div>
+            <span class="logo-cap"><span class="he">עיריית פתח תקווה</span><span class="en">Petah Tikva Municipality</span></span>
+          </div>
         </div>
       </div>
       <div class="wwa">
