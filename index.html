@@ -1305,6 +1305,26 @@ body:not(.lang-en) .violin-caption cite { font-family: 'Heebo', sans-serif; }
   }
   .reveal { transition: none; opacity: 1; transform: none; }
 }
+
+/* ── KNISA: partners + who-we-are ── */
+.about-side { display: flex; flex-direction: column; gap: 2.4rem; }
+.partners-label { display: block; font-size: 0.62rem; letter-spacing: 4px; text-transform: uppercase; color: var(--ash); margin-bottom: 0.85rem; font-family: 'Outfit', sans-serif; font-weight: 600; }
+body:not(.lang-en) .partners-label { font-family: 'Heebo', sans-serif; font-weight: 700; }
+.partners-logos { display: flex; gap: 1rem; flex-wrap: wrap; }
+.logo-chip { background: #fff; border-radius: 12px; padding: 0.7rem 1.1rem; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 16px rgba(0,0,0,0.28); transition: transform 0.2s; }
+.logo-chip:hover { transform: translateY(-2px); }
+.logo-chip img { height: 58px; width: auto; max-width: 160px; object-fit: contain; display: block; }
+.wwa-title { font-family: 'Frank Ruhl Libre', serif; font-size: clamp(1.2rem, 1.8vw, 1.4rem); font-weight: 700; color: var(--paper); margin-bottom: 1.1rem; }
+body.lang-en .wwa-title { font-family: 'Fraunces', serif; }
+.wwa-list { display: flex; flex-direction: column; gap: 0.95rem; }
+.wwa-person { display: flex; align-items: center; gap: 0.9rem; }
+.wwa-person img { width: 52px; height: 52px; border-radius: 50%; object-fit: cover; flex-shrink: 0; border: 1px solid var(--line-dark); }
+.wwa-name { font-family: 'Frank Ruhl Libre', serif; font-weight: 700; color: var(--paper); font-size: 0.98rem; line-height: 1.2; }
+body.lang-en .wwa-name { font-family: 'Fraunces', serif; }
+.wwa-role { font-size: 0.75rem; color: var(--ember); margin-top: 0.15rem; }
+body:not(.lang-en) .wwa-role { font-family: 'Heebo', sans-serif; }
+.footer-partner { display: flex; justify-content: center; padding: 1.5rem 0 0.5rem; }
+.footer-partner img { height: 68px; width: auto; background: #fff; border-radius: 10px; padding: 0.5rem 0.9rem; }
 </style>
 </head>
 <body>
@@ -1505,26 +1525,38 @@ body:not(.lang-en) .violin-caption cite { font-family: 'Heebo', sans-serif; }
       </div>
     </div>
 
-    <div class="about-stats reveal reveal-d2">
-      <div class="stat">
-        <div class="stat-n">12</div>
-        <div class="stat-d he">קטגוריות פרס. מיטב האמנים היהודיים בכל תחומי המוזיקה</div>
-        <div class="stat-d en">Award categories. The finest Jewish artists across all music genres</div>
+    <div class="about-side reveal reveal-d2">
+      <div class="partners">
+        <span class="partners-label"><span class="he">בשיתוף</span><span class="en">In partnership with</span></span>
+        <div class="partners-logos">
+          <div class="logo-chip"><img src="assets/images/logos/logo-meitar.jpg" alt="מיתר — היכל התהילה של המוזיקה היהודית" loading="lazy"></div>
+          <div class="logo-chip"><img src="assets/images/logos/logo-pt-emblem.jpg" alt="עיריית פתח תקווה" loading="lazy"></div>
+        </div>
       </div>
-      <div class="stat">
-        <div class="stat-n">3</div>
-        <div class="stat-d he">שופטים מקצועיים לכל קטגוריה. החלטה פה אחד בלבד</div>
-        <div class="stat-d en">Expert judges per category. Unanimous decision required</div>
-      </div>
-      <div class="stat">
-        <div class="stat-n">2027</div>
-        <div class="stat-d he">שנת הטקס הראשון. שידור בטלוויזיה לישראל ולעולם</div>
-        <div class="stat-d en">Year of the first ceremony. Televised broadcast to Israel and the world</div>
-      </div>
-      <div class="stat">
-        <div class="stat-n">150</div>
-        <div class="stat-d he">שנה לעיר פתח תקווה. הטקס יהווה חלק מהחגיגות לאם המושבות</div>
-        <div class="stat-d en">Years since Petah Tikva's founding. The ceremony will be part of the celebrations for the Mother of Moshavot</div>
+      <div class="wwa">
+        <h3 class="wwa-title"><span class="he">מי אנחנו</span><span class="en">Who We Are</span></h3>
+        <div class="wwa-list">
+          <div class="wwa-person">
+            <img src="assets/images/leader-gaon-recent.jpg" alt="יהורם גאון" loading="lazy" style="object-position:67% top;">
+            <div><div class="wwa-name"><span class="he">יהורם גאון</span><span class="en">Yehoram Gaon</span></div><div class="wwa-role"><span class="he">יו"ר מיתר · זוכה פרס ישראל</span><span class="en">Chair of Meitar · Israel Prize Laureate</span></div></div>
+          </div>
+          <div class="wwa-person">
+            <img src="assets/images/leader-greenberg.jpg" alt="רמי גרינברג" loading="lazy" style="object-position:center top;">
+            <div><div class="wwa-name"><span class="he">רמי גרינברג</span><span class="en">Rami Greenberg</span></div><div class="wwa-role"><span class="he">ראש עיריית פתח תקווה</span><span class="en">Mayor of Petah Tikva</span></div></div>
+          </div>
+          <div class="wwa-person">
+            <img src="assets/images/leader-gafni.png" alt="איתן גפני" loading="lazy" style="object-position:center top;">
+            <div><div class="wwa-name"><span class="he">איתן גפני</span><span class="en">Eitan Gafni</span></div><div class="wwa-role"><span class="he">מייסד ויו"ר ההנהלה</span><span class="en">Founder &amp; Chair of Management</span></div></div>
+          </div>
+          <div class="wwa-person">
+            <img src="assets/images/leader-shwadron.png" alt="מלכה שבדרון" loading="lazy" style="object-position:center 15%;">
+            <div><div class="wwa-name"><span class="he">מלכה שבדרון</span><span class="en">Malka Shwadron</span></div><div class="wwa-role"><span class="he">מנהלת מיתר</span><span class="en">Meitar Director</span></div></div>
+          </div>
+          <div class="wwa-person">
+            <img src="assets/images/leader-zonenshein.jpg" alt="יצחק זוננשיין" loading="lazy" style="object-position:19% center;">
+            <div><div class="wwa-name"><span class="he">יצחק זוננשיין</span><span class="en">Yitzhak Zonenshein</span></div><div class="wwa-role"><span class="he">במאי ומפיק הטקס</span><span class="en">Ceremony Director &amp; Producer</span></div></div>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -1792,6 +1824,9 @@ body:not(.lang-en) .violin-caption cite { font-family: 'Heebo', sans-serif; }
 
   </div>
 
+  <div class="footer-partner">
+    <img src="assets/images/logos/logo-pt-full.jpg" alt="עיריית פתח תקווה — מושבה למטרופולין" loading="lazy">
+  </div>
   <div class="footer-bottom">
     <span>© 2027 <span class="he">טקס פרס התהילה של המוזיקה היהודית</span><span class="en">Jewish Music Fame Awards</span></span>
     <span style="display:flex;align-items:center;gap:0.75rem;">
