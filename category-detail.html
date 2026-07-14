@@ -610,9 +610,8 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; }
   </a>
   <ul class="nav-links">
     <li><a href="about.html">    <span class="he">אודות</span>        <span class="en">About</span></a></li>
-    <li><a href="categories.html" class="active"><span class="he">קטגוריות</span>   <span class="en">Categories</span></a></li>
-    <li><a href="ceremony.html"> <span class="he">הטקס</span>         <span class="en">Ceremony</span></a></li>
-    <li><a href="selection-process.html">  <span class="he">תהליך הבחירה</span> <span class="en">Selection</span></a></li>
+    <li><a href="ceremony.html"><span class="he">הטקס והפרסים</span> <span class="en">The Award</span></a></li>
+    <li><a href="selection-process.html"><span class="he">תקנון</span> <span class="en">Regulations</span></a></li>
     <li><a href="donors.html">         <span class="he">תמיכה</span>        <span class="en">Support</span></a></li>
     <li><a href="partnership.html"><span class="he">שותפות</span> <span class="en">Partnership</span></a></li>
   </ul>
@@ -639,9 +638,8 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; }
   <nav class="mobile-nav" dir="rtl">
     <ul>
       <li><a href="about.html"><span class="he">אודות</span><span class="en">About</span></a></li>
-      <li><a href="categories.html"><span class="he">קטגוריות</span><span class="en">Categories</span></a></li>
-      <li><a href="ceremony.html"><span class="he">הטקס</span><span class="en">Ceremony</span></a></li>
-      <li><a href="selection-process.html"><span class="he">תהליך הבחירה</span><span class="en">Selection</span></a></li>
+      <li><a href="ceremony.html"><span class="he">הטקס והפרסים</span> <span class="en">The Award</span></a></li>
+      <li><a href="selection-process.html"><span class="he">תקנון</span> <span class="en">Regulations</span></a></li>
       <li><a href="donors.html"><span class="he">תמיכה</span><span class="en">Support</span></a></li>
       <li><a href="partnership.html"><span class="he">שותפות</span><span class="en">Partnership</span></a></li>
     </ul>
@@ -740,7 +738,7 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; }
       <span class="he">ועדת שיפוט של שלושה שופטים מקצועיים מחליטה פה אחד, תחת סודיות מלאה.</span>
       <span class="en">A judging panel of three professional judges decides unanimously, under full confidentiality.</span>
     </p>
-    <a href="categories.html" class="btn-link">
+    <a href="ceremony.html#cats-header" class="btn-link">
       <span class="he">כל הקטגוריות</span>
       <span class="en">All Categories</span>
       <span class="he-inline">←</span>
@@ -787,9 +785,8 @@ body:not(.lang-en) .footer-col h5 { font-family: 'Heebo', sans-serif; }
       <h5><span class="he">פרויקט</span><span class="en">Project</span></h5>
       <ul>
         <li><a href="about.html">    <span class="he">אודות</span>        <span class="en">About</span></a></li>
-        <li><a href="categories.html">     <span class="he">קטגוריות</span>   <span class="en">Categories</span></a></li>
-        <li><a href="ceremony.html"> <span class="he">הטקס</span>         <span class="en">Ceremony</span></a></li>
-        <li><a href="selection-process.html">  <span class="he">תהליך הבחירה</span><span class="en">Selection Process</span></a></li>
+        <li><a href="ceremony.html"><span class="he">הטקס והפרסים</span> <span class="en">The Award</span></a></li>
+        <li><a href="selection-process.html"><span class="he">תקנון</span> <span class="en">Regulations</span></a></li>
       </ul>
     </div>
     <div class="footer-col">
@@ -815,7 +812,7 @@ const CATS = {
   '03': { he: 'חזן',              en: 'Cantor',                              subHe: 'מסורת אשכנזית ומזרחית',        subEn: 'Ashkenazi & Mizrahi tradition',        descHe: 'הכרה לגדולי החזנות ששמרו על המסורת הליטורגית והעלו את הקול המקדשי לגבהים חדשים.', descEn: 'Honoring the great cantors who preserved liturgical tradition and elevated the sacred voice.' },
   '04': { he: 'פייטן',            en: 'Paytan',                              subHe: 'הגות ליטורגית, אשכנזי ומזרחי', subEn: 'Liturgical poetry, Ashkenazi & Mizrahi', descHe: 'הכרה ליוצרי הפיוט ומבצעיו — קולות שנשאו את הרוחניות היהודית מבית הכנסת אל הלב.', descEn: 'Honoring the creators and performers of piyyut — voices that carried Jewish spirituality from the synagogue to the soul.' },
   '05': { he: 'גדולי הג\'אז',     en: 'Jazz Instrumentalist',               subHe: 'מורשת הג\'אז היהודי',           subEn: 'Jewish jazz legacy',                  descHe: 'הכרה לנגני הג\'אז היהודים שעיצבו את אחד הז\'אנרים החשובים במוזיקה המערבית.', descEn: 'Recognition for Jewish jazz musicians who helped shape one of the most important genres in Western music.' },
-  '06': { he: 'נגן קלאסי',        en: 'Classical Instrumentalist',           subHe: 'כלי מיתר, נשיפה, מקלדת',      subEn: 'String, wind & keyboard',             descHe: 'הכרה לנגנים קלאסיים שהעלו את אמנות הנגינה לרמה בינלאומית ויצגו את המוזיקה היהודית על במות העולם.', descEn: 'Recognition for classical instrumentalists who elevated Jewish performance to international stature.' },
+  '06': { he: 'נגן קלאסי',        en: 'Classical Instrumentalist',           subHe: 'כלי מיתר, נשיפה, מקלדת',      subEn: 'String, wind & keyboard',             descHe: 'הכרה לנגנים קלאסיים שהעלו את אמנות הנגינה לרמה בינלאומית ויצגו את המוזיקה היהודית על במות העולם.', descEn: 'Recognition for classical instrumentalists who elevated Jewish performance to worldwide stature.' },
   '07': { he: 'מלחין / מנצח',     en: 'Composer / Conductor',               subHe: 'קלאסי, אופרה, מחזמר, פופ',    subEn: 'Classical, opera, musical, pop',      descHe: 'הכרה ליוצרים שפרסו קנה מידה מוזיקלי רחב — מהסימפוניה ועד לפזמון.', descEn: 'Honoring creators who spanned the full musical range — from symphony to pop song.' },
   '08': { he: 'להקה',             en: 'Ensemble',                            subHe: 'דואט ומעלה, כל הסגנונות',     subEn: 'Duo or larger, all styles',           descHe: 'הכרה להרכבים ולהקות שיצרו יחד מוזיקה שעברה את גבולות הפרט ונהפכה לתופעה.', descEn: 'Recognition for ensembles whose collective sound became a cultural phenomenon.' },
   '09': { he: 'זמר/ת ים-תיכוני', en: 'Mediterranean Vocalist',              subHe: 'ישראל וארצות המזרח',           subEn: 'Israel & Eastern lands',              descHe: 'הכרה לאמנים שמזגו את מוזיקת הים-תיכון והמזרח לתוך הצליל היהודי.', descEn: 'Honoring artists who fused Mediterranean and Eastern music into the Jewish sound.' },
